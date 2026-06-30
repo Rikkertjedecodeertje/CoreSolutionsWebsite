@@ -1,0 +1,11 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#F8F7F3"/>
+  <rect x="130" y="100" width="940" height="600" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="3"/>
+  <rect x="210" y="170" width="780" height="80" rx="8" fill="#EFF6FF"/>
+  <text x="250" y="222" fill="#111827" font-family="Arial, sans-serif" font-size="36" font-weight="700">iHeel Pads</text>
+  <path d="M326 501C326 395 412 309 518 309H868C892 309 905 337 890 356L745 536C708 582 652 609 593 609H434C374 609 326 561 326 501Z" fill="#DBEAFE" stroke="#2563EB" stroke-width="10"/>
+  <path d="M421 491C421 430 470 381 531 381H760" stroke="#2563EB" stroke-width="22" stroke-linecap="round"/>
+  <path d="M512 514H679" stroke="#16A34A" stroke-width="18" stroke-linecap="round"/>
+  <rect x="215" y="617" width="230" height="18" rx="4" fill="#4B5563"/>
+  <rect x="215" y="650" width="330" height="14" rx="4" fill="#9CA3AF"/>
+</svg>
