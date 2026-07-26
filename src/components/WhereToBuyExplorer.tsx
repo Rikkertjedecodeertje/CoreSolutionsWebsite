@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useMemo, useRef, useState } from 'react';
 import {
+  ChevronDown,
   Clock3,
   Crosshair,
   ExternalLink,
@@ -120,6 +121,7 @@ export function WhereToBuyExplorer() {
   const [searching, setSearching] = useState(false);
   const mapElementRef = useRef<HTMLDivElement>(null);
   const mapBundleRef = useRef<MapBundle | null>(null);
+  const autoLocateAttemptedRef = useRef(false);
 
   const visibleChannels = useMemo(
     () =>
@@ -150,6 +152,30 @@ export function WhereToBuyExplorer() {
   }, [activePointId, visiblePointKey, visibleRetailPoints]);
 
   useEffect(() => {
+    if (autoLocateAttemptedRef.current || !navigator.geolocation) return;
+    autoLocateAttemptedRef.current = true;
+    setSearching(true);
+    setSearchMessage('Checking whether your browser location is available…');
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setSearchOrigin({
+          lat: position.coords.latitude,
+          lon: position.coords.longitude,
+          label: 'Your location',
+        });
+        setSearchMessage('Your location is shown on the map; stores are sorted by distance.');
+        setSearching(false);
+      },
+      () => {
+        setSearchMessage('Browser location was not available. Enter a postcode to place your location pin.');
+        setSearching(false);
+      },
+      { enableHighAccuracy: false, timeout: 8000, maximumAge: 300000 },
+    );
+  }, []);
+
+  useEffect(() => {
     let cancelled = false;
 
     async function buildMap() {
@@ -162,7 +188,7 @@ export function WhereToBuyExplorer() {
       mapBundleRef.current?.map.remove();
 
       const map = L.map(element, {
-        scrollWheelZoom: false,
+        scrollWheelZoom: true,
         zoomControl: true,
       }).setView([52.05, 4.33], 11);
 
@@ -172,18 +198,15 @@ export function WhereToBuyExplorer() {
           '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       }).addTo(map);
 
-      const markerIcon = L.divIcon({
-        className: 'store-marker-shell',
-        html: `<span class="store-marker"><img alt="" src="${assetPath(
-          '/images/iheel-logo.svg',
-        )}" /></span>`,
-        iconAnchor: [21, 42],
-        iconSize: [42, 42],
-        tooltipAnchor: [0, -38],
-      });
-
       const markers = new Map<string, import('leaflet').Marker>();
-      visibleRetailPoints.forEach((point) => {
+      visibleRetailPoints.forEach((point, index) => {
+        const markerIcon = L.divIcon({
+          className: 'store-marker-shell',
+          html: `<span class="store-marker"><span class="store-marker-number">${index + 1}</span></span>`,
+          iconAnchor: [21, 42],
+          iconSize: [42, 42],
+          tooltipAnchor: [0, -38],
+        });
         const marker = L.marker([point.lat, point.lon], { icon: markerIcon })
           .addTo(map)
           .bindTooltip(point.name, { direction: 'top', offset: [0, -8] });
@@ -198,9 +221,9 @@ export function WhereToBuyExplorer() {
       if (searchOrigin) {
         const originIcon = L.divIcon({
           className: '',
-          html: '<span class="search-origin-marker"></span>',
-          iconAnchor: [9, 9],
-          iconSize: [18, 18],
+          html: '<span class="search-origin-marker"><span class="search-origin-dot"></span></span>',
+          iconAnchor: [12, 12],
+          iconSize: [24, 24],
         });
         L.marker([searchOrigin.lat, searchOrigin.lon], { icon: originIcon })
           .addTo(map)
@@ -550,6 +573,8 @@ export function WhereToBuyExplorer() {
                         <a
                           className="inline-flex items-center gap-3 text-sm font-semibold text-text hover:text-primary"
                           href={selectedPoint.website}
+                          rel="noreferrer"
+                          target="_blank"
                         >
                           <Globe2 aria-hidden="true" className="h-4 w-4 text-secondary" />
                           Store website
@@ -557,10 +582,20 @@ export function WhereToBuyExplorer() {
                       ) : null}
                     </div>
 
-                    <details className="mt-5 border-y border-border py-4">
-                      <summary className="flex cursor-pointer list-none items-center gap-3 text-sm font-semibold text-text">
-                        <Clock3 aria-hidden="true" className="h-4 w-4 text-secondary" />
-                        Opening hours
+                    <details className="group mt-5 border-y border-border py-4">
+                      <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-semibold text-text">
+                        <span className="flex items-center gap-3">
+                          <Clock3 aria-hidden="true" className="h-4 w-4 text-secondary" />
+                          Opening hours
+                        </span>
+                        <span className="flex items-center gap-2 text-xs font-semibold text-steel">
+                          <span className="group-open:hidden">Expand</span>
+                          <span className="hidden group-open:inline">Collapse</span>
+                          <ChevronDown
+                            aria-hidden="true"
+                            className="h-4 w-4 transition-transform group-open:rotate-180"
+                          />
+                        </span>
                       </summary>
                       <dl className="mt-4 space-y-2 text-xs">
                         {selectedPoint.hours.map((item) => (
@@ -576,6 +611,8 @@ export function WhereToBuyExplorer() {
                       <a
                         className="inline-flex min-h-11 items-center justify-center gap-2 rounded-card bg-primary px-4 py-3 text-sm font-semibold text-white transition hover:bg-steel"
                         href={routeUrl(selectedPoint)}
+                        rel="noreferrer"
+                        target="_blank"
                       >
                         <Navigation aria-hidden="true" className="h-4 w-4" />
                         Directions
@@ -583,6 +620,8 @@ export function WhereToBuyExplorer() {
                       <a
                         className="inline-flex min-h-11 items-center justify-center gap-2 rounded-card border border-border bg-background px-4 py-3 text-sm font-semibold text-text transition hover:border-primary hover:text-primary"
                         href={selectedPoint.detailsSource}
+                        rel="noreferrer"
+                        target="_blank"
                       >
                         <ExternalLink aria-hidden="true" className="h-4 w-4" />
                         {selectedPoint.detailsSourceLabel}

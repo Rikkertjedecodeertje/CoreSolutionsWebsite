@@ -30,14 +30,14 @@ export function SalesChannelButton({ channel }: { channel: SalesChannel }) {
       {channel.note ? <span className="mt-2 block text-sm leading-6 text-muted">{channel.note}</span> : null}
       <span className="mt-auto pt-5">
         {isContact ? (
-          <span className="inline-flex min-h-10 items-center gap-2 rounded-card bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-steel">
+          <span className="inline-flex min-h-10 items-center gap-2 rounded-card bg-steel px-4 py-2 text-sm font-semibold text-white hover:bg-primary">
             <MailIcon />
             Contact
           </span>
         ) : channel.isPlaceholder ? (
-          <span className="text-xs font-semibold uppercase text-primary">Link to be added</span>
+          <span className="text-xs font-semibold uppercase text-steel">Link to be added</span>
         ) : (
-          <span className="text-sm font-semibold text-primary">Open</span>
+          <span className="text-sm font-semibold text-steel">Open</span>
         )}
       </span>
     </a>

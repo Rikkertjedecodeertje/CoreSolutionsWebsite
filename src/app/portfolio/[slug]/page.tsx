@@ -77,7 +77,7 @@ function AchievementBand({ items }: { items: string[] }) {
       <div className="grid gap-4 md:grid-cols-4">
         {items.map((item, index) => (
           <div className="rounded-card border border-border bg-background p-5 text-center" key={item}>
-            <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-secondary/10 text-2xl font-black text-primary">
+            <div className="achievement-orb mx-auto grid h-12 w-12 place-items-center rounded-full bg-secondary/15 text-2xl font-black text-steel">
               {index === 0 ? 'WIN' : index === 1 ? '9x' : index === 2 ? 'OMNI' : 'OK'}
             </div>
             <p className="mt-4 text-sm font-semibold leading-6 text-text">{item}</p>
@@ -92,6 +92,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   const project = getProjectBySlug(params.slug);
   if (!project) notFound();
   const isIheel = project.slug === 'iheel';
+  const isBatbox = project.slug === 'batbox-battery-tester';
 
   return (
     <>
@@ -107,11 +108,13 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             </div>
             {isIheel ? (
               <img className="h-20 w-auto max-w-full object-contain object-left" src={assetPath('/images/iheel-logo.svg')} alt="iHeel logo" />
+            ) : isBatbox ? (
+              <img className="h-20 w-auto max-w-full object-contain object-left" src={assetPath('/images/batbox-logo.svg')} alt="BATBOX logo" />
             ) : (
               <h1 className="hero-title font-semibold text-text">{project.name}</h1>
             )}
             {project.status ? (
-              <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-primary">{project.status}</p>
+              <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-steel">{project.status}</p>
             ) : null}
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">{project.tagline}</p>
             <div className="mt-8 flex flex-wrap gap-3">

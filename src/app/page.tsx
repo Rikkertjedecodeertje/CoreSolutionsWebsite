@@ -13,7 +13,7 @@ export default function HomePage() {
       <section className="border-b border-border bg-background">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-[1.05fr_0.95fr] md:items-center lg:px-8">
           <div>
-            <p className="mb-5 text-sm font-semibold uppercase text-primary">Product portfolio</p>
+            <p className="mb-5 text-sm font-semibold uppercase text-steel">Product portfolio</p>
             <h1 className="hero-title max-w-4xl font-semibold text-text">
               Creating physical products in a digital-first world.
             </h1>
@@ -38,7 +38,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
         <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <SectionHeader eyebrow="Portfolio" title="Featured product brands" />
-          <Link className="font-semibold text-primary hover:text-steel" href="/portfolio/">View all</Link>
+          <Link className="font-semibold text-steel hover:text-primary" href="/portfolio/">View all</Link>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
           {projects.map((project) => (
