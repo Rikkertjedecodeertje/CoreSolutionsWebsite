@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
-import { ExternalLink, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { ButtonLink } from '@/components/ButtonLink';
+import { LinkedInIcon } from '@/components/LinkedInIcon';
 import { HowWeWorkSystem, WhatWeDoSystem } from '@/components/ProcessSystems';
 import { SplitCta } from '@/components/SplitCta';
 import { assetPath } from '@/lib/sitePath';
@@ -87,8 +88,10 @@ export default function AboutPage() {
                 <a
                   className="inline-flex min-h-11 items-center justify-center gap-2 rounded-card border border-white/20 px-4 py-3 text-sm font-semibold text-white transition hover:border-secondary hover:text-secondary"
                   href="https://www.linkedin.com/in/rikvwieren/"
+                  rel="noreferrer"
+                  target="_blank"
                 >
-                  <ExternalLink aria-hidden="true" className="h-4 w-4" />
+                  <LinkedInIcon className="h-4 w-4" />
                   Connect on LinkedIn
                 </a>
                 <ButtonLink
@@ -105,7 +108,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 lg:grid-cols-2 lg:px-8">
+      <div className="mx-auto grid max-w-7xl items-stretch gap-12 px-5 py-16 lg:grid-cols-2 lg:px-8">
         <WhatWeDoSystem />
         <HowWeWorkSystem />
       </div>

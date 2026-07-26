@@ -132,6 +132,8 @@ export const retailPoints: RetailPoint[] = [
     country: 'netherlands',
     lat: 52.0894,
     lon: 4.3002,
+    photo: '/images/stores/de-malle-molen.jpg',
+    photoAlt: 'Storefront of Schoenmakerij en sleutelservice De Malle Molen in Den Haag',
     phone: '+31 70 752 3289',
     website: 'https://www.schoenmakerijdemallemolen.nl/',
     hours: [

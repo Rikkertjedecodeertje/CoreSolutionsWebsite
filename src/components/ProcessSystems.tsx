@@ -77,8 +77,8 @@ const liftClasses = [
 
 export function WhatWeDoSystem() {
   return (
-    <section aria-labelledby="what-we-do-title">
-      <div className="mb-8">
+    <section className="flex h-full flex-col" aria-labelledby="what-we-do-title">
+      <div className="mb-8 lg:min-h-[168px]">
         <p className="text-xs font-bold uppercase tracking-[0.18em] text-secondary">
           Product studio system
         </p>
@@ -90,7 +90,7 @@ export function WhatWeDoSystem() {
         </p>
       </div>
 
-      <div className="overflow-hidden rounded-card border border-text/10 bg-dark text-white shadow-soft">
+      <div className="flex-1 overflow-hidden rounded-card border border-text/10 bg-dark text-white shadow-soft lg:h-[620px] lg:flex-none">
         <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
           <span className="text-xs font-bold uppercase tracking-[0.16em] text-white/65">
             Discovery
@@ -128,8 +128,8 @@ export function WhatWeDoSystem() {
 
 export function HowWeWorkSystem() {
   return (
-    <section aria-labelledby="how-we-work-title">
-      <div className="mb-8">
+    <section className="flex h-full flex-col" aria-labelledby="how-we-work-title">
+      <div className="mb-8 lg:min-h-[168px]">
         <p className="text-xs font-bold uppercase tracking-[0.18em] text-secondary">
           Launch sequence
         </p>
@@ -141,7 +141,7 @@ export function HowWeWorkSystem() {
         </p>
       </div>
 
-      <div className="relative overflow-hidden rounded-card border border-border bg-card p-5 shadow-soft md:min-h-[620px] md:p-8">
+      <div className="relative flex-1 overflow-hidden rounded-card border border-border bg-card p-5 shadow-soft md:min-h-[620px] md:p-8 lg:h-[620px] lg:flex-none">
         <div className="flex items-center justify-between gap-4 md:absolute md:left-8 md:right-8 md:top-6">
           <span className="text-xs font-bold uppercase tracking-[0.16em] text-muted">
             01 · Start with the problem
@@ -150,11 +150,18 @@ export function HowWeWorkSystem() {
             <span className="hidden text-xs font-bold uppercase tracking-[0.16em] sm:inline">
               05 · Ready to launch
             </span>
-            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-secondary text-white shadow-soft">
-              <Rocket aria-hidden="true" className="h-6 w-6 -rotate-12" />
+            <span className="launch-target grid h-12 w-12 shrink-0 place-items-center rounded-full bg-secondary text-white shadow-soft">
+              <Rocket aria-hidden="true" className="launch-target-icon h-6 w-6 -rotate-12" />
             </span>
           </span>
         </div>
+
+        <span
+          aria-hidden="true"
+          className="rocket-flight pointer-events-none absolute right-[42px] top-[38px] z-30 hidden text-secondary md:block"
+        >
+          <Rocket className="h-6 w-6 -rotate-12" />
+        </span>
 
         <div
           aria-hidden="true"

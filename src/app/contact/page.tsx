@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
-import { Building2, ExternalLink, Mail, MapPin } from 'lucide-react';
+import { Building2, Mail, MapPin } from 'lucide-react';
 import { ButtonLink } from '@/components/ButtonLink';
+import { LinkedInIcon } from '@/components/LinkedInIcon';
 import { assetPath } from '@/lib/sitePath';
 
 export const metadata: Metadata = {
@@ -51,8 +52,10 @@ export default function ContactPage() {
               <a
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-card border border-border bg-background px-5 py-3 text-sm font-semibold text-text transition hover:border-primary hover:text-primary"
                 href="https://www.linkedin.com/in/rikvwieren/"
+                rel="noreferrer"
+                target="_blank"
               >
-                <ExternalLink aria-hidden="true" className="h-4 w-4" />
+                <LinkedInIcon className="h-4 w-4" />
                 Connect on LinkedIn
               </a>
             </div>
@@ -67,10 +70,11 @@ export default function ContactPage() {
                 className="h-16 w-16 object-contain"
                 src={assetPath('/images/core-solutions-logo.png')}
               />
+              <div aria-hidden="true" className="h-16 w-px shrink-0 bg-steel/60" />
               <div>
                 <h2 className="text-2xl font-semibold text-text">Core Solutions</h2>
-                <p className="mt-1 text-xs font-medium uppercase tracking-[0.12em] text-muted">
-                  Physical Product Studio
+                <p className="mt-1 text-xs font-medium uppercase leading-5 tracking-[0.1em] text-muted">
+                  Physical Product Studio &amp; Brand Portfolio
                 </p>
               </div>
             </div>
