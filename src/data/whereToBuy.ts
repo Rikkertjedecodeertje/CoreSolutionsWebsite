@@ -1,4 +1,5 @@
-﻿export type ProductKey = 'iheel' | 'batbox';
+export type ProductKey = 'iheel' | 'batbox';
+
 export type CountryKey =
   | 'netherlands'
   | 'belgium'
@@ -20,19 +21,28 @@ export type SalesChannel = {
   note?: string;
 };
 
+export type OpeningTime = {
+  day: string;
+  hours: string;
+};
+
 export type RetailPoint = {
+  id: string;
   name: string;
   address: string[];
   postcode: string;
   city: string;
   product: ProductKey;
   country: CountryKey;
-  x: number;
-  y: number;
   lat: number;
   lon: number;
-  moreInfoHref: string;
-  directionsHref: string;
+  photo?: string;
+  photoAlt?: string;
+  phone?: string;
+  website?: string;
+  hours: OpeningTime[];
+  detailsSource: string;
+  detailsSourceLabel: string;
 };
 
 export const products = [
@@ -71,7 +81,7 @@ export const salesChannels: SalesChannel[] = [
     title: 'iHeel® on Kaufland',
     description: 'Available through Kaufland marketplace in this country.',
     href: '#',
-    note: 'Add final country-specific Kaufland URL.',
+    note: 'Country-specific marketplace link will be added.',
   })),
   ...(['netherlands', 'belgium'] as CountryKey[]).map((country) => ({
     product: 'iheel' as const,
@@ -80,7 +90,7 @@ export const salesChannels: SalesChannel[] = [
     title: 'iHeel® on Bol',
     description: 'Available through Bol in the Netherlands and Belgium.',
     href: '#',
-    note: 'Add final Bol URL.',
+    note: 'Marketplace link will be added.',
   })),
   ...(['netherlands', 'belgium', 'germany'] as CountryKey[]).map((country) => ({
     product: 'iheel' as const,
@@ -89,14 +99,15 @@ export const salesChannels: SalesChannel[] = [
     title: 'iHeel® on Amazon',
     description: 'Available through Amazon in selected markets.',
     href: '#',
-    note: 'Add final Amazon URL.',
+    note: 'Marketplace link will be added.',
   })),
   {
     product: 'iheel',
     country: 'netherlands',
     channel: 'iHeelpads.com',
-    title: 'iHeelpads.com Super Value 10-Pack',
-    description: 'Exclusive own-webshop offer for loyal customers: the Super Value 10-Pack with 20 pieces.',
+    title: 'Super Value 10-Pack',
+    description:
+      'Exclusive own-webshop offer for loyal customers: the Super Value 10-Pack with 20 pieces.',
     href: 'https://iheelpads.com/',
   },
   ...(['netherlands', 'belgium'] as CountryKey[]).map((country) => ({
@@ -106,55 +117,85 @@ export const salesChannels: SalesChannel[] = [
     title: 'BATBOX® Tester',
     description: 'Available in the Netherlands and Belgium.',
     href: '#',
-    note: 'Add final BATBOX® sales URL.',
+    note: 'Marketplace link will be added.',
   })),
 ];
 
 export const retailPoints: RetailPoint[] = [
   {
+    id: 'de-malle-molen',
     name: 'Schoenmakerij en sleutelservice De Malle Molen',
     address: ['Javastraat 57', '2585 AG Den Haag', 'Nederland'],
     postcode: '2585AG',
     city: 'Den Haag',
     product: 'iheel',
     country: 'netherlands',
-    x: 49,
-    y: 48,
     lat: 52.0894,
     lon: 4.3002,
-    moreInfoHref: 'https://iheelpads.com/where-to-buy/#wpsl-search-wrap',
-    directionsHref:
-      'https://www.google.com/maps/dir/?api=1&origin=Vaillantlaan%2018t%2C%202526%20HZ%20Den%20Haag%2C%20Netherlands&destination=Javastraat%2057%2C%20Den%20Haag%2C%202585%20AG%2C%20Nederland&travelmode=driving',
+    phone: '+31 70 752 3289',
+    website: 'https://www.schoenmakerijdemallemolen.nl/',
+    hours: [
+      { day: 'Monday', hours: '11:00–17:00' },
+      { day: 'Tuesday', hours: '08:30–17:00' },
+      { day: 'Wednesday', hours: '08:30–17:00' },
+      { day: 'Thursday', hours: '08:30–17:00' },
+      { day: 'Friday', hours: '08:30–17:00' },
+      { day: 'Saturday', hours: '10:00–15:00' },
+      { day: 'Sunday', hours: 'Closed' },
+    ],
+    detailsSource: 'https://www.schoenmakerijdemallemolen.nl/',
+    detailsSourceLabel: 'Store website',
   },
   {
+    id: 'bennis',
     name: 'Vakschoenmakerij Bennis & Sleutelservice',
     address: ['Herenstraat 69', '2282 BR Rijswijk', 'Nederland'],
     postcode: '2282BR',
     city: 'Rijswijk',
     product: 'iheel',
     country: 'netherlands',
-    x: 45,
-    y: 58,
     lat: 52.0377,
     lon: 4.3194,
-    moreInfoHref: 'https://iheelpads.com/where-to-buy/#wpsl-search-wrap',
-    directionsHref:
-      'https://www.google.com/maps/dir/?api=1&origin=Vaillantlaan%2018t%2C%202526%20HZ%20Den%20Haag%2C%20Netherlands&destination=Herenstraat%2069%2C%20Rijswijk%2C%202282%20BR%2C%20Nederland&travelmode=driving',
+    photo: '/images/stores/bennis.jpg',
+    photoAlt: 'Storefront of Vakschoenmakerij Bennis in Rijswijk',
+    phone: '+31 70 399 6410',
+    website: 'https://schoenmakerijbennis.nl/',
+    hours: [
+      { day: 'Monday', hours: '10:00–17:30' },
+      { day: 'Tuesday', hours: '08:30–17:30' },
+      { day: 'Wednesday', hours: '08:30–17:30' },
+      { day: 'Thursday', hours: '08:30–17:30' },
+      { day: 'Friday', hours: '08:30–17:30' },
+      { day: 'Saturday', hours: '08:00–16:00' },
+      { day: 'Sunday', hours: 'Closed' },
+    ],
+    detailsSource: 'https://schoenmakerijbennis.nl/contact/',
+    detailsSourceLabel: 'Store contact page',
   },
   {
+    id: 'sven',
     name: 'Schoen- en sleutelservice Sven',
     address: ['Vestpoort 14', '2611 MG Delft', 'Nederland'],
     postcode: '2611MG',
     city: 'Delft',
     product: 'iheel',
     country: 'netherlands',
-    x: 44,
-    y: 69,
     lat: 52.0116,
     lon: 4.3592,
-    moreInfoHref: 'https://iheelpads.com/where-to-buy/#wpsl-search-wrap',
-    directionsHref:
-      'https://www.google.com/maps/dir/?api=1&origin=Vaillantlaan%2018t%2C%202526%20HZ%20Den%20Haag%2C%20Netherlands&destination=Vestpoort%2014%2C%20Delft%2C%202611%20MG%2C%20Nederland&travelmode=driving',
+    photo: '/images/stores/sven.jpg',
+    photoAlt: 'Interior of Schoen- en sleutelservice Sven in Delft',
+    phone: '+31 15 364 6183',
+    website: 'https://dezuidpoort.nl/schoen-en-sleutelservice-sven/',
+    hours: [
+      { day: 'Monday', hours: 'Closed' },
+      { day: 'Tuesday', hours: '09:00–17:30' },
+      { day: 'Wednesday', hours: '09:00–17:30' },
+      { day: 'Thursday', hours: '09:00–17:30' },
+      { day: 'Friday', hours: '09:00–17:30' },
+      { day: 'Saturday', hours: '09:00–17:00' },
+      { day: 'Sunday', hours: 'Closed' },
+    ],
+    detailsSource: 'https://dezuidpoort.nl/schoen-en-sleutelservice-sven/',
+    detailsSourceLabel: 'Shopping centre store page',
   },
 ];
-

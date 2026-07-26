@@ -17,12 +17,14 @@ const config: Config = {
         primary: 'var(--color-primary)',
         secondary: 'var(--color-secondary)',
         dark: 'var(--color-dark)',
+        steel: 'var(--color-steel)',
+        graphite: 'var(--color-graphite)',
       },
       borderRadius: {
         card: '8px',
       },
       boxShadow: {
-        soft: '0 18px 45px rgba(15, 23, 42, 0.08)',
+        soft: '0 18px 45px rgba(13, 27, 42, 0.10)',
       },
     },
   },

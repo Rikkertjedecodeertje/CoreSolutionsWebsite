@@ -20,8 +20,8 @@ export default function WhereToBuyPage() {
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
         <SectionHeader
           eyebrow="Where to buy"
-          title="Find Core Solutions brands by country"
-          description="Filter by brand and country to see online marketplaces, own webshop options and selected physical retail points."
+          title="Find Core Solutions brands online and nearby"
+          description="Filter by brand and country, explore online marketplaces, or find the nearest selected physical retailer on an interactive map."
         />
         <div className="mt-10">
           <WhereToBuyExplorer />
