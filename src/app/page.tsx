@@ -38,7 +38,7 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
         <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <SectionHeader eyebrow="Portfolio" title="Featured product brands" />
-          <Link className="font-semibold text-primary hover:text-blue-700" href="/portfolio/">View all</Link>
+          <Link className="font-semibold text-primary hover:text-steel" href="/portfolio/">View all</Link>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
           {projects.map((project) => (

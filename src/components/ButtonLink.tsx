@@ -15,9 +15,9 @@ export function ButtonLink({
   className = '',
 }: ButtonLinkProps) {
   const styles = {
-    primary: 'bg-primary text-white border-primary hover:bg-blue-700',
+    primary: 'bg-primary text-white border-primary hover:bg-steel',
     secondary: 'bg-card text-text border-border hover:border-primary hover:text-primary',
-    dark: 'bg-text text-white border-text hover:bg-dark',
+    dark: 'bg-text text-white border-text hover:bg-graphite',
   };
 
   const classes = `inline-flex min-h-11 items-center justify-center rounded-card border px-5 py-3 text-sm font-semibold transition ${styles[variant]} ${className}`;

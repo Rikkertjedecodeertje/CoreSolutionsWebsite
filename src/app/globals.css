@@ -1,16 +1,20 @@
+@import 'leaflet/dist/leaflet.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --color-background: #f8f7f3;
-  --color-text: #111827;
-  --color-muted: #4b5563;
+  --color-background: #f6f5f2;
+  --color-text: #0d1b2a;
+  --color-muted: #4f6d8a;
   --color-card: #ffffff;
-  --color-border: #e5e7eb;
-  --color-primary: #2563eb;
-  --color-secondary: #16a34a;
-  --color-dark: #0f172a;
+  --color-border: #d8dde1;
+  --color-primary: #0d1b2a;
+  --color-secondary: #6c8f7a;
+  --color-dark: #0d1b2a;
+  --color-steel: #4f6d8a;
+  --color-graphite: #2e3640;
 }
 
 * {
@@ -36,7 +40,7 @@ img {
 }
 
 ::selection {
-  background: rgba(37, 99, 235, 0.18);
+  background: rgba(108, 143, 122, 0.25);
 }
 
 .hero-title {
@@ -48,4 +52,59 @@ img {
   .hero-title {
     font-size: 2.55rem;
   }
+}
+
+.footer-sheen {
+  background:
+    radial-gradient(circle at 22% 18%, rgba(79, 109, 138, 0.20), transparent 34%),
+    linear-gradient(112deg, #f6f5f2 0%, #e8ebec 55%, #d9dddf 100%);
+}
+
+.leaflet-container {
+  z-index: 0;
+  background: #dfe5e8;
+  font-family: var(--font-inter), sans-serif;
+}
+
+.leaflet-control-zoom a {
+  color: var(--color-text) !important;
+}
+
+.leaflet-control-attribution {
+  color: var(--color-graphite);
+  font-size: 10px;
+}
+
+.store-marker-shell {
+  background: transparent;
+  border: 0;
+}
+
+.store-marker {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  overflow: hidden;
+  border: 3px solid #ffffff;
+  border-radius: 50% 50% 50% 8px;
+  background: #f6f5f2;
+  box-shadow: 0 10px 24px rgba(13, 27, 42, 0.28);
+  transform: rotate(-45deg);
+}
+
+.store-marker img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  transform: rotate(45deg);
+}
+
+.search-origin-marker {
+  width: 18px;
+  height: 18px;
+  border: 4px solid #ffffff;
+  border-radius: 999px;
+  background: #6c8f7a;
+  box-shadow: 0 5px 16px rgba(13, 27, 42, 0.32);
 }

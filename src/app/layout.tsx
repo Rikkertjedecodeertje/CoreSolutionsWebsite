@@ -39,6 +39,11 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: '/images/core-solutions-logo.png',
+    shortcut: '/images/core-solutions-logo.png',
+    apple: '/images/core-solutions-logo.png',
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

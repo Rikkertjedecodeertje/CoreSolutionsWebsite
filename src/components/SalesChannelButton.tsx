@@ -30,7 +30,7 @@ export function SalesChannelButton({ channel }: { channel: SalesChannel }) {
       {channel.note ? <span className="mt-2 block text-sm leading-6 text-muted">{channel.note}</span> : null}
       <span className="mt-auto pt-5">
         {isContact ? (
-          <span className="inline-flex min-h-10 items-center gap-2 rounded-card bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700">
+          <span className="inline-flex min-h-10 items-center gap-2 rounded-card bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-steel">
             <MailIcon />
             Contact
           </span>

@@ -50,22 +50,22 @@ function IheelInfographic() {
   return (
     <div className="overflow-hidden rounded-card border border-border bg-background p-5">
       <svg className="h-auto w-full" viewBox="0 0 980 360" role="img" aria-label="iHeel benefits infographic">
-        <rect width="980" height="360" rx="8" fill="#F8F7F3" />
-        <rect x="40" y="42" width="900" height="276" rx="8" fill="#FFFFFF" stroke="#E5E7EB" />
-        <path d="M155 238C155 158 220 93 300 93H665C682 93 692 113 681 126L553 278C525 311 484 330 441 330H241C193 330 155 291 155 238Z" fill="#EFF6FF" stroke="#2563EB" strokeWidth="8" />
-        <path d="M245 231C245 185 283 147 329 147H562" stroke="#2563EB" strokeWidth="18" strokeLinecap="round" />
-        <circle cx="720" cy="118" r="34" fill="#DBEAFE" />
-        <circle cx="720" cy="203" r="34" fill="#DCFCE7" />
-        <circle cx="720" cy="288" r="34" fill="#F1F5F9" />
-        <text x="770" y="110" fill="#111827" fontSize="24" fontWeight="700">Improves heel fit</text>
-        <text x="770" y="137" fill="#4B5563" fontSize="16">Self-adhesive pad placed inside the heel</text>
-        <text x="770" y="195" fill="#111827" fontSize="24" fontWeight="700">Reduces slip and rubbing</text>
-        <text x="770" y="222" fill="#4B5563" fontSize="16">Soft foam and fabric improve walking comfort</text>
-        <text x="770" y="280" fill="#111827" fontSize="24" fontWeight="700">Discreet shoe protection</text>
-        <text x="770" y="307" fill="#4B5563" fontSize="16">Helps protect the inner heel lining</text>
-        <text x="710" y="126" textAnchor="middle" fill="#2563EB" fontSize="28" fontWeight="800">1</text>
-        <text x="720" y="211" textAnchor="middle" fill="#16A34A" fontSize="28" fontWeight="800">2</text>
-        <text x="720" y="296" textAnchor="middle" fill="#0F172A" fontSize="28" fontWeight="800">3</text>
+        <rect width="980" height="360" rx="8" fill="#F6F5F2" />
+        <rect x="40" y="42" width="900" height="276" rx="8" fill="#FFFFFF" stroke="#D8DDE1" />
+        <path d="M155 238C155 158 220 93 300 93H665C682 93 692 113 681 126L553 278C525 311 484 330 441 330H241C193 330 155 291 155 238Z" fill="#E8EEEA" stroke="#4F6D8A" strokeWidth="8" />
+        <path d="M245 231C245 185 283 147 329 147H562" stroke="#0D1B2A" strokeWidth="18" strokeLinecap="round" />
+        <circle cx="720" cy="118" r="34" fill="#DCE4EA" />
+        <circle cx="720" cy="203" r="34" fill="#E3EBE5" />
+        <circle cx="720" cy="288" r="34" fill="#ECEDEB" />
+        <text x="770" y="110" fill="#0D1B2A" fontSize="24" fontWeight="700">Improves heel fit</text>
+        <text x="770" y="137" fill="#4F6D8A" fontSize="16">Self-adhesive pad placed inside the heel</text>
+        <text x="770" y="195" fill="#0D1B2A" fontSize="24" fontWeight="700">Reduces slip and rubbing</text>
+        <text x="770" y="222" fill="#4F6D8A" fontSize="16">Soft foam and fabric improve walking comfort</text>
+        <text x="770" y="280" fill="#0D1B2A" fontSize="24" fontWeight="700">Discreet shoe protection</text>
+        <text x="770" y="307" fill="#4F6D8A" fontSize="16">Helps protect the inner heel lining</text>
+        <text x="710" y="126" textAnchor="middle" fill="#4F6D8A" fontSize="28" fontWeight="800">1</text>
+        <text x="720" y="211" textAnchor="middle" fill="#6C8F7A" fontSize="28" fontWeight="800">2</text>
+        <text x="720" y="296" textAnchor="middle" fill="#0D1B2A" fontSize="28" fontWeight="800">3</text>
       </svg>
     </div>
   );
@@ -77,7 +77,7 @@ function AchievementBand({ items }: { items: string[] }) {
       <div className="grid gap-4 md:grid-cols-4">
         {items.map((item, index) => (
           <div className="rounded-card border border-border bg-background p-5 text-center" key={item}>
-            <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-blue-50 text-2xl font-black text-primary">
+            <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-secondary/10 text-2xl font-black text-primary">
               {index === 0 ? 'WIN' : index === 1 ? '9x' : index === 2 ? 'OMNI' : 'OK'}
             </div>
             <p className="mt-4 text-sm font-semibold leading-6 text-text">{item}</p>
@@ -106,7 +106,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               ))}
             </div>
             {isIheel ? (
-              <img className="h-20 w-auto" src={assetPath('/images/iheel-logo-cropped.png')} alt="iHeel logo" />
+              <img className="h-20 w-auto max-w-full object-contain object-left" src={assetPath('/images/iheel-logo.svg')} alt="iHeel logo" />
             ) : (
               <h1 className="hero-title font-semibold text-text">{project.name}</h1>
             )}
