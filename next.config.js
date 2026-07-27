@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
-const isGithubPages = process.env.GITHUB_PAGES === 'true';
-const githubPagesBasePath = '/CoreSolutionsWebsite';
+const deploymentBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
 const nextConfig = {
   output: 'export',
@@ -8,10 +7,10 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  ...(isGithubPages
+  ...(deploymentBasePath
     ? {
-        assetPrefix: `${githubPagesBasePath}/`,
-        basePath: githubPagesBasePath,
+        assetPrefix: `${deploymentBasePath}/`,
+        basePath: deploymentBasePath,
       }
     : {}),
 };
