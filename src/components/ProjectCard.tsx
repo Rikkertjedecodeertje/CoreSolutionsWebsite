@@ -33,14 +33,10 @@ export function ProjectCard({ project, locale = 'en' }: ProjectCardProps) {
             ))}
           </div>
           {project.slug === 'iheel' || project.slug === 'batbox-battery-tester' ? (
-            <div className="flex h-14 max-w-[210px] items-center overflow-hidden">
+            <div className="flex h-14 w-[210px] max-w-full items-center">
               <img
                 alt={project.slug === 'iheel' ? 'iHeel logo' : 'BATBOX logo'}
-                className={
-                  project.slug === 'iheel'
-                    ? 'h-12 w-auto max-w-[210px] object-contain object-left'
-                    : 'h-14 w-[210px] origin-left -translate-x-8 scale-[1.28] object-contain object-left'
-                }
+                className="h-12 w-[210px] max-w-full object-contain object-left"
                 src={assetPath(
                   project.slug === 'iheel'
                     ? '/images/iheel-logo.svg'

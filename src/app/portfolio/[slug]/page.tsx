@@ -71,11 +71,9 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               ))}
             </div>
             {isIheel ? (
-              <img className="h-20 w-auto max-w-full object-contain object-left" src={assetPath('/images/iheel-logo.svg')} alt="iHeel logo" />
+              <img className="h-20 w-[300px] max-w-full object-contain object-left" src={assetPath('/images/iheel-logo.svg')} alt="iHeel logo" />
             ) : isBatbox ? (
-              <div className="h-20 max-w-[300px] overflow-hidden">
-                <img className="h-20 w-[300px] origin-left -translate-x-10 scale-[1.28] object-contain object-left" src={assetPath('/images/batbox-logo.svg')} alt="BATBOX logo" />
-              </div>
+              <img className="h-20 w-[300px] max-w-full object-contain object-left" src={assetPath('/images/batbox-logo.svg')} alt="BATBOX logo" />
             ) : (
               <h1 className="hero-title font-semibold text-text">{project.name}</h1>
             )}

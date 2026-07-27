@@ -11,11 +11,6 @@ export function MediaSection({
     return (
       <div className="rounded-card border border-dashed border-border bg-card p-6">
         <p className="font-semibold text-text">{locale === 'nl' ? 'In de media' : 'In the media'}</p>
-        <p className="mt-3 text-muted">
-          {locale === 'nl'
-            ? 'Media-aandacht en publicaties worden hier toegevoegd.'
-            : 'Media mentions and publications will be added here.'}
-        </p>
       </div>
     );
   }

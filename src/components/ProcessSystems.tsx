@@ -239,7 +239,7 @@ export function HowWeWorkSystem({ locale = 'en' }: { locale?: 'en' | 'nl' }) {
             const Icon = step.icon;
             return (
               <article
-                className={`relative z-10 border-l-2 border-secondary bg-background p-4 shadow-sm md:min-h-48 md:border-l-0 md:border-t-2 ${liftClasses[index]}`}
+                className={`relative z-10 border-l-2 border-secondary bg-background p-4 shadow-sm md:min-h-40 md:border-l-0 md:border-t-2 ${liftClasses[index]}`}
                 key={step.title}
               >
                 <div className="flex items-center justify-between">
@@ -247,7 +247,6 @@ export function HowWeWorkSystem({ locale = 'en' }: { locale?: 'en' | 'nl' }) {
                   <Icon aria-hidden="true" className="h-5 w-5 text-secondary" />
                 </div>
                 <h3 className="mt-5 text-sm font-semibold leading-5 text-text">{step.title}</h3>
-                <p className="mt-2 text-xs leading-5 text-muted">{step.description}</p>
               </article>
             );
           })}

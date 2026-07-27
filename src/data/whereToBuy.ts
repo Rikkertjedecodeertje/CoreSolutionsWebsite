@@ -93,6 +93,22 @@ const amazonUrls: Partial<Record<CountryKey, string>> = {
 
 const kauflandUrls: Partial<Record<CountryKey, string>> = {
   germany: 'https://www.kaufland.de/product/533367461/',
+  italy: 'https://www.kaufland.it/product/533367461/',
+  france: 'https://www.kaufland.fr/product/533367461/',
+  slovakia: 'https://www.kaufland.sk/product/533367461/',
+  czechia: 'https://www.kaufland.cz/product/533367461/',
+  poland: 'https://www.kaufland.pl/product/533367461/',
+  austria: 'https://www.kaufland.at/product/533367461/',
+};
+
+const iHeelShopUrl =
+  'https://iheelpads.com/product/iheel-pads-super-value-10-pack-20-pieces/';
+
+const batboxBolUrls: Partial<Record<CountryKey, string>> = {
+  netherlands:
+    'https://www.bol.com/nl/nl/p/batbox-batterijtester-universeel-voor-aa-aaa-batterijen-compact-accuraat-direct-resultaat-met-led-indicator-batterij-checker-tester-meter-accumeter-voorkom-verspilling-zwart/9300000256271606/',
+  belgium:
+    'https://www.bol.com/be/nl/p/batbox-batterijtester-universeel-voor-aa-aaa-batterijen-compact-accuraat-direct-resultaat-met-led-indicator-batterij-checker-tester-meter-accumeter-voorkom-verspilling-zwart/9300000256271606/',
 };
 
 export const salesChannels: SalesChannel[] = [
@@ -121,23 +137,22 @@ export const salesChannels: SalesChannel[] = [
     description: 'Available through Amazon in selected markets.',
     href: amazonUrls[country]!,
   })),
-  {
-    product: 'iheel',
-    country: 'netherlands',
-    channel: 'iHeelpads.com',
+  ...countries.map(({ key: country }) => ({
+    product: 'iheel' as const,
+    country,
+    channel: 'iHeelpads.com' as const,
     title: 'Super Value 10-Pack',
     description:
       'Exclusive own-webshop offer for loyal customers: the Super Value 10-Pack with 20 pieces.',
-    href: 'https://iheelpads.com/',
-  },
+    href: iHeelShopUrl,
+  })),
   ...(['netherlands', 'belgium'] as CountryKey[]).map((country) => ({
     product: 'batbox' as const,
     country,
     channel: 'Bol' as const,
     title: 'BATBOX® Tester',
     description: 'Available in the Netherlands and Belgium.',
-    href: '#',
-    note: 'Marketplace link will be added.',
+    href: batboxBolUrls[country]!,
   })),
 ];
 

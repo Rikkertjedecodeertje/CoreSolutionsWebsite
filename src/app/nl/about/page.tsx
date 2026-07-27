@@ -80,7 +80,7 @@ export default function DutchAboutPage() {
               <div>
                 <img
                   alt="Rik van Wieren, oprichter van Core Solutions"
-                  className="mx-auto aspect-square w-full max-w-[190px] rounded-card object-cover sm:max-w-[220px] lg:max-w-none"
+                  className="mx-auto aspect-square w-full max-w-[190px] rounded-full object-cover sm:max-w-[200px] lg:max-w-[200px]"
                   src={assetPath('/images/rik-van-wieren-profile.png')}
                 />
                 <p className="mt-6 text-xs font-bold uppercase tracking-[0.16em] text-secondary">

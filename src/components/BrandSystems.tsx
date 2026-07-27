@@ -68,12 +68,12 @@ const overviewCopy = {
 
 const achievementValues: Record<BrandKey, string[]> = {
   iheel: ['5,000+', '9', 'OMNI', 'RETAIL'],
-  'batbox-battery-tester': ['READY', 'MARKET', 'IP', 'CORE'],
+  'batbox-battery-tester': ['LIVE', 'TOP', 'SEO', '4.9'],
 };
 
 const achievementIcons = {
   iheel: [ShoppingBag, Globe2, Store, CheckCircle2],
-  'batbox-battery-tester': [Battery, ShoppingBag, ShieldCheck, PackageCheck],
+  'batbox-battery-tester': [Battery, ShoppingBag, Globe2, Sparkles],
 };
 
 export function BrandOverviewSystem({
@@ -103,21 +103,13 @@ export function BrandOverviewSystem({
               {copy.eyebrow}
             </p>
             <div className="mt-8 inline-flex min-h-28 items-center rounded-card bg-white px-6 py-5 shadow-soft">
-              {isIheel ? (
-                <img
-                  alt="iHeel logo"
-                  className="h-16 w-auto max-w-[230px] object-contain"
-                  src={assetPath('/images/iheel-logo.svg')}
-                />
-              ) : (
-                <div className="h-16 w-[250px] overflow-hidden">
-                  <img
-                    alt="BATBOX logo"
-                    className="h-16 w-[250px] origin-left -translate-x-9 scale-[1.28] object-contain object-left"
-                    src={assetPath('/images/batbox-logo.svg')}
-                  />
-                </div>
-              )}
+              <img
+                alt={isIheel ? 'iHeel logo' : 'BATBOX logo'}
+                className="h-16 w-[250px] max-w-full object-contain object-left"
+                src={assetPath(
+                  isIheel ? '/images/iheel-logo.svg' : '/images/batbox-logo.svg',
+                )}
+              />
             </div>
             <h3 className="mt-8 max-w-md text-3xl font-semibold leading-tight">{copy.title}</h3>
             <p className="mt-4 max-w-md leading-7 text-white/65">{copy.description}</p>

@@ -29,7 +29,7 @@ export default function DutchContactPage() {
           <div className="bg-dark p-6 text-white">
             <img
               alt="Rik van Wieren"
-              className="mx-auto aspect-square w-full max-w-[190px] rounded-card object-cover sm:max-w-[220px] lg:max-w-none"
+              className="mx-auto aspect-square w-full max-w-[190px] rounded-full object-cover sm:max-w-[200px] lg:max-w-[200px]"
               src={assetPath('/images/rik-van-wieren-profile.png')}
             />
             <h2 className="mt-5 text-xl font-semibold">Rik van Wieren</h2>

@@ -38,7 +38,7 @@ export const projectsNl: Project[] = [
       },
       {
         label: 'iHeelpads.com Super Value 10-Pack',
-        href: 'https://iheelpads.com/',
+        href: 'https://iheelpads.com/product/iheel-pads-super-value-10-pack-20-pieces/',
         note: 'Exclusief aanbod in de eigen webshop voor vaste klanten: de Super Value 10-Pack met 20 stuks.',
       },
       {
@@ -101,7 +101,7 @@ export const projectsNl: Project[] = [
     name: 'BATBOX®',
     shortName: 'BATBOX®',
     tagline: 'Premium producten voor het testen en geordend bewaren van huishoudbatterijen.',
-    status: 'Beschikbaar en in voorbereiding op lancering',
+    status: 'Beschikbaar',
     category: 'Consumentenelektronica',
     extraTags: ['Veiligheid in huis'],
     shortDescription:
@@ -122,10 +122,10 @@ export const projectsNl: Project[] = [
       'Geschikt voor e-commerce en retailpresentatie',
     ],
     achievements: [
-      'Productconcept en merk ontwikkeld',
-      'Marketplace-positionering voorbereid',
-      'Merk- en productclassificatiewerk voorbereid of in uitvoering',
-      'Onderdeel van het praktische Core Solutions-productportfolio',
+      'Gelanceerd en sterke online verkoop',
+      'Binnen drie maanden topverkoper in Nederland en België',
+      'Hoge posities in online zoekresultaten',
+      'Gemiddelde productbeoordeling van 4,9 van 5 sterren',
     ],
     salesChannels: [
       {
@@ -154,9 +154,9 @@ export const projectsNl: Project[] = [
           'BATBOX® is een merk voor het testen en bewaren van huishoudbatterijen, ontworpen voor dagelijks gebruik.',
       },
       {
-        question: 'Is BATBOX® al beschikbaar?',
+        question: 'Waar is BATBOX® verkrijgbaar?',
         answer:
-          'Informatie over de lancering en verkoopkanalen wordt toegevoegd zodra die beschikbaar is.',
+          'BATBOX® is verkrijgbaar via geselecteerde online verkoopkanalen. De actuele links per land staan op de pagina Waar te koop.',
       },
       {
         question: 'Voor wie is BATBOX® bedoeld?',
