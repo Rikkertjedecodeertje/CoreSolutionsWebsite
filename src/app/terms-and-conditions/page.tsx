@@ -4,6 +4,10 @@ import { SectionHeader } from '@/components/SectionHeader';
 export const metadata: Metadata = {
   title: 'Terms and Conditions',
   description: 'Terms and conditions placeholder for Core Solutions.',
+  alternates: {
+    canonical: '/terms-and-conditions/',
+    languages: { en: '/terms-and-conditions/', nl: '/nl/terms-and-conditions/' },
+  },
   openGraph: {
     title: 'Terms and Conditions | Core Solutions',
     description: 'Terms and conditions placeholder for Core Solutions.',

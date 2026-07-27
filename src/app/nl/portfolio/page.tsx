@@ -2,38 +2,39 @@ import type { Metadata } from 'next';
 import { ProjectCard } from '@/components/ProjectCard';
 import { SectionHeader } from '@/components/SectionHeader';
 import { SplitCta } from '@/components/SplitCta';
-import { projects } from '@/data/projects';
+import { projectsNl } from '@/data/projects.nl';
 
 export const metadata: Metadata = {
   title: 'Portfolio',
-  description: 'Explore the product brands developed and commercialized by Core Solutions.',
+  description: 'Bekijk de productmerken die Core Solutions ontwikkelt en commercialiseert.',
   alternates: {
-    canonical: '/portfolio/',
+    canonical: '/nl/portfolio/',
     languages: { en: '/portfolio/', nl: '/nl/portfolio/' },
   },
   openGraph: {
     title: 'Portfolio | Core Solutions',
-    description: 'Explore the product brands developed and commercialized by Core Solutions.',
-    url: '/portfolio/',
+    description: 'Bekijk de productmerken die Core Solutions ontwikkelt en commercialiseert.',
+    url: '/nl/portfolio/',
+    locale: 'nl_NL',
   },
 };
 
-export default function PortfolioPage() {
+export default function DutchPortfolioPage() {
   return (
     <>
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
         <SectionHeader
-          description="Explore the product brands developed and commercialized by Core Solutions."
-          eyebrow="Current brands"
+          description="Bekijk de productmerken die Core Solutions ontwikkelt en commercialiseert."
+          eyebrow="Huidige merken"
           title="Portfolio"
         />
         <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {projects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
+          {projectsNl.map((project) => (
+            <ProjectCard key={project.slug} locale="nl" project={project} />
           ))}
         </div>
       </section>
-      <SplitCta />
+      <SplitCta locale="nl" />
     </>
   );
 }

@@ -39,6 +39,34 @@ const studioSteps = [
   },
 ];
 
+const studioStepsNl = [
+  {
+    title: 'Probleemvalidatie',
+    description: 'Bevestig het probleem, de gebruiker en de commerciële reden om het op te lossen.',
+    icon: SearchCheck,
+  },
+  {
+    title: 'Productconcept ontwikkelen',
+    description: 'Vertaal het inzicht naar een scherpe propositie en duidelijke vereisten.',
+    icon: Target,
+  },
+  {
+    title: 'Prototyping en leveranciers',
+    description: 'Bouw, test en verfijn samen met de juiste productiepartners.',
+    icon: Box,
+  },
+  {
+    title: 'Merk en verpakking',
+    description: 'Maak een merksysteem dat het product begrijpelijk en betrouwbaar maakt.',
+    icon: Sparkles,
+  },
+  {
+    title: 'Marketplace- en e-commerceverkoop',
+    description: 'Lanceer, leer en verbeter via online en fysieke distributie.',
+    icon: PackageCheck,
+  },
+];
+
 const operatingSteps = [
   {
     title: 'Question every requirement',
@@ -67,6 +95,34 @@ const operatingSteps = [
   },
 ];
 
+const operatingStepsNl = [
+  {
+    title: 'Bevraag iedere vereiste',
+    description: 'Controleer of de vereiste het juiste probleem oplost.',
+    icon: Target,
+  },
+  {
+    title: 'Verwijder elk mogelijk onderdeel',
+    description: 'Schrap voordat je complexiteit toevoegt.',
+    icon: Zap,
+  },
+  {
+    title: 'Vereenvoudig en optimaliseer',
+    description: 'Maak de overgebleven oplossing duidelijker en sterker.',
+    icon: Settings2,
+  },
+  {
+    title: 'Versnel de doorlooptijd',
+    description: 'Verkort de weg van beslissing naar nieuwe inzichten.',
+    icon: Gauge,
+  },
+  {
+    title: 'Automatiseer',
+    description: 'Automatiseer pas wanneer het proces klaar is om op te schalen.',
+    icon: Rocket,
+  },
+];
+
 const liftClasses = [
   'md:translate-y-[248px]',
   'md:translate-y-[190px]',
@@ -75,34 +131,39 @@ const liftClasses = [
   'md:translate-y-[16px]',
 ];
 
-export function WhatWeDoSystem() {
+export function WhatWeDoSystem({ locale = 'en' }: { locale?: 'en' | 'nl' }) {
+  const isNl = locale === 'nl';
+  const steps = isNl ? studioStepsNl : studioSteps;
+
   return (
     <section className="flex h-full flex-col" aria-labelledby="what-we-do-title">
       <div className="mb-8 lg:min-h-[168px]">
         <p className="text-xs font-bold uppercase tracking-[0.18em] text-secondary">
-          Product studio system
+          {isNl ? 'Productstudiosysteem' : 'Product studio system'}
         </p>
         <h2 className="mt-3 text-3xl font-semibold text-text" id="what-we-do-title">
-          What we do
+          {isNl ? 'Wat we doen' : 'What we do'}
         </h2>
         <p className="mt-3 max-w-xl leading-7 text-muted">
-          One connected operating system that takes a real-world problem from evidence to market.
+          {isNl
+            ? 'Eén samenhangend systeem dat een praktisch probleem van bewijs naar markt brengt.'
+            : 'One connected operating system that takes a real-world problem from evidence to market.'}
         </p>
       </div>
 
       <div className="flex-1 overflow-hidden rounded-card border border-text/10 bg-dark text-white shadow-soft lg:h-[620px] lg:flex-none">
         <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
           <span className="text-xs font-bold uppercase tracking-[0.16em] text-white/65">
-            Discovery
+            {isNl ? 'Ontdekking' : 'Discovery'}
           </span>
           <ArrowUpRight aria-hidden="true" className="h-5 w-5 text-secondary" />
           <span className="text-xs font-bold uppercase tracking-[0.16em] text-white/65">
-            Commercialization
+            {isNl ? 'Commercialisatie' : 'Commercialization'}
           </span>
         </div>
 
         <div>
-          {studioSteps.map((step, index) => {
+          {steps.map((step, index) => {
             const Icon = step.icon;
             return (
               <article
@@ -126,29 +187,34 @@ export function WhatWeDoSystem() {
   );
 }
 
-export function HowWeWorkSystem() {
+export function HowWeWorkSystem({ locale = 'en' }: { locale?: 'en' | 'nl' }) {
+  const isNl = locale === 'nl';
+  const steps = isNl ? operatingStepsNl : operatingSteps;
+
   return (
     <section className="flex h-full flex-col" aria-labelledby="how-we-work-title">
       <div className="mb-8 lg:min-h-[168px]">
         <p className="text-xs font-bold uppercase tracking-[0.18em] text-secondary">
-          Launch sequence
+          {isNl ? 'Lanceervolgorde' : 'Launch sequence'}
         </p>
         <h2 className="mt-3 text-3xl font-semibold text-text" id="how-we-work-title">
-          How we work
+          {isNl ? 'Hoe we werken' : 'How we work'}
         </h2>
         <p className="mt-3 max-w-xl leading-7 text-muted">
-          Five decisions in the right order, rising from a validated need to a scalable launch.
+          {isNl
+            ? 'Vijf beslissingen in de juiste volgorde, van gevalideerde behoefte naar schaalbare lancering.'
+            : 'Five decisions in the right order, rising from a validated need to a scalable launch.'}
         </p>
       </div>
 
       <div className="relative flex-1 overflow-hidden rounded-card border border-border bg-card p-5 shadow-soft md:min-h-[620px] md:p-8 lg:h-[620px] lg:flex-none">
         <div className="flex items-center justify-between gap-4 md:absolute md:left-8 md:right-8 md:top-6">
           <span className="text-xs font-bold uppercase tracking-[0.16em] text-muted">
-            01 · Start with the problem
+            {isNl ? '01 · Begin bij het probleem' : '01 · Start with the problem'}
           </span>
           <span className="flex items-center gap-3 text-primary">
             <span className="hidden text-xs font-bold uppercase tracking-[0.16em] sm:inline">
-              05 · Ready to launch
+              {isNl ? '05 · Klaar voor lancering' : '05 · Ready to launch'}
             </span>
             <span className="launch-target grid h-12 w-12 shrink-0 place-items-center rounded-full bg-secondary text-white shadow-soft">
               <Rocket aria-hidden="true" className="launch-target-icon h-6 w-6 -rotate-12" />
@@ -169,7 +235,7 @@ export function HowWeWorkSystem() {
         />
 
         <div className="relative mt-6 grid gap-4 md:mt-0 md:grid-cols-5 md:gap-3 md:pt-16">
-          {operatingSteps.map((step, index) => {
+          {steps.map((step, index) => {
             const Icon = step.icon;
             return (
               <article

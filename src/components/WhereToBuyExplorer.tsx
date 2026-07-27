@@ -34,6 +34,163 @@ type MapBundle = {
   markers: Map<string, import('leaflet').Marker>;
 };
 
+const copy = {
+  en: {
+    storePhotoMissing: 'Store photo not yet supplied',
+    initialSearch: 'Enter a Dutch postcode or use your current location.',
+    checkingLocation: 'Checking whether your browser location is available…',
+    yourLocation: 'Your location',
+    locationShown: 'Your location is shown on the map; stores are sorted by distance.',
+    locationUnavailable:
+      'Browser location was not available. Enter a postcode to place your location pin.',
+    invalidPostcode: 'Enter a complete Dutch postcode, for example 2585 AG.',
+    locatingPostcode: 'Locating postcode…',
+    postcodeNotFound: 'That postcode could not be located. Check it and try again.',
+    postcodeUnavailable: 'Postcode search is temporarily unavailable. Please try again later.',
+    locationUnsupported: 'Location services are not supported by this browser.',
+    findingLocation: 'Finding your location…',
+    locationSorted: 'Stores are sorted by straight-line distance from your location.',
+    permissionUnavailable: 'Location permission was not available. Try a postcode instead.',
+    brand: 'Brand',
+    country: 'Country',
+    allBrands: 'All brands',
+    shopOnline: 'Shop online',
+    onlineChannels: 'Online sales channels',
+    linkSoon: 'Link coming soon',
+    visitChannel: 'Visit channel',
+    noChannels: 'No sales channels are listed for this combination yet.',
+    storeLocator: 'Store locator',
+    findRetailer: 'Find a physical retailer',
+    locatorDescription:
+      'Search by postcode, use your location or select a pin. Distances are straight-line estimates; the route button opens your maps application.',
+    searchPostcode: 'Search near a Dutch postcode',
+    postcodeExample: 'Example: 2585 AG',
+    find: 'Find',
+    useLocation: 'Use my location',
+    clear: 'Clear',
+    noRetailers: 'No physical retailers listed',
+    noRetailersHint: 'Try iHeel® in the Netherlands or use an online channel.',
+    selectedRetailer: 'Selected retailer',
+    storeWebsite: 'Store website',
+    openingHours: 'Opening hours',
+    expand: 'Expand',
+    collapse: 'Collapse',
+    directions: 'Directions',
+    hoursWarning: 'Opening hours can change. Check with the retailer before travelling.',
+    selectRetailer: 'Select a listed retailer to see details.',
+    mapCredit: 'Map and postcode lookup data by OpenStreetMap contributors and Nominatim.',
+    postcodeDistance: (postcode: string) =>
+      `Stores are sorted by straight-line distance from ${postcode}.`,
+  },
+  nl: {
+    storePhotoMissing: 'Winkelfoto nog niet aangeleverd',
+    initialSearch: 'Voer een Nederlandse postcode in of gebruik je huidige locatie.',
+    checkingLocation: 'Controleren of je browserlocatie beschikbaar is…',
+    yourLocation: 'Jouw locatie',
+    locationShown: 'Jouw locatie staat op de kaart; winkels zijn op afstand gesorteerd.',
+    locationUnavailable:
+      'Je browserlocatie was niet beschikbaar. Voer een postcode in om je locatiepin te plaatsen.',
+    invalidPostcode: 'Voer een volledige Nederlandse postcode in, bijvoorbeeld 2585 AG.',
+    locatingPostcode: 'Postcode zoeken…',
+    postcodeNotFound: 'Deze postcode kon niet worden gevonden. Controleer hem en probeer opnieuw.',
+    postcodeUnavailable: 'Postcode zoeken is tijdelijk niet beschikbaar. Probeer het later opnieuw.',
+    locationUnsupported: 'Locatieservices worden niet door deze browser ondersteund.',
+    findingLocation: 'Jouw locatie bepalen…',
+    locationSorted: 'Winkels zijn gesorteerd op hemelsbrede afstand vanaf jouw locatie.',
+    permissionUnavailable: 'Locatietoestemming was niet beschikbaar. Probeer een postcode.',
+    brand: 'Merk',
+    country: 'Land',
+    allBrands: 'Alle merken',
+    shopOnline: 'Online kopen',
+    onlineChannels: 'Online verkoopkanalen',
+    linkSoon: 'Link volgt binnenkort',
+    visitChannel: 'Bekijk verkoopkanaal',
+    noChannels: 'Voor deze combinatie zijn nog geen verkoopkanalen vermeld.',
+    storeLocator: 'Winkelzoeker',
+    findRetailer: 'Vind een fysieke winkel',
+    locatorDescription:
+      'Zoek op postcode, gebruik je locatie of selecteer een pin. Afstanden zijn hemelsbrede schattingen; de routeknop opent je kaarten-app.',
+    searchPostcode: 'Zoek bij een Nederlandse postcode',
+    postcodeExample: 'Voorbeeld: 2585 AG',
+    find: 'Zoeken',
+    useLocation: 'Gebruik mijn locatie',
+    clear: 'Wissen',
+    noRetailers: 'Geen fysieke winkels vermeld',
+    noRetailersHint: 'Probeer iHeel® in Nederland of gebruik een online verkoopkanaal.',
+    selectedRetailer: 'Geselecteerde winkel',
+    storeWebsite: 'Website van winkel',
+    openingHours: 'Openingstijden',
+    expand: 'Uitklappen',
+    collapse: 'Inklappen',
+    directions: 'Route',
+    hoursWarning: 'Openingstijden kunnen wijzigen. Controleer dit bij de winkel voor vertrek.',
+    selectRetailer: 'Selecteer een vermelde winkel om details te bekijken.',
+    mapCredit: 'Kaart- en postcodegegevens van OpenStreetMap-bijdragers en Nominatim.',
+    postcodeDistance: (postcode: string) =>
+      `Winkels zijn gesorteerd op hemelsbrede afstand vanaf ${postcode}.`,
+  },
+};
+
+const countryLabelsNl: Record<CountryKey, string> = {
+  netherlands: 'Nederland',
+  belgium: 'België',
+  germany: 'Duitsland',
+  italy: 'Italië',
+  france: 'Frankrijk',
+  slovakia: 'Slowakije',
+  czechia: 'Tsjechië',
+  poland: 'Polen',
+  austria: 'Oostenrijk',
+};
+
+const dayLabelsNl: Record<string, string> = {
+  Monday: 'Maandag',
+  Tuesday: 'Dinsdag',
+  Wednesday: 'Woensdag',
+  Thursday: 'Donderdag',
+  Friday: 'Vrijdag',
+  Saturday: 'Zaterdag',
+  Sunday: 'Zondag',
+};
+
+function localizedChannel(channel: SalesChannel, locale: 'en' | 'nl') {
+  if (locale === 'en') {
+    return {
+      title: channel.title,
+      description: channel.description,
+      note: channel.note,
+    };
+  }
+
+  if (channel.channel === 'iHeelpads.com') {
+    return {
+      title: 'Super Value 10-Pack',
+      description:
+        'Exclusief aanbod in de eigen webshop voor vaste klanten: de Super Value 10-Pack met 20 stuks.',
+      note: undefined,
+    };
+  }
+
+  if (channel.product === 'batbox') {
+    return {
+      title: 'BATBOX® Tester',
+      description: 'Beschikbaar in Nederland en België.',
+      note: channel.note ? 'Marketplace-link wordt toegevoegd.' : undefined,
+    };
+  }
+
+  return {
+    title: `iHeel® bij ${channel.channel}`,
+    description:
+      channel.channel === 'Bol'
+        ? 'Beschikbaar via Bol in Nederland en België.'
+        : channel.channel === 'Amazon'
+          ? 'Beschikbaar via Amazon in geselecteerde markten.'
+          : 'Beschikbaar via Kaufland Marketplace in dit land.',
+    note: channel.note ? 'Landspecifieke marketplace-link wordt toegevoegd.' : undefined,
+  };
+}
+
 const channelLogos: Partial<
   Record<SalesChannel['channel'], { src: string; alt: string; className: string }>
 > = {
@@ -80,7 +237,7 @@ function routeUrl(point: RetailPoint) {
   return `https://www.google.com/maps/dir/?api=1&destination=${destination}&travelmode=driving`;
 }
 
-function StorePhoto({ point }: { point: RetailPoint }) {
+function StorePhoto({ point, locale }: { point: RetailPoint; locale: 'en' | 'nl' }) {
   if (point.photo) {
     return (
       <img
@@ -100,14 +257,15 @@ function StorePhoto({ point }: { point: RetailPoint }) {
           src={assetPath('/images/core-solutions-logo.png')}
         />
         <p className="mt-3 text-xs font-semibold uppercase tracking-[0.12em] text-muted">
-          Store photo not yet supplied
+          {copy[locale].storePhotoMissing}
         </p>
       </div>
     </div>
   );
 }
 
-export function WhereToBuyExplorer() {
+export function WhereToBuyExplorer({ locale = 'en' }: { locale?: 'en' | 'nl' }) {
+  const text = copy[locale];
   const [product, setProduct] = useState<ProductFilter>('all');
   const [country, setCountry] = useState<CountryKey>('netherlands');
   const [activePointId, setActivePointId] = useState<string | null>(
@@ -115,9 +273,7 @@ export function WhereToBuyExplorer() {
   );
   const [postcode, setPostcode] = useState('');
   const [searchOrigin, setSearchOrigin] = useState<SearchOrigin | null>(null);
-  const [searchMessage, setSearchMessage] = useState(
-    'Enter a Dutch postcode or use your current location.',
-  );
+  const [searchMessage, setSearchMessage] = useState(text.initialSearch);
   const [searching, setSearching] = useState(false);
   const mapElementRef = useRef<HTMLDivElement>(null);
   const mapBundleRef = useRef<MapBundle | null>(null);
@@ -155,25 +311,25 @@ export function WhereToBuyExplorer() {
     if (autoLocateAttemptedRef.current || !navigator.geolocation) return;
     autoLocateAttemptedRef.current = true;
     setSearching(true);
-    setSearchMessage('Checking whether your browser location is available…');
+    setSearchMessage(text.checkingLocation);
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
         setSearchOrigin({
           lat: position.coords.latitude,
           lon: position.coords.longitude,
-          label: 'Your location',
+          label: text.yourLocation,
         });
-        setSearchMessage('Your location is shown on the map; stores are sorted by distance.');
+        setSearchMessage(text.locationShown);
         setSearching(false);
       },
       () => {
-        setSearchMessage('Browser location was not available. Enter a postcode to place your location pin.');
+        setSearchMessage(text.locationUnavailable);
         setSearching(false);
       },
       { enableHighAccuracy: false, timeout: 8000, maximumAge: 300000 },
     );
-  }, []);
+  }, [text]);
 
   useEffect(() => {
     let cancelled = false;
@@ -264,12 +420,12 @@ export function WhereToBuyExplorer() {
     const normalized = postcode.trim().toUpperCase();
 
     if (!/^\d{4}\s?[A-Z]{2}$/.test(normalized)) {
-      setSearchMessage('Enter a complete Dutch postcode, for example 2585 AG.');
+      setSearchMessage(text.invalidPostcode);
       return;
     }
 
     setSearching(true);
-    setSearchMessage('Locating postcode…');
+    setSearchMessage(text.locatingPostcode);
 
     try {
       const response = await fetch(
@@ -287,7 +443,7 @@ export function WhereToBuyExplorer() {
       }>;
       const match = results[0];
       if (!match) {
-        setSearchMessage('That postcode could not be located. Check it and try again.');
+        setSearchMessage(text.postcodeNotFound);
         return;
       }
 
@@ -296,9 +452,9 @@ export function WhereToBuyExplorer() {
         lon: Number(match.lon),
         label: normalized,
       });
-      setSearchMessage(`Stores are sorted by straight-line distance from ${normalized}.`);
+      setSearchMessage(text.postcodeDistance(normalized));
     } catch {
-      setSearchMessage('Postcode search is temporarily unavailable. Please try again later.');
+      setSearchMessage(text.postcodeUnavailable);
     } finally {
       setSearching(false);
     }
@@ -306,24 +462,24 @@ export function WhereToBuyExplorer() {
 
   function useCurrentLocation() {
     if (!navigator.geolocation) {
-      setSearchMessage('Location services are not supported by this browser.');
+      setSearchMessage(text.locationUnsupported);
       return;
     }
 
     setSearching(true);
-    setSearchMessage('Finding your location…');
+    setSearchMessage(text.findingLocation);
     navigator.geolocation.getCurrentPosition(
       (position) => {
         setSearchOrigin({
           lat: position.coords.latitude,
           lon: position.coords.longitude,
-          label: 'Your location',
+          label: text.yourLocation,
         });
-        setSearchMessage('Stores are sorted by straight-line distance from your location.');
+        setSearchMessage(text.locationSorted);
         setSearching(false);
       },
       () => {
-        setSearchMessage('Location permission was not available. Try a postcode instead.');
+        setSearchMessage(text.permissionUnavailable);
         setSearching(false);
       },
       { enableHighAccuracy: false, timeout: 10000 },
@@ -333,7 +489,7 @@ export function WhereToBuyExplorer() {
   function clearLocation() {
     setPostcode('');
     setSearchOrigin(null);
-    setSearchMessage('Enter a Dutch postcode or use your current location.');
+    setSearchMessage(text.initialSearch);
   }
 
   return (
@@ -341,7 +497,7 @@ export function WhereToBuyExplorer() {
       <section className="rounded-card border border-border bg-card p-5">
         <div className="grid gap-6 lg:grid-cols-[0.62fr_1.38fr]">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted">Brand</p>
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted">{text.brand}</p>
             <div className="mt-3 flex flex-wrap gap-2">
               {products.map((item) => (
                 <button
@@ -354,13 +510,13 @@ export function WhereToBuyExplorer() {
                   onClick={() => setProduct(item.key)}
                   type="button"
                 >
-                  {item.label}
+                  {locale === 'nl' && item.key === 'all' ? text.allBrands : item.label}
                 </button>
               ))}
             </div>
           </div>
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted">Country</p>
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-muted">{text.country}</p>
             <div className="mt-3 flex flex-wrap gap-2">
               {countries.map((item) => (
                 <button
@@ -373,7 +529,7 @@ export function WhereToBuyExplorer() {
                   onClick={() => setCountry(item.key)}
                   type="button"
                 >
-                  {item.label}
+                  {locale === 'nl' ? countryLabelsNl[item.key] : item.label}
                 </button>
               ))}
             </div>
@@ -385,9 +541,9 @@ export function WhereToBuyExplorer() {
         <div className="flex items-end justify-between gap-5">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-secondary">
-              Shop online
+              {text.shopOnline}
             </p>
-            <h2 className="mt-2 text-3xl font-semibold text-text">Online sales channels</h2>
+            <h2 className="mt-2 text-3xl font-semibold text-text">{text.onlineChannels}</h2>
           </div>
           <Globe2 aria-hidden="true" className="hidden h-8 w-8 text-steel sm:block" />
         </div>
@@ -395,6 +551,7 @@ export function WhereToBuyExplorer() {
           {visibleChannels.length > 0 ? (
             visibleChannels.map((channel) => {
               const logo = channelLogos[channel.channel];
+              const localized = localizedChannel(channel, locale);
               const content = (
                 <>
                   <div className="flex h-14 items-center">
@@ -408,16 +565,16 @@ export function WhereToBuyExplorer() {
                       <span className="text-2xl font-black text-text">{channel.channel}</span>
                     )}
                   </div>
-                  <h3 className="mt-4 text-lg font-semibold text-text">{channel.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-muted">{channel.description}</p>
+                  <h3 className="mt-4 text-lg font-semibold text-text">{localized.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-muted">{localized.description}</p>
                   <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary">
-                    {channel.href === '#' ? 'Link coming soon' : 'Visit channel'}
+                    {channel.href === '#' ? text.linkSoon : text.visitChannel}
                     {channel.href === '#' ? null : (
                       <ExternalLink aria-hidden="true" className="h-4 w-4" />
                     )}
                   </span>
-                  {channel.note ? (
-                    <p className="mt-3 text-xs leading-5 text-muted">{channel.note}</p>
+                  {localized.note ? (
+                    <p className="mt-3 text-xs leading-5 text-muted">{localized.note}</p>
                   ) : null}
                 </>
               );
@@ -441,7 +598,7 @@ export function WhereToBuyExplorer() {
             })
           ) : (
             <div className="rounded-card border border-dashed border-border bg-card p-5 text-sm text-muted">
-              No sales channels are listed for this combination yet.
+              {text.noChannels}
             </div>
           )}
         </div>
@@ -450,14 +607,13 @@ export function WhereToBuyExplorer() {
       <section aria-labelledby="store-locator-title">
         <div className="mb-6">
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-secondary">
-            Store locator
+            {text.storeLocator}
           </p>
           <h2 className="mt-2 text-3xl font-semibold text-text" id="store-locator-title">
-            Find a physical retailer
+            {text.findRetailer}
           </h2>
           <p className="mt-3 max-w-3xl leading-7 text-muted">
-            Search by postcode, use your location or select a pin. Distances are straight-line
-            estimates; the route button opens your maps application.
+            {text.locatorDescription}
           </p>
         </div>
 
@@ -465,7 +621,7 @@ export function WhereToBuyExplorer() {
           <div className="grid border-b border-border lg:grid-cols-[1.1fr_0.9fr]">
             <form className="border-b border-border p-5 lg:border-b-0 lg:border-r" onSubmit={searchPostcode}>
               <label className="text-sm font-semibold text-text" htmlFor="postcode">
-                Search near a Dutch postcode
+                {text.searchPostcode}
               </label>
               <div className="mt-3 flex gap-2">
                 <div className="relative flex-1">
@@ -478,7 +634,7 @@ export function WhereToBuyExplorer() {
                     className="min-h-11 w-full rounded-card border border-border bg-background py-3 pl-10 pr-4 text-sm text-text outline-none transition focus:border-primary"
                     id="postcode"
                     onChange={(event) => setPostcode(event.target.value)}
-                    placeholder="Example: 2585 AG"
+                    placeholder={text.postcodeExample}
                     value={postcode}
                   />
                 </div>
@@ -488,7 +644,7 @@ export function WhereToBuyExplorer() {
                   type="submit"
                 >
                   <LocateFixed aria-hidden="true" className="h-4 w-4" />
-                  Find
+                  {text.find}
                 </button>
               </div>
               <p aria-live="polite" className="mt-3 text-xs leading-5 text-muted">
@@ -504,7 +660,7 @@ export function WhereToBuyExplorer() {
                 type="button"
               >
                 <Crosshair aria-hidden="true" className="h-4 w-4" />
-                Use my location
+                {text.useLocation}
               </button>
               {searchOrigin ? (
                 <button
@@ -513,7 +669,7 @@ export function WhereToBuyExplorer() {
                   type="button"
                 >
                   <X aria-hidden="true" className="h-4 w-4" />
-                  Clear
+                  {text.clear}
                 </button>
               ) : null}
             </div>
@@ -526,9 +682,9 @@ export function WhereToBuyExplorer() {
                 <div className="pointer-events-none absolute inset-0 z-[400] grid place-items-center bg-background/80 p-6 text-center backdrop-blur-sm">
                   <div>
                     <Store aria-hidden="true" className="mx-auto h-8 w-8 text-secondary" />
-                    <p className="mt-3 font-semibold text-text">No physical retailers listed</p>
+                    <p className="mt-3 font-semibold text-text">{text.noRetailers}</p>
                     <p className="mt-2 text-sm text-muted">
-                      Try iHeel® in the Netherlands or use an online channel.
+                      {text.noRetailersHint}
                     </p>
                   </div>
                 </div>
@@ -538,12 +694,12 @@ export function WhereToBuyExplorer() {
             <div className="min-h-[520px]">
               {selectedPoint ? (
                 <article>
-                  <StorePhoto point={selectedPoint} />
+                  <StorePhoto locale={locale} point={selectedPoint} />
                   <div className="p-5">
                     <div className="flex items-start justify-between gap-4">
                       <div>
                         <p className="text-xs font-bold uppercase tracking-[0.14em] text-secondary">
-                          Selected retailer
+                           {text.selectedRetailer}
                         </p>
                         <h3 className="mt-2 text-xl font-semibold text-text">
                           {selectedPoint.name}
@@ -579,7 +735,7 @@ export function WhereToBuyExplorer() {
                           target="_blank"
                         >
                           <Globe2 aria-hidden="true" className="h-4 w-4 text-secondary" />
-                          Store website
+                           {text.storeWebsite}
                         </a>
                       ) : null}
                     </div>
@@ -588,11 +744,11 @@ export function WhereToBuyExplorer() {
                       <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-semibold text-text">
                         <span className="flex items-center gap-3">
                           <Clock3 aria-hidden="true" className="h-4 w-4 text-secondary" />
-                          Opening hours
+                           {text.openingHours}
                         </span>
                         <span className="flex items-center gap-2 text-xs font-semibold text-steel">
-                          <span className="group-open:hidden">Expand</span>
-                          <span className="hidden group-open:inline">Collapse</span>
+                           <span className="group-open:hidden">{text.expand}</span>
+                           <span className="hidden group-open:inline">{text.collapse}</span>
                           <ChevronDown
                             aria-hidden="true"
                             className="h-4 w-4 transition-transform group-open:rotate-180"
@@ -602,8 +758,12 @@ export function WhereToBuyExplorer() {
                       <dl className="mt-4 space-y-2 text-xs">
                         {selectedPoint.hours.map((item) => (
                           <div className="flex justify-between gap-5" key={item.day}>
-                            <dt className="text-muted">{item.day}</dt>
-                            <dd className="font-semibold text-text">{item.hours}</dd>
+                            <dt className="text-muted">
+                              {locale === 'nl' ? dayLabelsNl[item.day] ?? item.day : item.day}
+                            </dt>
+                            <dd className="font-semibold text-text">
+                              {locale === 'nl' && item.hours === 'Closed' ? 'Gesloten' : item.hours}
+                            </dd>
                           </div>
                         ))}
                       </dl>
@@ -617,7 +777,7 @@ export function WhereToBuyExplorer() {
                         target="_blank"
                       >
                         <Navigation aria-hidden="true" className="h-4 w-4" />
-                        Directions
+                         {text.directions}
                       </a>
                       <a
                         className="inline-flex min-h-11 items-center justify-center gap-2 rounded-card border border-border bg-background px-4 py-3 text-sm font-semibold text-text transition hover:border-primary hover:text-primary"
@@ -626,17 +786,17 @@ export function WhereToBuyExplorer() {
                         target="_blank"
                       >
                         <ExternalLink aria-hidden="true" className="h-4 w-4" />
-                        {selectedPoint.detailsSourceLabel}
+                         {locale === 'nl' ? 'Bron winkelgegevens' : selectedPoint.detailsSourceLabel}
                       </a>
                     </div>
                     <p className="mt-4 text-[11px] leading-5 text-muted">
-                      Opening hours can change. Check with the retailer before travelling.
+                       {text.hoursWarning}
                     </p>
                   </div>
                 </article>
               ) : (
                 <div className="grid min-h-[520px] place-items-center p-6 text-center">
-                  <p className="text-sm text-muted">Select a listed retailer to see details.</p>
+                   <p className="text-sm text-muted">{text.selectRetailer}</p>
                 </div>
               )}
             </div>
@@ -675,7 +835,7 @@ export function WhereToBuyExplorer() {
 
         <p className="mt-4 flex items-center gap-2 text-[11px] leading-5 text-muted">
           <MapPin aria-hidden="true" className="h-3.5 w-3.5" />
-          Map and postcode lookup data by OpenStreetMap contributors and Nominatim.
+          {text.mapCredit}
         </p>
       </section>
     </div>

@@ -7,20 +7,21 @@ import { assetPath } from '@/lib/sitePath';
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Contact Core Solutions for collaborations, retail opportunities and general inquiries.',
+    'Neem contact op met Core Solutions voor samenwerkingen, retailmogelijkheden en algemene vragen.',
   alternates: {
-    canonical: '/contact/',
+    canonical: '/nl/contact/',
     languages: { en: '/contact/', nl: '/nl/contact/' },
   },
   openGraph: {
     title: 'Contact | Core Solutions',
     description:
-      'Get in touch with Core Solutions by email for retail or collaboration inquiries.',
-    url: '/contact/',
+      'Neem rechtstreeks per e-mail contact op met Core Solutions voor retail- of samenwerkingsvragen.',
+    url: '/nl/contact/',
+    locale: 'nl_NL',
   },
 };
 
-export default function ContactPage() {
+export default function DutchContactPage() {
   return (
     <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
       <div className="grid gap-6 lg:grid-cols-[1.25fr_0.75fr] lg:items-stretch">
@@ -33,25 +34,25 @@ export default function ContactPage() {
             />
             <h2 className="mt-5 text-xl font-semibold">Rik van Wieren</h2>
             <p className="mt-1 text-xs font-bold uppercase tracking-[0.14em] text-secondary">
-              Founder @ Core Solutions
+              Oprichter @ Core Solutions
             </p>
           </div>
 
           <div className="flex flex-col justify-between p-7 sm:p-9">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-secondary">
-                Contact
-              </p>
-              <h1 className="mt-4 text-4xl font-semibold text-text sm:text-5xl">Get in touch</h1>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-secondary">Contact</p>
+              <h1 className="mt-4 text-4xl font-semibold text-text sm:text-5xl">
+                Neem contact op
+              </h1>
               <p className="mt-5 max-w-xl text-lg leading-8 text-muted">
-                For collaborations, retail opportunities and general inquiries, contact Rik van
-                Wieren directly.
+                Neem voor samenwerkingen, retailmogelijkheden en algemene vragen rechtstreeks
+                contact op met Rik van Wieren.
               </p>
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink href="mailto:contact@coresolutionsglobal.com?subject=Core%20Solutions%20inquiry">
+              <ButtonLink href="mailto:contact@coresolutionsglobal.com?subject=Core%20Solutions%20vraag">
                 <Mail aria-hidden="true" className="mr-2 h-4 w-4" />
-                Email Rik van Wieren
+                E-mail Rik van Wieren
               </ButtonLink>
               <a
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-card border border-border bg-background px-5 py-3 text-sm font-semibold text-text transition hover:border-primary hover:text-primary"
@@ -60,7 +61,7 @@ export default function ContactPage() {
                 target="_blank"
               >
                 <LinkedInIcon className="h-4 w-4" />
-                Connect on LinkedIn
+                Verbinden via LinkedIn
               </a>
             </div>
           </div>
@@ -78,7 +79,7 @@ export default function ContactPage() {
               <div>
                 <h2 className="text-2xl font-semibold text-text">Core Solutions</h2>
                 <p className="mt-1 text-xs font-medium uppercase leading-5 tracking-[0.1em] text-muted">
-                  Physical Product Studio &amp; Brand Portfolio
+                  Fysieke productstudio &amp; merkenportfolio
                 </p>
               </div>
             </div>
@@ -86,7 +87,7 @@ export default function ContactPage() {
               <div className="flex gap-3">
                 <Mail aria-hidden="true" className="mt-0.5 h-4 w-4 text-secondary" />
                 <div>
-                  <dt className="font-semibold text-text">Email</dt>
+                  <dt className="font-semibold text-text">E-mail</dt>
                   <dd className="mt-1 text-muted">
                     <a className="hover:text-primary" href="mailto:contact@coresolutionsglobal.com">
                       contact@coresolutionsglobal.com
@@ -104,14 +105,14 @@ export default function ContactPage() {
               <div className="flex gap-3">
                 <MapPin aria-hidden="true" className="mt-0.5 h-4 w-4 text-secondary" />
                 <div>
-                  <dt className="font-semibold text-text">Based in</dt>
-                  <dd className="mt-1 text-muted">The Hague, Netherlands</dd>
+                  <dt className="font-semibold text-text">Gevestigd in</dt>
+                  <dd className="mt-1 text-muted">Den Haag, Nederland</dd>
                 </div>
               </div>
             </dl>
           </div>
           <p className="mt-8 border-t border-border pt-5 text-xs leading-6 text-muted">
-            Product, retail and partnership inquiries are welcome.
+            Vragen over producten, retail en samenwerkingen zijn welkom.
           </p>
         </aside>
       </div>
@@ -122,15 +123,15 @@ export default function ContactPage() {
             <div className="flex items-center gap-3 text-secondary">
               <MapPin aria-hidden="true" className="h-5 w-5" />
               <p className="text-xs font-bold uppercase tracking-[0.16em]">
-                The Hague, Netherlands
+                Den Haag, Nederland
               </p>
             </div>
             <h2 className="mt-4 text-2xl font-semibold text-text">
-              Core Solutions operates from The Hague.
+              Core Solutions opereert vanuit Den Haag.
             </h2>
           </div>
           <img
-            alt="The Hague skyline"
+            alt="Skyline van Den Haag"
             className="h-72 w-full object-cover md:h-full"
             src={assetPath('/images/the-hague-skyline.png')}
           />
