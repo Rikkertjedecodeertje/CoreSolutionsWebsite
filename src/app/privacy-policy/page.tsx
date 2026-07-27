@@ -4,6 +4,10 @@ import { SectionHeader } from '@/components/SectionHeader';
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: 'Privacy policy placeholder for Core Solutions.',
+  alternates: {
+    canonical: '/privacy-policy/',
+    languages: { en: '/privacy-policy/', nl: '/nl/privacy-policy/' },
+  },
   openGraph: {
     title: 'Privacy Policy | Core Solutions',
     description: 'Privacy policy placeholder for Core Solutions.',

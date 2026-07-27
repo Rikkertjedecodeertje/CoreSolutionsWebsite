@@ -18,13 +18,21 @@ function MailIcon() {
   );
 }
 
-export function SalesChannelButton({ channel }: { channel: SalesChannel }) {
+export function SalesChannelButton({
+  channel,
+  locale = 'en',
+}: {
+  channel: SalesChannel;
+  locale?: 'en' | 'nl';
+}) {
   const isContact = channel.href === '/contact/' || channel.href.startsWith('mailto:');
+  const href =
+    locale === 'nl' && channel.href.startsWith('/') ? `/nl${channel.href}` : channel.href;
 
   return (
     <a
       className="flex min-h-40 flex-col rounded-card border border-border bg-card p-5 transition hover:border-primary hover:shadow-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-      href={channel.href}
+      href={href}
     >
       <span className="font-semibold text-text">{channel.label}</span>
       {channel.note ? <span className="mt-2 block text-sm leading-6 text-muted">{channel.note}</span> : null}
@@ -35,9 +43,13 @@ export function SalesChannelButton({ channel }: { channel: SalesChannel }) {
             Contact
           </span>
         ) : channel.isPlaceholder ? (
-          <span className="text-xs font-semibold uppercase text-steel">Link to be added</span>
+          <span className="text-xs font-semibold uppercase text-steel">
+            {locale === 'nl' ? 'Link wordt toegevoegd' : 'Link to be added'}
+          </span>
         ) : (
-          <span className="text-sm font-semibold text-steel">Open</span>
+          <span className="text-sm font-semibold text-steel">
+            {locale === 'nl' ? 'Openen' : 'Open'}
+          </span>
         )}
       </span>
     </a>

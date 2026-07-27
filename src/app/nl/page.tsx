@@ -5,37 +5,50 @@ import { MetricCard } from '@/components/MetricCard';
 import { ProjectCard } from '@/components/ProjectCard';
 import { SectionHeader } from '@/components/SectionHeader';
 import { SplitCta } from '@/components/SplitCta';
-import { editableMetrics, mediaHighlights, projects } from '@/data/projects';
+import { editableMetricsNl, mediaHighlightsNl, projectsNl } from '@/data/projects.nl';
 import { assetPath } from '@/lib/sitePath';
 
 export const metadata: Metadata = {
+  title: 'Praktische productoplossingen',
+  description:
+    'Core Solutions ontwikkelt en commercialiseert praktische productmerken, waaronder iHeel® en BATBOX®.',
   alternates: {
-    canonical: '/',
+    canonical: '/nl/',
     languages: { en: '/', nl: '/nl/' },
+  },
+  openGraph: {
+    title: 'Core Solutions | Praktische productoplossingen',
+    description:
+      'Core Solutions ontwikkelt en commercialiseert praktische productmerken, waaronder iHeel® en BATBOX®.',
+    url: '/nl/',
+    locale: 'nl_NL',
   },
 };
 
-export default function HomePage() {
+export default function DutchHomePage() {
   return (
     <>
       <section className="border-b border-border bg-background">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-[1.05fr_0.95fr] md:items-center lg:px-8">
           <div>
-            <p className="mb-5 text-sm font-semibold uppercase text-steel">Product portfolio</p>
+            <p className="mb-5 text-sm font-semibold uppercase text-steel">Productportfolio</p>
             <h1 className="hero-title max-w-4xl font-semibold text-text">
-              Creating physical products in a digital-first world.
+              Fysieke producten creëren in een digital-first wereld.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
-              Core Solutions exists to turn everyday problems into useful products people can actually use.
+              Core Solutions vertaalt alledaagse problemen naar bruikbare producten die mensen
+              echt kunnen gebruiken.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <ButtonLink href="/portfolio/">View portfolio</ButtonLink>
-              <ButtonLink href="/contact/" variant="secondary">Contact</ButtonLink>
+              <ButtonLink href="/nl/portfolio/">Bekijk portfolio</ButtonLink>
+              <ButtonLink href="/nl/contact/" variant="secondary">
+                Contact
+              </ButtonLink>
             </div>
           </div>
           <div className="overflow-hidden rounded-card border border-border bg-card shadow-soft">
             <img
-              alt="Core Solutions product portfolio with shoes, heel pad and BATBOX battery tester"
+              alt="Core Solutions-productportfolio met schoenen, hielpad en BATBOX-batterijtester"
               className="h-full min-h-80 w-full object-cover"
               src={assetPath('/images/core-solutions-products-hero.png')}
             />
@@ -45,12 +58,14 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
         <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <SectionHeader eyebrow="Portfolio" title="Featured product brands" />
-          <Link className="font-semibold text-steel hover:text-primary" href="/portfolio/">View all</Link>
+          <SectionHeader eyebrow="Portfolio" title="Uitgelichte productmerken" />
+          <Link className="font-semibold text-steel hover:text-primary" href="/nl/portfolio/">
+            Bekijk alles
+          </Link>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
-          {projects.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
+          {projectsNl.map((project) => (
+            <ProjectCard key={project.slug} locale="nl" project={project} />
           ))}
         </div>
       </section>
@@ -58,12 +73,12 @@ export default function HomePage() {
       <section className="border-y border-border bg-card">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-[0.9fr_1.1fr] lg:px-8">
           <SectionHeader
-            eyebrow="Approach"
-            title="From idea to market"
-            description="Core Solutions brings product ideas from problem discovery to validation, design, testing, branding, production and commercialization. Each project starts with a practical problem and is developed into a clear product proposition."
+            eyebrow="Aanpak"
+            title="Van idee naar markt"
+            description="Core Solutions brengt productideeën van probleemonderzoek naar validatie, ontwerp, testen, merkontwikkeling, productie en commercialisatie. Ieder project begint met een praktisch probleem en groeit uit tot een heldere productpropositie."
           />
           <div className="grid gap-4 sm:grid-cols-3">
-            {editableMetrics.map((metric) => (
+            {editableMetricsNl.map((metric) => (
               <MetricCard key={metric.label} {...metric} />
             ))}
           </div>
@@ -72,12 +87,12 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
         <SectionHeader
-          eyebrow="In the media"
-          title="Coverage, mentions and product stories"
-          description="A curated place for articles, interviews, videos and public mentions that build credibility around the Core Solutions portfolio."
+          eyebrow="In de media"
+          title="Aandacht, vermeldingen en productverhalen"
+          description="Een samengestelde plek voor artikelen, interviews, video’s en openbare vermeldingen die de geloofwaardigheid van het Core Solutions-portfolio versterken."
         />
         <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {mediaHighlights.map((item) => (
+          {mediaHighlightsNl.map((item) => (
             <article className="rounded-card border border-border bg-card p-5" key={item.title}>
               <h3 className="font-semibold text-text">{item.title}</h3>
               <p className="mt-3 text-sm leading-6 text-muted">{item.description}</p>
@@ -86,7 +101,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <SplitCta />
+      <SplitCta locale="nl" />
     </>
   );
 }

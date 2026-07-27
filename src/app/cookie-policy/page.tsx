@@ -4,6 +4,10 @@ import { SectionHeader } from '@/components/SectionHeader';
 export const metadata: Metadata = {
   title: 'Cookie Policy',
   description: 'Cookie policy placeholder for Core Solutions.',
+  alternates: {
+    canonical: '/cookie-policy/',
+    languages: { en: '/cookie-policy/', nl: '/nl/cookie-policy/' },
+  },
   openGraph: {
     title: 'Cookie Policy | Core Solutions',
     description: 'Cookie policy placeholder for Core Solutions.',

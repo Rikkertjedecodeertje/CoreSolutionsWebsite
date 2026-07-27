@@ -4,14 +4,17 @@ import { assetPath } from '@/lib/sitePath';
 
 type ProjectCardProps = {
   project: Project;
+  locale?: 'en' | 'nl';
 };
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, locale = 'en' }: ProjectCardProps) {
+  const prefix = locale === 'nl' ? '/nl' : '';
+
   return (
     <article className="group overflow-hidden rounded-card border border-border bg-card shadow-sm transition hover:-translate-y-1 hover:shadow-soft">
       <Link
         className="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
-        href={`/portfolio/${project.slug}/`}
+        href={`${prefix}/portfolio/${project.slug}/`}
       >
         <img
           alt={project.gallery[0]?.alt ?? `${project.name} placeholder image`}
@@ -55,7 +58,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           ) : null}
           <p className="mt-3 leading-7 text-muted">{project.shortDescription}</p>
           <p className="mt-5 text-sm font-semibold text-steel group-hover:text-primary">
-            View brand
+            {locale === 'nl' ? 'Bekijk merk' : 'View brand'}
           </p>
         </div>
       </Link>

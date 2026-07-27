@@ -189,9 +189,9 @@ export const projects: Project[] = [
         note: 'See available BATBOX® sales channels by country.',
       },
       {
-        label: 'Contact for retail or collaboration',
+        label: 'Retail and marketplace inquiries',
         href: '/contact/',
-        note: 'For retail, wholesale or launch inquiries.',
+        note: 'Contact Core Solutions for retail or distribution opportunities.',
       },
     ],
     mediaMentions: [],

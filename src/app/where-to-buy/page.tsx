@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   title: 'Where to Buy',
   description:
     'Find where to buy Core Solutions product brands online and through selected retail points.',
+  alternates: {
+    canonical: '/where-to-buy/',
+    languages: { en: '/where-to-buy/', nl: '/nl/where-to-buy/' },
+  },
   openGraph: {
     title: 'Where to Buy | Core Solutions',
     description: 'Filter by brand and country to find online channels and selected retail points.',

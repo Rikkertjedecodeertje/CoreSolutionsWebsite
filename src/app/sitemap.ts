@@ -14,8 +14,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/cookie-policy',
   ];
   const projectRoutes = projects.map((project) => `/portfolio/${project.slug}`);
+  const dutchStaticRoutes = staticRoutes.map((route) => `/nl${route}`);
+  const dutchProjectRoutes = projects.map((project) => `/nl/portfolio/${project.slug}`);
 
-  return [...staticRoutes, ...projectRoutes].map((route) => ({
+  return [...staticRoutes, ...projectRoutes, ...dutchStaticRoutes, ...dutchProjectRoutes].map((route) => ({
     url: `${baseUrl}${route}/`,
     lastModified: new Date(),
     changeFrequency: route === '' ? 'monthly' : 'yearly',

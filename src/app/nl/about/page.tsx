@@ -7,50 +7,51 @@ import { SplitCta } from '@/components/SplitCta';
 import { assetPath } from '@/lib/sitePath';
 
 export const metadata: Metadata = {
-  title: 'About',
+  title: 'Over ons',
   description:
-    'Core Solutions is the product and brand portfolio of Rik van Wieren, focused on practical consumer products.',
+    'Core Solutions is het product- en merkenportfolio van Rik van Wieren, gericht op praktische consumentenproducten.',
   alternates: {
-    canonical: '/about/',
+    canonical: '/nl/about/',
     languages: { en: '/about/', nl: '/nl/about/' },
   },
   openGraph: {
-    title: 'About | Core Solutions',
+    title: 'Over ons | Core Solutions',
     description:
-      'Learn how Core Solutions develops practical product brands from real everyday problems.',
-    url: '/about/',
+      'Lees hoe Core Solutions praktische productmerken ontwikkelt vanuit echte alledaagse problemen.',
+    url: '/nl/about/',
+    locale: 'nl_NL',
   },
 };
 
 const story = [
   {
-    label: 'The studio',
-    text: 'Core Solutions is the product and brand portfolio of Rik van Wieren. The company focuses on practical consumer products that are designed around real user problems, tested in the market, and commercialized online and offline.',
+    label: 'De studio',
+    text: 'Core Solutions is het product- en merkenportfolio van Rik van Wieren. Het bedrijf richt zich op praktische consumentenproducten die vanuit echte gebruikersproblemen worden ontworpen, in de markt worden getest en online en fysiek worden gecommercialiseerd.',
   },
   {
-    label: 'Early start',
-    text: 'Rik started experimenting with entrepreneurship at 14 after becoming frustrated by expensive USB-C cables. A first €80 supplier batch taught him sourcing, pricing, customer feedback and selling products people actually need.',
+    label: 'Vroege start',
+    text: 'Rik begon op zijn veertiende met ondernemen uit frustratie over dure USB-C-kabels. Een eerste leveranciersbestelling van €80 leerde hem over inkoop, prijsstelling, klantfeedback en het verkopen van producten die mensen echt nodig hebben.',
   },
   {
-    label: 'Healthcare affinity',
-    text: 'During the COVID period, Rik developed Neusbruggetje, a practical aid designed to reduce fogged glasses while wearing a face mask. The response introduced him to the healthcare sector and practical problems in vulnerable environments.',
+    label: 'Affiniteit met zorg',
+    text: 'Tijdens de coronaperiode ontwikkelde Rik Neusbruggetje, een praktisch hulpmiddel om beslagen brillen bij het dragen van een mondkapje te verminderen. De respons bracht hem in contact met de zorgsector en praktische problemen in kwetsbare omgevingen.',
   },
   {
-    label: 'Direction',
-    text: 'That perspective later led to research into making plastic use in healthcare more circular. The project was paused, but it sharpened the direction behind Core Solutions: tangible products for real everyday problems.',
+    label: 'Richting',
+    text: 'Dat perspectief leidde later tot onderzoek naar circulairder plasticgebruik in de zorg. Het project werd gepauzeerd, maar maakte de richting van Core Solutions scherper: tastbare producten voor echte alledaagse problemen.',
   },
 ];
 
-export default function AboutPage() {
+export default function DutchAboutPage() {
   return (
     <>
       <section className="border-b border-border bg-card">
         <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-secondary">About</p>
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-secondary">Over ons</p>
           <h1 className="hero-title mt-4 font-semibold text-text">Core Solutions</h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-muted">
-            A physical product studio and brand portfolio built around useful ideas, real feedback
-            and clear commercial execution.
+            Een fysieke productstudio en merkenportfolio rond bruikbare ideeën, echte feedback en
+            duidelijke commerciële uitvoering.
           </p>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-[1.4fr_0.6fr] lg:items-stretch">
@@ -70,23 +71,23 @@ export default function AboutPage() {
                 </article>
               ))}
               <p className="rounded-card border border-secondary/30 bg-secondary/10 p-6 leading-7 text-text sm:col-span-2">
-                Today, the portfolio includes brands such as iHeel® and BATBOX®, with each product
-                built around practical use, real feedback and clear commercial execution.
+                Vandaag omvat het portfolio merken zoals iHeel® en BATBOX®. Ieder product wordt
+                gebouwd rond praktisch gebruik, echte feedback en duidelijke commerciële uitvoering.
               </p>
             </div>
 
             <aside className="flex h-full flex-col justify-between rounded-card border border-text/10 bg-dark p-6 text-white shadow-soft">
               <div>
                 <img
-                  alt="Rik van Wieren, founder of Core Solutions"
+                  alt="Rik van Wieren, oprichter van Core Solutions"
                   className="mx-auto aspect-square w-full max-w-[190px] rounded-card object-cover sm:max-w-[220px] lg:max-w-none"
                   src={assetPath('/images/rik-van-wieren-profile.png')}
                 />
                 <p className="mt-6 text-xs font-bold uppercase tracking-[0.16em] text-secondary">
-                  Founder
+                  Oprichter
                 </p>
                 <h2 className="mt-2 text-2xl font-semibold">Rik van Wieren</h2>
-                <p className="mt-2 text-sm leading-6 text-white/65">Founder @ Core Solutions</p>
+                <p className="mt-2 text-sm leading-6 text-white/65">Oprichter @ Core Solutions</p>
               </div>
               <div className="mt-8 grid gap-3">
                 <a
@@ -96,15 +97,15 @@ export default function AboutPage() {
                   target="_blank"
                 >
                   <LinkedInIcon className="h-4 w-4" />
-                  Connect on LinkedIn
+                  Verbinden via LinkedIn
                 </a>
                 <ButtonLink
                   className="w-full border-secondary bg-secondary text-white hover:bg-secondary/85"
-                  href="/contact/"
+                  href="/nl/contact/"
                   variant="secondary"
                 >
                   <Mail aria-hidden="true" className="mr-2 h-4 w-4" />
-                  Contact Rik
+                  Contact met Rik
                 </ButtonLink>
               </div>
             </aside>
@@ -113,11 +114,11 @@ export default function AboutPage() {
       </section>
 
       <div className="mx-auto grid max-w-7xl items-stretch gap-12 px-5 py-16 lg:grid-cols-2 lg:px-8">
-        <WhatWeDoSystem />
-        <HowWeWorkSystem />
+        <WhatWeDoSystem locale="nl" />
+        <HowWeWorkSystem locale="nl" />
       </div>
 
-      <SplitCta />
+      <SplitCta locale="nl" />
     </>
   );
 }
