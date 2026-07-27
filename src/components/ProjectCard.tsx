@@ -29,18 +29,22 @@ export function ProjectCard({ project }: ProjectCardProps) {
               </span>
             ))}
           </div>
-          {project.slug === 'iheel' ? (
-            <img
-              alt="iHeel logo"
-              className="h-12 w-40 object-contain object-left"
-              src={assetPath('/images/iheel-logo.svg')}
-            />
-          ) : project.slug === 'batbox-battery-tester' ? (
-            <img
-              alt="BATBOX logo"
-              className="h-12 w-48 object-contain object-left"
-              src={assetPath('/images/batbox-logo.svg')}
-            />
+          {project.slug === 'iheel' || project.slug === 'batbox-battery-tester' ? (
+            <div className="flex h-14 max-w-[210px] items-center overflow-hidden">
+              <img
+                alt={project.slug === 'iheel' ? 'iHeel logo' : 'BATBOX logo'}
+                className={
+                  project.slug === 'iheel'
+                    ? 'h-12 w-auto max-w-[210px] object-contain object-left'
+                    : 'h-14 w-[210px] origin-left -translate-x-8 scale-[1.28] object-contain object-left'
+                }
+                src={assetPath(
+                  project.slug === 'iheel'
+                    ? '/images/iheel-logo.svg'
+                    : '/images/batbox-logo.svg',
+                )}
+              />
+            </div>
           ) : (
             <h3 className="text-2xl font-semibold text-text">{project.name}</h3>
           )}

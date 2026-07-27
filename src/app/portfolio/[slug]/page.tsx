@@ -77,8 +77,10 @@ function AchievementBand({ items }: { items: string[] }) {
       <div className="grid gap-4 md:grid-cols-4">
         {items.map((item, index) => (
           <div className="rounded-card border border-border bg-background p-5 text-center" key={item}>
-            <div className="achievement-orb mx-auto grid h-12 w-12 place-items-center rounded-full bg-secondary/15 text-2xl font-black text-steel">
-              {index === 0 ? 'WIN' : index === 1 ? '9x' : index === 2 ? 'OMNI' : 'OK'}
+            <div className="flex h-12 items-center justify-center">
+              <span className="achievement-glow text-center text-2xl font-black leading-none text-steel">
+                {index === 0 ? 'WIN' : index === 1 ? '9x' : index === 2 ? 'OMNI' : 'OK'}
+              </span>
             </div>
             <p className="mt-4 text-sm font-semibold leading-6 text-text">{item}</p>
           </div>
@@ -109,7 +111,9 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             {isIheel ? (
               <img className="h-20 w-auto max-w-full object-contain object-left" src={assetPath('/images/iheel-logo.svg')} alt="iHeel logo" />
             ) : isBatbox ? (
-              <img className="h-20 w-auto max-w-full object-contain object-left" src={assetPath('/images/batbox-logo.svg')} alt="BATBOX logo" />
+              <div className="h-20 max-w-[300px] overflow-hidden">
+                <img className="h-20 w-[300px] origin-left -translate-x-10 scale-[1.28] object-contain object-left" src={assetPath('/images/batbox-logo.svg')} alt="BATBOX logo" />
+              </div>
             ) : (
               <h1 className="hero-title font-semibold text-text">{project.name}</h1>
             )}

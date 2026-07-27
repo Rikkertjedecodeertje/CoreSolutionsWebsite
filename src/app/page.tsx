@@ -27,9 +27,9 @@ export default function HomePage() {
           </div>
           <div className="overflow-hidden rounded-card border border-border bg-card shadow-soft">
             <img
-              alt="Core Solutions product studio portfolio artwork"
+              alt="Core Solutions product portfolio with shoes, heel pad and BATBOX battery tester"
               className="h-full min-h-80 w-full object-cover"
-              src={assetPath('/images/studio-hero.svg')}
+              src={assetPath('/images/core-solutions-products-hero.png')}
             />
           </div>
         </div>

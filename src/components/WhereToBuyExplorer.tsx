@@ -432,6 +432,8 @@ export function WhereToBuyExplorer() {
                   className="rounded-card border border-border bg-card p-5 transition hover:-translate-y-1 hover:border-primary hover:shadow-soft"
                   href={channel.href}
                   key={key}
+                  rel="noreferrer"
+                  target="_blank"
                 >
                   {content}
                 </a>
