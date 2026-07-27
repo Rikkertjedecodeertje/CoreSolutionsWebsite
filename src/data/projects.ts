@@ -82,7 +82,7 @@ export const projects: Project[] = [
       },
       {
         label: 'iHeelpads.com Super Value 10-Pack',
-        href: 'https://iheelpads.com/',
+        href: 'https://iheelpads.com/product/iheel-pads-super-value-10-pack-20-pieces/',
         note: 'Exclusive own-webshop offer for loyal customers: the Super Value 10-Pack with 20 pieces.',
       },
       {
@@ -149,7 +149,7 @@ export const projects: Project[] = [
     name: 'BATBOX®',
     shortName: 'BATBOX®',
     tagline: 'Premium household battery testing and storage products for organized batteries.',
-    status: 'Available and preparing for launch',
+    status: 'Available',
     category: 'Consumer Electronics',
     extraTags: ['Home Safety'],
     shortDescription:
@@ -177,10 +177,10 @@ export const projects: Project[] = [
       'Brand suitable for e-commerce and retail presentation',
     ],
     achievements: [
-      'Product concept and brand developed',
-      'Marketplace positioning prepared',
-      'Trademark and product classification work in progress or prepared',
-      'Part of the Core Solutions practical product portfolio',
+      'Launched and selling strongly online',
+      'Top seller in the Netherlands and Belgium within three months',
+      'High visibility in online search results',
+      '4.9 out of 5 average product rating',
     ],
     salesChannels: [
       {
@@ -213,8 +213,9 @@ export const projects: Project[] = [
         answer: 'BATBOX® is a household battery testing and storage brand designed for everyday use.',
       },
       {
-        question: 'Is it available yet?',
-        answer: 'Launch and sales channel information will be added when available.',
+        question: 'Where is BATBOX® available?',
+        answer:
+          'BATBOX® is available through selected online sales channels. Current country-specific links are listed on the Where to buy page.',
       },
       {
         question: 'Who is it for?',

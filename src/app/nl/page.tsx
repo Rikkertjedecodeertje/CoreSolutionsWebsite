@@ -29,7 +29,7 @@ export default function DutchHomePage() {
   return (
     <>
       <section className="border-b border-border bg-background">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-[1.05fr_0.95fr] md:items-center lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-[1.05fr_0.95fr] md:items-center md:py-16 lg:px-8">
           <div>
             <p className="mb-5 text-sm font-semibold uppercase text-steel">Productportfolio</p>
             <h1 className="hero-title max-w-4xl font-semibold text-text">
@@ -95,7 +95,6 @@ export default function DutchHomePage() {
           {mediaHighlightsNl.map((item) => (
             <article className="rounded-card border border-border bg-card p-5" key={item.title}>
               <h3 className="font-semibold text-text">{item.title}</h3>
-              <p className="mt-3 text-sm leading-6 text-muted">{item.description}</p>
             </article>
           ))}
         </div>
