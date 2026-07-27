@@ -94,9 +94,9 @@ export const projects: Project[] = [
     mediaMentions: [],
     gallery: [
       {
-        src: '/images/iheel-product-placeholder.svg',
-        alt: 'Minimal placeholder artwork for iHeel® pads',
-        caption: 'Product image placeholder for iHeel®',
+        src: '/images/iheel-product.png',
+        alt: 'Navy shoes with an iHeel heel pad',
+        caption: 'iHeel® heel pad for a more comfortable shoe fit',
       },
       {
         src: '/images/marketplace-placeholder.svg',
@@ -197,9 +197,9 @@ export const projects: Project[] = [
     mediaMentions: [],
     gallery: [
       {
-        src: '/images/batbox-product-placeholder.svg',
-        alt: 'Minimal placeholder artwork for BATBOX®',
-        caption: 'Product image placeholder for BATBOX®',
+        src: '/images/batbox-product.png',
+        alt: 'BATBOX battery tester with two household batteries',
+        caption: 'BATBOX® battery tester concept',
       },
       {
         src: '/images/household-placeholder.svg',

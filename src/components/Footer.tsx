@@ -38,7 +38,10 @@ export function Footer() {
             className="h-20 w-20 shrink-0 object-contain sm:h-28 sm:w-28"
             src={assetPath('/images/core-solutions-logo.png')}
           />
-          <div aria-hidden="true" className="h-20 w-px shrink-0 bg-steel/60 sm:h-24" />
+          <div
+            aria-hidden="true"
+            className="h-20 w-[2px] shrink-0 bg-steel shadow-[0_0_12px_rgba(79,109,138,0.25)] sm:h-24"
+          />
           <div className="min-w-0">
             <p className="text-3xl font-medium leading-none text-text sm:text-5xl">Core Solutions</p>
             <p className="mt-3 text-[11px] font-medium tracking-[0.06em] text-graphite sm:text-base sm:tracking-[0.08em]">

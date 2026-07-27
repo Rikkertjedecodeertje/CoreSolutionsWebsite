@@ -73,6 +73,28 @@ const kauflandCountries: CountryKey[] = [
   'austria',
 ];
 
+const bolUrls: Partial<Record<CountryKey, string>> = {
+  netherlands:
+    'https://www.bol.com/nl/nl/p/iheel-pads-3-pack-voorkomt-zere-hielen-en-blaren-vervangt-dagelijkse-pleisters-anti-slip-kussens-comfortabel-hielbeschermers-blaarbeschermers-hiel-grips-hiel-liners-hiel-kussens-hiel-inserts-hiel-pads-hiel-zool/9300000163747004/',
+  belgium:
+    'https://www.bol.com/be/nl/p/iheel-pads-3-pack-voorkomt-zere-hielen-en-blaren-vervangt-dagelijkse-pleisters-anti-slip-kussens-comfortabel-hielbeschermers-blaarbeschermers-hiel-grips-hiel-liners-hiel-kussens-hiel-inserts-hiel-pads-hiel-zool/9300000163747004/',
+};
+
+const amazonUrls: Partial<Record<CountryKey, string>> = {
+  netherlands:
+    'https://www.amazon.nl/iHeel%C2%AE-pads-Hielbeschermers-blarenpleisters-Schoenverkleiners/dp/B0CL2FB8D3',
+  belgium:
+    'https://www.amazon.com.be/-/nl/iHeel%C2%AE-Pads-Antislippads-Hielbeschermers-Blaasbeschermers/dp/B0CL2FB8D3',
+  germany:
+    'https://www.amazon.de/iHeel%C2%AE-Pads-Anti-Rutsch-Kissen-Fersenschoner-Ferseneinlagen/dp/B0CL2FB8D3/',
+  poland:
+    'https://www.amazon.pl/iHeel%C2%AE-pady-Antypo%C5%9Blizgowe-ochraniacze-Zmniejszacze/dp/B0CL2FB8D3/',
+};
+
+const kauflandUrls: Partial<Record<CountryKey, string>> = {
+  germany: 'https://www.kaufland.de/product/533367461/',
+};
+
 export const salesChannels: SalesChannel[] = [
   ...kauflandCountries.map((country) => ({
     product: 'iheel' as const,
@@ -80,8 +102,8 @@ export const salesChannels: SalesChannel[] = [
     channel: 'Kaufland' as const,
     title: 'iHeel® on Kaufland',
     description: 'Available through Kaufland marketplace in this country.',
-    href: '#',
-    note: 'Country-specific marketplace link will be added.',
+    href: kauflandUrls[country] ?? '#',
+    note: kauflandUrls[country] ? undefined : 'Country-specific marketplace link will be added.',
   })),
   ...(['netherlands', 'belgium'] as CountryKey[]).map((country) => ({
     product: 'iheel' as const,
@@ -89,17 +111,15 @@ export const salesChannels: SalesChannel[] = [
     channel: 'Bol' as const,
     title: 'iHeel® on Bol',
     description: 'Available through Bol in the Netherlands and Belgium.',
-    href: '#',
-    note: 'Marketplace link will be added.',
+    href: bolUrls[country]!,
   })),
-  ...(['netherlands', 'belgium', 'germany'] as CountryKey[]).map((country) => ({
+  ...(['netherlands', 'belgium', 'germany', 'poland'] as CountryKey[]).map((country) => ({
     product: 'iheel' as const,
     country,
     channel: 'Amazon' as const,
     title: 'iHeel® on Amazon',
     description: 'Available through Amazon in selected markets.',
-    href: '#',
-    note: 'Marketplace link will be added.',
+    href: amazonUrls[country]!,
   })),
   {
     product: 'iheel',

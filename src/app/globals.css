@@ -7,7 +7,7 @@
 :root {
   --color-background: #f6f5f2;
   --color-text: #0d1b2a;
-  --color-muted: #4f6d8a;
+  --color-muted: #2e3640;
   --color-card: #ffffff;
   --color-border: #d8dde1;
   --color-primary: #0d1b2a;
@@ -60,10 +60,10 @@ img {
     linear-gradient(112deg, #f6f5f2 0%, #e8ebec 55%, #d9dddf 100%);
 }
 
-.achievement-orb {
-  box-shadow:
-    0 0 0 8px rgba(108, 143, 122, 0.10),
-    0 0 34px rgba(79, 109, 138, 0.48);
+.achievement-glow {
+  text-shadow:
+    0 0 9px rgba(79, 109, 138, 0.62),
+    0 0 20px rgba(108, 143, 122, 0.38);
 }
 
 .rocket-flight {
