@@ -249,24 +249,12 @@ export const editableMetrics = [
 
 export const mediaHighlights = [
   {
-    title: 'Press and media mentions',
+    title: 'Core Solutions nominated for The Hague Student Innovator Award 2026',
     description:
-      'A place for newspaper articles, interviews and independent coverage of Core Solutions products.',
-  },
-  {
-    title: 'Product videos and demonstrations',
-    description:
-      'Add videos, product explainers and launch content that show the portfolio in use.',
-  },
-  {
-    title: 'Founder and development stories',
-    description:
-      'Collect interviews, behind-the-scenes updates and product development milestones.',
-  },
-  {
-    title: 'Portfolio credibility',
-    description:
-      'Use genuine mentions and publications here to strengthen trust and the premium character of the brands.',
+      'ImpactCity names Core Solutions among the five student nominees for PillenPopper, a device that helps people with reduced hand function remove tablets from blister packs independently.',
+    source: 'ImpactCity',
+    date: '22 September 2026',
+    href: 'https://www.impactcity.nl/nominaties-voor-the-hague-innovators-awards-2026-bekendgemaakt/',
   },
 ];
 
