@@ -190,24 +190,12 @@ export const editableMetricsNl = [
 
 export const mediaHighlightsNl = [
   {
-    title: 'Pers- en media-aandacht',
+    title: 'Core Solutions genomineerd voor The Hague Student Innovator Award 2026',
     description:
-      'Een plek voor krantenartikelen, interviews en onafhankelijke aandacht voor Core Solutions-producten.',
-  },
-  {
-    title: 'Productvideo’s en demonstraties',
-    description:
-      'Video’s, productuitleg en lanceringscontent die het portfolio in gebruik laten zien.',
-  },
-  {
-    title: 'Oprichters- en ontwikkelverhalen',
-    description:
-      'Interviews, updates achter de schermen en mijlpalen uit de productontwikkeling.',
-  },
-  {
-    title: 'Geloofwaardigheid van het portfolio',
-    description:
-      'Echte vermeldingen en publicaties versterken het vertrouwen en premium karakter van de merken.',
+      'ImpactCity noemt Core Solutions als een van de vijf genomineerde studentondernemers met de PillenPopper, die mensen met beperkte handfunctie helpt zelfstandig medicijnen uit blisters te halen.',
+    source: 'ImpactCity',
+    date: '22 september 2026',
+    href: 'https://www.impactcity.nl/nominaties-voor-the-hague-innovators-awards-2026-bekendgemaakt/',
   },
 ];
 
