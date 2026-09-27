@@ -91,10 +91,15 @@ export default function DutchHomePage() {
           title="Aandacht, vermeldingen en productverhalen"
           description="Een samengestelde plek voor artikelen, interviews, video’s en openbare vermeldingen die de geloofwaardigheid van het Core Solutions-portfolio versterken."
         />
-        <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
           {mediaHighlightsNl.map((item) => (
-            <article className="rounded-card border border-border bg-card p-5" key={item.title}>
-              <h3 className="font-semibold text-text">{item.title}</h3>
+            <article className="rounded-card border border-border bg-card transition-colors hover:border-steel" key={item.href}>
+              <a className="block h-full rounded-card p-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" href={item.href} target="_blank" rel="noopener noreferrer">
+                <p className="text-sm font-semibold text-steel">{item.source} · {item.date}</p>
+                <h3 className="mt-2 font-semibold text-text">{item.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-muted">{item.description}</p>
+                <span className="mt-4 inline-block font-semibold text-steel">Lees het artikel <span aria-hidden="true">↗</span></span>
+              </a>
             </article>
           ))}
         </div>
