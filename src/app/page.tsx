@@ -74,7 +74,6 @@ export default function HomePage() {
         <SectionHeader
           eyebrow="In the media"
           title="Coverage, mentions and product stories"
-          description="A curated place for articles, interviews, videos and public mentions that build credibility around the Core Solutions portfolio."
         />
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           {mediaHighlights.map((item) => (

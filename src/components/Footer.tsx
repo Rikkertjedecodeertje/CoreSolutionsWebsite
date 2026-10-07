@@ -139,9 +139,9 @@ export function Footer() {
             <div>
               <p className="font-semibold text-text">{copy.connect}</p>
               <a
-                aria-label="LinkedIn profile of Rik van Wieren"
+                aria-label={isNl ? 'Core Solutions op LinkedIn' : 'Core Solutions on LinkedIn'}
                 className="mt-4 inline-grid h-11 w-11 place-items-center rounded-card bg-primary text-white transition hover:bg-steel"
-                href="https://www.linkedin.com/in/rikvwieren/"
+                href="https://www.linkedin.com/company/87188781/"
                 rel="noreferrer"
                 target="_blank"
               >

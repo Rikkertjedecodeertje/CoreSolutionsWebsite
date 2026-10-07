@@ -89,7 +89,6 @@ export default function DutchHomePage() {
         <SectionHeader
           eyebrow="In de media"
           title="Aandacht, vermeldingen en productverhalen"
-          description="Een samengestelde plek voor artikelen, interviews, video’s en openbare vermeldingen die de geloofwaardigheid van het Core Solutions-portfolio versterken."
         />
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           {mediaHighlightsNl.map((item) => (

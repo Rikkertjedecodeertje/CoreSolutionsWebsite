@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { FormEvent, useEffect, useMemo, useRef, useState } from 'react';
 import {
   ChevronDown,
@@ -38,11 +39,7 @@ const copy = {
   en: {
     storePhotoMissing: 'Store photo not yet supplied',
     initialSearch: 'Enter a Dutch postcode or use your current location.',
-    checkingLocation: 'Checking whether your browser location is available…',
     yourLocation: 'Your location',
-    locationShown: 'Your location is shown on the map; stores are sorted by distance.',
-    locationUnavailable:
-      'Browser location was not available. Enter a postcode to place your location pin.',
     invalidPostcode: 'Enter a complete Dutch postcode, for example 2585 AG.',
     locatingPostcode: 'Locating postcode…',
     postcodeNotFound: 'That postcode could not be located. Check it and try again.',
@@ -85,11 +82,7 @@ const copy = {
   nl: {
     storePhotoMissing: 'Winkelfoto nog niet aangeleverd',
     initialSearch: 'Voer een Nederlandse postcode in of gebruik je huidige locatie.',
-    checkingLocation: 'Controleren of je browserlocatie beschikbaar is…',
     yourLocation: 'Jouw locatie',
-    locationShown: 'Jouw locatie staat op de kaart; winkels zijn op afstand gesorteerd.',
-    locationUnavailable:
-      'Je browserlocatie was niet beschikbaar. Voer een postcode in om je locatiepin te plaatsen.',
     invalidPostcode: 'Voer een volledige Nederlandse postcode in, bijvoorbeeld 2585 AG.',
     locatingPostcode: 'Postcode zoeken…',
     postcodeNotFound: 'Deze postcode kon niet worden gevonden. Controleer hem en probeer opnieuw.',
@@ -277,7 +270,6 @@ export function WhereToBuyExplorer({ locale = 'en' }: { locale?: 'en' | 'nl' }) 
   const [searching, setSearching] = useState(false);
   const mapElementRef = useRef<HTMLDivElement>(null);
   const mapBundleRef = useRef<MapBundle | null>(null);
-  const autoLocateAttemptedRef = useRef(false);
 
   const visibleChannels = useMemo(
     () =>
@@ -307,29 +299,6 @@ export function WhereToBuyExplorer({ locale = 'en' }: { locale?: 'en' | 'nl' }) 
     }
   }, [activePointId, visiblePointKey, visibleRetailPoints]);
 
-  useEffect(() => {
-    if (autoLocateAttemptedRef.current || !navigator.geolocation) return;
-    autoLocateAttemptedRef.current = true;
-    setSearching(true);
-    setSearchMessage(text.checkingLocation);
-
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        setSearchOrigin({
-          lat: position.coords.latitude,
-          lon: position.coords.longitude,
-          label: text.yourLocation,
-        });
-        setSearchMessage(text.locationShown);
-        setSearching(false);
-      },
-      () => {
-        setSearchMessage(text.locationUnavailable);
-        setSearching(false);
-      },
-      { enableHighAccuracy: false, timeout: 8000, maximumAge: 300000 },
-    );
-  }, [text]);
 
   useEffect(() => {
     let cancelled = false;
@@ -614,6 +583,14 @@ export function WhereToBuyExplorer({ locale = 'en' }: { locale?: 'en' | 'nl' }) 
           </h2>
           <p className="mt-3 max-w-3xl leading-7 text-muted">
             {text.locatorDescription}
+          </p>
+          <p className="mt-3 max-w-3xl text-sm leading-6 text-muted">
+            {locale === 'nl'
+              ? "De kaart laadt gegevens van OpenStreetMap; een postcodezoekopdracht wordt naar Nominatim gestuurd. Je browserlocatie wordt alleen opgevraagd als je 'Gebruik mijn locatie' kiest en toestemming geeft. "
+              : "The map loads data from OpenStreetMap; a postcode search is sent to Nominatim. Browser location is only requested when you choose 'Use my location' and permit access. "}
+            <Link className="font-semibold text-steel underline underline-offset-4 hover:text-primary" href={locale === 'nl' ? '/nl/privacy-policy/' : '/privacy-policy/'}>
+              {locale === 'nl' ? 'Lees het privacybeleid' : 'Read the privacy policy'}
+            </Link>
           </p>
         </div>
 
