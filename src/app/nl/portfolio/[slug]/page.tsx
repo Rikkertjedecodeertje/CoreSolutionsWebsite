@@ -55,6 +55,8 @@ export function generateMetadata({ params }: ProjectPageProps): Metadata {
 export default function DutchProjectPage({ params }: ProjectPageProps) {
   const project = getProjectNlBySlug(params.slug);
   if (!project) notFound();
+  const isPillenpopper = project.slug === 'pillenpopper';
+  const brand = isPillenpopper ? 'pillenpopper' : project.slug === 'iheel' ? 'iheel' : 'batbox-battery-tester';
   const isIheel = project.slug === 'iheel';
   const isBatbox = project.slug === 'batbox-battery-tester';
 
@@ -95,10 +97,10 @@ export default function DutchProjectPage({ params }: ProjectPageProps) {
             ) : null}
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">{project.tagline}</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <ButtonLink href="#sales-channels">Verkoopkanalen</ButtonLink>
-              <ButtonLink href="/nl/where-to-buy/" variant="secondary">
-                Waar te koop
+              <ButtonLink href={isPillenpopper ? '#availability' : '#sales-channels'}>
+                {isPillenpopper ? 'Beschikbaarheid en samenwerking' : 'Verkoopkanalen'}
               </ButtonLink>
+              {!isPillenpopper && <ButtonLink href="/nl/where-to-buy/" variant="secondary">Waar te koop</ButtonLink>}
               <ButtonLink href="/nl/contact/" variant="secondary">
                 Contact
               </ButtonLink>
@@ -107,6 +109,7 @@ export default function DutchProjectPage({ params }: ProjectPageProps) {
           <div className="overflow-hidden rounded-card border border-border bg-background">
             <img
               alt={project.gallery[0]?.alt ?? project.name}
+              style={isPillenpopper ? { objectPosition: 'left center' } : undefined}
               className="h-full min-h-80 w-full object-cover"
               src={assetPath(project.gallery[0]?.src ?? '/images/marketplace-placeholder.svg')}
             />
@@ -134,7 +137,7 @@ export default function DutchProjectPage({ params }: ProjectPageProps) {
           />
           <div className="mt-8">
             <BrandOverviewSystem
-              brand={isIheel ? 'iheel' : 'batbox-battery-tester'}
+              brand={brand}
               locale="nl"
             />
           </div>
@@ -142,20 +145,20 @@ export default function DutchProjectPage({ params }: ProjectPageProps) {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
-        <SectionHeader title="Prestaties" />
+        <SectionHeader title={isPillenpopper ? 'Ontwikkeling en mijlpalen' : 'Prestaties'} />
         <div className="mt-8">
           <AchievementSystem
-            brand={isIheel ? 'iheel' : 'batbox-battery-tester'}
+            brand={brand}
             items={project.achievements}
           />
         </div>
       </section>
 
-      <section className="border-y border-border bg-card" id="sales-channels">
+      <section className="border-y border-border bg-card" id={isPillenpopper ? 'availability' : 'sales-channels'}>
         <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <SectionHeader
-            description="Bekijk beschikbare verkoopkanalen, de eigen webshop en retailmogelijkheden voor dit merk."
-            title="Verkoopkanalen"
+            description={isPillenpopper ? 'PillenPopper® wordt voorbereid op marktintroductie. Ontdek hoe je kunt bijdragen aan validatie en de volgende stap naar productie.' : 'Bekijk beschikbare verkoopkanalen, de eigen webshop en retailmogelijkheden voor dit merk.'}
+            title={isPillenpopper ? 'Beschikbaarheid en samenwerking' : 'Verkoopkanalen'}
           />
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {project.salesChannels.map((channel) => (
@@ -183,7 +186,7 @@ export default function DutchProjectPage({ params }: ProjectPageProps) {
         </div>
       </section>
 
-      <SplitCta locale="nl" />
+      <SplitCta locale="nl" prelaunch={isPillenpopper} />
     </>
   );
 }

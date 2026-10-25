@@ -28,7 +28,7 @@ export default function DutchPortfolioPage() {
           eyebrow="Huidige merken"
           title="Portfolio"
         />
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
+        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {projectsNl.map((project) => (
             <ProjectCard key={project.slug} locale="nl" project={project} />
           ))}

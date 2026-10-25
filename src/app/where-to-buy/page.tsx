@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { SectionHeader } from '@/components/SectionHeader';
 import { SplitCta } from '@/components/SplitCta';
 import { WhereToBuyExplorer } from '@/components/WhereToBuyExplorer';
@@ -27,6 +28,12 @@ export default function WhereToBuyPage() {
           title="Find Core Solutions brands online and nearby"
           description="Filter by brand and country, explore online marketplaces, or find the nearest selected physical retailer on an interactive map."
         />
+        <p className="mt-6 rounded-card border border-border bg-card p-5 text-sm leading-6 text-muted">
+          PillenPopper® is still being prepared for launch.{' '}
+          <Link className="font-semibold text-steel hover:text-primary" href="/portfolio/pillenpopper/">
+            View its current status and collaboration opportunities.
+          </Link>
+        </p>
         <div className="mt-10">
           <WhereToBuyExplorer />
         </div>

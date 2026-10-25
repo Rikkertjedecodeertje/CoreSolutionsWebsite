@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import { assetPath } from '@/lib/sitePath';
 
-type BrandKey = 'iheel' | 'batbox-battery-tester';
+type BrandKey = 'iheel' | 'batbox-battery-tester' | 'pillenpopper';
 type Locale = 'en' | 'nl';
 
 const overviewCopy = {
@@ -26,6 +26,16 @@ const overviewCopy = {
         { title: 'Better fit', description: 'Fills excess space around the heel.', icon: Gauge },
         { title: 'Less friction', description: 'Reduces heel slip and rubbing.', icon: ShieldCheck },
         { title: 'More comfort', description: 'Supports confident, worry-free walking.', icon: Sparkles },
+      ],
+    },
+    pillenpopper: {
+      eyebrow: 'Everyday independence',
+      title: 'Three functions for preparing your own pills',
+      description: 'Designed around hands that need less strain and more support during pill preparation.',
+      stages: [
+        { title: 'Remove', description: 'Press the lever with the palm or forearm to push a tablet out of its blister.', icon: Gauge },
+        { title: 'Collect', description: 'The tablet falls into a tray for easy collection.', icon: PackageCheck },
+        { title: 'Split', description: 'Split suitable tablets with a separate mechanism, without a sharp blade.', icon: ShieldCheck },
       ],
     },
     'batbox-battery-tester': {
@@ -52,6 +62,16 @@ const overviewCopy = {
         { title: 'Meer comfort', description: 'Ondersteunt comfortabel en zorgeloos lopen.', icon: Sparkles },
       ],
     },
+    pillenpopper: {
+      eyebrow: 'Dagelijkse zelfstandigheid',
+      title: 'Drie functies om zelf je pillen voor te bereiden',
+      description: 'Ontworpen voor handen die minder belasting en meer ondersteuning kunnen gebruiken bij het voorbereiden van pillen.',
+      stages: [
+        { title: 'Uitdrukken', description: 'Druk de hefboom in met je handpalm of onderarm om een pil uit de strip te halen.', icon: Gauge },
+        { title: 'Opvangen', description: 'De pil valt in een bakje en is zo gemakkelijk te verzamelen.', icon: PackageCheck },
+        { title: 'Splitsen', description: 'Splits geschikte tabletten met een apart mechanisme, zonder scherp mes.', icon: ShieldCheck },
+      ],
+    },
     'batbox-battery-tester': {
       eyebrow: 'Huishoudelijk systeem',
       title: 'Weet, scheid en bewaar met zekerheid',
@@ -67,11 +87,13 @@ const overviewCopy = {
 } as const;
 
 const achievementValues: Record<BrandKey, string[]> = {
+  pillenpopper: ['6', '3', '3D', '2026'],
   iheel: ['5,000+', '9', 'OMNI', 'RETAIL'],
   'batbox-battery-tester': ['LIVE', 'TOP', 'SEO', '4.9'],
 };
 
 const achievementIcons = {
+  pillenpopper: [CheckCircle2, ShieldCheck, PackageCheck, Sparkles],
   iheel: [ShoppingBag, Globe2, Store, CheckCircle2],
   'batbox-battery-tester': [Battery, ShoppingBag, Globe2, Sparkles],
 };
@@ -103,13 +125,15 @@ export function BrandOverviewSystem({
               {copy.eyebrow}
             </p>
             <div className="mt-8 inline-flex min-h-28 items-center rounded-card bg-white px-6 py-5 shadow-soft">
-              <img
+              {brand === 'pillenpopper' ? (
+                <span className="text-3xl font-semibold text-text">PillenPopper®</span>
+              ) : <img
                 alt={isIheel ? 'iHeel logo' : 'BATBOX logo'}
                 className="h-16 w-[250px] max-w-full object-contain object-left"
                 src={assetPath(
                   isIheel ? '/images/iheel-logo.svg' : '/images/batbox-logo.svg',
                 )}
-              />
+              />}
             </div>
             <h3 className="mt-8 max-w-md text-3xl font-semibold leading-tight">{copy.title}</h3>
             <p className="mt-4 max-w-md leading-7 text-white/65">{copy.description}</p>

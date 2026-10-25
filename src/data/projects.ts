@@ -8,6 +8,9 @@
 export type MediaMention = {
   title: string;
   description: string;
+  href?: string;
+  source?: string;
+  date?: string;
 };
 
 export type GalleryItem = {
@@ -227,6 +230,96 @@ export const projects: Project[] = [
     seoDescription:
       'BATBOX® includes premium household battery testing and storage products designed to help organize batteries and reduce unnecessary waste.',
   },
+  {
+    "slug": "pillenpopper",
+    "name": "PillenPopper®",
+    "shortName": "PillenPopper®",
+    "tagline": "Prepare your own pills, even with weak or painful hands.",
+    "status": "Preparing for launch",
+    "category": "Healthcare",
+    "extraTags": [
+      "Independent living"
+    ],
+    "shortDescription": "A tabletop aid that helps people with reduced hand function remove tablets from blister packs and split suitable tablets without a sharp blade.",
+    "longDescription": "PillenPopper® starts with a small but meaningful part of everyday independence: preparing your own pills. Developed by Rik van Wieren through user research, 3D-printed prototypes and feedback from occupational therapy experts, it combines blister opening, tablet collection and blade-free splitting in one tabletop aid. The next step is independent validation and preparation for production.",
+    "problem": "Pushing tablets out of blister packs can require more grip, pressure and precise finger movement than weak or painful hands can manage comfortably. For people with arthritis, muscle conditions or age-related loss of hand function, a routine task can become painful, frustrating or dependent on someone else's help.",
+    "solution": "PillenPopper® uses a lever that can be pressed with the palm or forearm to push tablets from a blister pack into a collection tray. A separate lever mechanism splits suitable tablets without a sharp blade. The design aims to make pill preparation easier to carry out independently.",
+    "targetUsers": [
+      "People with weak or painful hands",
+      "People with reduced hand function due to arthritis, muscle conditions or ageing",
+      "Occupational therapists and care professionals supporting independent living"
+    ],
+    "features": [
+      "Operation with the palm or forearm",
+      "Tablets collected in a tray",
+      "Splits suitable tablets without a sharp blade",
+      "Developed with users and occupational therapy experts",
+      "3D-printed prototypes and planned local pilot production"
+    ],
+    "achievements": [
+      "Early testing with six users",
+      "Feedback from three occupational therapy experts",
+      "Design refined through 3D-printed prototypes",
+      "Nominated for The Hague Student Innovator Award 2026"
+    ],
+    "salesChannels": [
+      {
+        "label": "Product and launch inquiries",
+        "href": "/contact/",
+        "note": "PillenPopper® is not yet available to buy. Contact Core Solutions for current launch information."
+      },
+      {
+        "label": "Independent validation",
+        "href": "/contact/",
+        "note": "Interested in contributing to further user testing or research? Get in touch."
+      },
+      {
+        "label": "Care and distribution partnerships",
+        "href": "/contact/",
+        "note": "Discuss opportunities for occupational therapy, care organisations, retail or distribution."
+      }
+    ],
+    "mediaMentions": [
+      {
+        "title": "Core Solutions nominated for The Hague Student Innovator Award 2026",
+        "description": "ImpactCity lists Core Solutions among the student nominees for its work helping people with reduced hand function remove tablets from blister packs independently.",
+        "href": "https://www.impactcity.nl/nominaties-voor-the-hague-innovators-awards-2026-bekendgemaakt/",
+        "source": "ImpactCity",
+        "date": "22 September 2026"
+      }
+    ],
+    "gallery": [
+      {
+        "src": "/images/pillenpopper-product.webp",
+        "alt": "Rik van Wieren demonstrates the purple and white PillenPopper prototype",
+        "caption": "PillenPopper® prototype operated with the palm"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Who is PillenPopper® designed for?",
+        "answer": "It is designed for people who have difficulty preparing pills because of weak or painful hands or reduced hand function. Further independent testing is planned to better understand suitability for different users and medication routines."
+      },
+      {
+        "question": "How does PillenPopper® work?",
+        "answer": "A lever can be pressed with the palm or forearm to push a tablet from its blister into a collection tray. A separate mechanism can split suitable tablets without a sharp blade."
+      },
+      {
+        "question": "Can every tablet be split?",
+        "answer": "No. Only split a tablet when the instructions for that specific medicine permit it. If you are unsure, ask your pharmacist. PillenPopper® does not determine whether a medicine can be split."
+      },
+      {
+        "question": "Has PillenPopper® been tested?",
+        "answer": "The design has been developed with early testing involving six users and feedback from three occupational therapy experts. Further independent validation is planned. Early feedback does not establish that it will work equally well for everyone."
+      },
+      {
+        "question": "Can I buy PillenPopper® already?",
+        "answer": "PillenPopper® is being prepared for market introduction and is not yet available to buy. Contact Core Solutions for current information or to discuss testing and collaboration."
+      }
+    ],
+    "seoTitle": "PillenPopper® | Independent Pill Preparation",
+    "seoDescription": "Discover PillenPopper®, a tabletop aid for people with weak or painful hands. Remove tablets from blister packs and split suitable tablets without a sharp blade."
+  },
 ];
 
 export const editableMetrics = [
@@ -249,6 +342,7 @@ export const editableMetrics = [
 
 export const mediaHighlights = [
   {
+    projectSlug: 'pillenpopper',
     title: 'Core Solutions nominated for The Hague Student Innovator Award 2026',
     description:
       'ImpactCity names Core Solutions among the five student nominees for PillenPopper, a device that helps people with reduced hand function remove tablets from blister packs independently.',

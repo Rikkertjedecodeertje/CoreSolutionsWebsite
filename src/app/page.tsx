@@ -48,7 +48,7 @@ export default function HomePage() {
           <SectionHeader eyebrow="Portfolio" title="Featured product brands" />
           <Link className="font-semibold text-steel hover:text-primary" href="/portfolio/">View all</Link>
         </div>
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}
@@ -78,12 +78,15 @@ export default function HomePage() {
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           {mediaHighlights.map((item) => (
             <article className="rounded-card border border-border bg-card transition-colors hover:border-steel" key={item.href}>
-              <a className="block h-full rounded-card p-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" href={item.href} target="_blank" rel="noopener noreferrer">
+              <a className="block rounded-card p-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" href={item.href} target="_blank" rel="noopener noreferrer">
                 <p className="text-sm font-semibold text-steel">{item.source} · {item.date}</p>
                 <h3 className="mt-2 font-semibold text-text">{item.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-muted">{item.description}</p>
                 <span className="mt-4 inline-block font-semibold text-steel">Read the article <span aria-hidden="true">↗</span></span>
               </a>
+              <Link className="mx-5 mb-5 inline-block font-semibold text-steel hover:text-primary" href={`/portfolio/${item.projectSlug}/`}>
+                Discover PillenPopper® <span aria-hidden="true">→</span>
+              </Link>
             </article>
           ))}
         </div>

@@ -70,7 +70,7 @@ export default function AboutPage() {
                 </article>
               ))}
               <p className="rounded-card border border-secondary/30 bg-secondary/10 p-6 leading-7 text-text sm:col-span-2">
-                Today, the portfolio includes brands such as iHeel® and BATBOX®, with each product
+                Today, the portfolio includes brands such as iHeel®, BATBOX® and PillenPopper®, with each product
                 built around practical use, real feedback and clear commercial execution.
               </p>
             </div>

@@ -18,6 +18,7 @@ export function ProjectCard({ project, locale = 'en' }: ProjectCardProps) {
       >
         <img
           alt={project.gallery[0]?.alt ?? `${project.name} placeholder image`}
+          style={project.slug === 'pillenpopper' ? { objectPosition: 'left center' } : undefined}
           className="h-56 w-full border-b border-border object-cover"
           src={assetPath(project.gallery[0]?.src ?? '/images/marketplace-placeholder.svg')}
         />

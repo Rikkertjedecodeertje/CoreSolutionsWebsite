@@ -71,7 +71,7 @@ export default function DutchAboutPage() {
                 </article>
               ))}
               <p className="rounded-card border border-secondary/30 bg-secondary/10 p-6 leading-7 text-text sm:col-span-2">
-                Vandaag omvat het portfolio merken zoals iHeel® en BATBOX®. Ieder product wordt
+                Vandaag omvat het portfolio merken zoals iHeel®, BATBOX® en PillenPopper®. Ieder product wordt
                 gebouwd rond praktisch gebruik, echte feedback en duidelijke commerciële uitvoering.
               </p>
             </div>

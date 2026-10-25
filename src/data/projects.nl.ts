@@ -168,6 +168,96 @@ export const projectsNl: Project[] = [
     seoDescription:
       'BATBOX® omvat premium producten voor het testen en bewaren van huishoudbatterijen, ontworpen om batterijen te ordenen en onnodige verspilling te verminderen.',
   },
+  {
+    "slug": "pillenpopper",
+    "name": "PillenPopper®",
+    "shortName": "PillenPopper®",
+    "tagline": "Zelf je pillen voorbereiden, ook met zwakke of pijnlijke handen.",
+    "status": "In voorbereiding op marktintroductie",
+    "category": "Gezondheidszorg",
+    "extraTags": [
+      "Zelfstandig leven"
+    ],
+    "shortDescription": "Een tafelhulpmiddel dat mensen met verminderde handfunctie helpt pillen uit strips te halen en geschikte tabletten te splitsen zonder scherp mes.",
+    "longDescription": "PillenPopper® begint bij een klein maar belangrijk stukje dagelijkse zelfstandigheid: zelf je pillen voorbereiden. Rik van Wieren ontwikkelde het hulpmiddel via gebruikersonderzoek, 3D-geprinte prototypes en feedback van ergotherapeutische experts. Het combineert pillen uit strips halen, opvangen en splitsen zonder scherp mes in één tafelhulpmiddel. De volgende stap is onafhankelijke validatie en voorbereiding op productie.",
+    "problem": "Pillen uit strips drukken vraagt om grip, kracht en nauwkeurige vingerbewegingen. Dat kan lastig zijn met zwakke of pijnlijke handen. Voor mensen met reuma, een spierziekte of verminderde handfunctie door ouderdom kan een dagelijkse handeling daardoor pijnlijk en frustrerend worden, of alleen met hulp van iemand anders lukken.",
+    "solution": "Met de PillenPopper® druk je een hefboom in met je handpalm of onderarm. De pil komt uit de strip en valt in een opvangbakje. Een apart hefboommechanisme splitst geschikte tabletten zonder scherp mes. Het ontwerp is erop gericht om zelf je pillen voorbereiden eenvoudiger te maken.",
+    "targetUsers": [
+      "Mensen met zwakke of pijnlijke handen",
+      "Mensen met verminderde handfunctie door reuma, een spierziekte of ouderdom",
+      "Ergotherapeuten en zorgprofessionals die zelfstandig leven ondersteunen"
+    ],
+    "features": [
+      "Bediening met handpalm of onderarm",
+      "Pillen opgevangen in een bakje",
+      "Geschikte tabletten splitsen zonder scherp mes",
+      "Ontwikkeld met gebruikers en ergotherapeutische experts",
+      "3D-geprinte prototypes en geplande lokale pilotproductie"
+    ],
+    "achievements": [
+      "Eerste gebruikerstesten met zes gebruikers",
+      "Feedback van drie ergotherapeutische experts",
+      "Ontwerp verfijnd met 3D-geprinte prototypes",
+      "Genomineerd voor The Hague Student Innovator Award 2026"
+    ],
+    "salesChannels": [
+      {
+        "label": "Productinformatie en marktintroductie",
+        "href": "/contact/",
+        "note": "PillenPopper® is nog niet te koop. Neem contact op met Core Solutions voor actuele informatie over de marktintroductie."
+      },
+      {
+        "label": "Onafhankelijke validatie",
+        "href": "/contact/",
+        "note": "Wil je bijdragen aan aanvullend gebruikersonderzoek of testen? Neem contact op."
+      },
+      {
+        "label": "Samenwerking in zorg en distributie",
+        "href": "/contact/",
+        "note": "Bespreek mogelijkheden voor ergotherapie, zorgorganisaties, retail of distributie."
+      }
+    ],
+    "mediaMentions": [
+      {
+        "title": "Core Solutions genomineerd voor The Hague Student Innovator Award 2026",
+        "description": "ImpactCity noemt Core Solutions als een van de studentgenomineerden voor het helpen van mensen met beperkte handfunctie om zelfstandig medicijnen uit blisters te halen.",
+        "href": "https://www.impactcity.nl/nominaties-voor-the-hague-innovators-awards-2026-bekendgemaakt/",
+        "source": "ImpactCity",
+        "date": "22 september 2026"
+      }
+    ],
+    "gallery": [
+      {
+        "src": "/images/pillenpopper-product.webp",
+        "alt": "Rik van Wieren demonstreert het paarse en witte PillenPopper-prototype",
+        "caption": "PillenPopper®-prototype bediend met de handpalm"
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Voor wie is de PillenPopper® bedoeld?",
+        "answer": "Voor mensen die moeite hebben met het voorbereiden van pillen door zwakke of pijnlijke handen of verminderde handfunctie. Aanvullend onafhankelijk onderzoek is gepland om de geschiktheid voor verschillende gebruikers en medicatieroutines beter te begrijpen."
+      },
+      {
+        "question": "Hoe werkt de PillenPopper®?",
+        "answer": "Je drukt een hefboom in met je handpalm of onderarm om een pil uit de strip in het opvangbakje te drukken. Een apart mechanisme kan geschikte tabletten splitsen zonder scherp mes."
+      },
+      {
+        "question": "Mag je iedere tablet splitsen?",
+        "answer": "Nee. Splits een tablet alleen wanneer de instructies van dat specifieke geneesmiddel dit toestaan. Vraag bij twijfel je apotheker om advies. De PillenPopper® bepaalt niet of een geneesmiddel gesplitst mag worden."
+      },
+      {
+        "question": "Is de PillenPopper® al getest?",
+        "answer": "Het ontwerp is ontwikkeld met eerste tests met zes gebruikers en feedback van drie ergotherapeutische experts. Verdere onafhankelijke validatie is gepland. De eerste ervaringen betekenen niet dat het hulpmiddel voor iedereen even goed werkt."
+      },
+      {
+        "question": "Kan ik de PillenPopper® al kopen?",
+        "answer": "PillenPopper® wordt voorbereid op marktintroductie en is nog niet te koop. Neem contact op met Core Solutions voor actuele informatie of om testen en samenwerking te bespreken."
+      }
+    ],
+    "seoTitle": "PillenPopper® | Zelf je pillen voorbereiden",
+    "seoDescription": "Ontdek de PillenPopper®, een tafelhulpmiddel voor mensen met zwakke of pijnlijke handen. Haal pillen uit strips en splits geschikte tabletten zonder scherp mes."
+  },
 ];
 
 export const editableMetricsNl = [
@@ -190,6 +280,7 @@ export const editableMetricsNl = [
 
 export const mediaHighlightsNl = [
   {
+    projectSlug: 'pillenpopper',
     title: 'Core Solutions genomineerd voor The Hague Student Innovator Award 2026',
     description:
       'ImpactCity noemt Core Solutions als een van de vijf genomineerde studentondernemers met de PillenPopper, die mensen met beperkte handfunctie helpt zelfstandig medicijnen uit blisters te halen.',

@@ -27,7 +27,7 @@ export default function PortfolioPage() {
           eyebrow="Current brands"
           title="Portfolio"
         />
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
+        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {projects.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}

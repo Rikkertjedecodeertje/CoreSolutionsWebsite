@@ -17,11 +17,11 @@ export const metadata: Metadata = {
     template: '%s | Core Solutions',
   },
   description:
-    'Core Solutions develops and commercializes practical product brands, including iHeel® and BATBOX®.',
+    'Core Solutions develops and commercializes practical product brands, including iHeel®, BATBOX® and PillenPopper®.',
   openGraph: {
     title: 'Core Solutions | Practical Product Solutions',
     description:
-      'Core Solutions develops and commercializes practical product brands, including iHeel® and BATBOX®.',
+      'Core Solutions develops and commercializes practical product brands, including iHeel®, BATBOX® and PillenPopper®.',
     url: 'https://coresolutionsglobal.com',
     siteName: 'Core Solutions',
     images: [

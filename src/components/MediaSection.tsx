@@ -1,4 +1,4 @@
-﻿import type { MediaMention } from '@/data/projects';
+import type { MediaMention } from '@/data/projects';
 
 export function MediaSection({
   mentions,
@@ -16,14 +16,22 @@ export function MediaSection({
   }
 
   return (
-    <div className="grid gap-4 md:grid-cols-2">
-      {mentions.map((mention) => (
-        <article className="rounded-card border border-border bg-card p-5" key={mention.title}>
-          <h3 className="font-semibold text-text">{mention.title}</h3>
-          <p className="mt-2 text-sm leading-6 text-muted">{mention.description}</p>
-        </article>
-      ))}
+    <div>
+      <h2 className="text-2xl font-semibold text-text">{locale === 'nl' ? 'In de media' : 'In the media'}</h2>
+      <div className="mt-8 grid gap-4 md:grid-cols-2">
+        {mentions.map((mention) => (
+          <article className="rounded-card border border-border bg-card p-5" key={mention.title}>
+            {mention.source && <p className="text-sm font-semibold text-steel">{mention.source}{mention.date ? ` · ${mention.date}` : ''}</p>}
+            <h3 className="mt-2 font-semibold text-text">{mention.title}</h3>
+            <p className="mt-2 text-sm leading-6 text-muted">{mention.description}</p>
+            {mention.href && (
+              <a className="mt-4 inline-block font-semibold text-steel hover:text-primary" href={mention.href} target="_blank" rel="noopener noreferrer">
+                {locale === 'nl' ? 'Lees het artikel' : 'Read the article'} <span aria-hidden="true">↗</span>
+              </a>
+            )}
+          </article>
+        ))}
+      </div>
     </div>
   );
 }
-

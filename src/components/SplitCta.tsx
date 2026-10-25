@@ -1,6 +1,6 @@
 ﻿import { ButtonLink } from './ButtonLink';
 
-export function SplitCta({ locale = 'en' }: { locale?: 'en' | 'nl' }) {
+export function SplitCta({ locale = 'en', prelaunch = false }: { locale?: 'en' | 'nl'; prelaunch?: boolean }) {
   const isNl = locale === 'nl';
   const prefix = isNl ? '/nl' : '';
 
@@ -9,20 +9,20 @@ export function SplitCta({ locale = 'en' }: { locale?: 'en' | 'nl' }) {
       <div className="mx-auto grid max-w-7xl gap-px px-5 py-14 md:grid-cols-2 lg:px-8">
         <div className="flex h-full flex-col border-b border-white/15 pb-8 md:border-b-0 md:border-r md:pb-0 md:pr-10">
           <h2 className="text-3xl font-semibold leading-tight">
-            {isNl ? 'Interesse in een product?' : 'Interested in a product?'}
+            {prelaunch ? (isNl ? 'Interesse in de PillenPopper®?' : 'Interested in PillenPopper®?') : (isNl ? 'Interesse in een product?' : 'Interested in a product?')}
           </h2>
           <p className="mt-4 leading-7 text-white/65">
-            {isNl
-              ? 'Bekijk de huidige productmerken en beschikbare verkoopkanalen.'
-              : 'Explore current product brands and available sales channels.'}
+            {prelaunch
+              ? (isNl ? 'Neem contact op voor actuele productinformatie en nieuws over de marktintroductie.' : 'Contact us for current product information and launch updates.')
+              : (isNl ? 'Bekijk de huidige productmerken en beschikbare verkoopkanalen.' : 'Explore current product brands and available sales channels.')}
           </p>
           <div className="mt-auto pt-6">
             <ButtonLink
               className="border-white bg-white text-dark hover:border-secondary hover:bg-background"
-              href={`${prefix}/where-to-buy/`}
+              href={prelaunch ? `${prefix}/contact/` : `${prefix}/where-to-buy/`}
               variant="secondary"
             >
-              {isNl ? 'Waar te koop' : 'Where to buy'}
+              {prelaunch ? (isNl ? 'Vraag productinformatie' : 'Ask about PillenPopper®') : (isNl ? 'Waar te koop' : 'Where to buy')}
             </ButtonLink>
           </div>
         </div>

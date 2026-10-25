@@ -55,6 +55,8 @@ export function generateMetadata({ params }: ProjectPageProps): Metadata {
 export default function ProjectPage({ params }: ProjectPageProps) {
   const project = getProjectBySlug(params.slug);
   if (!project) notFound();
+  const isPillenpopper = project.slug === 'pillenpopper';
+  const brand = isPillenpopper ? 'pillenpopper' : project.slug === 'iheel' ? 'iheel' : 'batbox-battery-tester';
   const isIheel = project.slug === 'iheel';
   const isBatbox = project.slug === 'batbox-battery-tester';
 
@@ -82,14 +84,17 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             ) : null}
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">{project.tagline}</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <ButtonLink href="#sales-channels">Sales channels</ButtonLink>
-              <ButtonLink href="/where-to-buy/" variant="secondary">Where to buy</ButtonLink>
+              <ButtonLink href={isPillenpopper ? '#availability' : '#sales-channels'}>
+                {isPillenpopper ? 'Availability and collaboration' : 'Sales channels'}
+              </ButtonLink>
+              {!isPillenpopper && <ButtonLink href="/where-to-buy/" variant="secondary">Where to buy</ButtonLink>}
               <ButtonLink href="/contact/" variant="secondary">Contact</ButtonLink>
             </div>
           </div>
           <div className="overflow-hidden rounded-card border border-border bg-background">
             <img
               alt={project.gallery[0]?.alt ?? project.name}
+              style={isPillenpopper ? { objectPosition: 'left center' } : undefined}
               className="h-full min-h-80 w-full object-cover"
               src={assetPath(project.gallery[0]?.src ?? '/images/marketplace-placeholder.svg')}
             />
@@ -112,26 +117,26 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <SectionHeader description={project.longDescription} eyebrow={project.shortName} title="Brand overview" />
           <div className="mt-8">
-            <BrandOverviewSystem brand={isIheel ? 'iheel' : 'batbox-battery-tester'} />
+            <BrandOverviewSystem brand={brand} />
           </div>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
-        <SectionHeader title="Achievements" />
+        <SectionHeader title={isPillenpopper ? 'Development and milestones' : 'Achievements'} />
         <div className="mt-8">
           <AchievementSystem
-            brand={isIheel ? 'iheel' : 'batbox-battery-tester'}
+            brand={brand}
             items={project.achievements}
           />
         </div>
       </section>
 
-      <section className="border-y border-border bg-card" id="sales-channels">
+      <section className="border-y border-border bg-card" id={isPillenpopper ? 'availability' : 'sales-channels'}>
         <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <SectionHeader
-            description="Explore available sales channels, own webshop options and retail opportunities for this brand."
-            title="Sales channels"
+            description={isPillenpopper ? 'PillenPopper® is being prepared for launch. Explore opportunities to contribute to validation and the next step towards production.' : 'Explore available sales channels, own webshop options and retail opportunities for this brand.'}
+            title={isPillenpopper ? 'Availability and collaboration' : 'Sales channels'}
           />
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {project.salesChannels.map((channel) => (
@@ -159,7 +164,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         </div>
       </section>
 
-      <SplitCta />
+      <SplitCta prelaunch={isPillenpopper} />
     </>
   );
 }
