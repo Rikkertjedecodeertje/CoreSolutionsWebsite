@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { AchievementSystem, BrandOverviewSystem } from '@/components/BrandSystems';
 import { ButtonLink } from '@/components/ButtonLink';
 import { MediaSection } from '@/components/MediaSection';
+import { PillenPopperSignup } from '@/components/PillenPopperSignup';
 import { SalesChannelButton } from '@/components/SalesChannelButton';
 import { SectionHeader } from '@/components/SectionHeader';
 import { SplitCta } from '@/components/SplitCta';
@@ -143,6 +144,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               <SalesChannelButton channel={channel} key={channel.label} />
             ))}
           </div>
+          {isPillenpopper && <PillenPopperSignup />}
         </div>
       </section>
 

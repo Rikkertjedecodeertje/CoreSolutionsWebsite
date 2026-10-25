@@ -6,7 +6,7 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
   "en": {
     "privacy": {
       "title": "Privacy Policy",
-      "description": "How Core Solutions handles personal data when you visit this website, use the store locator or contact us.",
+      "description": "How Core Solutions handles personal data when you visit this website, sign up for PillenPopper updates, use the store locator or contact us.",
       "sections": [
         {
           "heading": "1. Who is responsible?",
@@ -51,6 +51,11 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
                 "Agreements and legally required records, where relevant",
                 "Contact details, agreed terms and necessary transaction or invoice data.",
                 "Performing an agreement and complying with legal, including tax, obligations."
+              ],
+              [
+                "PillenPopper development updates",
+                "Email address, submission time, consent response and the language of the form used.",
+                "Sending emails from Core Solutions about the development of the PillenPopper, based on your consent. You can withdraw consent at any time by emailing contact@coresolutionsglobal.com."
               ]
             ]
           }
@@ -67,7 +72,8 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
           "heading": "4. Who receives personal data?",
           "paragraphs": [
             "Website hosting and delivery use GitHub Pages. Our business email uses Google Workspace. These providers may receive the data needed to deliver their services. The OpenStreetMap Foundation receives the map and postcode requests described above. Their own privacy notices explain processing for which they are independently responsible.",
-            "Data may also be shared with an adviser, service provider or competent authority when necessary for handling an agreement, a legal obligation or a legal claim. We do not sell your personal data. Where a provider processes personal data on our behalf, the GDPR requires appropriate processor terms and safeguards."
+            "Data may also be shared with an adviser, service provider or competent authority when necessary for handling an agreement, a legal obligation or a legal claim. We do not sell your personal data. Where a provider processes personal data on our behalf, the GDPR requires appropriate processor terms and safeguards.",
+            "The PillenPopper sign-up form is embedded from Google Forms. When the form loads, your browser contacts Google, which may receive technical information such as your IP address and browser information. Submitted email addresses and consent responses are processed in Google Forms and a linked Google Sheet within our Google Workspace account, with access restricted to authorised people. Google may also process service and account data under its own privacy policy."
           ]
         },
         {
@@ -81,7 +87,8 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
           "paragraphs": [
             "Routine enquiries and correspondence are kept while they are being handled and for up to 12 months after completion, then deleted unless the following exceptions apply. Correspondence forming part of an ongoing agreement is kept for the duration of that agreement. Relevant evidence for an actual or reasonably anticipated legal dispute is kept until the claim is resolved or the applicable limitation period has expired; unrelated data is not retained for that purpose.",
             "Tax records that must be retained are kept for the statutory period, generally seven years. Where the One Stop Shop VAT scheme applies, the relevant records are kept for ten years. These periods apply only to records covered by the relevant legal duty, not to all correspondence.",
-            "The website itself does not retain postcode or browser-location history beyond the current page state. Hosting, email and map providers may keep their own technical logs according to their service, security and statutory retention rules; their privacy notices explain the criteria. Core Solutions does not set those providers’ independent log-retention periods."
+            "The website itself does not retain postcode or browser-location history beyond the current page state. Hosting, email and map providers may keep their own technical logs according to their service, security and statutory retention rules; their privacy notices explain the criteria. Core Solutions does not set those providers’ independent log-retention periods.",
+            "We keep your sign-up while you are subscribed to PillenPopper development updates. You can unsubscribe by emailing contact@coresolutionsglobal.com. We then stop sending updates and handle removal of your subscription data from the form responses and linked spreadsheet, except for minimal records needed to respect an opt-out or meet an applicable legal obligation."
           ]
         },
         {
@@ -89,7 +96,7 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
           "paragraphs": [
             "We use appropriate technical and organisational measures for the risks involved, including HTTPS for the website and restricting access to business correspondence to people who need it. No online system is completely risk-free.",
             "Providing a postcode, browser location or contacting us is optional. We need an email address and enough information about your request to reply. Without the relevant data, we may be unable to answer a question or provide the requested location feature. Please do not send medical records, passwords or other sensitive information that is unnecessary for your enquiry.",
-            "This website has no customer accounts, checkout, newsletter registration, advertising trackers or analytics scripts. We do not use the data described here for profiling or solely automated decisions with legal or similarly significant effects."
+            "This website has no customer accounts or checkout and its own code does not use advertising trackers or analytics scripts. The optional PillenPopper sign-up form is provided by Google Forms as described above. We do not use the data described here for profiling or solely automated decisions with legal or similarly significant effects."
           ]
         },
         {
@@ -104,7 +111,7 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
         {
           "heading": "9. Updates and further information",
           "paragraphs": [
-            "This version takes effect on 7 October 2026. We update this policy when relevant processing changes and show the revision date on this page. Where the law requires additional information or consent, we provide it before the new processing begins. For cookies and similar technologies, also read our Cookie Policy."
+            "This version takes effect on 25 October 2026. We update this policy when relevant processing changes and show the revision date on this page. Where the law requires additional information or consent, we provide it before the new processing begins. For cookies and similar technologies, also read our Cookie Policy."
           ],
           "links": [
             {
@@ -122,6 +129,10 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
             {
               "label": "Autoriteit Persoonsgegevens",
               "href": "https://www.autoriteitpersoonsgegevens.nl/"
+            },
+            {
+              "label": "Google Privacy Policy",
+              "href": "https://policies.google.com/privacy"
             }
           ]
         }
@@ -202,7 +213,7 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
     },
     "cookie": {
       "title": "Cookie Policy",
-      "description": "Cookies, browser storage and external map services on the Core Solutions website.",
+      "description": "Cookies, browser storage, embedded Google Forms and external map services on the Core Solutions website.",
       "sections": [
         {
           "heading": "1. About this policy",
@@ -214,7 +225,7 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
         {
           "heading": "2. What this website uses",
           "paragraphs": [
-            "The current website does not deliberately place first-party cookies and does not use analytics, advertising pixels, tracking cookies or persistent browser storage. The language is selected through the page URL, not a stored language cookie. There is no customer login or shopping basket on this site.",
+            "The website’s own code does not place first-party cookies or use analytics, advertising pixels, tracking cookies or persistent browser storage. The language is selected through the page URL, not a stored language cookie. There is no customer login or shopping basket on this site. The embedded Google Forms service is described below.",
             "Choices in the store locator are kept only in the current page’s memory. This is temporary application state, not a cookie or local-storage profile. It is cleared when you refresh or leave that page."
           ],
           "table": {
@@ -259,7 +270,8 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
           "heading": "4. External links and hosting",
           "paragraphs": [
             "The LinkedIn icon, media mentions, shops and route buttons are links, not embedded social widgets or video players. When you open an external website, that operator’s cookies and privacy rules apply. Its services may place cookies on their own domain, subject to applicable law.",
-            "GitHub Pages delivers the website and processes technical requests. Technical logs and normal browser caching are not the same as advertising cookies. The hosting provider’s own privacy notice explains its processing. Cookies that a provider uses on its own website are not automatically cookies placed by this Core Solutions website."
+            "GitHub Pages delivers the website and processes technical requests. Technical logs and normal browser caching are not the same as advertising cookies. The hosting provider’s own privacy notice explains its processing. Cookies that a provider uses on its own website are not automatically cookies placed by this Core Solutions website.",
+            "The PillenPopper page embeds a Google Forms sign-up form. When the form loads, your browser contacts Google. Google may use cookies and similar technologies for form functionality, language preferences, security and existing Google-account sessions. These are managed by Google and your browser settings. The Google policies linked below describe its use of cookies and personal data. If the embedded form does not work with your browser settings, you can open it using the separate-window link."
           ],
           "links": [
             {
@@ -269,6 +281,10 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
             {
               "label": "OpenStreetMap Foundation Privacy Policy",
               "href": "https://osmfoundation.org/wiki/Privacy_Policy"
+            },
+            {
+              "label": "How Google uses cookies",
+              "href": "https://policies.google.com/technologies/cookies"
             }
           ]
         },
@@ -283,7 +299,7 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
         {
           "heading": "6. Updates and contact",
           "paragraphs": [
-            "This version takes effect on 7 October 2026. We update the policy when the website’s technologies change. For personal-data purposes, legal bases, retention and your GDPR rights, read our Privacy Policy. Contact contact@coresolutionsglobal.com with questions."
+            "This version takes effect on 25 October 2026. We update the policy when the website’s technologies change. For personal-data purposes, legal bases, retention and your GDPR rights, read our Privacy Policy. Contact contact@coresolutionsglobal.com with questions."
           ]
         }
       ]
@@ -292,7 +308,7 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
   "nl": {
     "privacy": {
       "title": "Privacybeleid",
-      "description": "Hoe Core Solutions persoonsgegevens verwerkt wanneer je deze website bezoekt, de winkelzoeker gebruikt of contact opneemt.",
+      "description": "Hoe Core Solutions persoonsgegevens verwerkt wanneer je deze website bezoekt, je inschrijft voor PillenPopper-updates, de winkelzoeker gebruikt of contact opneemt.",
       "sections": [
         {
           "heading": "1. Wie is verantwoordelijk?",
@@ -337,6 +353,11 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
                 "Overeenkomsten en wettelijk verplichte administratie, indien van toepassing",
                 "Contactgegevens, gemaakte afspraken en noodzakelijke transactie- of factuurgegevens.",
                 "Een overeenkomst uitvoeren en voldoen aan wettelijke verplichtingen, waaronder fiscale verplichtingen."
+              ],
+              [
+                "Updates over de ontwikkeling van de PillenPopper",
+                "E-mailadres, tijdstip van inschrijving, toestemmingsantwoord en de taal van het gebruikte formulier.",
+                "E-mails van Core Solutions over de ontwikkeling van de PillenPopper versturen op basis van jouw toestemming. Je kunt deze altijd intrekken via contact@coresolutionsglobal.com."
               ]
             ]
           }
@@ -353,7 +374,8 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
           "heading": "4. Wie ontvangt persoonsgegevens?",
           "paragraphs": [
             "De website wordt gehost en geleverd via GitHub Pages. Voor zakelijke e-mail gebruiken we Google Workspace. Deze aanbieders kunnen gegevens ontvangen die nodig zijn om hun diensten te leveren. De OpenStreetMap Foundation ontvangt de hierboven beschreven kaart- en postcodeaanvragen. Hun eigen privacyverklaringen beschrijven verwerkingen waarvoor zij zelf verantwoordelijk zijn.",
-            "Gegevens kunnen daarnaast worden gedeeld met een adviseur, dienstverlener of bevoegde instantie als dit noodzakelijk is voor een overeenkomst, wettelijke verplichting of juridische aanspraak. We verkopen je persoonsgegevens niet. Wanneer een aanbieder persoonsgegevens namens ons verwerkt, vereist de AVG passende verwerkersafspraken en waarborgen."
+            "Gegevens kunnen daarnaast worden gedeeld met een adviseur, dienstverlener of bevoegde instantie als dit noodzakelijk is voor een overeenkomst, wettelijke verplichting of juridische aanspraak. We verkopen je persoonsgegevens niet. Wanneer een aanbieder persoonsgegevens namens ons verwerkt, vereist de AVG passende verwerkersafspraken en waarborgen.",
+            "Het inschrijfformulier voor de PillenPopper is ingesloten via Google Forms. Bij het laden maakt je browser verbinding met Google, dat technische informatie zoals je IP-adres en browsergegevens kan ontvangen. Ingestuurde e-mailadressen en toestemmingsantwoorden worden verwerkt in Google Forms en een gekoppelde Google Sheet binnen ons Google Workspace-account, met toegang voor bevoegde personen. Google kan daarnaast dienst- en accountgegevens verwerken volgens het eigen privacybeleid."
           ]
         },
         {
@@ -367,7 +389,8 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
           "paragraphs": [
             "Gewone vragen en correspondentie bewaren we tijdens de behandeling en maximaal 12 maanden na afronding. Daarna verwijderen we deze, tenzij een van de volgende uitzonderingen geldt. Correspondentie die onderdeel is van een lopende overeenkomst bewaren we gedurende die overeenkomst. Relevant bewijsmateriaal voor een daadwerkelijk of redelijkerwijs te verwachten juridisch geschil bewaren we totdat de aanspraak is afgewikkeld of de toepasselijke verjaringstermijn is verstreken; niet-relevante gegevens bewaren we hiervoor niet.",
             "Fiscaal verplichte administratie bewaren we gedurende de wettelijke termijn, doorgaans zeven jaar. Voor administratie waarop de One Stop Shop-btw-regeling van toepassing is, geldt tien jaar. Deze termijnen gelden alleen voor de gegevens waarop de betreffende bewaarplicht rust, niet voor alle correspondentie.",
-            "De website bewaart geen postcode- of browserlocatiegeschiedenis buiten de huidige paginastaat. Hosting-, e-mail- en kaartaanbieders kunnen eigen technische logbestanden bewaren volgens hun dienstverlenings-, beveiligings- en wettelijke bewaaregels. Hun privacyverklaringen beschrijven de criteria. Core Solutions bepaalt niet de zelfstandige bewaartermijnen van die aanbieders."
+            "De website bewaart geen postcode- of browserlocatiegeschiedenis buiten de huidige paginastaat. Hosting-, e-mail- en kaartaanbieders kunnen eigen technische logbestanden bewaren volgens hun dienstverlenings-, beveiligings- en wettelijke bewaaregels. Hun privacyverklaringen beschrijven de criteria. Core Solutions bepaalt niet de zelfstandige bewaartermijnen van die aanbieders.",
+            "We bewaren je inschrijving zolang je bent ingeschreven voor updates over de ontwikkeling van de PillenPopper. Afmelden kan via contact@coresolutionsglobal.com. Daarna stoppen we met het sturen van updates en handelen we de verwijdering van je inschrijfgegevens uit de formulierantwoorden en gekoppelde spreadsheet af, behalve minimale gegevens die nodig zijn om een afmelding te respecteren of aan een toepasselijke wettelijke verplichting te voldoen."
           ]
         },
         {
@@ -375,7 +398,7 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
           "paragraphs": [
             "We nemen technische en organisatorische maatregelen die passen bij de risico’s, waaronder HTTPS voor de website en beperking van toegang tot zakelijke correspondentie tot personen die deze nodig hebben. Geen enkel online systeem is volledig zonder risico.",
             "Een postcode invoeren, je browserlocatie delen of contact opnemen is vrijwillig. Om je te antwoorden hebben we een e-mailadres en voldoende informatie over je verzoek nodig. Zonder relevante gegevens kunnen we een vraag of locatieverzoek mogelijk niet afhandelen. Stuur geen medische dossiers, wachtwoorden of andere gevoelige informatie die niet nodig is voor je vraag.",
-            "Deze website heeft geen klantaccounts, betaalpagina, nieuwsbriefinschrijving, advertentietrackers of analyticsscripts. We gebruiken de hier beschreven gegevens niet voor profilering of uitsluitend geautomatiseerde besluiten met rechtsgevolgen of vergelijkbare aanzienlijke gevolgen."
+            "Deze website heeft geen klantaccounts of betaalpagina en de eigen code gebruikt geen advertentietrackers of analyticsscripts. Het optionele inschrijfformulier voor de PillenPopper wordt geleverd via Google Forms zoals hierboven beschreven. We gebruiken de hier beschreven gegevens niet voor profilering of uitsluitend geautomatiseerde besluiten met rechtsgevolgen of vergelijkbare aanzienlijke gevolgen."
           ]
         },
         {
@@ -390,7 +413,7 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
         {
           "heading": "9. Wijzigingen en meer informatie",
           "paragraphs": [
-            "Deze versie geldt vanaf 7 oktober 2026. We werken dit beleid bij als relevante verwerkingen veranderen en tonen de wijzigingsdatum op deze pagina. Waar extra informatie of toestemming wettelijk nodig is, regelen we dit voordat de nieuwe verwerking begint. Lees voor cookies en vergelijkbare technieken ook ons Cookiebeleid."
+            "Deze versie geldt vanaf 25 oktober 2026. We werken dit beleid bij als relevante verwerkingen veranderen en tonen de wijzigingsdatum op deze pagina. Waar extra informatie of toestemming wettelijk nodig is, regelen we dit voordat de nieuwe verwerking begint. Lees voor cookies en vergelijkbare technieken ook ons Cookiebeleid."
           ],
           "links": [
             {
@@ -408,6 +431,10 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
             {
               "label": "Autoriteit Persoonsgegevens",
               "href": "https://www.autoriteitpersoonsgegevens.nl/"
+            },
+            {
+              "label": "Privacybeleid van Google",
+              "href": "https://policies.google.com/privacy"
             }
           ]
         }
@@ -488,7 +515,7 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
     },
     "cookie": {
       "title": "Cookiebeleid",
-      "description": "Cookies, browseropslag en externe kaartdiensten op de Core Solutions-website.",
+      "description": "Cookies, browseropslag, ingesloten Google Forms en externe kaartdiensten op de Core Solutions-website.",
       "sections": [
         {
           "heading": "1. Over dit beleid",
@@ -500,7 +527,7 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
         {
           "heading": "2. Wat gebruikt deze website?",
           "paragraphs": [
-            "De huidige website plaatst zelf geen first-party cookies en gebruikt geen analytics, advertentiepixels, trackingcookies of blijvende browseropslag. De taal wordt gekozen via het pagina-adres, niet via een opgeslagen taalcookie. Er is geen klantlogin of winkelmandje op deze site.",
+            "De eigen websitecode plaatst geen first-party cookies en gebruikt geen analytics, advertentiepixels, trackingcookies of blijvende browseropslag. De taal wordt gekozen via het pagina-adres, niet via een opgeslagen taalcookie. Er is geen klantlogin of winkelmandje op deze site. De ingesloten Google Forms-dienst wordt hieronder beschreven.",
             "Keuzes in de winkelzoeker staan alleen in het geheugen van de huidige pagina. Dit is tijdelijke paginastaat en geen cookie of profiel in lokale opslag. Deze staat wordt gewist als je de pagina vernieuwt of verlaat."
           ],
           "table": {
@@ -545,7 +572,8 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
           "heading": "4. Externe links en hosting",
           "paragraphs": [
             "Het LinkedIn-icoon, mediavermeldingen, webshops en routeknoppen zijn links en geen ingesloten sociale widgets of videospelers. Als je een externe website opent, gelden de cookies en privacyregels van die aanbieder. Deze kan op het eigen domein cookies plaatsen, met inachtneming van het toepasselijke recht.",
-            "GitHub Pages levert de website en verwerkt technische aanvragen. Technische logbestanden en normale browsercache zijn iets anders dan advertentiecookies. De privacyverklaring van de hostingaanbieder geeft uitleg over zijn verwerking. Cookies die een aanbieder op de eigen website gebruikt, worden niet automatisch op deze Core Solutions-website geplaatst."
+            "GitHub Pages levert de website en verwerkt technische aanvragen. Technische logbestanden en normale browsercache zijn iets anders dan advertentiecookies. De privacyverklaring van de hostingaanbieder geeft uitleg over zijn verwerking. Cookies die een aanbieder op de eigen website gebruikt, worden niet automatisch op deze Core Solutions-website geplaatst.",
+            "Op de PillenPopper-pagina staat een ingesloten inschrijfformulier van Google Forms. Bij het laden maakt je browser verbinding met Google. Google kan cookies en vergelijkbare technieken gebruiken voor de werking van het formulier, taalvoorkeuren, beveiliging en bestaande Google-accountsessies. Google en je browserinstellingen beheren deze technieken. De hieronder gelinkte Google-beleidsdocumenten beschrijven het gebruik van cookies en persoonsgegevens. Werkt het ingesloten formulier niet met je browserinstellingen, dan kun je het via de link in een apart venster openen."
           ],
           "links": [
             {
@@ -555,6 +583,10 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
             {
               "label": "OpenStreetMap Foundation Privacy Policy",
               "href": "https://osmfoundation.org/wiki/Privacy_Policy"
+            },
+            {
+              "label": "Hoe Google cookies gebruikt",
+              "href": "https://policies.google.com/technologies/cookies"
             }
           ]
         },
@@ -569,7 +601,7 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
         {
           "heading": "6. Wijzigingen en contact",
           "paragraphs": [
-            "Deze versie geldt vanaf 7 oktober 2026. We werken dit beleid bij als de gebruikte technieken veranderen. Lees ons Privacybeleid voor de verwerkingsdoelen, grondslagen, bewaartermijnen en je AVG-rechten. Mail contact@coresolutionsglobal.com voor vragen."
+            "Deze versie geldt vanaf 25 oktober 2026. We werken dit beleid bij als de gebruikte technieken veranderen. Lees ons Privacybeleid voor de verwerkingsdoelen, grondslagen, bewaartermijnen en je AVG-rechten. Mail contact@coresolutionsglobal.com voor vragen."
           ]
         }
       ]
