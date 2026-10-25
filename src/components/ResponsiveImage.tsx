@@ -19,8 +19,8 @@ export function ResponsiveImage({ src, alt, sizes, loading, decoding = 'async', 
 
   return (
     <picture className="contents">
-      <source sizes={responsiveSizes} srcSet={srcSet('avif')} type="image/avif" />
-      <source sizes={responsiveSizes} srcSet={srcSet('webp')} type="image/webp" />
+      <source className="hidden" sizes={responsiveSizes} srcSet={srcSet('avif')} type="image/avif" />
+      <source className="hidden" sizes={responsiveSizes} srcSet={srcSet('webp')} type="image/webp" />
       <img
         {...props}
         alt={alt}
