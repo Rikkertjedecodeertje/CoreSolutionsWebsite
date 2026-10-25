@@ -1,3 +1,5 @@
+import { imageFallback } from '@/lib/images';
+import { ResponsiveImage } from '@/components/ResponsiveImage';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { AchievementSystem, BrandOverviewSystem } from '@/components/BrandSystems';
@@ -43,7 +45,7 @@ export function generateMetadata({ params }: ProjectPageProps): Metadata {
       locale: 'nl_NL',
       images: [
         {
-          url: project.gallery[0]?.src ?? '/images/og-core-solutions.svg',
+          url: imageFallback(project.gallery[0]?.src ?? '/images/og-core-solutions.svg'),
           width: 1200,
           height: 630,
           alt: project.name,
@@ -77,13 +79,13 @@ export default function DutchProjectPage({ params }: ProjectPageProps) {
               ))}
             </div>
             {isIheel ? (
-              <img
+              <ResponsiveImage
                 alt="iHeel logo"
                 className="h-20 w-[300px] max-w-full object-contain object-left"
                 src={assetPath('/images/iheel-logo.svg')}
               />
             ) : isBatbox ? (
-              <img
+              <ResponsiveImage
                 alt="BATBOX logo"
                 className="h-20 w-[300px] max-w-full object-contain object-left"
                 src={assetPath('/images/batbox-logo.svg')}
@@ -108,7 +110,9 @@ export default function DutchProjectPage({ params }: ProjectPageProps) {
             </div>
           </div>
           <div className="overflow-hidden rounded-card border border-border bg-background">
-            <img
+            <ResponsiveImage
+              loading="eager"
+              fetchPriority="high"
               alt={project.gallery[0]?.alt ?? project.name}
               style={isPillenpopper ? { objectPosition: 'left center' } : undefined}
               className="h-full min-h-80 w-full object-cover"

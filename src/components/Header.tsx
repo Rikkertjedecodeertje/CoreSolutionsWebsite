@@ -1,4 +1,6 @@
 'use client';
+import { ResponsiveImage } from '@/components/ResponsiveImage';
+
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
@@ -79,7 +81,8 @@ export function Header() {
             className="flex min-w-0 flex-1 items-center gap-2 font-semibold text-text"
             href={isNl ? '/nl/' : '/'}
           >
-            <img
+            <ResponsiveImage
+              sizes="44px"
               alt="Core Solutions logo"
               className="h-9 w-9 shrink-0 object-contain"
               src={assetPath('/images/core-solutions-logo.png')}
@@ -127,7 +130,7 @@ export function Header() {
             className="flex items-center gap-3 font-semibold text-text"
             href={isNl ? '/nl/' : '/'}
           >
-            <img
+            <ResponsiveImage
               alt="Core Solutions logo"
               className="h-11 w-11 object-contain"
               src={assetPath('/images/core-solutions-logo.png')}

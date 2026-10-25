@@ -143,8 +143,8 @@ export const projectsNl: Project[] = [
     gallery: [
       {
         src: '/images/batbox-product.png',
-        alt: 'BATBOX batterijtester met twee huishoudbatterijen',
-        caption: 'BATBOX® batterijtesterconcept',
+        alt: 'BATBOX batterijtester in gebruik met een AA-batterij',
+        caption: 'BATBOX® Tester in gebruik',
       },
     ],
     faqs: [
@@ -181,7 +181,7 @@ export const projectsNl: Project[] = [
     "shortDescription": "De PillenPopper helpt mensen met zwakke of pijnlijke handen om zelf pillen uit strips te halen en geschikte pillen te splitsen zonder scherp mes, met meer zelfstandigheid en controle.",
     "longDescription": "De PillenPopper begint bij een klein maar belangrijk stukje dagelijkse zelfstandigheid: zelf je pillen voorbereiden. Core Solutions ontwikkelde het hulpmiddel via gebruikersonderzoek, 3D-geprinte prototypes en feedback van ergotherapeutische experts. Het combineert pillen uit strips halen, opvangen en splitsen zonder scherp mes in één tafelhulpmiddel. De volgende stap is onafhankelijke validatie en voorbereiding op productie.",
     "problem": "Pillen uit strips drukken vraagt om grip, kracht en nauwkeurige vingerbewegingen. Dat kan lastig zijn met zwakke of pijnlijke handen. Voor mensen met bijvoorbeeld reuma, een spierziekte of verminderde handfunctie door ouderdom kan deze dagelijkse handeling daardoor pijnlijk en frustrerend worden. Zij kunnen afhankelijk worden van hulp bij het voorbereiden van hun medicatie en daarmee een stukje zelfstandigheid en controle verliezen.",
-    "solution": "Met de PillenPopper schuif je een hele pillenstrip eenvoudig in een clip. Je drukt een hefboom in met je handpalm of onderarm, waarna de pil uit de strip komt en in een opvangbakje valt. Van daaruit kun je de pillen direct innemen of verdelen over bijvoorbeeld een weekdoos. Een apart hefboommechanisme splitst geschikte pillen zonder scherp mes. De PillenPopper is ontworpen om mensen in staat te stellen hun zelfstandigheid en controle terug te pakken.",
+    "solution": "Met de PillenPopper schuif je een hele pillenstrip eenvoudig in een clip. Je drukt een hefboom in met je handpalm of onderarm, waarna de pil uit de strip komt en in een opvangbakje valt. Van daaruit kun je de pillen direct innemen of verdelen over bijvoorbeeld een weekdoos. Een apart, patent-pending hefboommechanisme splitst geschikte pillen zonder scherp mes. De PillenPopper is ontworpen om mensen in staat te stellen hun zelfstandigheid en controle terug te pakken.",
     "targetUsers": [
       "Mensen met zwakke of pijnlijke handen",
       "Mensen met verminderde handfunctie door reuma, een spierziekte of ouderdom",
@@ -190,13 +190,13 @@ export const projectsNl: Project[] = [
     "features": [
       "Bediening met handpalm of onderarm",
       "Pillen opgevangen in een bakje",
-      "Geschikte pillen splitsen zonder scherp mes",
+      "Patent-pending mechanisme om geschikte pillen te splitsen zonder scherp mes",
       "Ontwikkeld met gebruikers en ergotherapeutische experts",
       "3D-geprinte prototypes en geplande lokale pilotproductie"
     ],
     "achievements": [
-      "Ontwikkeld in samenwerking met zes gebruikers",
-      "Feedback van drie ergotherapeutische experts",
+      "Ontwikkeld in samenwerking met zes gebruikers en drie ergotherapeutische experts",
+      "Patent-pending splitmechaniek voor pillen",
       "Ontwerp verfijnd met 3D-geprinte prototypes",
       "Genomineerd voor The Hague Student Innovator Award 2026"
     ],
@@ -240,7 +240,7 @@ export const projectsNl: Project[] = [
       },
       {
         "question": "Hoe werkt de PillenPopper?",
-        "answer": "Met de PillenPopper schuif je een hele pillenstrip eenvoudig in een clip. Je drukt een hefboom in met je handpalm of onderarm om een pil uit de strip in het opvangbakje te drukken. De pil kan daarna direct worden ingenomen of worden verdeeld over bijvoorbeeld een weekdoos. Een apart mechanisme kan geschikte pillen splitsen zonder scherp mes."
+        "answer": "Met de PillenPopper schuif je een hele pillenstrip eenvoudig in een clip. Je drukt een hefboom in met je handpalm of onderarm om een pil uit de strip in het opvangbakje te drukken. De pil kan daarna direct worden ingenomen of worden verdeeld over bijvoorbeeld een weekdoos. Een apart, patent-pending mechanisme kan geschikte pillen splitsen zonder scherp mes."
       },
       {
         "question": "Mag je iedere pil splitsen?",
@@ -256,7 +256,7 @@ export const projectsNl: Project[] = [
       }
     ],
     "seoTitle": "De PillenPopper | Zelf je pillen voorbereiden",
-    "seoDescription": "Met de PillenPopper haal je zelf pillen uit strips en splits je geschikte pillen zonder scherp mes. Ontworpen voor meer zelfstandigheid met zwakke of pijnlijke handen."
+    "seoDescription": "De PillenPopper helpt je zelf pillen uit strips te halen en geschikte pillen te splitsen met een patent-pending mechanisme zonder scherp mes."
   },
 ];
 

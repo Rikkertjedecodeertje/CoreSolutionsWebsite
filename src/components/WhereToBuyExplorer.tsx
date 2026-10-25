@@ -1,4 +1,6 @@
 'use client';
+import { ResponsiveImage } from '@/components/ResponsiveImage';
+
 
 import Link from 'next/link';
 import { FormEvent, useEffect, useMemo, useRef, useState } from 'react';
@@ -233,7 +235,7 @@ function routeUrl(point: RetailPoint) {
 function StorePhoto({ point, locale }: { point: RetailPoint; locale: 'en' | 'nl' }) {
   if (point.photo) {
     return (
-      <img
+      <ResponsiveImage
         alt={point.photoAlt ?? point.name}
         className="h-44 w-full object-cover"
         src={assetPath(point.photo)}
@@ -244,7 +246,7 @@ function StorePhoto({ point, locale }: { point: RetailPoint; locale: 'en' | 'nl'
   return (
     <div className="grid h-44 place-items-center bg-background">
       <div className="text-center">
-        <img
+        <ResponsiveImage
           alt=""
           className="mx-auto h-16 w-16 object-contain opacity-70"
           src={assetPath('/images/core-solutions-logo.png')}
@@ -538,7 +540,7 @@ export function WhereToBuyExplorer({ locale = 'en' }: { locale?: 'en' | 'nl' }) 
                 <>
                   <div className="flex h-14 items-center">
                     {logo ? (
-                      <img
+                      <ResponsiveImage
                         alt={logo.alt}
                         className={logo.className}
                         src={assetPath(logo.src)}

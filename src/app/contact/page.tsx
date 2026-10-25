@@ -1,3 +1,4 @@
+import { ResponsiveImage } from '@/components/ResponsiveImage';
 import type { Metadata } from 'next';
 import { Building2, Mail, MapPin } from 'lucide-react';
 import { ButtonLink } from '@/components/ButtonLink';
@@ -26,7 +27,7 @@ export default function ContactPage() {
       <div className="grid gap-6 lg:grid-cols-[1.25fr_0.75fr] lg:items-stretch">
         <article className="grid overflow-hidden rounded-card border border-border bg-card shadow-soft sm:grid-cols-[220px_1fr]">
           <div className="bg-dark p-6 text-white">
-            <img
+            <ResponsiveImage
               alt="Rik van Wieren"
               className="mx-auto aspect-square w-full max-w-[190px] rounded-full object-cover sm:max-w-[200px] lg:max-w-[200px]"
               src={assetPath('/images/rik-van-wieren-profile.png')}
@@ -69,7 +70,7 @@ export default function ContactPage() {
         <aside className="flex h-full flex-col justify-between rounded-card border border-border bg-background p-7">
           <div>
             <div className="flex items-center gap-4">
-              <img
+              <ResponsiveImage
                 alt=""
                 className="h-16 w-16 object-contain"
                 src={assetPath('/images/core-solutions-logo.png')}
@@ -129,7 +130,7 @@ export default function ContactPage() {
               Core Solutions operates from The Hague.
             </h2>
           </div>
-          <img
+          <ResponsiveImage
             alt="The Hague skyline"
             className="h-72 w-full object-cover md:h-full"
             src={assetPath('/images/the-hague-skyline.png')}

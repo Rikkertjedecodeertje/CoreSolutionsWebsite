@@ -1,3 +1,4 @@
+import { ResponsiveImage } from '@/components/ResponsiveImage';
 import Link from 'next/link';
 import type { Project } from '@/data/projects';
 import { assetPath } from '@/lib/sitePath';
@@ -16,7 +17,8 @@ export function ProjectCard({ project, locale = 'en' }: ProjectCardProps) {
         className="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
         href={`${prefix}/portfolio/${project.slug}/`}
       >
-        <img
+        <ResponsiveImage
+          sizes="(min-width: 1280px) 390px, (min-width: 768px) calc((100vw - 64px) / 2), calc(100vw - 40px)"
           alt={project.gallery[0]?.alt ?? `${project.name} placeholder image`}
           style={project.slug === 'pillenpopper' ? { objectPosition: 'left center' } : undefined}
           className="h-56 w-full border-b border-border object-cover"
@@ -35,7 +37,7 @@ export function ProjectCard({ project, locale = 'en' }: ProjectCardProps) {
           </div>
           {project.slug === 'iheel' || project.slug === 'batbox-battery-tester' ? (
             <div className="flex h-14 w-[210px] max-w-full items-center">
-              <img
+              <ResponsiveImage
                 alt={project.slug === 'iheel' ? 'iHeel logo' : 'BATBOX logo'}
                 className="h-12 w-[210px] max-w-full object-contain object-left"
                 src={assetPath(

@@ -201,8 +201,8 @@ export const projects: Project[] = [
     gallery: [
       {
         src: '/images/batbox-product.png',
-        alt: 'BATBOX battery tester with two household batteries',
-        caption: 'BATBOX® battery tester concept',
+        alt: 'BATBOX battery tester being used with an AA battery',
+        caption: 'BATBOX® Tester in use',
       },
       {
         src: '/images/household-placeholder.svg',
@@ -243,7 +243,7 @@ export const projects: Project[] = [
     "shortDescription": "The PillenPopper helps people with weak or painful hands remove pills from blister packs and split suitable pills without a sharp blade, supporting greater independence and control.",
     "longDescription": "The PillenPopper starts with a small but meaningful part of everyday independence: preparing your own pills. Core Solutions developed the aid through user research, 3D-printed prototypes and feedback from occupational therapy experts. It combines removing pills from blister packs, collecting them and splitting suitable pills without a sharp blade in one tabletop aid. The next step is independent validation and preparation for production.",
     "problem": "Pushing pills out of blister packs requires grip, strength and precise finger movements. That can be difficult with weak or painful hands. For people with conditions such as arthritis, muscle disorders or age-related loss of hand function, this everyday task can become painful and frustrating. They may need someone else's help to prepare their medication, losing a degree of independence and control.",
-    "solution": "With the PillenPopper, you simply slide a whole blister strip into a clip. Press a lever with your palm or forearm to push a pill out of the strip and into a collection tray. From there, you can take the pills directly or organise them in, for example, a weekly pill organiser. A separate lever mechanism splits suitable pills without a sharp blade. The PillenPopper is designed to help people regain their independence and control.",
+    "solution": "With the PillenPopper, you simply slide a whole blister strip into a clip. Press a lever with your palm or forearm to push a pill out of the strip and into a collection tray. From there, you can take the pills directly or organise them in, for example, a weekly pill organiser. A separate, patent-pending lever mechanism splits suitable pills without a sharp blade. The PillenPopper is designed to help people regain their independence and control.",
     "targetUsers": [
       "People with weak or painful hands",
       "People with reduced hand function due to arthritis, muscle conditions or ageing",
@@ -252,13 +252,13 @@ export const projects: Project[] = [
     "features": [
       "Operation with the palm or forearm",
       "Pills collected in a tray",
-      "Splits suitable pills without a sharp blade",
+      "Patent-pending mechanism to split suitable pills without a sharp blade",
       "Developed with users and occupational therapy experts",
       "3D-printed prototypes and planned local pilot production"
     ],
     "achievements": [
-      "Developed together with six users",
-      "Feedback from three occupational therapy experts",
+      "Developed together with six users and three occupational therapy experts",
+      "Patent-pending pill-splitting mechanism",
       "Design refined through 3D-printed prototypes",
       "Nominated for The Hague Student Innovator Award 2026"
     ],
@@ -302,7 +302,7 @@ export const projects: Project[] = [
       },
       {
         "question": "How does the PillenPopper work?",
-        "answer": "With the PillenPopper, you simply slide a whole blister strip into a clip. Press a lever with your palm or forearm to push a pill from the strip into the collection tray. The pill can then be taken directly or organised in, for example, a weekly pill organiser. A separate mechanism can split suitable pills without a sharp blade."
+        "answer": "With the PillenPopper, you simply slide a whole blister strip into a clip. Press a lever with your palm or forearm to push a pill from the strip into the collection tray. The pill can then be taken directly or organised in, for example, a weekly pill organiser. A separate, patent-pending mechanism can split suitable pills without a sharp blade."
       },
       {
         "question": "Can every pill be split?",
@@ -318,7 +318,7 @@ export const projects: Project[] = [
       }
     ],
     "seoTitle": "The PillenPopper | Prepare Your Own Pills",
-    "seoDescription": "The PillenPopper helps you remove pills from blister packs and split suitable pills without a sharp blade. Designed for greater independence with weak or painful hands."
+    "seoDescription": "The PillenPopper helps you remove pills from blister packs and split suitable pills with a patent-pending, blade-free mechanism, supporting everyday independence."
   },
 ];
 

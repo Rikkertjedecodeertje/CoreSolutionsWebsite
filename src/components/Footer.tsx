@@ -1,4 +1,6 @@
 'use client';
+import { ResponsiveImage } from '@/components/ResponsiveImage';
+
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -86,7 +88,7 @@ export function Footer() {
     <footer className="footer-sheen border-t border-border">
       <div className="mx-auto max-w-7xl px-5 py-12 lg:px-8">
         <div className="flex items-center gap-4 border-b border-text/15 pb-10 sm:gap-7">
-          <img
+          <ResponsiveImage
             alt="Core Solutions logo"
             className="h-20 w-20 shrink-0 object-contain sm:h-28 sm:w-28"
             src={assetPath('/images/core-solutions-logo.png')}

@@ -1,0 +1,221 @@
+[
+  {
+    "path": "/images/amazon-logo.png",
+    "source": "assets/originals/images/amazon-logo.png",
+    "originalBytes": 103221,
+    "sourceWidth": 6110,
+    "sourceHeight": 2047,
+    "widths": [
+      160,
+      320,
+      600
+    ],
+    "largestAvifBytes": 16652,
+    "largestWebpBytes": 15776,
+    "purpose": "Logo; retain alpha and crisp edges"
+  },
+  {
+    "path": "/images/batbox-product.png",
+    "source": "assets/originals/replacements/batbox_tester_product.png",
+    "originalBytes": 1980558,
+    "sourceWidth": 1400,
+    "sourceHeight": 779,
+    "widths": [
+      480,
+      800,
+      1200
+    ],
+    "largestAvifBytes": 53259,
+    "largestWebpBytes": 42598,
+    "purpose": "Home and product heroes; card-specific sizes supplied in markup"
+  },
+  {
+    "path": "/images/bol-logo.png",
+    "source": "assets/originals/images/bol-logo.png",
+    "originalBytes": 22665,
+    "sourceWidth": 1280,
+    "sourceHeight": 502,
+    "widths": [
+      160,
+      320,
+      600
+    ],
+    "largestAvifBytes": 9742,
+    "largestWebpBytes": 8870,
+    "purpose": "Logo; retain alpha and crisp edges"
+  },
+  {
+    "path": "/images/core-solutions-logo.png",
+    "source": "assets/originals/images/core-solutions-logo.png",
+    "originalBytes": 471207,
+    "sourceWidth": 1000,
+    "sourceHeight": 1000,
+    "widths": [
+      96,
+      192,
+      320
+    ],
+    "largestAvifBytes": 9322,
+    "largestWebpBytes": 30108,
+    "purpose": "Logo; retain alpha and crisp edges"
+  },
+  {
+    "path": "/images/core-solutions-products-hero.png",
+    "source": "assets/originals/images/core-solutions-products-hero.png",
+    "originalBytes": 2250593,
+    "sourceWidth": 1448,
+    "sourceHeight": 1086,
+    "widths": [
+      480,
+      800,
+      1200
+    ],
+    "largestAvifBytes": 98722,
+    "largestWebpBytes": 88688,
+    "purpose": "Home and product heroes; card-specific sizes supplied in markup"
+  },
+  {
+    "path": "/images/iheel-logo-cropped.png",
+    "source": "assets/originals/images/iheel-logo-cropped.png",
+    "originalBytes": 197572,
+    "sourceWidth": 971,
+    "sourceHeight": 337,
+    "widths": [
+      160,
+      320,
+      600
+    ],
+    "largestAvifBytes": 7479,
+    "largestWebpBytes": 6056,
+    "purpose": "Logo; retain alpha and crisp edges"
+  },
+  {
+    "path": "/images/iheel-product.png",
+    "source": "assets/originals/replacements/iHeel_pads_product.jpg",
+    "originalBytes": 2392860,
+    "sourceWidth": 1435,
+    "sourceHeight": 779,
+    "widths": [
+      480,
+      800,
+      1200
+    ],
+    "largestAvifBytes": 150235,
+    "largestWebpBytes": 150226,
+    "purpose": "Home and product heroes; card-specific sizes supplied in markup"
+  },
+  {
+    "path": "/images/kaufland-logo.png",
+    "source": "assets/originals/images/kaufland-logo.png",
+    "originalBytes": 5176,
+    "sourceWidth": 304,
+    "sourceHeight": 76,
+    "widths": [
+      160,
+      304
+    ],
+    "largestAvifBytes": 3605,
+    "largestWebpBytes": 2616,
+    "purpose": "Logo; retain alpha and crisp edges"
+  },
+  {
+    "path": "/images/pillenpopper-product.webp",
+    "source": "assets/source-images/pillenpopper-cleaned.png",
+    "originalBytes": 112654,
+    "sourceWidth": 1400,
+    "sourceHeight": 779,
+    "widths": [
+      480,
+      800,
+      1200
+    ],
+    "largestAvifBytes": 67636,
+    "largestWebpBytes": 59802,
+    "purpose": "Home and product heroes; card-specific sizes supplied in markup"
+  },
+  {
+    "path": "/images/rik-van-wieren-profile.png",
+    "source": "assets/originals/images/rik-van-wieren-profile.png",
+    "originalBytes": 54126,
+    "sourceWidth": 200,
+    "sourceHeight": 200,
+    "widths": [
+      100,
+      200
+    ],
+    "largestAvifBytes": 6509,
+    "largestWebpBytes": 6422,
+    "purpose": "Founder portrait, displayed up to 200 CSS pixels"
+  },
+  {
+    "path": "/images/stores/bennis.jpg",
+    "source": "assets/originals/images/stores/bennis.jpg",
+    "originalBytes": 241277,
+    "sourceWidth": 1936,
+    "sourceHeight": 1296,
+    "widths": [
+      480,
+      800
+    ],
+    "largestAvifBytes": 68022,
+    "largestWebpBytes": 67652,
+    "purpose": "Retail cards, about 390 CSS pixels"
+  },
+  {
+    "path": "/images/stores/boost-lokaal.webp",
+    "source": "assets/originals/images/stores/boost-lokaal.webp",
+    "originalBytes": 191676,
+    "sourceWidth": 1200,
+    "sourceHeight": 800,
+    "widths": [
+      480,
+      800
+    ],
+    "largestAvifBytes": 78744,
+    "largestWebpBytes": 87338,
+    "purpose": "Retail cards, about 390 CSS pixels"
+  },
+  {
+    "path": "/images/stores/de-malle-molen.jpg",
+    "source": "assets/originals/images/stores/de-malle-molen.jpg",
+    "originalBytes": 44194,
+    "sourceWidth": 545,
+    "sourceHeight": 366,
+    "widths": [
+      480,
+      545
+    ],
+    "largestAvifBytes": 39195,
+    "largestWebpBytes": 45094,
+    "purpose": "Retail cards, about 390 CSS pixels"
+  },
+  {
+    "path": "/images/stores/sven.jpg",
+    "source": "assets/originals/images/stores/sven.jpg",
+    "originalBytes": 87823,
+    "sourceWidth": 709,
+    "sourceHeight": 709,
+    "widths": [
+      480,
+      709
+    ],
+    "largestAvifBytes": 69845,
+    "largestWebpBytes": 68172,
+    "purpose": "Retail cards, about 390 CSS pixels"
+  },
+  {
+    "path": "/images/the-hague-skyline.png",
+    "source": "assets/originals/images/the-hague-skyline.png",
+    "originalBytes": 19334005,
+    "sourceWidth": 4276,
+    "sourceHeight": 2702,
+    "widths": [
+      640,
+      960,
+      1600
+    ],
+    "largestAvifBytes": 345943,
+    "largestWebpBytes": 368756,
+    "purpose": "Contact-page panorama, up to about 760 CSS pixels"
+  }
+]

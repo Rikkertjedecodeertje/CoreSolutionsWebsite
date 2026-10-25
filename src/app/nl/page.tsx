@@ -1,3 +1,4 @@
+import { ResponsiveImage } from '@/components/ResponsiveImage';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ButtonLink } from '@/components/ButtonLink';
@@ -47,7 +48,9 @@ export default function DutchHomePage() {
             </div>
           </div>
           <div className="overflow-hidden rounded-card border border-border bg-card shadow-soft">
-            <img
+            <ResponsiveImage
+              loading="eager"
+              fetchPriority="high"
               alt="Core Solutions-productportfolio met schoenen, hielpad en BATBOX-batterijtester"
               className="h-full min-h-80 w-full object-cover"
               src={assetPath('/images/core-solutions-products-hero.png')}

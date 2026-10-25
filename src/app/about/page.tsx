@@ -1,3 +1,4 @@
+import { ResponsiveImage } from '@/components/ResponsiveImage';
 import type { Metadata } from 'next';
 import { Mail } from 'lucide-react';
 import { ButtonLink } from '@/components/ButtonLink';
@@ -77,7 +78,7 @@ export default function AboutPage() {
 
             <aside className="flex h-full flex-col justify-between rounded-card border border-text/10 bg-dark p-6 text-white shadow-soft">
               <div>
-                <img
+                <ResponsiveImage
                   alt="Rik van Wieren, founder of Core Solutions"
                   className="mx-auto aspect-square w-full max-w-[190px] rounded-full object-cover sm:max-w-[200px] lg:max-w-[200px]"
                   src={assetPath('/images/rik-van-wieren-profile.png')}

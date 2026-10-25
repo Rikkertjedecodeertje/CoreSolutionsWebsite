@@ -1,3 +1,4 @@
+import { ResponsiveImage } from '@/components/ResponsiveImage';
 import {
   Battery,
   CheckCircle2,
@@ -35,7 +36,7 @@ const overviewCopy = {
       stages: [
         { title: 'Remove', description: 'Press the lever with the palm or forearm to push a pill out of its blister.', icon: Gauge },
         { title: 'Collect', description: 'The pill falls into a tray, ready to take directly or organise in, for example, a weekly pill organiser.', icon: PackageCheck },
-        { title: 'Split', description: 'Split suitable pills with a separate mechanism, without a sharp blade.', icon: ShieldCheck },
+        { title: 'Split', description: 'Split suitable pills with a separate, patent-pending mechanism, without a sharp blade.', icon: ShieldCheck },
       ],
     },
     'batbox-battery-tester': {
@@ -69,7 +70,7 @@ const overviewCopy = {
       stages: [
         { title: 'Uitdrukken', description: 'Druk de hefboom in met je handpalm of onderarm om een pil uit de strip te halen.', icon: Gauge },
         { title: 'Opvangen', description: 'De pil valt in een bakje en kan zo gemakkelijk direct worden ingenomen of worden verdeeld over bijvoorbeeld een weekdoos.', icon: PackageCheck },
-        { title: 'Splitsen', description: 'Splits geschikte pillen met een apart mechanisme, zonder scherp mes.', icon: ShieldCheck },
+        { title: 'Splitsen', description: 'Splits geschikte pillen met een apart, patent-pending mechanisme, zonder scherp mes.', icon: ShieldCheck },
       ],
     },
     'batbox-battery-tester': {
@@ -87,7 +88,7 @@ const overviewCopy = {
 } as const;
 
 const achievementValues: Record<BrandKey, string[]> = {
-  pillenpopper: ['6', '3', '3D', '2026'],
+  pillenpopper: ['6 + 3', 'PATENT', '3D', '2026'],
   iheel: ['5,000+', '9', 'OMNI', 'RETAIL'],
   'batbox-battery-tester': ['LIVE', 'TOP', 'SEO', '4.9'],
 };
@@ -127,7 +128,7 @@ export function BrandOverviewSystem({
             <div className="mt-8 inline-flex min-h-28 items-center rounded-card bg-white px-6 py-5 shadow-soft">
               {brand === 'pillenpopper' ? (
                 <span className="text-3xl font-semibold text-text">PillenPopper</span>
-              ) : <img
+              ) : <ResponsiveImage
                 alt={isIheel ? 'iHeel logo' : 'BATBOX logo'}
                 className="h-16 w-[250px] max-w-full object-contain object-left"
                 src={assetPath(
