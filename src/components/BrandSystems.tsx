@@ -31,11 +31,11 @@ const overviewCopy = {
     pillenpopper: {
       eyebrow: 'Everyday independence',
       title: 'Three functions for preparing your own pills',
-      description: 'Designed around hands that need less strain and more support during pill preparation.',
+      description: 'The PillenPopper supports people with weak or painful hands in regaining independence and control.',
       stages: [
-        { title: 'Remove', description: 'Press the lever with the palm or forearm to push a tablet out of its blister.', icon: Gauge },
-        { title: 'Collect', description: 'The tablet falls into a tray for easy collection.', icon: PackageCheck },
-        { title: 'Split', description: 'Split suitable tablets with a separate mechanism, without a sharp blade.', icon: ShieldCheck },
+        { title: 'Remove', description: 'Press the lever with the palm or forearm to push a pill out of its blister.', icon: Gauge },
+        { title: 'Collect', description: 'The pill falls into a tray, ready to take directly or organise in, for example, a weekly pill organiser.', icon: PackageCheck },
+        { title: 'Split', description: 'Split suitable pills with a separate mechanism, without a sharp blade.', icon: ShieldCheck },
       ],
     },
     'batbox-battery-tester': {
@@ -65,11 +65,11 @@ const overviewCopy = {
     pillenpopper: {
       eyebrow: 'Dagelijkse zelfstandigheid',
       title: 'Drie functies om zelf je pillen voor te bereiden',
-      description: 'Ontworpen voor handen die minder belasting en meer ondersteuning kunnen gebruiken bij het voorbereiden van pillen.',
+      description: 'De PillenPopper ondersteunt mensen met zwakke of pijnlijke handen bij het terugpakken van zelfstandigheid en controle.',
       stages: [
         { title: 'Uitdrukken', description: 'Druk de hefboom in met je handpalm of onderarm om een pil uit de strip te halen.', icon: Gauge },
-        { title: 'Opvangen', description: 'De pil valt in een bakje en is zo gemakkelijk te verzamelen.', icon: PackageCheck },
-        { title: 'Splitsen', description: 'Splits geschikte tabletten met een apart mechanisme, zonder scherp mes.', icon: ShieldCheck },
+        { title: 'Opvangen', description: 'De pil valt in een bakje en kan zo gemakkelijk direct worden ingenomen of worden verdeeld over bijvoorbeeld een weekdoos.', icon: PackageCheck },
+        { title: 'Splitsen', description: 'Splits geschikte pillen met een apart mechanisme, zonder scherp mes.', icon: ShieldCheck },
       ],
     },
     'batbox-battery-tester': {
@@ -126,7 +126,7 @@ export function BrandOverviewSystem({
             </p>
             <div className="mt-8 inline-flex min-h-28 items-center rounded-card bg-white px-6 py-5 shadow-soft">
               {brand === 'pillenpopper' ? (
-                <span className="text-3xl font-semibold text-text">PillenPopper®</span>
+                <span className="text-3xl font-semibold text-text">PillenPopper</span>
               ) : <img
                 alt={isIheel ? 'iHeel logo' : 'BATBOX logo'}
                 className="h-16 w-[250px] max-w-full object-contain object-left"

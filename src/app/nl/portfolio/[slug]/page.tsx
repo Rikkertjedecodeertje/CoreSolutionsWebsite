@@ -157,7 +157,7 @@ export default function DutchProjectPage({ params }: ProjectPageProps) {
       <section className="border-y border-border bg-card" id={isPillenpopper ? 'availability' : 'sales-channels'}>
         <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <SectionHeader
-            description={isPillenpopper ? 'PillenPopper® wordt voorbereid op marktintroductie. Ontdek hoe je kunt bijdragen aan validatie en de volgende stap naar productie.' : 'Bekijk beschikbare verkoopkanalen, de eigen webshop en retailmogelijkheden voor dit merk.'}
+            description={isPillenpopper ? 'De PillenPopper wordt voorbereid op marktintroductie. Ontdek hoe je kunt bijdragen aan validatie en de volgende stap naar productie.' : 'Bekijk beschikbare verkoopkanalen, de eigen webshop en retailmogelijkheden voor dit merk.'}
             title={isPillenpopper ? 'Beschikbaarheid en samenwerking' : 'Verkoopkanalen'}
           />
           <div className="mt-8 grid gap-4 md:grid-cols-3">

@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { SectionHeader } from '@/components/SectionHeader';
 import { SplitCta } from '@/components/SplitCta';
 import { WhereToBuyExplorer } from '@/components/WhereToBuyExplorer';
@@ -30,12 +29,6 @@ export default function DutchWhereToBuyPage() {
           title="Vind Core Solutions-merken online en bij jou in de buurt"
           description="Filter op merk en land, bekijk online marketplaces of vind de dichtstbijzijnde geselecteerde winkel op de interactieve kaart."
         />
-        <p className="mt-6 rounded-card border border-border bg-card p-5 text-sm leading-6 text-muted">
-          PillenPopper® is nog in voorbereiding op marktintroductie.{' '}
-          <Link className="font-semibold text-steel hover:text-primary" href="/nl/portfolio/pillenpopper/">
-            Bekijk de actuele status en samenwerkingsmogelijkheden.
-          </Link>
-        </p>
         <div className="mt-10">
           <WhereToBuyExplorer locale="nl" />
         </div>

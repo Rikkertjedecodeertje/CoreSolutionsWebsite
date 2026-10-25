@@ -232,18 +232,18 @@ export const projects: Project[] = [
   },
   {
     "slug": "pillenpopper",
-    "name": "PillenPopper®",
-    "shortName": "PillenPopper®",
+    "name": "PillenPopper",
+    "shortName": "PillenPopper",
     "tagline": "Prepare your own pills, even with weak or painful hands.",
     "status": "Preparing for launch",
     "category": "Healthcare",
     "extraTags": [
       "Independent living"
     ],
-    "shortDescription": "A tabletop aid that helps people with reduced hand function remove tablets from blister packs and split suitable tablets without a sharp blade.",
-    "longDescription": "PillenPopper® starts with a small but meaningful part of everyday independence: preparing your own pills. Developed by Rik van Wieren through user research, 3D-printed prototypes and feedback from occupational therapy experts, it combines blister opening, tablet collection and blade-free splitting in one tabletop aid. The next step is independent validation and preparation for production.",
-    "problem": "Pushing tablets out of blister packs can require more grip, pressure and precise finger movement than weak or painful hands can manage comfortably. For people with arthritis, muscle conditions or age-related loss of hand function, a routine task can become painful, frustrating or dependent on someone else's help.",
-    "solution": "PillenPopper® uses a lever that can be pressed with the palm or forearm to push tablets from a blister pack into a collection tray. A separate lever mechanism splits suitable tablets without a sharp blade. The design aims to make pill preparation easier to carry out independently.",
+    "shortDescription": "The PillenPopper helps people with weak or painful hands remove pills from blister packs and split suitable pills without a sharp blade, supporting greater independence and control.",
+    "longDescription": "The PillenPopper starts with a small but meaningful part of everyday independence: preparing your own pills. Core Solutions developed the aid through user research, 3D-printed prototypes and feedback from occupational therapy experts. It combines removing pills from blister packs, collecting them and splitting suitable pills without a sharp blade in one tabletop aid. The next step is independent validation and preparation for production.",
+    "problem": "Pushing pills out of blister packs requires grip, strength and precise finger movements. That can be difficult with weak or painful hands. For people with conditions such as arthritis, muscle disorders or age-related loss of hand function, this everyday task can become painful and frustrating. They may need someone else's help to prepare their medication, losing a degree of independence and control.",
+    "solution": "With the PillenPopper, you simply slide a whole blister strip into a clip. Press a lever with your palm or forearm to push a pill out of the strip and into a collection tray. From there, you can take the pills directly or organise them in, for example, a weekly pill organiser. A separate lever mechanism splits suitable pills without a sharp blade. The PillenPopper is designed to help people regain their independence and control.",
     "targetUsers": [
       "People with weak or painful hands",
       "People with reduced hand function due to arthritis, muscle conditions or ageing",
@@ -251,13 +251,13 @@ export const projects: Project[] = [
     ],
     "features": [
       "Operation with the palm or forearm",
-      "Tablets collected in a tray",
-      "Splits suitable tablets without a sharp blade",
+      "Pills collected in a tray",
+      "Splits suitable pills without a sharp blade",
       "Developed with users and occupational therapy experts",
       "3D-printed prototypes and planned local pilot production"
     ],
     "achievements": [
-      "Early testing with six users",
+      "Developed together with six users",
       "Feedback from three occupational therapy experts",
       "Design refined through 3D-printed prototypes",
       "Nominated for The Hague Student Innovator Award 2026"
@@ -266,7 +266,7 @@ export const projects: Project[] = [
       {
         "label": "Product and launch inquiries",
         "href": "/contact/",
-        "note": "PillenPopper® is not yet available to buy. Contact Core Solutions for current launch information."
+        "note": "The PillenPopper is not yet available to buy. Contact Core Solutions for current launch information."
       },
       {
         "label": "Independent validation",
@@ -292,33 +292,33 @@ export const projects: Project[] = [
       {
         "src": "/images/pillenpopper-product.webp",
         "alt": "Rik van Wieren demonstrates the purple and white PillenPopper prototype",
-        "caption": "PillenPopper® prototype operated with the palm"
+        "caption": "PillenPopper prototype operated with the palm"
       }
     ],
     "faqs": [
       {
-        "question": "Who is PillenPopper® designed for?",
+        "question": "Who is the PillenPopper designed for?",
         "answer": "It is designed for people who have difficulty preparing pills because of weak or painful hands or reduced hand function. Further independent testing is planned to better understand suitability for different users and medication routines."
       },
       {
-        "question": "How does PillenPopper® work?",
-        "answer": "A lever can be pressed with the palm or forearm to push a tablet from its blister into a collection tray. A separate mechanism can split suitable tablets without a sharp blade."
+        "question": "How does the PillenPopper work?",
+        "answer": "With the PillenPopper, you simply slide a whole blister strip into a clip. Press a lever with your palm or forearm to push a pill from the strip into the collection tray. The pill can then be taken directly or organised in, for example, a weekly pill organiser. A separate mechanism can split suitable pills without a sharp blade."
       },
       {
-        "question": "Can every tablet be split?",
-        "answer": "No. Only split a tablet when the instructions for that specific medicine permit it. If you are unsure, ask your pharmacist. PillenPopper® does not determine whether a medicine can be split."
+        "question": "Can every pill be split?",
+        "answer": "No. Only split a pill when the instructions for that specific medicine permit it. If you are unsure, ask your pharmacist. The PillenPopper does not determine whether a medicine can be split."
       },
       {
-        "question": "Has PillenPopper® been tested?",
-        "answer": "The design has been developed with early testing involving six users and feedback from three occupational therapy experts. Further independent validation is planned. Early feedback does not establish that it will work equally well for everyone."
+        "question": "Has the PillenPopper been tested?",
+        "answer": "Six users contributed to the development of the PillenPopper, alongside feedback from three occupational therapy experts. The next step is further independent validation."
       },
       {
-        "question": "Can I buy PillenPopper® already?",
-        "answer": "PillenPopper® is being prepared for market introduction and is not yet available to buy. Contact Core Solutions for current information or to discuss testing and collaboration."
+        "question": "Can I buy the PillenPopper already?",
+        "answer": "The PillenPopper is being prepared for market introduction and is not yet available to buy. Contact Core Solutions for current information or to discuss testing and collaboration."
       }
     ],
-    "seoTitle": "PillenPopper® | Independent Pill Preparation",
-    "seoDescription": "Discover PillenPopper®, a tabletop aid for people with weak or painful hands. Remove tablets from blister packs and split suitable tablets without a sharp blade."
+    "seoTitle": "The PillenPopper | Prepare Your Own Pills",
+    "seoDescription": "The PillenPopper helps you remove pills from blister packs and split suitable pills without a sharp blade. Designed for greater independence with weak or painful hands."
   },
 ];
 
@@ -345,7 +345,7 @@ export const mediaHighlights = [
     projectSlug: 'pillenpopper',
     title: 'Core Solutions nominated for The Hague Student Innovator Award 2026',
     description:
-      'ImpactCity names Core Solutions among the five student nominees for PillenPopper, a device that helps people with reduced hand function remove tablets from blister packs independently.',
+      'ImpactCity names Core Solutions among the five student nominees for the PillenPopper, a device that helps people with reduced hand function remove pills from blister packs independently.',
     source: 'ImpactCity',
     date: '22 September 2026',
     href: 'https://www.impactcity.nl/nominaties-voor-the-hague-innovators-awards-2026-bekendgemaakt/',

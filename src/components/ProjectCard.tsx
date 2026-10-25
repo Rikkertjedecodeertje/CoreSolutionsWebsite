@@ -46,7 +46,9 @@ export function ProjectCard({ project, locale = 'en' }: ProjectCardProps) {
               />
             </div>
           ) : (
-            <h3 className="text-2xl font-semibold text-text">{project.name}</h3>
+            <div className="flex h-14 w-[210px] max-w-full items-center">
+              <h3 className="whitespace-nowrap text-[44px] font-semibold leading-none tracking-tight text-text">{project.name}</h3>
+            </div>
           )}
           {project.status ? (
             <p className="mt-2 text-xs font-semibold uppercase tracking-wide text-steel">

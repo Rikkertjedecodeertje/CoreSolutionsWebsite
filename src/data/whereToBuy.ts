@@ -1,4 +1,4 @@
-export type ProductKey = 'iheel' | 'batbox';
+export type ProductKey = 'iheel' | 'batbox' | 'pillenpopper';
 
 export type CountryKey =
   | 'netherlands'
@@ -32,7 +32,7 @@ export type RetailPoint = {
   address: string[];
   postcode: string;
   city: string;
-  product: ProductKey;
+  product: ProductKey | ProductKey[];
   country: CountryKey;
   lat: number;
   lon: number;
@@ -49,6 +49,7 @@ export const products = [
   { key: 'all', label: 'All brands' },
   { key: 'iheel', label: 'iHeel®' },
   { key: 'batbox', label: 'BATBOX®' },
+  { key: 'pillenpopper', label: 'PillenPopper' },
 ] as const;
 
 export const countries: { key: CountryKey; label: string }[] = [
@@ -157,6 +158,59 @@ export const salesChannels: SalesChannel[] = [
 ];
 
 export const retailPoints: RetailPoint[] = [
+  {
+    "id": "boost-lokaal",
+    "name": "Boost Lokaal",
+    "address": [
+      "Papsouwselaan 484",
+      "2624 EP Delft",
+      "Nederland"
+    ],
+    "postcode": "2624EP",
+    "city": "Delft",
+    "product": [
+      "iheel",
+      "batbox"
+    ],
+    "country": "netherlands",
+    "lat": 51.9975663,
+    "lon": 4.3544559,
+    "photo": "/images/stores/boost-lokaal.webp",
+    "photoAlt": "Boost Lokaal in Winkelcentrum De Hoven, Delft",
+    "website": "https://www.newfuturelab.nl/nieuws/boost-lokaal",
+    "hours": [
+      {
+        "day": "Monday",
+        "hours": "13:30–17:30"
+      },
+      {
+        "day": "Tuesday",
+        "hours": "09:30–17:30"
+      },
+      {
+        "day": "Wednesday",
+        "hours": "09:30–17:30"
+      },
+      {
+        "day": "Thursday",
+        "hours": "09:30–17:30"
+      },
+      {
+        "day": "Friday",
+        "hours": "09:30–18:00"
+      },
+      {
+        "day": "Saturday",
+        "hours": "09:30–17:30"
+      },
+      {
+        "day": "Sunday",
+        "hours": "Closed"
+      }
+    ],
+    "detailsSource": "https://www.newfuturelab.nl/nieuws/boost-lokaal",
+    "detailsSourceLabel": "New Future Lab"
+  },
   {
     id: 'de-malle-molen',
     name: 'Schoenmakerij en sleutelservice De Malle Molen',

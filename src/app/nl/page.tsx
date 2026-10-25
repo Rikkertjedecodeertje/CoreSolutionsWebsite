@@ -11,7 +11,7 @@ import { assetPath } from '@/lib/sitePath';
 export const metadata: Metadata = {
   title: 'Praktische productoplossingen',
   description:
-    'Core Solutions ontwikkelt en commercialiseert praktische productmerken, waaronder iHeel®, BATBOX® en PillenPopper®.',
+    'Core Solutions ontwikkelt en commercialiseert praktische productmerken, waaronder iHeel®, BATBOX® en PillenPopper.',
   alternates: {
     canonical: '/nl/',
     languages: { en: '/', nl: '/nl/' },
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Core Solutions | Praktische productoplossingen',
     description:
-      'Core Solutions ontwikkelt en commercialiseert praktische productmerken, waaronder iHeel®, BATBOX® en PillenPopper®.',
+      'Core Solutions ontwikkelt en commercialiseert praktische productmerken, waaronder iHeel®, BATBOX® en PillenPopper.',
     url: '/nl/',
     locale: 'nl_NL',
   },
@@ -100,7 +100,7 @@ export default function DutchHomePage() {
                 <span className="mt-4 inline-block font-semibold text-steel">Lees het artikel <span aria-hidden="true">↗</span></span>
               </a>
               <Link className="mx-5 mb-5 inline-block font-semibold text-steel hover:text-primary" href={`/nl/portfolio/${item.projectSlug}/`}>
-                Ontdek de PillenPopper® <span aria-hidden="true">→</span>
+                Ontdek de PillenPopper <span aria-hidden="true">→</span>
               </Link>
             </article>
           ))}

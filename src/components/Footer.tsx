@@ -20,7 +20,7 @@ const footerGroups = {
       links: [
         { href: '/portfolio/iheel/', label: 'iHeel® pads' },
         { href: '/portfolio/batbox-battery-tester/', label: 'BATBOX® Tester' },
-        { href: '/portfolio/pillenpopper/', label: 'PillenPopper®' },
+        { href: '/portfolio/pillenpopper/', label: 'PillenPopper' },
       ],
     },
     {
@@ -45,7 +45,7 @@ const footerGroups = {
       links: [
         { href: '/nl/portfolio/iheel/', label: 'iHeel® pads' },
         { href: '/nl/portfolio/batbox-battery-tester/', label: 'BATBOX® Tester' },
-        { href: '/nl/portfolio/pillenpopper/', label: 'PillenPopper®' },
+        { href: '/nl/portfolio/pillenpopper/', label: 'PillenPopper' },
       ],
     },
     {

@@ -209,8 +209,8 @@ const channelLogos: Partial<
   },
 };
 
-function productMatches(filter: ProductFilter, product: ProductKey) {
-  return filter === 'all' || filter === product;
+function productMatches(filter: ProductFilter, product: ProductKey | ProductKey[]) {
+  return filter === 'all' || (Array.isArray(product) ? product.includes(filter) : filter === product);
 }
 
 function distanceInKm(origin: SearchOrigin, point: RetailPoint) {
@@ -476,6 +476,7 @@ export function WhereToBuyExplorer({ locale = 'en' }: { locale?: 'en' | 'nl' }) 
                       : 'border-border bg-background text-muted hover:border-primary hover:text-primary'
                   }`}
                   key={item.key}
+                  aria-pressed={product === item.key}
                   onClick={() => setProduct(item.key)}
                   type="button"
                 >
@@ -506,6 +507,18 @@ export function WhereToBuyExplorer({ locale = 'en' }: { locale?: 'en' | 'nl' }) 
         </div>
       </section>
 
+      {product === 'pillenpopper' ? (
+        <section className="rounded-card border border-border bg-card p-6" aria-live="polite">
+          <h2 className="text-2xl font-semibold text-text">{locale === 'nl' ? 'De PillenPopper' : 'The PillenPopper'}</h2>
+          <p className="mt-3 text-sm leading-6 text-muted">
+            {locale === 'nl' ? 'De PillenPopper is nog in voorbereiding op marktintroductie.' : 'The PillenPopper is still being prepared for launch.'}
+          </p>
+          <Link className="mt-3 inline-block font-semibold text-steel hover:text-primary" href={locale === 'nl' ? '/nl/portfolio/pillenpopper/' : '/portfolio/pillenpopper/'}>
+            {locale === 'nl' ? 'Bekijk de actuele status en samenwerkingsmogelijkheden.' : 'View its current status and collaboration opportunities.'}
+          </Link>
+        </section>
+      ) : (
+        <>
       <section>
         <div className="flex items-end justify-between gap-5">
           <div>
@@ -815,6 +828,8 @@ export function WhereToBuyExplorer({ locale = 'en' }: { locale?: 'en' | 'nl' }) 
           {text.mapCredit}
         </p>
       </section>
+        </>
+      )}
     </div>
   );
 }

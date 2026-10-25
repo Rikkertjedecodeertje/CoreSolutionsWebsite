@@ -135,7 +135,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       <section className="border-y border-border bg-card" id={isPillenpopper ? 'availability' : 'sales-channels'}>
         <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <SectionHeader
-            description={isPillenpopper ? 'PillenPopper® is being prepared for launch. Explore opportunities to contribute to validation and the next step towards production.' : 'Explore available sales channels, own webshop options and retail opportunities for this brand.'}
+            description={isPillenpopper ? 'The PillenPopper is being prepared for launch. Explore opportunities to contribute to validation and the next step towards production.' : 'Explore available sales channels, own webshop options and retail opportunities for this brand.'}
             title={isPillenpopper ? 'Availability and collaboration' : 'Sales channels'}
           />
           <div className="mt-8 grid gap-4 md:grid-cols-3">

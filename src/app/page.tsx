@@ -85,7 +85,7 @@ export default function HomePage() {
                 <span className="mt-4 inline-block font-semibold text-steel">Read the article <span aria-hidden="true">↗</span></span>
               </a>
               <Link className="mx-5 mb-5 inline-block font-semibold text-steel hover:text-primary" href={`/portfolio/${item.projectSlug}/`}>
-                Discover PillenPopper® <span aria-hidden="true">→</span>
+                Discover the PillenPopper <span aria-hidden="true">→</span>
               </Link>
             </article>
           ))}

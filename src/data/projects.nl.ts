@@ -170,18 +170,18 @@ export const projectsNl: Project[] = [
   },
   {
     "slug": "pillenpopper",
-    "name": "PillenPopper®",
-    "shortName": "PillenPopper®",
+    "name": "PillenPopper",
+    "shortName": "PillenPopper",
     "tagline": "Zelf je pillen voorbereiden, ook met zwakke of pijnlijke handen.",
     "status": "In voorbereiding op marktintroductie",
     "category": "Gezondheidszorg",
     "extraTags": [
       "Zelfstandig leven"
     ],
-    "shortDescription": "Een tafelhulpmiddel dat mensen met verminderde handfunctie helpt pillen uit strips te halen en geschikte tabletten te splitsen zonder scherp mes.",
-    "longDescription": "PillenPopper® begint bij een klein maar belangrijk stukje dagelijkse zelfstandigheid: zelf je pillen voorbereiden. Rik van Wieren ontwikkelde het hulpmiddel via gebruikersonderzoek, 3D-geprinte prototypes en feedback van ergotherapeutische experts. Het combineert pillen uit strips halen, opvangen en splitsen zonder scherp mes in één tafelhulpmiddel. De volgende stap is onafhankelijke validatie en voorbereiding op productie.",
-    "problem": "Pillen uit strips drukken vraagt om grip, kracht en nauwkeurige vingerbewegingen. Dat kan lastig zijn met zwakke of pijnlijke handen. Voor mensen met reuma, een spierziekte of verminderde handfunctie door ouderdom kan een dagelijkse handeling daardoor pijnlijk en frustrerend worden, of alleen met hulp van iemand anders lukken.",
-    "solution": "Met de PillenPopper® druk je een hefboom in met je handpalm of onderarm. De pil komt uit de strip en valt in een opvangbakje. Een apart hefboommechanisme splitst geschikte tabletten zonder scherp mes. Het ontwerp is erop gericht om zelf je pillen voorbereiden eenvoudiger te maken.",
+    "shortDescription": "De PillenPopper helpt mensen met zwakke of pijnlijke handen om zelf pillen uit strips te halen en geschikte pillen te splitsen zonder scherp mes, met meer zelfstandigheid en controle.",
+    "longDescription": "De PillenPopper begint bij een klein maar belangrijk stukje dagelijkse zelfstandigheid: zelf je pillen voorbereiden. Core Solutions ontwikkelde het hulpmiddel via gebruikersonderzoek, 3D-geprinte prototypes en feedback van ergotherapeutische experts. Het combineert pillen uit strips halen, opvangen en splitsen zonder scherp mes in één tafelhulpmiddel. De volgende stap is onafhankelijke validatie en voorbereiding op productie.",
+    "problem": "Pillen uit strips drukken vraagt om grip, kracht en nauwkeurige vingerbewegingen. Dat kan lastig zijn met zwakke of pijnlijke handen. Voor mensen met bijvoorbeeld reuma, een spierziekte of verminderde handfunctie door ouderdom kan deze dagelijkse handeling daardoor pijnlijk en frustrerend worden. Zij kunnen afhankelijk worden van hulp bij het voorbereiden van hun medicatie en daarmee een stukje zelfstandigheid en controle verliezen.",
+    "solution": "Met de PillenPopper schuif je een hele pillenstrip eenvoudig in een clip. Je drukt een hefboom in met je handpalm of onderarm, waarna de pil uit de strip komt en in een opvangbakje valt. Van daaruit kun je de pillen direct innemen of verdelen over bijvoorbeeld een weekdoos. Een apart hefboommechanisme splitst geschikte pillen zonder scherp mes. De PillenPopper is ontworpen om mensen in staat te stellen hun zelfstandigheid en controle terug te pakken.",
     "targetUsers": [
       "Mensen met zwakke of pijnlijke handen",
       "Mensen met verminderde handfunctie door reuma, een spierziekte of ouderdom",
@@ -190,12 +190,12 @@ export const projectsNl: Project[] = [
     "features": [
       "Bediening met handpalm of onderarm",
       "Pillen opgevangen in een bakje",
-      "Geschikte tabletten splitsen zonder scherp mes",
+      "Geschikte pillen splitsen zonder scherp mes",
       "Ontwikkeld met gebruikers en ergotherapeutische experts",
       "3D-geprinte prototypes en geplande lokale pilotproductie"
     ],
     "achievements": [
-      "Eerste gebruikerstesten met zes gebruikers",
+      "Ontwikkeld in samenwerking met zes gebruikers",
       "Feedback van drie ergotherapeutische experts",
       "Ontwerp verfijnd met 3D-geprinte prototypes",
       "Genomineerd voor The Hague Student Innovator Award 2026"
@@ -204,7 +204,7 @@ export const projectsNl: Project[] = [
       {
         "label": "Productinformatie en marktintroductie",
         "href": "/contact/",
-        "note": "PillenPopper® is nog niet te koop. Neem contact op met Core Solutions voor actuele informatie over de marktintroductie."
+        "note": "De PillenPopper is nog niet te koop. Neem contact op met Core Solutions voor actuele informatie over de marktintroductie."
       },
       {
         "label": "Onafhankelijke validatie",
@@ -230,33 +230,33 @@ export const projectsNl: Project[] = [
       {
         "src": "/images/pillenpopper-product.webp",
         "alt": "Rik van Wieren demonstreert het paarse en witte PillenPopper-prototype",
-        "caption": "PillenPopper®-prototype bediend met de handpalm"
+        "caption": "PillenPopper-prototype bediend met de handpalm"
       }
     ],
     "faqs": [
       {
-        "question": "Voor wie is de PillenPopper® bedoeld?",
+        "question": "Voor wie is de PillenPopper bedoeld?",
         "answer": "Voor mensen die moeite hebben met het voorbereiden van pillen door zwakke of pijnlijke handen of verminderde handfunctie. Aanvullend onafhankelijk onderzoek is gepland om de geschiktheid voor verschillende gebruikers en medicatieroutines beter te begrijpen."
       },
       {
-        "question": "Hoe werkt de PillenPopper®?",
-        "answer": "Je drukt een hefboom in met je handpalm of onderarm om een pil uit de strip in het opvangbakje te drukken. Een apart mechanisme kan geschikte tabletten splitsen zonder scherp mes."
+        "question": "Hoe werkt de PillenPopper?",
+        "answer": "Met de PillenPopper schuif je een hele pillenstrip eenvoudig in een clip. Je drukt een hefboom in met je handpalm of onderarm om een pil uit de strip in het opvangbakje te drukken. De pil kan daarna direct worden ingenomen of worden verdeeld over bijvoorbeeld een weekdoos. Een apart mechanisme kan geschikte pillen splitsen zonder scherp mes."
       },
       {
-        "question": "Mag je iedere tablet splitsen?",
-        "answer": "Nee. Splits een tablet alleen wanneer de instructies van dat specifieke geneesmiddel dit toestaan. Vraag bij twijfel je apotheker om advies. De PillenPopper® bepaalt niet of een geneesmiddel gesplitst mag worden."
+        "question": "Mag je iedere pil splitsen?",
+        "answer": "Nee. Splits een pil alleen wanneer de instructies van dat specifieke geneesmiddel dit toestaan. Vraag bij twijfel je apotheker om advies. De PillenPopper bepaalt niet of een geneesmiddel gesplitst mag worden."
       },
       {
-        "question": "Is de PillenPopper® al getest?",
-        "answer": "Het ontwerp is ontwikkeld met eerste tests met zes gebruikers en feedback van drie ergotherapeutische experts. Verdere onafhankelijke validatie is gepland. De eerste ervaringen betekenen niet dat het hulpmiddel voor iedereen even goed werkt."
+        "question": "Is de PillenPopper al getest?",
+        "answer": "Zes gebruikers hebben bijgedragen aan de ontwikkeling van de PillenPopper, naast feedback van drie ergotherapeutische experts. De volgende stap is verdere onafhankelijke validatie."
       },
       {
-        "question": "Kan ik de PillenPopper® al kopen?",
-        "answer": "PillenPopper® wordt voorbereid op marktintroductie en is nog niet te koop. Neem contact op met Core Solutions voor actuele informatie of om testen en samenwerking te bespreken."
+        "question": "Kan ik de PillenPopper al kopen?",
+        "answer": "De PillenPopper wordt voorbereid op marktintroductie en is nog niet te koop. Neem contact op met Core Solutions voor actuele informatie of om testen en samenwerking te bespreken."
       }
     ],
-    "seoTitle": "PillenPopper® | Zelf je pillen voorbereiden",
-    "seoDescription": "Ontdek de PillenPopper®, een tafelhulpmiddel voor mensen met zwakke of pijnlijke handen. Haal pillen uit strips en splits geschikte tabletten zonder scherp mes."
+    "seoTitle": "De PillenPopper | Zelf je pillen voorbereiden",
+    "seoDescription": "Met de PillenPopper haal je zelf pillen uit strips en splits je geschikte pillen zonder scherp mes. Ontworpen voor meer zelfstandigheid met zwakke of pijnlijke handen."
   },
 ];
 
