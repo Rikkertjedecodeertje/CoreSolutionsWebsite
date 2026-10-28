@@ -85,8 +85,13 @@ export default function HomePage() {
                 <p className="text-sm font-semibold text-steel">{item.source} · {item.date}</p>
                 <h3 className="mt-2 font-semibold text-text">{item.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-muted">{item.description}</p>
-                <span className="mt-4 inline-block font-semibold text-steel">Read the article <span aria-hidden="true">↗</span></span>
+                <span className="mt-4 inline-block font-semibold text-steel">{item.linkLabel ?? 'Read the article'} <span aria-hidden="true">↗</span></span>
               </a>
+              {item.additionalLinks?.map((link) => (
+                <a className="mx-5 mb-5 block w-fit font-semibold text-steel hover:text-primary" href={link.href} key={link.href} target="_blank" rel="noopener noreferrer">
+                  {link.label} <span aria-hidden="true">↗</span>
+                </a>
+              ))}
               <Link className="mx-5 mb-5 inline-block font-semibold text-steel hover:text-primary" href={`/portfolio/${item.projectSlug}/`}>
                 Discover the PillenPopper <span aria-hidden="true">→</span>
               </Link>

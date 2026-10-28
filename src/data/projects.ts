@@ -11,7 +11,11 @@ export type MediaMention = {
   href?: string;
   source?: string;
   date?: string;
+  linkLabel?: string;
+  additionalLinks?: { label: string; href: string }[];
 };
+
+export type MediaHighlight = MediaMention & { projectSlug: string };
 
 export type GalleryItem = {
   src: string;
@@ -281,6 +285,20 @@ export const projects: Project[] = [
     ],
     "mediaMentions": [
       {
+        "title": "The PillenPopper on Den Haag FM",
+        "description": "Rik van Wieren talks about the PillenPopper and helping people with weak or painful hands. Listen to the interview in two parts (in Dutch).",
+        "href": "https://media.denhaagfm.nl/audio/denhaagfm/202610271900.mp3#t=470,670",
+        "source": "Den Haag FM",
+        "date": "27 October 2026",
+        "linkLabel": "Listen to part 1 (7:50 to 11:10)",
+        "additionalLinks": [
+          {
+            "label": "Listen to part 2 (19:00 to 22:45)",
+            "href": "https://media.denhaagfm.nl/audio/denhaagfm/202610271900.mp3#t=1140,1365"
+          }
+        ]
+      },
+      {
         "title": "Rik van Wieren and the story behind the PillenPopper",
         "description": "The Hague Online profiles Rik van Wieren, the development of the PillenPopper and his work supporting student entrepreneurs.",
         "href": "https://thehagueonline.com/community-story-meet-rik-van-wieren-the-entrepreneur-behind-the-pillenpopper/",
@@ -347,7 +365,22 @@ export const editableMetrics = [
   },
 ];
 
-export const mediaHighlights = [
+export const mediaHighlights: MediaHighlight[] = [
+  {
+    "projectSlug": "pillenpopper",
+    "title": "The PillenPopper on Den Haag FM",
+    "description": "Rik van Wieren talks about the PillenPopper and helping people with weak or painful hands. Listen to the interview in two parts (in Dutch).",
+    "href": "https://media.denhaagfm.nl/audio/denhaagfm/202610271900.mp3#t=470,670",
+    "source": "Den Haag FM",
+    "date": "27 October 2026",
+    "linkLabel": "Listen to part 1 (7:50 to 11:10)",
+    "additionalLinks": [
+      {
+        "label": "Listen to part 2 (19:00 to 22:45)",
+        "href": "https://media.denhaagfm.nl/audio/denhaagfm/202610271900.mp3#t=1140,1365"
+      }
+    ]
+  },
   {
     "projectSlug": "pillenpopper",
     "title": "Rik van Wieren and the story behind the PillenPopper",

@@ -26,9 +26,14 @@ export function MediaSection({
             <p className="mt-2 text-sm leading-6 text-muted">{mention.description}</p>
             {mention.href && (
               <a className="mt-4 inline-block font-semibold text-steel hover:text-primary" href={mention.href} target="_blank" rel="noopener noreferrer">
-                {locale === 'nl' ? 'Lees het artikel' : 'Read the article'} <span aria-hidden="true">↗</span>
+                {mention.linkLabel ?? (locale === 'nl' ? 'Lees het artikel' : 'Read the article')} <span aria-hidden="true">↗</span>
               </a>
             )}
+            {mention.additionalLinks?.map((link) => (
+              <a className="mt-3 block w-fit font-semibold text-steel hover:text-primary" href={link.href} key={link.href} target="_blank" rel="noopener noreferrer">
+                {link.label} <span aria-hidden="true">↗</span>
+              </a>
+            ))}
           </article>
         ))}
       </div>
