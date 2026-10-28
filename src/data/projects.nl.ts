@@ -219,6 +219,13 @@ export const projectsNl: Project[] = [
     ],
     "mediaMentions": [
       {
+        "title": "Rik van Wieren en het verhaal achter de PillenPopper",
+        "description": "The Hague Online interviewt Rik van Wieren over de ontwikkeling van de PillenPopper en zijn werk voor de community van studentondernemers.",
+        "href": "https://thehagueonline.com/community-story-meet-rik-van-wieren-the-entrepreneur-behind-the-pillenpopper/",
+        "source": "The Hague Online",
+        "date": "25 oktober 2026"
+      },
+      {
         "title": "Core Solutions genomineerd voor The Hague Student Innovator Award 2026",
         "description": "ImpactCity noemt Core Solutions als een van de studentgenomineerden voor het helpen van mensen met beperkte handfunctie om zelfstandig medicijnen uit blisters te halen.",
         "href": "https://www.impactcity.nl/nominaties-voor-the-hague-innovators-awards-2026-bekendgemaakt/",
@@ -279,6 +286,14 @@ export const editableMetricsNl = [
 ];
 
 export const mediaHighlightsNl = [
+  {
+    "projectSlug": "pillenpopper",
+    "title": "Rik van Wieren en het verhaal achter de PillenPopper",
+    "description": "The Hague Online interviewt Rik van Wieren over de ontwikkeling van de PillenPopper en zijn werk voor de community van studentondernemers.",
+    "href": "https://thehagueonline.com/community-story-meet-rik-van-wieren-the-entrepreneur-behind-the-pillenpopper/",
+    "source": "The Hague Online",
+    "date": "25 oktober 2026"
+  },
   {
     projectSlug: 'pillenpopper',
     title: 'Core Solutions genomineerd voor The Hague Student Innovator Award 2026',
