@@ -285,6 +285,13 @@ export const projects: Project[] = [
     ],
     "mediaMentions": [
       {
+        "title": "Rik (23) from The Hague develops a device to help people remove pills independently",
+        "description": "De Nieuwe Haagse Courant covers the PillenPopper, its development with users and occupational therapists, and the planned pilot with one hundred devices (article in Dutch).",
+        "href": "https://dnhc.nl/voorpagina/haagse-rik-23-ontwikkelt-hulpmiddel-waarmee-mensen-zelfstandig-pillen-kunnen-uitdrukken/",
+        "source": "De Nieuwe Haagse Courant",
+        "date": "31 October 2026"
+      },
+      {
         "title": "The PillenPopper on Den Haag FM",
         "description": "Rik van Wieren talks about the PillenPopper and helping people with weak or painful hands. Listen to the interview in two parts (in Dutch).",
         "href": "https://media.denhaagfm.nl/audio/denhaagfm/202610271900.mp3#t=470,670",
@@ -366,6 +373,14 @@ export const editableMetrics = [
 ];
 
 export const mediaHighlights: MediaHighlight[] = [
+  {
+    "projectSlug": "pillenpopper",
+    "title": "Rik (23) from The Hague develops a device to help people remove pills independently",
+    "description": "De Nieuwe Haagse Courant covers the PillenPopper, its development with users and occupational therapists, and the planned pilot with one hundred devices (article in Dutch).",
+    "href": "https://dnhc.nl/voorpagina/haagse-rik-23-ontwikkelt-hulpmiddel-waarmee-mensen-zelfstandig-pillen-kunnen-uitdrukken/",
+    "source": "De Nieuwe Haagse Courant",
+    "date": "31 October 2026"
+  },
   {
     "projectSlug": "pillenpopper",
     "title": "The PillenPopper on Den Haag FM",

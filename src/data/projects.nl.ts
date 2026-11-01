@@ -219,6 +219,13 @@ export const projectsNl: Project[] = [
     ],
     "mediaMentions": [
       {
+        "title": "Haagse Rik (23) ontwikkelt hulpmiddel waarmee mensen zelfstandig pillen kunnen uitdrukken",
+        "description": "De Nieuwe Haagse Courant schrijft over de PillenPopper, de ontwikkeling met gebruikers en ergotherapeuten en de geplande pilot met honderd hulpmiddelen.",
+        "href": "https://dnhc.nl/voorpagina/haagse-rik-23-ontwikkelt-hulpmiddel-waarmee-mensen-zelfstandig-pillen-kunnen-uitdrukken/",
+        "source": "De Nieuwe Haagse Courant",
+        "date": "31 oktober 2026"
+      },
+      {
         "title": "De PillenPopper op Den Haag FM",
         "description": "Rik van Wieren vertelt over de PillenPopper en het helpen van mensen met zwakke of pijnlijke handen. Luister het interview terug in twee delen.",
         "href": "https://media.denhaagfm.nl/audio/denhaagfm/202610271900.mp3#t=470,670",
@@ -300,6 +307,14 @@ export const editableMetricsNl = [
 ];
 
 export const mediaHighlightsNl: MediaHighlight[] = [
+  {
+    "projectSlug": "pillenpopper",
+    "title": "Haagse Rik (23) ontwikkelt hulpmiddel waarmee mensen zelfstandig pillen kunnen uitdrukken",
+    "description": "De Nieuwe Haagse Courant schrijft over de PillenPopper, de ontwikkeling met gebruikers en ergotherapeuten en de geplande pilot met honderd hulpmiddelen.",
+    "href": "https://dnhc.nl/voorpagina/haagse-rik-23-ontwikkelt-hulpmiddel-waarmee-mensen-zelfstandig-pillen-kunnen-uitdrukken/",
+    "source": "De Nieuwe Haagse Courant",
+    "date": "31 oktober 2026"
+  },
   {
     "projectSlug": "pillenpopper",
     "title": "De PillenPopper op Den Haag FM",
