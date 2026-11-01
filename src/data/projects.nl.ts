@@ -195,7 +195,7 @@ export const projectsNl: Project[] = [
       "3D-geprinte prototypes en geplande lokale pilotproductie"
     ],
     "achievements": [
-      "Ontwikkeld in samenwerking met zes gebruikers en drie ergotherapeutische experts",
+      "Ontwikkeld in samenwerking met gebruikers en ergotherapeutische experts",
       "Patent-pending splitmechaniek voor pillen",
       "Ontwerp verfijnd met 3D-geprinte prototypes",
       "Genomineerd voor The Hague Student Innovator Award 2026"

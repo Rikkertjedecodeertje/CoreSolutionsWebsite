@@ -60,12 +60,6 @@ img {
     linear-gradient(112deg, #f6f5f2 0%, #e8ebec 55%, #d9dddf 100%);
 }
 
-.achievement-glow {
-  text-shadow:
-    0 0 9px rgba(79, 109, 138, 0.62),
-    0 0 20px rgba(108, 143, 122, 0.38);
-}
-
 .rocket-flight {
   animation: rocket-flight 6s cubic-bezier(0.48, 0.08, 0.24, 1) infinite;
 }

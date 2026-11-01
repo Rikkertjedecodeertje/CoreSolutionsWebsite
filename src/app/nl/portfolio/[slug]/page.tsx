@@ -155,6 +155,7 @@ export default function DutchProjectPage({ params }: ProjectPageProps) {
           <AchievementSystem
             brand={brand}
             items={project.achievements}
+            locale="nl"
           />
         </div>
       </section>

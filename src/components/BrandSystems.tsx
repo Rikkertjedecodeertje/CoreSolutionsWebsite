@@ -88,7 +88,7 @@ const overviewCopy = {
 } as const;
 
 const achievementValues: Record<BrandKey, string[]> = {
-  pillenpopper: ['6 + 3', 'PATENT', '3D', '2026'],
+  pillenpopper: ['TOGETHER', 'PATENT', '3D', '2026'],
   iheel: ['5,000+', '9', 'OMNI', 'RETAIL'],
   'batbox-battery-tester': ['LIVE', 'TOP', 'SEO', '4.9'],
 };
@@ -171,11 +171,15 @@ export function BrandOverviewSystem({
 export function AchievementSystem({
   brand,
   items,
+  locale = 'en',
 }: {
   brand: BrandKey;
   items: string[];
+  locale?: Locale;
 }) {
-  const values = achievementValues[brand];
+  const values = brand === 'pillenpopper' && locale === 'nl'
+    ? ['SAMEN', ...achievementValues[brand].slice(1)]
+    : achievementValues[brand];
   const icons = achievementIcons[brand];
 
   return (
@@ -193,7 +197,7 @@ export function AchievementSystem({
             />
             <div className="relative flex min-h-32 flex-col">
               <div className="flex items-start justify-between gap-4">
-                <span className="achievement-glow text-2xl font-black leading-none text-steel">
+                <span className="text-2xl font-black leading-none text-steel">
                   {values[index] ?? 'OK'}
                 </span>
                 <Icon aria-hidden="true" className="h-5 w-5 text-secondary" />

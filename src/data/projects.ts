@@ -261,7 +261,7 @@ export const projects: Project[] = [
       "3D-printed prototypes and planned local pilot production"
     ],
     "achievements": [
-      "Developed together with six users and three occupational therapy experts",
+      "Developed together with users and occupational therapy experts",
       "Patent-pending pill-splitting mechanism",
       "Design refined through 3D-printed prototypes",
       "Nominated for The Hague Student Innovator Award 2026"
