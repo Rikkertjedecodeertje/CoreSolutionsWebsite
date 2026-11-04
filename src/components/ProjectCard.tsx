@@ -10,6 +10,7 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project, locale = 'en' }: ProjectCardProps) {
   const prefix = locale === 'nl' ? '/nl' : '';
+  const cardImage = project.cardImage ?? project.gallery[0];
 
   return (
     <article className="group overflow-hidden rounded-card border border-border bg-card shadow-sm transition hover:-translate-y-1 hover:shadow-soft">
@@ -19,10 +20,10 @@ export function ProjectCard({ project, locale = 'en' }: ProjectCardProps) {
       >
         <ResponsiveImage
           sizes="(min-width: 1280px) 390px, (min-width: 768px) calc((100vw - 64px) / 2), calc(100vw - 40px)"
-          alt={project.gallery[0]?.alt ?? `${project.name} placeholder image`}
-          style={project.slug === 'pillenpopper' ? { objectPosition: 'left center' } : undefined}
+          alt={cardImage?.alt ?? `${project.name} placeholder image`}
+          style={project.slug === 'pillenpopper' ? { objectPosition: '60% 55%' } : undefined}
           className="h-56 w-full border-b border-border object-cover"
-          src={assetPath(project.gallery[0]?.src ?? '/images/marketplace-placeholder.svg')}
+          src={assetPath(cardImage?.src ?? '/images/marketplace-placeholder.svg')}
         />
         <div className="p-6">
           <div className="mb-4 flex flex-wrap items-center gap-2">

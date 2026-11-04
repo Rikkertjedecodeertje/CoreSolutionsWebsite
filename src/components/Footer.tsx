@@ -1,4 +1,5 @@
 'use client';
+import { getWaitlistLocale, waitlistPaths } from '@/lib/pillenpopperWaitlist';
 import { ResponsiveImage } from '@/components/ResponsiveImage';
 
 
@@ -63,7 +64,9 @@ const footerGroups = {
 
 export function Footer() {
   const pathname = usePathname() || '/';
-  const isNl = pathname === '/nl' || pathname.startsWith('/nl/');
+  const waitlistLocale = getWaitlistLocale(pathname);
+  const isWaitlist = waitlistLocale !== null;
+  const isNl = waitlistLocale === 'nl' || pathname === '/nl' || pathname.startsWith('/nl/');
   const copy = isNl
     ? {
         descriptor: 'Fysieke productstudio & merkenportfolio',
@@ -83,6 +86,15 @@ export function Footer() {
         connect: 'Connect',
         rights: 'All rights reserved.',
       };
+
+  if (isWaitlist) return (
+    <footer className="border-t border-[#e4dfe8] bg-[#faf9f6] text-[#5e626d]">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-5 px-5 py-7 text-xs lg:px-8">
+        <p>© 2026 Core Solutions</p>
+        <div className="flex flex-wrap gap-5"><Link className="hover:text-[#7547a4]" href={isNl ? '/nl/portfolio/pillenpopper/' : '/portfolio/pillenpopper/'}>{isNl ? 'Meer over de PillenPopper' : 'More about the PillenPopper'}</Link><a className="hover:text-[#7547a4]" href="mailto:contact@coresolutionsglobal.com">Contact</a><Link className="hover:text-[#7547a4]" href={isNl ? '/nl/privacy-policy/' : '/privacy-policy/'}>{isNl ? 'Privacybeleid' : 'Privacy policy'}</Link></div>
+      </div>
+    </footer>
+  );
 
   return (
     <footer className="footer-sheen border-t border-border">

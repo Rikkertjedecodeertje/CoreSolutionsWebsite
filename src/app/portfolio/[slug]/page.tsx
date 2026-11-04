@@ -1,3 +1,4 @@
+import { waitlistPaths } from '@/lib/pillenpopperWaitlist';
 import { imageFallback } from '@/lib/images';
 import { ResponsiveImage } from '@/components/ResponsiveImage';
 import type { Metadata } from 'next';
@@ -64,7 +65,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   const isBatbox = project.slug === 'batbox-battery-tester';
 
   return (
-    <>
+    <div className={isIheel ? 'iheel-theme' : undefined}>
       <section className="border-b border-border bg-card">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-[1fr_0.9fr] md:items-center lg:px-8">
           <div>
@@ -87,8 +88,8 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             ) : null}
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">{project.tagline}</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <ButtonLink href={isPillenpopper ? '#availability' : '#sales-channels'}>
-                {isPillenpopper ? 'Availability and collaboration' : 'Sales channels'}
+              <ButtonLink href={isPillenpopper ? waitlistPaths.en : '#sales-channels'}>
+                {isPillenpopper ? 'Join the waitlist' : 'Sales channels'}
               </ButtonLink>
               {!isPillenpopper && <ButtonLink href="/where-to-buy/" variant="secondary">Where to buy</ButtonLink>}
               <ButtonLink href="/contact/" variant="secondary">Contact</ButtonLink>
@@ -141,7 +142,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <SectionHeader
             description={isPillenpopper ? 'The PillenPopper is being prepared for launch. Explore opportunities to contribute to validation and the next step towards production.' : 'Explore available sales channels, own webshop options and retail opportunities for this brand.'}
-            title={isPillenpopper ? 'Availability and collaboration' : 'Sales channels'}
+            title={isPillenpopper ? 'Join the waitlist' : 'Sales channels'}
           />
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {project.salesChannels.map((channel) => (
@@ -171,7 +172,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       </section>
 
       <SplitCta prelaunch={isPillenpopper} />
-    </>
+    </div>
   );
 }
 

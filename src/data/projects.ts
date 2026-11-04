@@ -46,6 +46,7 @@ export type Project = {
   salesChannels: SalesChannel[];
   mediaMentions: MediaMention[];
   gallery: GalleryItem[];
+  cardImage?: Pick<GalleryItem, 'src' | 'alt'>;
   faqs: FAQ[];
   seoTitle: string;
   seoDescription: string;
@@ -320,6 +321,10 @@ export const projects: Project[] = [
         "date": "22 September 2026"
       }
     ],
+    "cardImage": {
+      "src": "/images/pillenpopper-blister.jpg",
+      "alt": "A woman presses the PillenPopper with her palm to remove a pill from a blister pack"
+    },
     "gallery": [
       {
         "src": "/images/pillenpopper-product.webp",

@@ -1,6 +1,7 @@
 ﻿import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import './iheel-theme.css';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 
@@ -40,9 +41,13 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: '/images/core-solutions-logo.png',
-    shortcut: '/images/core-solutions-logo.png',
-    apple: '/images/core-solutions-logo.png',
+    icon: [
+      { url: '/favicon.ico', sizes: '16x16 32x32 48x48 64x64', type: 'image/x-icon' },
+      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
   },
 };
 

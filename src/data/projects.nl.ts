@@ -254,6 +254,10 @@ export const projectsNl: Project[] = [
         "date": "22 september 2026"
       }
     ],
+    "cardImage": {
+      "src": "/images/pillenpopper-blister.jpg",
+      "alt": "Een vrouw drukt met haar handpalm op de PillenPopper om een pil uit een blister te drukken"
+    },
     "gallery": [
       {
         "src": "/images/pillenpopper-product.webp",

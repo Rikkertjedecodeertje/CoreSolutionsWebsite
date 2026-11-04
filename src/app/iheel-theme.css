@@ -1,0 +1,69 @@
+/* iHeel palette from the supplied brandbook. Scoped to brand-page content. */
+.iheel-theme {
+  --iheel-rosewood: #4a2e35;
+  --iheel-dusty-rose: #c9827a;
+  --iheel-soft-taupe: #d4c8c2;
+  --iheel-linen: #f7f0e8;
+  --iheel-sand: #e5d4be;
+  --iheel-charcoal: #40464d;
+  --iheel-sage: #7d9a72;
+  --iheel-berry: #b85f62;
+  --iheel-gold: #d6a642;
+  --color-background: var(--iheel-linen);
+  --color-card: var(--iheel-linen);
+  --color-text: var(--iheel-charcoal);
+  --color-muted: var(--iheel-charcoal);
+  --color-border: var(--iheel-soft-taupe);
+  --color-primary: var(--iheel-rosewood);
+  --color-secondary: var(--iheel-sage);
+  --color-dark: var(--iheel-rosewood);
+  --color-steel: var(--iheel-rosewood);
+  --color-graphite: var(--iheel-charcoal);
+  background: var(--iheel-linen);
+  color: var(--iheel-charcoal);
+}
+
+.iheel-theme :is(h1, h2, h3, summary).text-text {
+  color: var(--iheel-rosewood);
+}
+
+.iheel-theme :is(article, a, div).rounded-card.bg-card {
+  background: var(--iheel-sand);
+}
+
+/* Dusty Rose accents and Rosewood button fills keep small text readable. */
+.iheel-theme a.bg-steel {
+  border-color: var(--iheel-dusty-rose);
+  box-shadow: 0 3px 0 var(--iheel-dusty-rose);
+}
+
+.iheel-theme a.bg-steel:hover {
+  box-shadow: 0 1px 0 var(--iheel-dusty-rose);
+}
+
+.iheel-theme a:focus-visible,
+.iheel-theme summary:focus-visible {
+  outline: 3px solid var(--iheel-rosewood);
+  outline-offset: 4px;
+}
+
+.iheel-theme svg.text-secondary {
+  color: var(--iheel-rosewood);
+}
+
+.iheel-theme .bg-dark .text-secondary {
+  color: var(--iheel-sand);
+}
+
+.iheel-theme .bg-dark svg {
+  color: var(--iheel-sage);
+}
+
+.iheel-theme .bg-dark :is(a, summary):focus-visible {
+  outline-color: var(--iheel-linen);
+}
+
+.iheel-theme ::selection {
+  background: var(--iheel-soft-taupe);
+  color: var(--iheel-rosewood);
+}

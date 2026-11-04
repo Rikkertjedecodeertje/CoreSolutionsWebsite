@@ -1,4 +1,5 @@
 'use client';
+import { getWaitlistLocale, waitlistPaths } from '@/lib/pillenpopperWaitlist';
 import { ResponsiveImage } from '@/components/ResponsiveImage';
 
 
@@ -39,13 +40,32 @@ export function Header() {
   const pathname = usePathname() || '/';
   const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const isNl = pathname === '/nl' || pathname.startsWith('/nl/');
+  const waitlistLocale = getWaitlistLocale(pathname);
+  const isWaitlist = waitlistLocale !== null;
+  const isNl = waitlistLocale === 'nl' || pathname === '/nl' || pathname.startsWith('/nl/');
   const paths = languagePaths(pathname);
 
   useEffect(() => {
     document.documentElement.lang = isNl ? 'nl' : 'en';
     setMobileMenuOpen(false);
   }, [isNl, pathname]);
+
+  if (isWaitlist) return (
+    <header className="sticky top-0 z-40 border-b border-[#e4dfe8] bg-[#faf9f6]/95 backdrop-blur">
+      <nav aria-label={isNl ? 'Wachtlijstnavigatie' : 'Waitlist navigation'} className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-5 py-4 lg:px-8">
+        <Link href={isNl ? '/nl/' : '/'} aria-label={isNl ? 'Core Solutions startpagina' : 'Core Solutions home'} className="flex items-center gap-2.5 font-semibold text-text">
+          <img src={assetPath('/images/core-solutions-logo.png')} alt="" className="h-9 w-9 object-contain" width="36" height="36" />
+          <span className="hidden text-sm tracking-tight sm:inline sm:text-base">Core Solutions<span className="ml-3 hidden border-l border-[#d8d0df] pl-3 text-[#7547a4] sm:inline">PillenPopper</span></span>
+        </Link>
+        <div className="flex shrink-0 items-center gap-2 sm:gap-4">
+          <div className="inline-flex rounded-md border border-[#e4dfe8] bg-white p-1" role="group" aria-label={isNl ? 'Taal kiezen' : 'Choose language'}>
+            {(['nl', 'en'] as const).map(locale => <Link href={waitlistPaths[locale]} hrefLang={locale} aria-current={waitlistLocale === locale ? 'page' : undefined} className={`rounded px-2 py-1.5 text-[11px] font-semibold ${waitlistLocale === locale ? 'bg-[#7547a4] text-white' : 'text-[#7547a4]'}`} key={locale}>{locale.toUpperCase()}</Link>)}
+          </div>
+          <a href={isNl ? '#wachtlijst' : '#waitlist'} className="rounded-md bg-[#7547a4] px-4 py-3 text-xs font-semibold text-white transition hover:bg-[#563279] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#7547a4] sm:px-5">{isNl ? 'Op de wachtlijst' : 'Join the waitlist'}</a>
+        </div>
+      </nav>
+    </header>
+  );
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">

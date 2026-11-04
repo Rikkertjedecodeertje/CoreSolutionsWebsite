@@ -217,5 +217,20 @@
     "largestAvifBytes": 345943,
     "largestWebpBytes": 368756,
     "purpose": "Contact-page panorama, up to about 760 CSS pixels"
+  },
+  {
+    "path": "/images/pillenpopper-blister.jpg",
+    "source": "assets/originals/replacements/pillenpopper-blister.jpg",
+    "originalBytes": 383104,
+    "sourceWidth": 1448,
+    "sourceHeight": 1086,
+    "widths": [
+      480,
+      800,
+      1200
+    ],
+    "largestAvifBytes": 202139,
+    "largestWebpBytes": 206288,
+    "purpose": "Home and product heroes; card-specific sizes supplied in markup"
   }
 ]

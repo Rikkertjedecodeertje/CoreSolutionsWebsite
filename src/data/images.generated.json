@@ -391,5 +391,34 @@
         "jpg": "/images/optimized/the-hague-skyline-1600.jpg"
       }
     ]
+  },
+  "/images/pillenpopper-blister.jpg": {
+    "width": 1200,
+    "height": 900,
+    "sizes": "(min-width: 1280px) 560px, (min-width: 768px) 45vw, calc(100vw - 40px)",
+    "fallback": "/images/optimized/pillenpopper-blister-1200.jpg",
+    "variants": [
+      {
+        "width": 480,
+        "height": 360,
+        "avif": "/images/optimized/pillenpopper-blister-480.avif",
+        "webp": "/images/optimized/pillenpopper-blister-480.webp",
+        "jpg": "/images/optimized/pillenpopper-blister-480.jpg"
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "avif": "/images/optimized/pillenpopper-blister-800.avif",
+        "webp": "/images/optimized/pillenpopper-blister-800.webp",
+        "jpg": "/images/optimized/pillenpopper-blister-800.jpg"
+      },
+      {
+        "width": 1200,
+        "height": 900,
+        "avif": "/images/optimized/pillenpopper-blister-1200.avif",
+        "webp": "/images/optimized/pillenpopper-blister-1200.webp",
+        "jpg": "/images/optimized/pillenpopper-blister-1200.jpg"
+      }
+    ]
   }
 }

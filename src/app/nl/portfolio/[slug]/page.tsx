@@ -1,3 +1,4 @@
+import { waitlistPaths } from '@/lib/pillenpopperWaitlist';
 import { imageFallback } from '@/lib/images';
 import { ResponsiveImage } from '@/components/ResponsiveImage';
 import type { Metadata } from 'next';
@@ -64,7 +65,7 @@ export default function DutchProjectPage({ params }: ProjectPageProps) {
   const isBatbox = project.slug === 'batbox-battery-tester';
 
   return (
-    <>
+    <div className={isIheel ? 'iheel-theme' : undefined}>
       <section className="border-b border-border bg-card">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-[1fr_0.9fr] md:items-center lg:px-8">
           <div>
@@ -100,8 +101,8 @@ export default function DutchProjectPage({ params }: ProjectPageProps) {
             ) : null}
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">{project.tagline}</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <ButtonLink href={isPillenpopper ? '#availability' : '#sales-channels'}>
-                {isPillenpopper ? 'Beschikbaarheid en samenwerking' : 'Verkoopkanalen'}
+              <ButtonLink href={isPillenpopper ? waitlistPaths.nl : '#sales-channels'}>
+                {isPillenpopper ? 'Op de wachtlijst' : 'Verkoopkanalen'}
               </ButtonLink>
               {!isPillenpopper && <ButtonLink href="/nl/where-to-buy/" variant="secondary">Waar te koop</ButtonLink>}
               <ButtonLink href="/nl/contact/" variant="secondary">
@@ -164,7 +165,7 @@ export default function DutchProjectPage({ params }: ProjectPageProps) {
         <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <SectionHeader
             description={isPillenpopper ? 'De PillenPopper wordt voorbereid op marktintroductie. Ontdek hoe je kunt bijdragen aan validatie en de volgende stap naar productie.' : 'Bekijk beschikbare verkoopkanalen, de eigen webshop en retailmogelijkheden voor dit merk.'}
-            title={isPillenpopper ? 'Beschikbaarheid en samenwerking' : 'Verkoopkanalen'}
+            title={isPillenpopper ? 'Op de wachtlijst' : 'Verkoopkanalen'}
           />
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {project.salesChannels.map((channel) => (
@@ -194,6 +195,6 @@ export default function DutchProjectPage({ params }: ProjectPageProps) {
       </section>
 
       <SplitCta locale="nl" prelaunch={isPillenpopper} />
-    </>
+    </div>
   );
 }

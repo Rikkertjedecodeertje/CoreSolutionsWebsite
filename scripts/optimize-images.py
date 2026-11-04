@@ -1,6 +1,7 @@
 """Build responsive assets from immutable originals. Run with Pillow 12.3.0."""
 from pathlib import Path
 from PIL import Image, ImageOps
+import argparse
 import json
 ROOT = Path(__file__).resolve().parents[1]
 ORIGINALS = ROOT / "assets/originals/images"
@@ -12,6 +13,12 @@ REPLACEMENTS = {
  "iheel-product.png": ROOT / "assets/originals/replacements/iHeel_pads_product.jpg",
  "pillenpopper-product.webp": ROOT / "assets/source-images/pillenpopper-cleaned.png",
 }
+EXTRA_SOURCES = {
+ "pillenpopper-blister.jpg": ROOT / "assets/originals/replacements/pillenpopper-blister.jpg",
+}
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--only", nargs="+", help="Regenerate only the named image keys; preserve other assets")
+args = parser.parse_args()
 def plan(name):
  if "logo" in name:
   return ([96, 192, 320] if "core-solutions" in name else [160, 320, 600]), "160px", "Logo; retain alpha and crisp edges"
@@ -22,10 +29,18 @@ def plan(name):
  if name.startswith("stores/"):
   return [480,800], "(min-width: 1280px) 390px, (min-width: 768px) 45vw, calc(100vw - 40px)", "Retail cards, about 390 CSS pixels"
  return [480,800,1200], "(min-width: 1280px) 560px, (min-width: 768px) 45vw, calc(100vw - 40px)", "Home and product heroes; card-specific sizes supplied in markup"
-manifest, audit = {}, []
-for original in sorted(ORIGINALS.rglob("*")):
- if not original.is_file() or original.suffix.lower() == ".svg": continue
- name=original.relative_to(ORIGINALS).as_posix()
+manifest_path = ROOT / "src/data/images.generated.json"
+audit_path = ROOT / "assets/image-audit.json"
+manifest = json.loads(manifest_path.read_text()) if args.only and manifest_path.exists() else {}
+audit = json.loads(audit_path.read_text()) if args.only and audit_path.exists() else []
+sources = {p.relative_to(ORIGINALS).as_posix(): p for p in ORIGINALS.rglob("*") if p.is_file() and p.suffix.lower() != ".svg"}
+sources.update(EXTRA_SOURCES)
+if args.only:
+ unknown = set(args.only) - sources.keys()
+ if unknown: parser.error("Unknown image keys: " + ", ".join(sorted(unknown)))
+ sources = {name: sources[name] for name in args.only}
+ audit = [item for item in audit if item["path"] not in {"/images/" + name for name in sources}]
+for name, original in sorted(sources.items()):
  source=REPLACEMENTS.get(name,original)
  with Image.open(source) as img:
   img=ImageOps.exif_transpose(img)
@@ -60,6 +75,9 @@ for original in sorted(ORIGINALS.rglob("*")):
    elif legacy.suffix==".webp": legacy_image.save(legacy,"WEBP",quality=84,method=6)
    else: legacy_image.convert("RGB").save(legacy,"JPEG",quality=86,optimize=True,progressive=True)
   audit.append({"path":"/images/"+name,"source":str(source.relative_to(ROOT)).replace("\\","/"),"originalBytes":original.stat().st_size,"sourceWidth":img.width,"sourceHeight":img.height,"widths":widths,"largestAvifBytes":(ROOT/"public"/largest["avif"].lstrip("/")).stat().st_size,"largestWebpBytes":(ROOT/"public"/largest["webp"].lstrip("/")).stat().st_size,"purpose":purpose})
-(ROOT/"src/data/images.generated.json").write_text(json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
-(ROOT/"assets/image-audit.json").write_text(json.dumps(audit,indent=2)+"\n",encoding="utf-8")
+def write_json(path, value):
+ newline = "\r\n" if path.exists() and b"\r\n" in path.read_bytes() else "\n"
+ path.write_bytes((json.dumps(value,indent=2)+"\n").replace("\n",newline).encode("utf-8"))
+write_json(manifest_path, manifest)
+write_json(audit_path, audit)
 print(json.dumps({"images":len(audit),"variants":sum(len(v["variants"])*3 for v in manifest.values()),"originalBytes":sum(a["originalBytes"] for a in audit),"largestAvifBytes":sum(a["largestAvifBytes"] for a in audit)}))

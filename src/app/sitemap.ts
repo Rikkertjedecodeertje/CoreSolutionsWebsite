@@ -1,5 +1,6 @@
 ﻿import type { MetadataRoute } from 'next';
 import { projects } from '@/data/projects';
+import { waitlistPaths } from '@/lib/pillenpopperWaitlist';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://coresolutionsglobal.com';
@@ -17,7 +18,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const dutchStaticRoutes = staticRoutes.map((route) => `/nl${route}`);
   const dutchProjectRoutes = projects.map((project) => `/nl/portfolio/${project.slug}`);
 
-  return [...staticRoutes, ...projectRoutes, ...dutchStaticRoutes, ...dutchProjectRoutes].map((route) => ({
+  const waitlistRoutes = Object.values(waitlistPaths).map(path => path.replace(/\/$/, ''));
+
+  return [...staticRoutes, ...projectRoutes, ...dutchStaticRoutes, ...dutchProjectRoutes, ...waitlistRoutes].map((route) => ({
     url: `${baseUrl}${route}/`,
     lastModified: new Date(),
     changeFrequency: route === '' ? 'monthly' : 'yearly',
