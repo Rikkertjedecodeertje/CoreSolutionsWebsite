@@ -420,5 +420,121 @@
         "jpg": "/images/optimized/pillenpopper-blister-1200.jpg"
       }
     ]
+  },
+  "/images/media-hague-online.jpg": {
+    "width": 960,
+    "height": 720,
+    "sizes": "(min-width: 1280px) 290px, (min-width: 768px) 45vw, calc(100vw - 40px)",
+    "fallback": "/images/optimized/media-hague-online-960.jpg",
+    "variants": [
+      {
+        "width": 320,
+        "height": 240,
+        "avif": "/images/optimized/media-hague-online-320.avif",
+        "webp": "/images/optimized/media-hague-online-320.webp",
+        "jpg": "/images/optimized/media-hague-online-320.jpg"
+      },
+      {
+        "width": 640,
+        "height": 480,
+        "avif": "/images/optimized/media-hague-online-640.avif",
+        "webp": "/images/optimized/media-hague-online-640.webp",
+        "jpg": "/images/optimized/media-hague-online-640.jpg"
+      },
+      {
+        "width": 960,
+        "height": 720,
+        "avif": "/images/optimized/media-hague-online-960.avif",
+        "webp": "/images/optimized/media-hague-online-960.webp",
+        "jpg": "/images/optimized/media-hague-online-960.jpg"
+      }
+    ]
+  },
+  "/images/media-impactcity.jpg": {
+    "width": 960,
+    "height": 640,
+    "sizes": "(min-width: 1280px) 290px, (min-width: 768px) 45vw, calc(100vw - 40px)",
+    "fallback": "/images/optimized/media-impactcity-960.jpg",
+    "variants": [
+      {
+        "width": 320,
+        "height": 213,
+        "avif": "/images/optimized/media-impactcity-320.avif",
+        "webp": "/images/optimized/media-impactcity-320.webp",
+        "jpg": "/images/optimized/media-impactcity-320.jpg"
+      },
+      {
+        "width": 640,
+        "height": 427,
+        "avif": "/images/optimized/media-impactcity-640.avif",
+        "webp": "/images/optimized/media-impactcity-640.webp",
+        "jpg": "/images/optimized/media-impactcity-640.jpg"
+      },
+      {
+        "width": 960,
+        "height": 640,
+        "avif": "/images/optimized/media-impactcity-960.avif",
+        "webp": "/images/optimized/media-impactcity-960.webp",
+        "jpg": "/images/optimized/media-impactcity-960.jpg"
+      }
+    ]
+  },
+  "/images/split-detail-place.jpg": {
+    "width": 480,
+    "height": 360,
+    "sizes": "110px",
+    "fallback": "/images/optimized/split-detail-place-480.jpg",
+    "variants": [
+      {
+        "width": 160,
+        "height": 120,
+        "avif": "/images/optimized/split-detail-place-160.avif",
+        "webp": "/images/optimized/split-detail-place-160.webp",
+        "jpg": "/images/optimized/split-detail-place-160.jpg"
+      },
+      {
+        "width": 320,
+        "height": 240,
+        "avif": "/images/optimized/split-detail-place-320.avif",
+        "webp": "/images/optimized/split-detail-place-320.webp",
+        "jpg": "/images/optimized/split-detail-place-320.jpg"
+      },
+      {
+        "width": 480,
+        "height": 360,
+        "avif": "/images/optimized/split-detail-place-480.avif",
+        "webp": "/images/optimized/split-detail-place-480.webp",
+        "jpg": "/images/optimized/split-detail-place-480.jpg"
+      }
+    ]
+  },
+  "/images/split-detail-ready.jpg": {
+    "width": 480,
+    "height": 360,
+    "sizes": "110px",
+    "fallback": "/images/optimized/split-detail-ready-480.jpg",
+    "variants": [
+      {
+        "width": 160,
+        "height": 120,
+        "avif": "/images/optimized/split-detail-ready-160.avif",
+        "webp": "/images/optimized/split-detail-ready-160.webp",
+        "jpg": "/images/optimized/split-detail-ready-160.jpg"
+      },
+      {
+        "width": 320,
+        "height": 240,
+        "avif": "/images/optimized/split-detail-ready-320.avif",
+        "webp": "/images/optimized/split-detail-ready-320.webp",
+        "jpg": "/images/optimized/split-detail-ready-320.jpg"
+      },
+      {
+        "width": 480,
+        "height": 360,
+        "avif": "/images/optimized/split-detail-ready-480.avif",
+        "webp": "/images/optimized/split-detail-ready-480.webp",
+        "jpg": "/images/optimized/split-detail-ready-480.jpg"
+      }
+    ]
   }
 }

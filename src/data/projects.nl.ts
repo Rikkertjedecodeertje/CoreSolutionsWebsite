@@ -260,9 +260,9 @@ export const projectsNl: Project[] = [
     },
     "gallery": [
       {
-        "src": "/images/pillenpopper-product.webp",
-        "alt": "Rik van Wieren demonstreert het paarse en witte PillenPopper-prototype",
-        "caption": "PillenPopper-prototype bediend met de handpalm"
+        "src": "/images/pillenpopper-blister.jpg",
+        "alt": "Een vrouw drukt met haar handpalm een pil uit een blister met de PillenPopper",
+        "caption": "PillenPopper bediend met de handpalm"
       }
     ],
     "faqs": [

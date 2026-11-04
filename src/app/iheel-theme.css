@@ -67,3 +67,7 @@
   background: var(--iheel-soft-taupe);
   color: var(--iheel-rosewood);
 }
+
+.iheel-theme .brand-stage-icon{background:#e5d4be}
+.iheel-theme .group:hover .brand-stage-icon{background:#f7f0e8}
+.iheel-theme .bg-dark .brand-stage-icon svg{color:#52694a}

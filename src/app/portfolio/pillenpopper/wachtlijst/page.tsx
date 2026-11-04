@@ -1,5 +1,7 @@
+import { PillenPopperSignup } from '@/components/PillenPopperSignup';
+import { ResponsiveImage } from '@/components/ResponsiveImage';
 import type { Metadata } from 'next';
-import { ArrowDown, ArrowRight, Check, ExternalLink, Mail } from 'lucide-react';
+import { ArrowDown, ArrowRight, Check } from 'lucide-react';
 import { assetPath } from '@/lib/sitePath';
 import styles from './waitlist.module.css';
 
@@ -14,7 +16,6 @@ export const metadata: Metadata = {
     images: [{ url: '/images/pillenpopper-wachtlijst/uitdrukken.jpg', width: 1448, height: 1086, alt: 'Pillen uit een strip drukken met de PillenPopper' }],
   },
 };
-const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScYbL7pi9GWUlsYyJu5UQgV9Uf7MewXLauiP2DHtGiDV8huWw/viewform';
 const functions = [
   { number: '01', title: 'Druk pillen uit de strip', image: 'uitdrukken.jpg', alt: 'Een gebruiker drukt met haar handpalm op de arm van de PillenPopper om een pil uit de strip te drukken.', text: 'Schuif de strip in de klem. Druk met je handpalm of onderarm op de hendel, in plaats van met je vingers op de pil.' },
   { number: '02', title: 'Vang ze op in het bakje', image: 'opvangen.jpg', alt: 'Het uitneembare paarse opvangbakje van de PillenPopper met daarin hele en gesplitste pillen.', text: 'De pillen vallen in het uitneembare bakje. Klaar om in te nemen of in je pillendoos te verdelen.' },
@@ -50,27 +51,16 @@ export default function WaitlistPage() {
         </div>
         <div className={styles.steps}>
           {functions.map((item) => <article className={styles.step} key={item.number}>
-            <div className={styles.stepImage}><img src={assetPath('/images/pillenpopper-wachtlijst/' + item.image)} alt={item.alt} width="1200" height="900" loading="lazy" /><span>{item.number}</span></div>
+            <div className={styles.stepImage}><img src={assetPath('/images/pillenpopper-wachtlijst/' + item.image)} alt={item.alt} width="1200" height="900" loading="lazy" /><span className={styles.stepNumber}>{item.number}</span>{item.number === '03' && <div className={styles.detailInsets}>
+              <figure><ResponsiveImage src={assetPath('/images/split-detail-place.jpg')} alt="Gebruiker legt de pil op het onderste splitblok" sizes="480px" loading="lazy" /><figcaption>1</figcaption></figure>
+              <figure><ResponsiveImage src={assetPath('/images/split-detail-ready.jpg')} alt="De pil ligt op zijn plek in het splitmechaniek" sizes="480px" loading="lazy" /><figcaption>2</figcaption></figure>
+            </div>}</div>
             <h3>{item.title}</h3><p>{item.text}</p>
           </article>)}
         </div>
         <p className={styles.splitNote}>Split alleen pillen die daarvoor geschikt zijn. Controleer de bijsluiter of vraag je apotheker.</p>
       </section>
-      <section className={styles.signup} id="wachtlijst" aria-labelledby="signup-title">
-        <div className={styles.signupCopy}>
-          <span className={styles.mailIcon}><Mail size={25} aria-hidden="true" /></span>
-          <p className={styles.eyebrow}>BLIJF OP DE HOOGTE</p>
-          <h2 id="signup-title">Een seintje als<br />de PillenPopper<br />beschikbaar is?</h2>
-          <p>Laat je e-mailadres achter. Dan hoor je van ons zodra de PillenPopper te bestellen is of de crowdfunding start.</p>
-          <ul><li><Check size={18} aria-hidden="true" /> Nieuws over de lancering</li><li><Check size={18} aria-hidden="true" /> Bericht bij de start van de verkoop of crowdfunding</li><li><Check size={18} aria-hidden="true" /> Vrijblijvend en zonder aankoopverplichting</li></ul>
-          <p className={styles.unsubscribe}>Je kunt je altijd afmelden via <a href="mailto:contact@coresolutionsglobal.com">contact@coresolutionsglobal.com</a>.</p>
-        </div>
-        <div className={styles.formPanel}>
-          <div className={styles.formHead}><h3>Meld je aan voor de wachtlijst</h3><a href={formUrl} target="_blank" rel="noopener noreferrer">Open apart <ExternalLink size={14} aria-hidden="true" /></a></div>
-          <iframe src={formUrl + '?embedded=true&hl=nl'} title="Aanmelden voor de PillenPopper wachtlijst" loading="lazy" referrerPolicy="strict-origin-when-cross-origin" />
-          <p className={styles.privacy}>Je inschrijving wordt verwerkt via Google Forms. <a href="/nl/privacy-policy/">Lees het privacybeleid</a>.</p>
-        </div>
-      </section>
+      <PillenPopperSignup locale="nl" id="wachtlijst" />
     </div>
   );
 }

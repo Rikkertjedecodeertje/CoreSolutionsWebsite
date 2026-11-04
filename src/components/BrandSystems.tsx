@@ -151,7 +151,7 @@ export function BrandOverviewSystem({
                   key={stage.title}
                 >
                   <span className="text-3xl font-light text-white/30">0{index + 1}</span>
-                  <span className="grid h-11 w-11 place-items-center rounded-card bg-secondary/15 text-secondary transition group-hover:bg-secondary group-hover:text-white">
+                  <span className="brand-stage-icon grid h-11 w-11 place-items-center rounded-card bg-secondary/15 text-secondary transition group-hover:bg-secondary group-hover:text-white">
                     <Icon aria-hidden="true" className="h-5 w-5" />
                   </span>
                   <div>

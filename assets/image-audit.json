@@ -232,5 +232,65 @@
     "largestAvifBytes": 202139,
     "largestWebpBytes": 206288,
     "purpose": "Home and product heroes; card-specific sizes supplied in markup"
+  },
+  {
+    "path": "/images/media-hague-online.jpg",
+    "source": "assets/source-images/media-hague-online.jpg",
+    "originalBytes": 296090,
+    "sourceWidth": 1200,
+    "sourceHeight": 900,
+    "widths": [
+      320,
+      640,
+      960
+    ],
+    "largestAvifBytes": 137270,
+    "largestWebpBytes": 148072,
+    "purpose": "Press article thumbnails"
+  },
+  {
+    "path": "/images/media-impactcity.jpg",
+    "source": "assets/source-images/media-impactcity.jpg",
+    "originalBytes": 131374,
+    "sourceWidth": 1024,
+    "sourceHeight": 683,
+    "widths": [
+      320,
+      640,
+      960
+    ],
+    "largestAvifBytes": 77992,
+    "largestWebpBytes": 74692,
+    "purpose": "Press article thumbnails"
+  },
+  {
+    "path": "/images/split-detail-place.jpg",
+    "source": "assets/source-images/split-detail-place.jpg",
+    "originalBytes": 130397,
+    "sourceWidth": 960,
+    "sourceHeight": 720,
+    "widths": [
+      160,
+      320,
+      480
+    ],
+    "largestAvifBytes": 27112,
+    "largestWebpBytes": 25014,
+    "purpose": "Pill-splitting detail insets"
+  },
+  {
+    "path": "/images/split-detail-ready.jpg",
+    "source": "assets/source-images/split-detail-ready.jpg",
+    "originalBytes": 82037,
+    "sourceWidth": 960,
+    "sourceHeight": 720,
+    "widths": [
+      160,
+      320,
+      480
+    ],
+    "largestAvifBytes": 15427,
+    "largestWebpBytes": 13252,
+    "purpose": "Pill-splitting detail insets"
   }
 ]

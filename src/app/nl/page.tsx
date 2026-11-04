@@ -1,3 +1,4 @@
+import { MediaCards } from '@/components/MediaCards';
 import { ResponsiveImage } from '@/components/ResponsiveImage';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -93,26 +94,7 @@ export default function DutchHomePage() {
           eyebrow="In de media"
           title="Aandacht, vermeldingen en productverhalen"
         />
-        <div className="mt-8 grid gap-4 md:grid-cols-2">
-          {mediaHighlightsNl.map((item) => (
-            <article className="rounded-card border border-border bg-card transition-colors hover:border-steel" key={item.href}>
-              <a className="block rounded-card p-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" href={item.href} target="_blank" rel="noopener noreferrer">
-                <p className="text-sm font-semibold text-steel">{item.source} · {item.date}</p>
-                <h3 className="mt-2 font-semibold text-text">{item.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-muted">{item.description}</p>
-                <span className="mt-4 inline-block font-semibold text-steel">{item.linkLabel ?? 'Lees het artikel'} <span aria-hidden="true">↗</span></span>
-              </a>
-              {item.additionalLinks?.map((link) => (
-                <a className="mx-5 mb-5 block w-fit font-semibold text-steel hover:text-primary" href={link.href} key={link.href} target="_blank" rel="noopener noreferrer">
-                  {link.label} <span aria-hidden="true">↗</span>
-                </a>
-              ))}
-              <Link className="mx-5 mb-5 inline-block font-semibold text-steel hover:text-primary" href={`/nl/portfolio/${item.projectSlug}/`}>
-                Ontdek de PillenPopper <span aria-hidden="true">→</span>
-              </Link>
-            </article>
-          ))}
-        </div>
+        <MediaCards mentions={mediaHighlightsNl} />
       </section>
 
       <SplitCta locale="nl" />

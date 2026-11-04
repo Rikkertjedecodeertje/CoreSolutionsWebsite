@@ -1,0 +1,15 @@
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:28px}
+.card{display:flex;flex-direction:column;min-width:0;overflow:hidden;border-radius:14px;background:#292c33;color:#f3f4f6}
+.mainLink{display:block;flex:1;color:inherit}
+.image{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+.copy{padding:15px 15px 0}
+.copy h3{margin:0;font-size:16px;line-height:1.4;font-weight:550;color:#afd0ff;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.mainLink:hover h3{color:#d1e4ff;text-decoration-thickness:2px}
+.date{margin:12px 0 0;font-size:12px;line-height:1.5;color:#c0c4cc}
+.footer{padding:14px 15px 17px}
+.source{display:flex;align-items:center;gap:8px;margin:0;font-size:12px;line-height:1.5;color:#edf0f5}
+.source svg{flex-shrink:0;color:#c3cddd}
+.extraLink{display:inline-block;margin-top:12px;color:#afd0ff;font-size:12px;line-height:1.6;text-decoration:underline;text-underline-offset:3px}
+.mainLink:focus-visible,.extraLink:focus-visible{outline:3px solid #afd0ff;outline-offset:-4px;border-radius:4px}
+@media(max-width:1100px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.grid{grid-template-columns:1fr;gap:20px}.image{aspect-ratio:16/9}.copy h3{font-size:17px}.copy{padding:17px 17px 0}.footer{padding:14px 17px 18px}}

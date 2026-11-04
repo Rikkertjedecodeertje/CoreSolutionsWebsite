@@ -1,0 +1,15 @@
+.section{width:calc(100% - 40px);max-width:700px;margin:32px auto 0;padding:36px;border:1px solid #ded8e5;border-radius:12px;background:#fff;color:#20222b;scroll-margin-top:100px}
+.section h2{margin:0;font-size:clamp(25px,3vw,31px);font-weight:650;line-height:1.2;letter-spacing:-.025em;text-wrap:balance}
+.description{margin:12px 0 25px;color:#5e626d;font-size:15px;line-height:1.7}
+.form label{display:block;margin-bottom:9px;font-size:14px;font-weight:600}
+.fields{display:flex;gap:10px}
+.fields input{width:100%;min-width:0;min-height:54px;padding:13px 15px;border:1px solid #b4aabd;border-radius:6px;background:#fff;font:inherit;font-size:16px;color:#20222b;caret-color:#7547a4}
+.fields input::placeholder{color:#6d6874;opacity:1}
+.fields input:focus-visible,.fields button:focus-visible,.note a:focus-visible{outline:3px solid #7547a4;outline-offset:3px}
+.fields button{min-height:54px;padding:13px 25px;border:0;border-radius:6px;background:#7547a4;color:#fff;font:inherit;font-size:15px;font-weight:650;white-space:nowrap;cursor:pointer;transition:background .15s}
+.fields button:hover{background:#563279}
+.fields button:active{background:#452663}
+.note{max-width:65ch;margin:16px 0 0;font-size:12px;line-height:1.8;color:#625a6c}
+.note a{color:#60388a;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:600px){.section{width:calc(100% - 32px);padding:25px 20px;margin-top:15px;scroll-margin-top:86px}.fields{flex-direction:column}.fields button{width:100%}.description{font-size:15px}.section h2{font-size:27px}}
+@media(prefers-reduced-motion:reduce){.fields button{transition:none}}

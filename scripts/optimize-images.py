@@ -2,6 +2,7 @@
 from pathlib import Path
 from PIL import Image, ImageOps
 import argparse
+import difflib
 import json
 ROOT = Path(__file__).resolve().parents[1]
 ORIGINALS = ROOT / "assets/originals/images"
@@ -14,12 +15,20 @@ REPLACEMENTS = {
  "pillenpopper-product.webp": ROOT / "assets/source-images/pillenpopper-cleaned.png",
 }
 EXTRA_SOURCES = {
+ "split-detail-place.jpg": ROOT / "assets/source-images/split-detail-place.jpg",
+ "split-detail-ready.jpg": ROOT / "assets/source-images/split-detail-ready.jpg",
+ "media-hague-online.jpg": ROOT / "assets/source-images/media-hague-online.jpg",
+ "media-impactcity.jpg": ROOT / "assets/source-images/media-impactcity.jpg",
  "pillenpopper-blister.jpg": ROOT / "assets/originals/replacements/pillenpopper-blister.jpg",
 }
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--only", nargs="+", help="Regenerate only the named image keys; preserve other assets")
 args = parser.parse_args()
 def plan(name):
+ if name.startswith("split-detail-"):
+  return [160,320,480], "110px", "Pill-splitting detail insets"
+ if name.startswith("media-"):
+  return [320,640,960], "(min-width: 1280px) 290px, (min-width: 768px) 45vw, calc(100vw - 40px)", "Press article thumbnails"
  if "logo" in name:
   return ([96, 192, 320] if "core-solutions" in name else [160, 320, 600]), "160px", "Logo; retain alpha and crisp edges"
  if "profile" in name:
@@ -62,6 +71,7 @@ for name, original in sorted(sources.items()):
     elif fmt=="webp": resized.save(path,"WEBP",quality=88 if "logo" in name else 82,method=6,lossless=alpha)
     elif fmt=="png": resized.save(path,"PNG",optimize=True)
     else: resized.convert("RGB").save(path,"JPEG",quality=86,optimize=True,progressive=True)
+    with Image.open(path) as check: check.verify()
     row[fmt]="/images/optimized/"+path.name
    variants.append(row)
   largest=variants[-1]
@@ -76,8 +86,13 @@ for name, original in sorted(sources.items()):
    else: legacy_image.convert("RGB").save(legacy,"JPEG",quality=86,optimize=True,progressive=True)
   audit.append({"path":"/images/"+name,"source":str(source.relative_to(ROOT)).replace("\\","/"),"originalBytes":original.stat().st_size,"sourceWidth":img.width,"sourceHeight":img.height,"widths":widths,"largestAvifBytes":(ROOT/"public"/largest["avif"].lstrip("/")).stat().st_size,"largestWebpBytes":(ROOT/"public"/largest["webp"].lstrip("/")).stat().st_size,"purpose":purpose})
 def write_json(path, value):
- newline = "\r\n" if path.exists() and b"\r\n" in path.read_bytes() else "\n"
- path.write_bytes((json.dumps(value,indent=2)+"\n").replace("\n",newline).encode("utf-8"))
+ old = path.read_bytes().decode("utf-8").splitlines(keepends=True) if path.exists() else []
+ new = (json.dumps(value,indent=2)+"\n").splitlines(keepends=True)
+ output = []
+ matcher = difflib.SequenceMatcher(a=[line.rstrip("\r\n") for line in old], b=[line.rstrip("\r\n") for line in new], autojunk=False)
+ for tag,i,j,k,l in matcher.get_opcodes():
+  output.extend(old[i:j] if tag == "equal" else new[k:l])
+ path.write_bytes("".join(output).encode("utf-8"))
 write_json(manifest_path, manifest)
 write_json(audit_path, audit)
 print(json.dumps({"images":len(audit),"variants":sum(len(v["variants"])*3 for v in manifest.values()),"originalBytes":sum(a["originalBytes"] for a in audit),"largestAvifBytes":sum(a["largestAvifBytes"] for a in audit)}))

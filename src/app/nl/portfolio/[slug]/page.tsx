@@ -115,7 +115,7 @@ export default function DutchProjectPage({ params }: ProjectPageProps) {
               loading="eager"
               fetchPriority="high"
               alt={project.gallery[0]?.alt ?? project.name}
-              style={isPillenpopper ? { objectPosition: 'left center' } : undefined}
+              style={isPillenpopper ? { objectPosition: '60% 55%' } : undefined}
               className="h-full min-h-80 w-full object-cover"
               src={assetPath(project.gallery[0]?.src ?? '/images/marketplace-placeholder.svg')}
             />

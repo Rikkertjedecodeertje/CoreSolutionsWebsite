@@ -6,7 +6,7 @@ import { ResponsiveImage } from '@/components/ResponsiveImage';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { Languages, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { assetPath } from '@/lib/sitePath';
 
 const navItems = {
@@ -111,7 +111,6 @@ export function Header() {
           </Link>
 
           <label className="relative flex h-10 shrink-0 items-center rounded-card border border-border bg-card pl-2 text-steel">
-            <Languages aria-hidden="true" className="h-4 w-4" />
             <span className="sr-only">{isNl ? 'Taal kiezen' : 'Choose language'}</span>
             <select
               aria-label={isNl ? 'Taal kiezen' : 'Choose language'}
@@ -174,7 +173,6 @@ export function Header() {
               className="ml-1 inline-flex items-center rounded-card border border-border bg-card p-1"
               role="group"
             >
-              <Languages aria-hidden="true" className="mx-2 h-4 w-4 text-steel" />
               <Link
                 aria-current={!isNl ? 'page' : undefined}
                 className={`rounded-md px-2.5 py-1.5 text-xs font-bold transition ${

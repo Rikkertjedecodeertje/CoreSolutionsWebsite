@@ -327,9 +327,9 @@ export const projects: Project[] = [
     },
     "gallery": [
       {
-        "src": "/images/pillenpopper-product.webp",
-        "alt": "Rik van Wieren demonstrates the purple and white PillenPopper prototype",
-        "caption": "PillenPopper prototype operated with the palm"
+        "src": "/images/pillenpopper-blister.jpg",
+        "alt": "A woman uses her palm to press a pill out of its blister pack with the PillenPopper",
+        "caption": "PillenPopper operated with the palm"
       }
     ],
     "faqs": [
