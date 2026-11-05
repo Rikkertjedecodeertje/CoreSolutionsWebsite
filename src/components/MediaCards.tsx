@@ -1,4 +1,3 @@
-import { Newspaper } from 'lucide-react';
 import type { MediaMention } from '@/data/projects';
 import { ResponsiveImage } from '@/components/ResponsiveImage';
 import { assetPath } from '@/lib/sitePath';
@@ -12,10 +11,20 @@ const images: Record<string, string> = {
   'Omroep Delft': '/images/pillenpopper-blister.jpg',
 };
 
+const sourceLogos: Record<string, { src: string; width: number }> = {
+  AD: { src: '/images/press-logos/ad-logo.png', width: 32 },
+  'Omroep Delft': { src: '/images/press-logos/omroep-delft-logo.png', width: 146 },
+  'De Nieuwe Haagse Courant': { src: '/images/press-logos/dnhc-logo.png', width: 126 },
+  'Den Haag FM': { src: '/images/press-logos/den-haag-fm-logo.png', width: 44 },
+  'The Hague Online': { src: '/images/press-logos/hague-online-logo.png', width: 146 },
+  ImpactCity: { src: '/images/press-logos/impactcity-logo.png', width: 146 },
+};
+
 export function MediaCards({ mentions }: { mentions: MediaMention[] }) {
   return (
     <div className={styles.grid}>
       {mentions.map((mention) => {
+        const logo = sourceLogos[mention.source ?? ''];
         const links = [
           ...(mention.href && mention.linkLabel
             ? [{ label: mention.linkLabel, href: mention.href }]
@@ -64,7 +73,20 @@ export function MediaCards({ mentions }: { mentions: MediaMention[] }) {
             )}
             <div className={styles.footer}>
               {mention.date && <p className={styles.date}>{mention.date}</p>}
-              <p className={styles.source}><Newspaper size={15} aria-hidden="true" />{mention.source}</p>
+              <div className={styles.source}>
+                {logo ? (
+                  <ResponsiveImage
+                    src={assetPath(logo.src)}
+                    alt={mention.source ?? ''}
+                    className={styles.sourceLogo}
+                    sizes={`${logo.width}px`}
+                    width={logo.width}
+                    height={48}
+                    style={{ width: logo.width }}
+                    loading="lazy"
+                  />
+                ) : mention.source}
+              </div>
             </div>
           </article>
         );

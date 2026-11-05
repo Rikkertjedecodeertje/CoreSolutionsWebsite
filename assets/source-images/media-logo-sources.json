@@ -1,0 +1,37 @@
+{
+  "retrievedOn": "2026-11-05",
+  "preparation": "Preserve official colours and transparency; crop only fully transparent margins. Originals retained unchanged.",
+  "logos": [
+    {
+      "sourceUrl": "https://www.ad.nl/favicon.ico",
+      "vectorSourceUrl": "https://statics.ad.nl/img/icons/brands/ad-2247ef4ca4.svg",
+      "original": "assets/originals/media-logos/ad-logo.ico",
+      "prepared": "assets/source-images/media-logos/ad-logo.png"
+    },
+    {
+      "sourceUrl": "https://www.omroepdelft.nl/wp-content/uploads/2025/07/Logo_Nieuw_V2-1x.png",
+      "original": "assets/originals/media-logos/omroep-delft-logo.png",
+      "prepared": "assets/source-images/media-logos/omroep-delft-logo.png"
+    },
+    {
+      "sourceUrl": "https://dnhc.nl/wp-content/uploads/go-x/u/1b3dec35-f315-488d-96c0-ca62621b8c19/image-384x279.png",
+      "original": "assets/originals/media-logos/dnhc-logo.png",
+      "prepared": "assets/source-images/media-logos/dnhc-logo.png"
+    },
+    {
+      "sourceUrl": "https://s.regiogroei.cloud/img/brand-logos/resized/logo_denhaagfm.jpg",
+      "original": "assets/originals/media-logos/den-haag-fm-logo.jpg",
+      "prepared": "assets/source-images/media-logos/den-haag-fm-logo.png"
+    },
+    {
+      "sourceUrl": "https://thehagueonline.com/wp-content/uploads/2025/01/THOLLogo-2.png",
+      "original": "assets/originals/media-logos/hague-online-logo.png",
+      "prepared": "assets/source-images/media-logos/hague-online-logo.png"
+    },
+    {
+      "sourceUrl": "https://www.impactcity.nl/wp/wp-content/uploads/impactcity/2021/11/ImpactCity_RGB-ai.png",
+      "original": "assets/originals/media-logos/impactcity-logo.png",
+      "prepared": "assets/source-images/media-logos/impactcity-logo.png"
+    }
+  ]
+}

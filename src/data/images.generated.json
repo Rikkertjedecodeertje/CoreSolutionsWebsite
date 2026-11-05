@@ -536,5 +536,165 @@
         "jpg": "/images/optimized/split-detail-ready-480.jpg"
       }
     ]
+  },
+  "/images/press-logos/ad-logo.png": {
+    "width": 64,
+    "height": 64,
+    "sizes": "146px",
+    "fallback": "/images/optimized/press-logos--ad-logo-64.png",
+    "variants": [
+      {
+        "width": 64,
+        "height": 64,
+        "avif": "/images/optimized/press-logos--ad-logo-64.avif",
+        "webp": "/images/optimized/press-logos--ad-logo-64.webp",
+        "png": "/images/optimized/press-logos--ad-logo-64.png"
+      }
+    ]
+  },
+  "/images/press-logos/den-haag-fm-logo.png": {
+    "width": 320,
+    "height": 320,
+    "sizes": "146px",
+    "fallback": "/images/optimized/press-logos--den-haag-fm-logo-320.jpg",
+    "variants": [
+      {
+        "width": 80,
+        "height": 80,
+        "avif": "/images/optimized/press-logos--den-haag-fm-logo-80.avif",
+        "webp": "/images/optimized/press-logos--den-haag-fm-logo-80.webp",
+        "jpg": "/images/optimized/press-logos--den-haag-fm-logo-80.jpg"
+      },
+      {
+        "width": 160,
+        "height": 160,
+        "avif": "/images/optimized/press-logos--den-haag-fm-logo-160.avif",
+        "webp": "/images/optimized/press-logos--den-haag-fm-logo-160.webp",
+        "jpg": "/images/optimized/press-logos--den-haag-fm-logo-160.jpg"
+      },
+      {
+        "width": 320,
+        "height": 320,
+        "avif": "/images/optimized/press-logos--den-haag-fm-logo-320.avif",
+        "webp": "/images/optimized/press-logos--den-haag-fm-logo-320.webp",
+        "jpg": "/images/optimized/press-logos--den-haag-fm-logo-320.jpg"
+      }
+    ]
+  },
+  "/images/press-logos/dnhc-logo.png": {
+    "width": 320,
+    "height": 200,
+    "sizes": "146px",
+    "fallback": "/images/optimized/press-logos--dnhc-logo-320.png",
+    "variants": [
+      {
+        "width": 80,
+        "height": 50,
+        "avif": "/images/optimized/press-logos--dnhc-logo-80.avif",
+        "webp": "/images/optimized/press-logos--dnhc-logo-80.webp",
+        "png": "/images/optimized/press-logos--dnhc-logo-80.png"
+      },
+      {
+        "width": 160,
+        "height": 100,
+        "avif": "/images/optimized/press-logos--dnhc-logo-160.avif",
+        "webp": "/images/optimized/press-logos--dnhc-logo-160.webp",
+        "png": "/images/optimized/press-logos--dnhc-logo-160.png"
+      },
+      {
+        "width": 320,
+        "height": 200,
+        "avif": "/images/optimized/press-logos--dnhc-logo-320.avif",
+        "webp": "/images/optimized/press-logos--dnhc-logo-320.webp",
+        "png": "/images/optimized/press-logos--dnhc-logo-320.png"
+      }
+    ]
+  },
+  "/images/press-logos/hague-online-logo.png": {
+    "width": 320,
+    "height": 98,
+    "sizes": "146px",
+    "fallback": "/images/optimized/press-logos--hague-online-logo-320.png",
+    "variants": [
+      {
+        "width": 80,
+        "height": 24,
+        "avif": "/images/optimized/press-logos--hague-online-logo-80.avif",
+        "webp": "/images/optimized/press-logos--hague-online-logo-80.webp",
+        "png": "/images/optimized/press-logos--hague-online-logo-80.png"
+      },
+      {
+        "width": 160,
+        "height": 49,
+        "avif": "/images/optimized/press-logos--hague-online-logo-160.avif",
+        "webp": "/images/optimized/press-logos--hague-online-logo-160.webp",
+        "png": "/images/optimized/press-logos--hague-online-logo-160.png"
+      },
+      {
+        "width": 320,
+        "height": 98,
+        "avif": "/images/optimized/press-logos--hague-online-logo-320.avif",
+        "webp": "/images/optimized/press-logos--hague-online-logo-320.webp",
+        "png": "/images/optimized/press-logos--hague-online-logo-320.png"
+      }
+    ]
+  },
+  "/images/press-logos/impactcity-logo.png": {
+    "width": 320,
+    "height": 62,
+    "sizes": "146px",
+    "fallback": "/images/optimized/press-logos--impactcity-logo-320.png",
+    "variants": [
+      {
+        "width": 80,
+        "height": 15,
+        "avif": "/images/optimized/press-logos--impactcity-logo-80.avif",
+        "webp": "/images/optimized/press-logos--impactcity-logo-80.webp",
+        "png": "/images/optimized/press-logos--impactcity-logo-80.png"
+      },
+      {
+        "width": 160,
+        "height": 31,
+        "avif": "/images/optimized/press-logos--impactcity-logo-160.avif",
+        "webp": "/images/optimized/press-logos--impactcity-logo-160.webp",
+        "png": "/images/optimized/press-logos--impactcity-logo-160.png"
+      },
+      {
+        "width": 320,
+        "height": 62,
+        "avif": "/images/optimized/press-logos--impactcity-logo-320.avif",
+        "webp": "/images/optimized/press-logos--impactcity-logo-320.webp",
+        "png": "/images/optimized/press-logos--impactcity-logo-320.png"
+      }
+    ]
+  },
+  "/images/press-logos/omroep-delft-logo.png": {
+    "width": 320,
+    "height": 87,
+    "sizes": "146px",
+    "fallback": "/images/optimized/press-logos--omroep-delft-logo-320.png",
+    "variants": [
+      {
+        "width": 80,
+        "height": 22,
+        "avif": "/images/optimized/press-logos--omroep-delft-logo-80.avif",
+        "webp": "/images/optimized/press-logos--omroep-delft-logo-80.webp",
+        "png": "/images/optimized/press-logos--omroep-delft-logo-80.png"
+      },
+      {
+        "width": 160,
+        "height": 44,
+        "avif": "/images/optimized/press-logos--omroep-delft-logo-160.avif",
+        "webp": "/images/optimized/press-logos--omroep-delft-logo-160.webp",
+        "png": "/images/optimized/press-logos--omroep-delft-logo-160.png"
+      },
+      {
+        "width": 320,
+        "height": 87,
+        "avif": "/images/optimized/press-logos--omroep-delft-logo-320.avif",
+        "webp": "/images/optimized/press-logos--omroep-delft-logo-320.webp",
+        "png": "/images/optimized/press-logos--omroep-delft-logo-320.png"
+      }
+    ]
   }
 }

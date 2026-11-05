@@ -15,6 +15,12 @@ REPLACEMENTS = {
  "pillenpopper-product.webp": ROOT / "assets/source-images/pillenpopper-cleaned.png",
 }
 EXTRA_SOURCES = {
+ "press-logos/ad-logo.png": ROOT / "assets/source-images/media-logos/ad-logo.png",
+ "press-logos/omroep-delft-logo.png": ROOT / "assets/source-images/media-logos/omroep-delft-logo.png",
+ "press-logos/dnhc-logo.png": ROOT / "assets/source-images/media-logos/dnhc-logo.png",
+ "press-logos/den-haag-fm-logo.png": ROOT / "assets/source-images/media-logos/den-haag-fm-logo.png",
+ "press-logos/hague-online-logo.png": ROOT / "assets/source-images/media-logos/hague-online-logo.png",
+ "press-logos/impactcity-logo.png": ROOT / "assets/source-images/media-logos/impactcity-logo.png",
  "split-detail-place.jpg": ROOT / "assets/source-images/split-detail-place.jpg",
  "split-detail-ready.jpg": ROOT / "assets/source-images/split-detail-ready.jpg",
  "media-hague-online.jpg": ROOT / "assets/source-images/media-hague-online.jpg",
@@ -25,6 +31,8 @@ parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--only", nargs="+", help="Regenerate only the named image keys; preserve other assets")
 args = parser.parse_args()
 def plan(name):
+ if name.startswith("press-logos/"):
+  return [80,160,320], "146px", "Media source logos; retain alpha, trim empty margins, never upscale"
  if name.startswith("split-detail-"):
   return [160,320,480], "110px", "Pill-splitting detail insets"
  if name.startswith("media-"):
