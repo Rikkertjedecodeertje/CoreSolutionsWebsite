@@ -286,6 +286,20 @@ export const projects: Project[] = [
     ],
     "mediaMentions": [
       {
+        "title": "Inventor Rik (23) helps a rheumatism patient stop struggling with blister packs",
+        "description": "AD features Rik van Wieren and the PillenPopper (premium article in Dutch).",
+        "href": "https://www.ad.nl/den-haag/dankzij-uitvinder-rik-23-hoeft-een-reumapatient-niet-meer-te-worstelen-met-medicijnstrips~a407efaf/",
+        "source": "AD",
+        "date": "5 November 2026"
+      },
+      {
+        "title": "Rik (23) invents the PillenPopper: helping people stay independent",
+        "description": "Omroep Delft reports on the PillenPopper and independence when removing pills from blister packs (article in Dutch).",
+        "href": "https://www.omroepdelft.nl/delft/rik-23-bedenkt-pillenpopper-biedt-stukje-zelfstandigheid/",
+        "source": "Omroep Delft",
+        "date": "5 November 2026"
+      },
+      {
         "title": "Rik (23) from The Hague develops a device to help people remove pills independently",
         "description": "De Nieuwe Haagse Courant covers the PillenPopper, its development with users and occupational therapists, and the planned pilot with one hundred devices (article in Dutch).",
         "href": "https://dnhc.nl/voorpagina/haagse-rik-23-ontwikkelt-hulpmiddel-waarmee-mensen-zelfstandig-pillen-kunnen-uitdrukken/",
@@ -378,6 +392,22 @@ export const editableMetrics = [
 ];
 
 export const mediaHighlights: MediaHighlight[] = [
+  {
+    "projectSlug": "pillenpopper",
+    "title": "Inventor Rik (23) helps a rheumatism patient stop struggling with blister packs",
+    "description": "AD features Rik van Wieren and the PillenPopper (premium article in Dutch).",
+    "href": "https://www.ad.nl/den-haag/dankzij-uitvinder-rik-23-hoeft-een-reumapatient-niet-meer-te-worstelen-met-medicijnstrips~a407efaf/",
+    "source": "AD",
+    "date": "5 November 2026"
+  },
+  {
+    "projectSlug": "pillenpopper",
+    "title": "Rik (23) invents the PillenPopper: helping people stay independent",
+    "description": "Omroep Delft reports on the PillenPopper and independence when removing pills from blister packs (article in Dutch).",
+    "href": "https://www.omroepdelft.nl/delft/rik-23-bedenkt-pillenpopper-biedt-stukje-zelfstandigheid/",
+    "source": "Omroep Delft",
+    "date": "5 November 2026"
+  },
   {
     "projectSlug": "pillenpopper",
     "title": "Rik (23) from The Hague develops a device to help people remove pills independently",

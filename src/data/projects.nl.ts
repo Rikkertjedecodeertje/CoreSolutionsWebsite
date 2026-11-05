@@ -219,6 +219,20 @@ export const projectsNl: Project[] = [
     ],
     "mediaMentions": [
       {
+        "title": "Dankzij uitvinder Rik (23) hoeft een reumapatiënt niet meer te worstelen met medicijnstrips",
+        "description": "Het AD schrijft over Rik van Wieren en de PillenPopper (premiumartikel).",
+        "href": "https://www.ad.nl/den-haag/dankzij-uitvinder-rik-23-hoeft-een-reumapatient-niet-meer-te-worstelen-met-medicijnstrips~a407efaf/",
+        "source": "AD",
+        "date": "5 november 2026"
+      },
+      {
+        "title": "Rik (23) bedenkt pillenpopper: ‘Biedt stukje zelfstandigheid’",
+        "description": "Omroep Delft schrijft over de PillenPopper en zelfstandig pillen uit een strip halen.",
+        "href": "https://www.omroepdelft.nl/delft/rik-23-bedenkt-pillenpopper-biedt-stukje-zelfstandigheid/",
+        "source": "Omroep Delft",
+        "date": "5 november 2026"
+      },
+      {
         "title": "Haagse Rik (23) ontwikkelt hulpmiddel waarmee mensen zelfstandig pillen kunnen uitdrukken",
         "description": "De Nieuwe Haagse Courant schrijft over de PillenPopper, de ontwikkeling met gebruikers en ergotherapeuten en de geplande pilot met honderd hulpmiddelen.",
         "href": "https://dnhc.nl/voorpagina/haagse-rik-23-ontwikkelt-hulpmiddel-waarmee-mensen-zelfstandig-pillen-kunnen-uitdrukken/",
@@ -311,6 +325,22 @@ export const editableMetricsNl = [
 ];
 
 export const mediaHighlightsNl: MediaHighlight[] = [
+  {
+    "projectSlug": "pillenpopper",
+    "title": "Dankzij uitvinder Rik (23) hoeft een reumapatiënt niet meer te worstelen met medicijnstrips",
+    "description": "Het AD schrijft over Rik van Wieren en de PillenPopper (premiumartikel).",
+    "href": "https://www.ad.nl/den-haag/dankzij-uitvinder-rik-23-hoeft-een-reumapatient-niet-meer-te-worstelen-met-medicijnstrips~a407efaf/",
+    "source": "AD",
+    "date": "5 november 2026"
+  },
+  {
+    "projectSlug": "pillenpopper",
+    "title": "Rik (23) bedenkt pillenpopper: ‘Biedt stukje zelfstandigheid’",
+    "description": "Omroep Delft schrijft over de PillenPopper en zelfstandig pillen uit een strip halen.",
+    "href": "https://www.omroepdelft.nl/delft/rik-23-bedenkt-pillenpopper-biedt-stukje-zelfstandigheid/",
+    "source": "Omroep Delft",
+    "date": "5 november 2026"
+  },
   {
     "projectSlug": "pillenpopper",
     "title": "Haagse Rik (23) ontwikkelt hulpmiddel waarmee mensen zelfstandig pillen kunnen uitdrukken",
