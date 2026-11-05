@@ -380,5 +380,34 @@
     "largestAvifBytes": 5920,
     "largestWebpBytes": 16970,
     "purpose": "Media source logos; retain alpha, trim empty margins, never upscale"
+  },
+  {
+    "path": "/images/media-haagse-dingen.jpg",
+    "source": "assets/source-images/media-haagse-dingen.jpg",
+    "originalBytes": 9374,
+    "sourceWidth": 480,
+    "sourceHeight": 360,
+    "widths": [
+      320,
+      480
+    ],
+    "largestAvifBytes": 8993,
+    "largestWebpBytes": 8794,
+    "purpose": "Press article thumbnails"
+  },
+  {
+    "path": "/images/press-logos/haagse-dingen-logo.png",
+    "source": "assets/source-images/media-logos/haagse-dingen-logo.png",
+    "originalBytes": 661657,
+    "sourceWidth": 900,
+    "sourceHeight": 900,
+    "widths": [
+      80,
+      160,
+      320
+    ],
+    "largestAvifBytes": 18580,
+    "largestWebpBytes": 19014,
+    "purpose": "Media source logos; retain alpha, trim empty margins, never upscale"
   }
 ]

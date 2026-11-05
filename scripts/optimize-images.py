@@ -15,6 +15,8 @@ REPLACEMENTS = {
  "pillenpopper-product.webp": ROOT / "assets/source-images/pillenpopper-cleaned.png",
 }
 EXTRA_SOURCES = {
+ "press-logos/haagse-dingen-logo.png": ROOT / "assets/source-images/media-logos/haagse-dingen-logo.png",
+ "media-haagse-dingen.jpg": ROOT / "assets/source-images/media-haagse-dingen.jpg",
  "press-logos/ad-logo.png": ROOT / "assets/source-images/media-logos/ad-logo.png",
  "press-logos/omroep-delft-logo.png": ROOT / "assets/source-images/media-logos/omroep-delft-logo.png",
  "press-logos/dnhc-logo.png": ROOT / "assets/source-images/media-logos/dnhc-logo.png",

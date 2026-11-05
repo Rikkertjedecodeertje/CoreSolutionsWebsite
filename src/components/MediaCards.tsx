@@ -9,15 +9,17 @@ const images: Record<string, string> = {
   'Den Haag FM': '/images/pillenpopper-product.webp',
   AD: '/images/pillenpopper-product.webp',
   'Omroep Delft': '/images/pillenpopper-blister.jpg',
+  'Haagse Dingen': '/images/media-haagse-dingen.jpg',
 };
 
 const sourceLogos: Record<string, { src: string; width: number }> = {
-  AD: { src: '/images/press-logos/ad-logo.png', width: 32 },
-  'Omroep Delft': { src: '/images/press-logos/omroep-delft-logo.png', width: 146 },
-  'De Nieuwe Haagse Courant': { src: '/images/press-logos/dnhc-logo.png', width: 126 },
-  'Den Haag FM': { src: '/images/press-logos/den-haag-fm-logo.png', width: 44 },
-  'The Hague Online': { src: '/images/press-logos/hague-online-logo.png', width: 146 },
-  ImpactCity: { src: '/images/press-logos/impactcity-logo.png', width: 146 },
+  AD: { src: '/images/press-logos/ad-logo.png', width: 24 },
+  'Omroep Delft': { src: '/images/press-logos/omroep-delft-logo.png', width: 100 },
+  'De Nieuwe Haagse Courant': { src: '/images/press-logos/dnhc-logo.png', width: 50 },
+  'Den Haag FM': { src: '/images/press-logos/den-haag-fm-logo.png', width: 28 },
+  'The Hague Online': { src: '/images/press-logos/hague-online-logo.png', width: 92 },
+  ImpactCity: { src: '/images/press-logos/impactcity-logo.png', width: 100 },
+  'Haagse Dingen': { src: '/images/press-logos/haagse-dingen-logo.png', width: 28 },
 };
 
 export function MediaCards({ mentions }: { mentions: MediaMention[] }) {
@@ -80,9 +82,7 @@ export function MediaCards({ mentions }: { mentions: MediaMention[] }) {
                     alt={mention.source ?? ''}
                     className={styles.sourceLogo}
                     sizes={`${logo.width}px`}
-                    width={logo.width}
-                    height={48}
-                    style={{ width: logo.width }}
+                    style={{ maxWidth: logo.width }}
                     loading="lazy"
                   />
                 ) : mention.source}
