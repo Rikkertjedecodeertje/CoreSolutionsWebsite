@@ -29,12 +29,12 @@
   color: #d9c3ef;
 }
 
-.pillenpopper-theme .brand-stage-icon {
+.pillenpopper-theme .bg-dark .brand-stage-icon {
   background: #eee6f6;
   color: var(--pillenpopper-purple);
 }
 
-.pillenpopper-theme .group:hover .brand-stage-icon {
+.pillenpopper-theme .bg-dark .group:hover .brand-stage-icon {
   background: #d9c3ef;
   color: var(--pillenpopper-purple-dark);
 }
