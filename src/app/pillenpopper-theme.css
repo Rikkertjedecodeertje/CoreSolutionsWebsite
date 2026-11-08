@@ -1,0 +1,58 @@
+/* PillenPopper palette, scoped to both portfolio translations. */
+.pillenpopper-theme {
+  --pillenpopper-purple: #7447a4;
+  --pillenpopper-purple-dark: #563279;
+  --pillenpopper-ink: #20222e;
+  --pillenpopper-gray: #929599;
+  --color-background: #faf9f6;
+  --color-card: #ffffff;
+  --color-text: var(--pillenpopper-ink);
+  --color-muted: #5e626d;
+  --color-border: #ded8e5;
+  --color-primary: var(--pillenpopper-purple-dark);
+  --color-secondary: var(--pillenpopper-purple);
+  --color-dark: var(--pillenpopper-ink);
+  --color-steel: var(--pillenpopper-purple);
+  --color-graphite: #383545;
+  --media-surface: var(--pillenpopper-ink);
+  --media-link: #d9c3ef;
+  --media-link-hover: #eee2fa;
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+.pillenpopper-theme :is(h1, h2, h3).text-text {
+  color: var(--pillenpopper-purple);
+}
+
+.pillenpopper-theme .bg-dark .text-secondary {
+  color: #d9c3ef;
+}
+
+.pillenpopper-theme .brand-stage-icon {
+  background: #eee6f6;
+  color: var(--pillenpopper-purple);
+}
+
+.pillenpopper-theme .group:hover .brand-stage-icon {
+  background: #d9c3ef;
+  color: var(--pillenpopper-purple-dark);
+}
+
+.pillenpopper-theme .bg-dark .text-white\/30 {
+  color: var(--pillenpopper-gray);
+}
+
+.pillenpopper-theme :is(a, summary, input, button):focus-visible {
+  outline: 3px solid var(--pillenpopper-purple);
+  outline-offset: 4px;
+}
+
+.pillenpopper-theme .bg-dark :is(a, summary):focus-visible {
+  outline-color: #d9c3ef;
+}
+
+.pillenpopper-theme ::selection {
+  background: #e6d8f2;
+  color: var(--pillenpopper-ink);
+}

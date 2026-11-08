@@ -6,11 +6,11 @@ import { assetPath } from '@/lib/sitePath';
 import styles from './waitlist.module.css';
 
 export const metadata: Metadata = {
-  title: 'PillenPopper wachtlijst | Zelf je pillen klaarzetten',
+  title: 'PillenPopper wachtlijst | Zelf je pillen voorbereiden',
   description: 'Pillen uit een strip drukken, opvangen en geschikte pillen splitten. Ontdek de PillenPopper en ontvang bericht over de lancering, verkoop en crowdfunding.',
   alternates: { canonical: '/portfolio/pillenpopper/wachtlijst/', languages: { nl: '/portfolio/pillenpopper/wachtlijst/', en: '/portfolio/pillenpopper/waitlist/' } },
   openGraph: {
-    title: 'Zelf je pillen klaarzetten met de PillenPopper',
+    title: 'Zelf je pillen voorbereiden met de PillenPopper',
     description: 'Ook met zwakke of pijnlijke handen. Meld je vrijblijvend aan voor de wachtlijst.',
     url: '/portfolio/pillenpopper/wachtlijst/', locale: 'nl_NL',
     images: [{ url: '/images/pillenpopper-wachtlijst/uitdrukken.jpg', width: 1448, height: 1086, alt: 'Pillen uit een strip drukken met de PillenPopper' }],
@@ -28,7 +28,7 @@ export default function WaitlistPage() {
       <section className={styles.hero} aria-labelledby="waitlist-title">
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow}><span /> PILLENPOPPER · MEER ZELFSTANDIGHEID</p>
-          <h1 id="waitlist-title">Zelf je pillen<br />klaarzetten.<br /><span>Ook met pijnlijke handen.</span></h1>
+          <h1 id="waitlist-title">Zelf je pillen<br />voorbereiden.<br /><span>Ook met pijnlijke handen.</span></h1>
           <p className={styles.intro}>Pillen uit de strip drukken en geschikte pillen splitten met je handpalm of onderarm. De PillenPopper helpt je het zelf te doen.</p>
           <a className={styles.button} href="#wachtlijst">Zet mij op de wachtlijst <ArrowRight size={19} aria-hidden="true" /></a>
           <p className={styles.micro}>Vrijblijvend. Ontvang bericht zodra je kunt bestellen.</p>

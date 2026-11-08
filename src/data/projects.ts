@@ -289,7 +289,8 @@ export const projects: Project[] = [
         "title": "Rik (23) develops the PillenPopper for people with painful or weak hands",
         "description": "Haagse Dingen visits Rik van Wieren to show the PillenPopper in action (video in Dutch).",
         "href": "https://www.youtube.com/watch?v=inTvBd82SBE",
-        "source": "Haagse Dingen"
+        "source": "Haagse Dingen",
+        "date": "3 November 2026"
       },
       {
         "title": "Inventor Rik (23) helps a rheumatism patient stop struggling with blister packs",
@@ -403,7 +404,8 @@ export const mediaHighlights: MediaHighlight[] = [
     "title": "Rik (23) develops the PillenPopper for people with painful or weak hands",
     "description": "Haagse Dingen visits Rik van Wieren to show the PillenPopper in action (video in Dutch).",
     "href": "https://www.youtube.com/watch?v=inTvBd82SBE",
-    "source": "Haagse Dingen"
+    "source": "Haagse Dingen",
+    "date": "3 November 2026"
   },
   {
     "projectSlug": "pillenpopper",

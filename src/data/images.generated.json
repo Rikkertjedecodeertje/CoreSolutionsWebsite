@@ -670,27 +670,27 @@
   },
   "/images/press-logos/omroep-delft-logo.png": {
     "width": 320,
-    "height": 87,
+    "height": 68,
     "sizes": "146px",
     "fallback": "/images/optimized/press-logos--omroep-delft-logo-320.png",
     "variants": [
       {
         "width": 80,
-        "height": 22,
+        "height": 17,
         "avif": "/images/optimized/press-logos--omroep-delft-logo-80.avif",
         "webp": "/images/optimized/press-logos--omroep-delft-logo-80.webp",
         "png": "/images/optimized/press-logos--omroep-delft-logo-80.png"
       },
       {
         "width": 160,
-        "height": 44,
+        "height": 34,
         "avif": "/images/optimized/press-logos--omroep-delft-logo-160.avif",
         "webp": "/images/optimized/press-logos--omroep-delft-logo-160.webp",
         "png": "/images/optimized/press-logos--omroep-delft-logo-160.png"
       },
       {
         "width": 320,
-        "height": 87,
+        "height": 68,
         "avif": "/images/optimized/press-logos--omroep-delft-logo-320.avif",
         "webp": "/images/optimized/press-logos--omroep-delft-logo-320.webp",
         "png": "/images/optimized/press-logos--omroep-delft-logo-320.png"

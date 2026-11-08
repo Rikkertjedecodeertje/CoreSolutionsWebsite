@@ -65,7 +65,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   const isBatbox = project.slug === 'batbox-battery-tester';
 
   return (
-    <div className={isIheel ? 'iheel-theme' : undefined}>
+    <div className={isIheel ? 'iheel-theme' : isPillenpopper ? 'pillenpopper-theme' : undefined}>
       <section className="border-b border-border bg-card">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-[1fr_0.9fr] md:items-center lg:px-8">
           <div>

@@ -367,21 +367,6 @@
     "purpose": "Media source logos; retain alpha, trim empty margins, never upscale"
   },
   {
-    "path": "/images/press-logos/omroep-delft-logo.png",
-    "source": "assets/source-images/media-logos/omroep-delft-logo.png",
-    "originalBytes": 60786,
-    "sourceWidth": 990,
-    "sourceHeight": 270,
-    "widths": [
-      80,
-      160,
-      320
-    ],
-    "largestAvifBytes": 5920,
-    "largestWebpBytes": 16970,
-    "purpose": "Media source logos; retain alpha, trim empty margins, never upscale"
-  },
-  {
     "path": "/images/media-haagse-dingen.jpg",
     "source": "assets/source-images/media-haagse-dingen.jpg",
     "originalBytes": 9374,
@@ -408,6 +393,21 @@
     ],
     "largestAvifBytes": 18580,
     "largestWebpBytes": 19014,
+    "purpose": "Media source logos; retain alpha, trim empty margins, never upscale"
+  },
+  {
+    "path": "/images/press-logos/omroep-delft-logo.png",
+    "source": "assets/source-images/media-logos/omroep-delft-logo.png",
+    "originalBytes": 26831,
+    "sourceWidth": 990,
+    "sourceHeight": 211,
+    "widths": [
+      80,
+      160,
+      320
+    ],
+    "largestAvifBytes": 5076,
+    "largestWebpBytes": 16702,
     "purpose": "Media source logos; retain alpha, trim empty margins, never upscale"
   }
 ]

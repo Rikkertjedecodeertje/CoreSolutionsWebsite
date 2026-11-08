@@ -222,7 +222,8 @@ export const projectsNl: Project[] = [
         "title": "Rik (23) ontwikkelt PillenPopper voor mensen met pijnlijke of zwakke handen",
         "description": "Haagse Dingen gaat langs bij Rik van Wieren en laat zien hoe de PillenPopper werkt.",
         "href": "https://www.youtube.com/watch?v=inTvBd82SBE",
-        "source": "Haagse Dingen"
+        "source": "Haagse Dingen",
+        "date": "3 november 2026"
       },
       {
         "title": "Dankzij uitvinder Rik (23) hoeft een reumapatiënt niet meer te worstelen met medicijnstrips",
@@ -336,7 +337,8 @@ export const mediaHighlightsNl: MediaHighlight[] = [
     "title": "Rik (23) ontwikkelt PillenPopper voor mensen met pijnlijke of zwakke handen",
     "description": "Haagse Dingen gaat langs bij Rik van Wieren en laat zien hoe de PillenPopper werkt.",
     "href": "https://www.youtube.com/watch?v=inTvBd82SBE",
-    "source": "Haagse Dingen"
+    "source": "Haagse Dingen",
+    "date": "3 november 2026"
   },
   {
     "projectSlug": "pillenpopper",
