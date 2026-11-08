@@ -10,6 +10,7 @@ const images: Record<string, string> = {
   AD: '/images/pillenpopper-product.webp',
   'Omroep Delft': '/images/pillenpopper-blister.jpg',
   'Haagse Dingen': '/images/media-haagse-dingen.jpg',
+  LeidenNieuwsjournaal: '/images/rik-van-wieren-founder.jpg',
 };
 
 const sourceLogos: Record<string, string> = {
@@ -27,64 +28,52 @@ export function MediaCards({ mentions }: { mentions: MediaMention[] }) {
     <div className={styles.grid}>
       {mentions.map((mention) => {
         const logo = sourceLogos[mention.source ?? ''];
+        const hasSeparateLinks = !!mention.linkLabel || !!mention.additionalLinks?.length;
         const links = [
-          ...(mention.href && mention.linkLabel
-            ? [{ label: mention.linkLabel, href: mention.href }]
-            : []),
+          ...(mention.href && mention.linkLabel ? [{ label: mention.linkLabel, href: mention.href }] : []),
           ...(mention.additionalLinks ?? []),
         ];
-        const image = (
-          <ResponsiveImage
-            src={assetPath(images[mention.source ?? ''] ?? '/images/pillenpopper-blister.jpg')}
-            alt=""
-            sizes="(min-width: 1280px) 290px, (min-width: 768px) 45vw, calc(100vw - 40px)"
-            className={styles.image}
-            loading="lazy"
-          />
-        );
-
         return (
-          <article className={styles.card} key={mention.title}>
-            {links.length > 0 || !mention.href ? (
-              <div className={styles.mainContent}>
-                {image}
-                <div className={styles.copy}>
-                  <h3>{mention.title}</h3>
-                  {links.length > 0 && (
-                    <div className={styles.links}>
-                      {links.map((link) => (
-                        <a
-                          className={styles.extraLink}
-                          href={link.href}
-                          key={link.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {link.label}
-                        </a>
-                      ))}
-                    </div>
-                  )}
+          <article className={styles.card} key={`${mention.source}-${mention.title}`}>
+            <div className={styles.thumbnail}>
+              <ResponsiveImage
+                src={assetPath(images[mention.source ?? ''] ?? '/images/pillenpopper-blister.jpg')}
+                alt=""
+                sizes="(min-width: 1000px) 144px, (min-width: 700px) 180px, 28vw"
+                className={styles.image}
+                loading="lazy"
+              />
+            </div>
+            <div className={styles.content}>
+              <h3 className={styles.title}>
+                {mention.href && !hasSeparateLinks ? (
+                  <a className={styles.mainLink} href={mention.href} target="_blank" rel="noopener noreferrer">
+                    {mention.title}
+                  </a>
+                ) : mention.title}
+              </h3>
+              {links.length > 0 && (
+                <div className={styles.links}>
+                  {links.map((link) => (
+                    <a className={styles.extraLink} href={link.href} key={link.href} target="_blank" rel="noopener noreferrer">
+                      {link.label}
+                    </a>
+                  ))}
                 </div>
-              </div>
-            ) : (
-              <a className={styles.mainLink} href={mention.href} target="_blank" rel="noopener noreferrer">
-                {image}
-                <div className={styles.copy}><h3>{mention.title}</h3></div>
-              </a>
-            )}
-            <div className={styles.footer}>
-              {mention.date && <p className={styles.date}>{mention.date}</p>}
-              <div className={styles.source}>
-                {logo ? (
-                  <ResponsiveImage
-                    src={assetPath(logo)}
-                    alt={mention.source ?? ''}
-                    className={styles.sourceLogo}
-                    sizes="124px"
-                    loading="lazy"
-                  />
-                ) : mention.source}
+              )}
+              <div className={styles.footer}>
+                <div className={styles.source}>
+                  {logo ? (
+                    <ResponsiveImage
+                      src={assetPath(logo)}
+                      alt={mention.source ?? ''}
+                      className={styles.sourceLogo}
+                      sizes="112px"
+                      loading="lazy"
+                    />
+                  ) : <span>{mention.source}</span>}
+                </div>
+                {mention.date && <p className={styles.date}>{mention.date}</p>}
               </div>
             </div>
           </article>

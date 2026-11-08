@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { SectionHeader } from '@/components/SectionHeader';
 import { SplitCta } from '@/components/SplitCta';
@@ -30,7 +31,9 @@ export default function DutchWhereToBuyPage() {
           description="Filter op merk en land, bekijk online marketplaces of vind de dichtstbijzijnde geselecteerde winkel op de interactieve kaart."
         />
         <div className="mt-10">
-          <WhereToBuyExplorer locale="nl" />
+          <Suspense fallback={<p role="status" className="py-12 text-muted">Verkooppunten laden…</p>}>
+            <WhereToBuyExplorer locale="nl" />
+          </Suspense>
         </div>
       </section>
       <SplitCta locale="nl" />

@@ -3,6 +3,7 @@ import { ResponsiveImage } from '@/components/ResponsiveImage';
 
 
 import Link from 'next/link';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { FormEvent, useEffect, useMemo, useRef, useState } from 'react';
 import {
   ChevronDown,
@@ -261,7 +262,20 @@ function StorePhoto({ point, locale }: { point: RetailPoint; locale: 'en' | 'nl'
 
 export function WhereToBuyExplorer({ locale = 'en' }: { locale?: 'en' | 'nl' }) {
   const text = copy[locale];
-  const [product, setProduct] = useState<ProductFilter>('all');
+  const pathname = usePathname();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const requestedProduct = searchParams.get('product');
+  const product: ProductFilter = products.some((item) => item.key === requestedProduct)
+    ? requestedProduct as ProductFilter
+    : 'all';
+  function setProduct(nextProduct: ProductFilter) {
+    const nextParams = new URLSearchParams(searchParams.toString());
+    if (nextProduct === 'all') nextParams.delete('product');
+    else nextParams.set('product', nextProduct);
+    const query = nextParams.toString();
+    router.replace(`${pathname}${query ? `?${query}` : ''}`, { scroll: false });
+  }
   const [country, setCountry] = useState<CountryKey>('netherlands');
   const [activePointId, setActivePointId] = useState<string | null>(
     retailPoints[0]?.id ?? null,

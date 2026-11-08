@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { SectionHeader } from '@/components/SectionHeader';
 import { SplitCta } from '@/components/SplitCta';
@@ -28,7 +29,9 @@ export default function WhereToBuyPage() {
           description="Filter by brand and country, explore online marketplaces, or find the nearest selected physical retailer on an interactive map."
         />
         <div className="mt-10">
-          <WhereToBuyExplorer />
+          <Suspense fallback={<p role="status" className="py-12 text-muted">Loading sales channels…</p>}>
+            <WhereToBuyExplorer />
+          </Suspense>
         </div>
       </section>
       <SplitCta />

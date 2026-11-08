@@ -65,7 +65,7 @@ export default function DutchProjectPage({ params }: ProjectPageProps) {
   const isBatbox = project.slug === 'batbox-battery-tester';
 
   return (
-    <div className={isIheel ? 'iheel-theme' : isPillenpopper ? 'pillenpopper-theme' : undefined}>
+    <div className={isIheel ? 'iheel-theme' : isPillenpopper ? 'pillenpopper-theme' : isBatbox ? 'batbox-theme' : undefined}>
       <section className="border-b border-border bg-card">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 md:grid-cols-[1fr_0.9fr] md:items-center lg:px-8">
           <div>
@@ -104,7 +104,7 @@ export default function DutchProjectPage({ params }: ProjectPageProps) {
               <ButtonLink href={isPillenpopper ? waitlistPaths.nl : '#sales-channels'}>
                 {isPillenpopper ? 'Op de wachtlijst' : 'Verkoopkanalen'}
               </ButtonLink>
-              {!isPillenpopper && <ButtonLink href="/nl/where-to-buy/" variant="secondary">Waar te koop</ButtonLink>}
+              {!isPillenpopper && <ButtonLink href={`/nl/where-to-buy/?product=${isIheel ? 'iheel' : 'batbox'}`} variant="secondary">Waar te koop</ButtonLink>}
               <ButtonLink href="/nl/contact/" variant="secondary">
                 Contact
               </ButtonLink>
@@ -194,7 +194,7 @@ export default function DutchProjectPage({ params }: ProjectPageProps) {
         </div>
       </section>
 
-      <SplitCta locale="nl" prelaunch={isPillenpopper} />
+      <SplitCta locale="nl" prelaunch={isPillenpopper} product={isIheel ? 'iheel' : isBatbox ? 'batbox' : undefined} />
     </div>
   );
 }

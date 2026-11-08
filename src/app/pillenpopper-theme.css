@@ -21,7 +21,7 @@
   color: var(--color-text);
 }
 
-.pillenpopper-theme :is(h1, h2, h3).text-text {
+.pillenpopper-theme :is(h2, h3).text-text {
   color: var(--pillenpopper-purple);
 }
 
@@ -55,4 +55,9 @@
 .pillenpopper-theme ::selection {
   background: #e6d8f2;
   color: var(--pillenpopper-ink);
+}
+
+.pillenpopper-theme h1.hero-title {
+  color: #20222e;
+  font-weight: 800;
 }

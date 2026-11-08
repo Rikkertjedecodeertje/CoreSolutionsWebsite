@@ -25,7 +25,7 @@ export const projectsNl: Project[] = [
       'Discrete vormgeving in de schoen',
     ],
     achievements: [
-      'Meer dan 5.000 producten verkocht',
+      'Meer dan 10.000 producten verkocht',
       'Actief in 9 landen',
       'Online en fysieke distributie',
       'Beschikbaar via marketplaces en geselecteerde winkels',
@@ -33,7 +33,7 @@ export const projectsNl: Project[] = [
     salesChannels: [
       {
         label: 'Waar te koop',
-        href: '/where-to-buy/',
+        href: '/where-to-buy/?product=iheel',
         note: 'Bekijk online marketplaces en fysieke verkooppunten per land.',
       },
       {
@@ -130,7 +130,7 @@ export const projectsNl: Project[] = [
     salesChannels: [
       {
         label: 'Waar te koop',
-        href: '/where-to-buy/',
+        href: '/where-to-buy/?product=batbox',
         note: 'Bekijk beschikbare BATBOX®-verkoopkanalen per land.',
       },
       {
@@ -218,6 +218,13 @@ export const projectsNl: Project[] = [
       }
     ],
     "mediaMentions": [
+      {
+        "title": "Dankzij uitvinder Rik (23) hoeft een reumapatiënt niet meer te worstelen met medicijnstrips",
+        "description": "LeidenNieuwsjournaal schrijft over Rik van Wieren en de PillenPopper.",
+        "href": "https://leidennieuwsjournaal.nl/dankzij-uitvinder-rik-23-hoeft-een-reumapatient-niet-meer-te-worstelen-met-medicijnstrips/",
+        "source": "LeidenNieuwsjournaal",
+        "date": "5 november 2026"
+      },
       {
         "title": "Rik (23) ontwikkelt PillenPopper voor mensen met pijnlijke of zwakke handen",
         "description": "Haagse Dingen gaat langs bij Rik van Wieren en laat zien hoe de PillenPopper werkt.",
@@ -315,7 +322,7 @@ export const projectsNl: Project[] = [
 
 export const editableMetricsNl = [
   {
-    value: '5.000+',
+    value: '10.000+',
     label: 'producten verkocht',
     description: 'Actief in 9 landen.',
   },
@@ -332,6 +339,14 @@ export const editableMetricsNl = [
 ];
 
 export const mediaHighlightsNl: MediaHighlight[] = [
+  {
+    "projectSlug": "pillenpopper",
+    "title": "Dankzij uitvinder Rik (23) hoeft een reumapatiënt niet meer te worstelen met medicijnstrips",
+    "description": "LeidenNieuwsjournaal schrijft over Rik van Wieren en de PillenPopper.",
+    "href": "https://leidennieuwsjournaal.nl/dankzij-uitvinder-rik-23-hoeft-een-reumapatient-niet-meer-te-worstelen-met-medicijnstrips/",
+    "source": "LeidenNieuwsjournaal",
+    "date": "5 november 2026"
+  },
   {
     "projectSlug": "pillenpopper",
     "title": "Rik (23) ontwikkelt PillenPopper voor mensen met pijnlijke of zwakke handen",

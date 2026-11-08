@@ -89,7 +89,7 @@ const overviewCopy = {
 
 const achievementValues: Record<BrandKey, string[]> = {
   pillenpopper: ['TOGETHER', 'PATENT', '3D', '2026'],
-  iheel: ['5,000+', '9', 'OMNI', 'RETAIL'],
+  iheel: ['10.000+', '9', 'OMNI', 'RETAIL'],
   'batbox-battery-tester': ['LIVE', 'TOP', 'SEO', '4.9'],
 };
 

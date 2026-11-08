@@ -77,7 +77,7 @@ export const projects: Project[] = [
       'Discreet in-shoe design',
     ],
     achievements: [
-      '5,000+ products sold',
+      '10.000+ products sold',
       'Active in 9 countries',
       'Online and offline distribution',
       'Available through marketplaces and selected retailers',
@@ -85,7 +85,7 @@ export const projects: Project[] = [
     salesChannels: [
       {
         label: 'Where to buy',
-        href: '/where-to-buy/',
+        href: '/where-to-buy/?product=iheel',
         note: 'See online marketplaces and physical retail points by country.',
       },
       {
@@ -193,7 +193,7 @@ export const projects: Project[] = [
     salesChannels: [
       {
         label: 'Where to buy',
-        href: '/where-to-buy/',
+        href: '/where-to-buy/?product=batbox',
         note: 'See available BATBOX® sales channels by country.',
       },
       {
@@ -285,6 +285,13 @@ export const projects: Project[] = [
       }
     ],
     "mediaMentions": [
+      {
+        "title": "Inventor Rik (23) helps a rheumatism patient stop struggling with blister packs",
+        "description": "LeidenNieuwsjournaal features Rik van Wieren and the PillenPopper (article in Dutch).",
+        "href": "https://leidennieuwsjournaal.nl/dankzij-uitvinder-rik-23-hoeft-een-reumapatient-niet-meer-te-worstelen-met-medicijnstrips/",
+        "source": "LeidenNieuwsjournaal",
+        "date": "5 November 2026"
+      },
       {
         "title": "Rik (23) develops the PillenPopper for people with painful or weak hands",
         "description": "Haagse Dingen visits Rik van Wieren to show the PillenPopper in action (video in Dutch).",
@@ -382,7 +389,7 @@ export const projects: Project[] = [
 
 export const editableMetrics = [
   {
-    value: '5,000+',
+    value: '10.000+',
     label: 'products sold',
     description: 'Active in 9 countries.',
   },
@@ -399,6 +406,14 @@ export const editableMetrics = [
 ];
 
 export const mediaHighlights: MediaHighlight[] = [
+  {
+    "projectSlug": "pillenpopper",
+    "title": "Inventor Rik (23) helps a rheumatism patient stop struggling with blister packs",
+    "description": "LeidenNieuwsjournaal features Rik van Wieren and the PillenPopper (article in Dutch).",
+    "href": "https://leidennieuwsjournaal.nl/dankzij-uitvinder-rik-23-hoeft-een-reumapatient-niet-meer-te-worstelen-met-medicijnstrips/",
+    "source": "LeidenNieuwsjournaal",
+    "date": "5 November 2026"
+  },
   {
     "projectSlug": "pillenpopper",
     "title": "Rik (23) develops the PillenPopper for people with painful or weak hands",

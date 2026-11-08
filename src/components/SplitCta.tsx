@@ -1,6 +1,6 @@
 ﻿import { ButtonLink } from './ButtonLink';
 
-export function SplitCta({ locale = 'en', prelaunch = false }: { locale?: 'en' | 'nl'; prelaunch?: boolean }) {
+export function SplitCta({ locale = 'en', prelaunch = false, product }: { locale?: 'en' | 'nl'; prelaunch?: boolean; product?: 'iheel' | 'batbox' }) {
   const isNl = locale === 'nl';
   const prefix = isNl ? '/nl' : '';
 
@@ -19,7 +19,7 @@ export function SplitCta({ locale = 'en', prelaunch = false }: { locale?: 'en' |
           <div className="mt-auto pt-6">
             <ButtonLink
               className="border-white bg-white text-dark hover:border-secondary hover:bg-background"
-              href={prelaunch ? `${prefix}/contact/` : `${prefix}/where-to-buy/`}
+              href={prelaunch ? `${prefix}/contact/` : `${prefix}/where-to-buy/${product ? `?product=${product}` : ''}`}
               variant="secondary"
             >
               {prelaunch ? (isNl ? 'Vraag productinformatie' : 'Ask about the PillenPopper') : (isNl ? 'Waar te koop' : 'Where to buy')}

@@ -364,31 +364,31 @@
     ]
   },
   "/images/the-hague-skyline.png": {
-    "width": 1600,
-    "height": 1011,
+    "width": 800,
+    "height": 506,
     "sizes": "(min-width: 1280px) 760px, (min-width: 768px) 60vw, calc(100vw - 40px)",
-    "fallback": "/images/optimized/the-hague-skyline-1600.jpg",
+    "fallback": "/images/optimized/the-hague-skyline-800.jpg",
     "variants": [
       {
-        "width": 640,
-        "height": 404,
-        "avif": "/images/optimized/the-hague-skyline-640.avif",
-        "webp": "/images/optimized/the-hague-skyline-640.webp",
-        "jpg": "/images/optimized/the-hague-skyline-640.jpg"
+        "width": 320,
+        "height": 202,
+        "avif": "/images/optimized/the-hague-skyline-320.avif",
+        "webp": "/images/optimized/the-hague-skyline-320.webp",
+        "jpg": "/images/optimized/the-hague-skyline-320.jpg"
       },
       {
-        "width": 960,
-        "height": 607,
-        "avif": "/images/optimized/the-hague-skyline-960.avif",
-        "webp": "/images/optimized/the-hague-skyline-960.webp",
-        "jpg": "/images/optimized/the-hague-skyline-960.jpg"
+        "width": 480,
+        "height": 303,
+        "avif": "/images/optimized/the-hague-skyline-480.avif",
+        "webp": "/images/optimized/the-hague-skyline-480.webp",
+        "jpg": "/images/optimized/the-hague-skyline-480.jpg"
       },
       {
-        "width": 1600,
-        "height": 1011,
-        "avif": "/images/optimized/the-hague-skyline-1600.avif",
-        "webp": "/images/optimized/the-hague-skyline-1600.webp",
-        "jpg": "/images/optimized/the-hague-skyline-1600.jpg"
+        "width": 800,
+        "height": 506,
+        "avif": "/images/optimized/the-hague-skyline-800.avif",
+        "webp": "/images/optimized/the-hague-skyline-800.webp",
+        "jpg": "/images/optimized/the-hague-skyline-800.jpg"
       }
     ]
   },
@@ -745,6 +745,35 @@
         "avif": "/images/optimized/press-logos--haagse-dingen-logo-320.avif",
         "webp": "/images/optimized/press-logos--haagse-dingen-logo-320.webp",
         "jpg": "/images/optimized/press-logos--haagse-dingen-logo-320.jpg"
+      }
+    ]
+  },
+  "/images/rik-van-wieren-founder.jpg": {
+    "width": 1200,
+    "height": 900,
+    "sizes": "(min-width: 1280px) 560px, (min-width: 768px) 45vw, calc(100vw - 40px)",
+    "fallback": "/images/optimized/rik-van-wieren-founder-1200.jpg",
+    "variants": [
+      {
+        "width": 480,
+        "height": 360,
+        "avif": "/images/optimized/rik-van-wieren-founder-480.avif",
+        "webp": "/images/optimized/rik-van-wieren-founder-480.webp",
+        "jpg": "/images/optimized/rik-van-wieren-founder-480.jpg"
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "avif": "/images/optimized/rik-van-wieren-founder-800.avif",
+        "webp": "/images/optimized/rik-van-wieren-founder-800.webp",
+        "jpg": "/images/optimized/rik-van-wieren-founder-800.jpg"
+      },
+      {
+        "width": 1200,
+        "height": 900,
+        "avif": "/images/optimized/rik-van-wieren-founder-1200.avif",
+        "webp": "/images/optimized/rik-van-wieren-founder-1200.webp",
+        "jpg": "/images/optimized/rik-van-wieren-founder-1200.jpg"
       }
     ]
   }

@@ -1,5 +1,5 @@
 import { MediaCards } from '@/components/MediaCards';
-import { ResponsiveImage } from '@/components/ResponsiveImage';
+import { FounderPortrait } from '@/components/FounderPortrait';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ButtonLink } from '@/components/ButtonLink';
@@ -8,7 +8,6 @@ import { ProjectCard } from '@/components/ProjectCard';
 import { SectionHeader } from '@/components/SectionHeader';
 import { SplitCta } from '@/components/SplitCta';
 import { editableMetrics, mediaHighlights, projects } from '@/data/projects';
-import { assetPath } from '@/lib/sitePath';
 
 export const metadata: Metadata = {
   alternates: {
@@ -35,15 +34,7 @@ export default function HomePage() {
               <ButtonLink href="/contact/" variant="secondary">Contact</ButtonLink>
             </div>
           </div>
-          <div className="overflow-hidden rounded-card border border-border bg-card shadow-soft">
-            <ResponsiveImage
-              loading="eager"
-              fetchPriority="high"
-              alt="Core Solutions product portfolio with shoes, heel pad and BATBOX battery tester"
-              className="h-full min-h-80 w-full object-cover"
-              src={assetPath('/images/core-solutions-products-hero.png')}
-            />
-          </div>
+          <FounderPortrait />
         </div>
       </section>
 

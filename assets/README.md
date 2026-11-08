@@ -4,7 +4,8 @@
 - `originals/replacements/` contains the two new product photographs supplied on 25 October 2026.
 - `source-images/pillenpopper-cleaned.png` is the working source with the white corner graphic removed. Product and person pixels are retained from the original photograph; the retouch is limited to the background.
 - Originals live outside `public/` and are not included in the published website export. Keep them unchanged for future design work.
-- `public/images/core-solutions-products-hero.png` remains byte-for-byte unchanged. Its responsive derivatives use the same composition.
+- The homepage now uses `rik-van-wieren-founder.jpg`, supplied by Rik on 8 November 2026. Its original is retained in `originals/replacements/`; the pipeline crops a 4:3 portrait composition and creates AVIF, WebP and JPEG sizes. The old AI hero remains archived and is no longer used on the homepage.
+- The contact skyline is capped at 800 pixels and uses lighter compression settings. Older unused derivatives remain for legacy URLs.
 
 ## Rebuild
 

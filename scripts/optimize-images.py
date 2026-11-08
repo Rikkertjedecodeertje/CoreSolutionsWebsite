@@ -15,6 +15,7 @@ REPLACEMENTS = {
  "pillenpopper-product.webp": ROOT / "assets/source-images/pillenpopper-cleaned.png",
 }
 EXTRA_SOURCES = {
+ "rik-van-wieren-founder.jpg": ROOT / "assets/originals/replacements/rik-van-wieren-founder.jpg",
  "press-logos/haagse-dingen-logo.png": ROOT / "assets/source-images/media-logos/haagse-dingen-logo.png",
  "media-haagse-dingen.jpg": ROOT / "assets/source-images/media-haagse-dingen.jpg",
  "press-logos/ad-logo.png": ROOT / "assets/source-images/media-logos/ad-logo.png",
@@ -44,7 +45,7 @@ def plan(name):
  if "profile" in name:
   return [100,200], "200px", "Founder portrait, displayed up to 200 CSS pixels"
  if "skyline" in name:
-  return [640,960,1600], "(min-width: 1280px) 760px, (min-width: 768px) 60vw, calc(100vw - 40px)", "Contact-page panorama, up to about 760 CSS pixels"
+  return [320,480,800], "(min-width: 1280px) 760px, (min-width: 768px) 60vw, calc(100vw - 40px)", "Contact-page panorama; capped at 800 pixels for faster loading"
  if name.startswith("stores/"):
   return [480,800], "(min-width: 1280px) 390px, (min-width: 768px) 45vw, calc(100vw - 40px)", "Retail cards, about 390 CSS pixels"
  return [480,800,1200], "(min-width: 1280px) 560px, (min-width: 768px) 45vw, calc(100vw - 40px)", "Home and product heroes; card-specific sizes supplied in markup"
@@ -65,6 +66,8 @@ for name, original in sorted(sources.items()):
   img=ImageOps.exif_transpose(img)
   if img.mode=="P": img=img.convert("RGBA" if "transparency" in img.info else "RGB")
   elif img.mode not in ("RGB","RGBA"): img=img.convert("RGB")
+  if name=="rik-van-wieren-founder.jpg":
+   img=ImageOps.fit(img,(1536,1152),Image.Resampling.LANCZOS,centering=(0.78,0.5))
   widths,sizes,purpose=plan(name)
   widths=sorted(set(min(w,img.width) for w in widths))
   alpha=img.mode=="RGBA" and img.getextrema()[3][0]<255
@@ -77,10 +80,10 @@ for name, original in sorted(sources.items()):
    row={"width":width,"height":height}
    for fmt in ("avif","webp","png" if alpha else "jpg"):
     path=OUT/f"{slug}-{width}.{fmt}"
-    if fmt=="avif": resized.save(path,"AVIF",quality=85 if "logo" in name else 72,speed=6,subsampling="4:4:4" if "logo" in name else "4:2:0")
-    elif fmt=="webp": resized.save(path,"WEBP",quality=88 if "logo" in name else 82,method=6,lossless=alpha)
+    if fmt=="avif": resized.save(path,"AVIF",quality=85 if "logo" in name else 44 if "skyline" in name else 56 if "founder" in name else 72,speed=6,subsampling="4:4:4" if "logo" in name else "4:2:0")
+    elif fmt=="webp": resized.save(path,"WEBP",quality=88 if "logo" in name else 66 if "skyline" in name else 80 if "founder" in name else 82,method=6,lossless=alpha)
     elif fmt=="png": resized.save(path,"PNG",optimize=True)
-    else: resized.convert("RGB").save(path,"JPEG",quality=86,optimize=True,progressive=True)
+    else: resized.convert("RGB").save(path,"JPEG",quality=72 if "skyline" in name else 86,optimize=True,progressive=True)
     with Image.open(path) as check: check.verify()
     row[fmt]="/images/optimized/"+path.name
    variants.append(row)
@@ -93,7 +96,7 @@ for name, original in sorted(sources.items()):
    legacy_image=img.resize((largest["width"],largest["height"]),Image.Resampling.LANCZOS)
    if legacy.suffix==".png": legacy_image.save(legacy,"PNG",compress_level=4)
    elif legacy.suffix==".webp": legacy_image.save(legacy,"WEBP",quality=84,method=6)
-   else: legacy_image.convert("RGB").save(legacy,"JPEG",quality=86,optimize=True,progressive=True)
+   else: legacy_image.convert("RGB").save(legacy,"JPEG",quality=72 if "skyline" in name else 86,optimize=True,progressive=True)
   audit.append({"path":"/images/"+name,"source":str(source.relative_to(ROOT)).replace("\\","/"),"originalBytes":original.stat().st_size,"sourceWidth":img.width,"sourceHeight":img.height,"widths":widths,"largestAvifBytes":(ROOT/"public"/largest["avif"].lstrip("/")).stat().st_size,"largestWebpBytes":(ROOT/"public"/largest["webp"].lstrip("/")).stat().st_size,"purpose":purpose})
 def write_json(path, value):
  old = path.read_bytes().decode("utf-8").splitlines(keepends=True) if path.exists() else []

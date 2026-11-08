@@ -1,0 +1,53 @@
+/* BATBOX brand palette, scoped to its portfolio pages. */
+.batbox-theme {
+  --batbox-green: #2c9131;
+  --color-background: #f5f7f5;
+  --color-card: #ffffff;
+  --color-text: #000000;
+  --color-muted: #454545;
+  --color-border: #d6ded6;
+  --color-primary: #000000;
+  --color-secondary: var(--batbox-green);
+  --color-dark: #000000;
+  --color-steel: var(--batbox-green);
+  --color-graphite: #222222;
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+.batbox-theme a.bg-steel {
+  color: #000000;
+  font-weight: 700;
+}
+
+.batbox-theme a.bg-steel:hover {
+  color: #ffffff;
+}
+
+.batbox-theme a.bg-card.text-steel {
+  color: #000000;
+}
+
+.batbox-theme p.text-steel {
+  color: #226e26;
+}
+
+.batbox-theme .bg-dark .brand-stage-icon {
+  background: var(--batbox-green);
+  color: #000000;
+}
+
+.batbox-theme .bg-dark .group:hover .brand-stage-icon {
+  background: #ffffff;
+  color: #000000;
+}
+
+.batbox-theme :is(a, summary, button):focus-visible {
+  outline: 3px solid var(--batbox-green);
+  outline-offset: 4px;
+}
+
+.batbox-theme ::selection {
+  background: var(--batbox-green);
+  color: #000000;
+}

@@ -1,5 +1,5 @@
 import { MediaCards } from '@/components/MediaCards';
-import { ResponsiveImage } from '@/components/ResponsiveImage';
+import { FounderPortrait } from '@/components/FounderPortrait';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ButtonLink } from '@/components/ButtonLink';
@@ -8,7 +8,6 @@ import { ProjectCard } from '@/components/ProjectCard';
 import { SectionHeader } from '@/components/SectionHeader';
 import { SplitCta } from '@/components/SplitCta';
 import { editableMetricsNl, mediaHighlightsNl, projectsNl } from '@/data/projects.nl';
-import { assetPath } from '@/lib/sitePath';
 
 export const metadata: Metadata = {
   title: 'Praktische productoplossingen',
@@ -48,15 +47,7 @@ export default function DutchHomePage() {
               </ButtonLink>
             </div>
           </div>
-          <div className="overflow-hidden rounded-card border border-border bg-card shadow-soft">
-            <ResponsiveImage
-              loading="eager"
-              fetchPriority="high"
-              alt="Core Solutions-productportfolio met schoenen, hielpad en BATBOX-batterijtester"
-              className="h-full min-h-80 w-full object-cover"
-              src={assetPath('/images/core-solutions-products-hero.png')}
-            />
-          </div>
+          <FounderPortrait locale="nl" />
         </div>
       </section>
 

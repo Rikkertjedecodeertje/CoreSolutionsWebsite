@@ -204,21 +204,6 @@
     "purpose": "Retail cards, about 390 CSS pixels"
   },
   {
-    "path": "/images/the-hague-skyline.png",
-    "source": "assets/originals/images/the-hague-skyline.png",
-    "originalBytes": 19334005,
-    "sourceWidth": 4276,
-    "sourceHeight": 2702,
-    "widths": [
-      640,
-      960,
-      1600
-    ],
-    "largestAvifBytes": 345943,
-    "largestWebpBytes": 368756,
-    "purpose": "Contact-page panorama, up to about 760 CSS pixels"
-  },
-  {
     "path": "/images/pillenpopper-blister.jpg",
     "source": "assets/originals/replacements/pillenpopper-blister.jpg",
     "originalBytes": 383104,
@@ -409,5 +394,35 @@
     "largestAvifBytes": 5076,
     "largestWebpBytes": 16702,
     "purpose": "Media source logos; retain alpha, trim empty margins, never upscale"
+  },
+  {
+    "path": "/images/rik-van-wieren-founder.jpg",
+    "source": "assets/originals/replacements/rik-van-wieren-founder.jpg",
+    "originalBytes": 390638,
+    "sourceWidth": 1536,
+    "sourceHeight": 1152,
+    "widths": [
+      480,
+      800,
+      1200
+    ],
+    "largestAvifBytes": 77042,
+    "largestWebpBytes": 106332,
+    "purpose": "Home and product heroes; card-specific sizes supplied in markup"
+  },
+  {
+    "path": "/images/the-hague-skyline.png",
+    "source": "assets/originals/images/the-hague-skyline.png",
+    "originalBytes": 19334005,
+    "sourceWidth": 4276,
+    "sourceHeight": 2702,
+    "widths": [
+      320,
+      480,
+      800
+    ],
+    "largestAvifBytes": 33731,
+    "largestWebpBytes": 75492,
+    "purpose": "Contact-page panorama; capped at 800 pixels for faster loading"
   }
 ]
