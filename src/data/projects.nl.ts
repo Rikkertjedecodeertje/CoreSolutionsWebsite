@@ -264,7 +264,8 @@ export const projectsNl: Project[] = [
           "title": "PillenPopper helpt mensen met reuma bij medicijnstrips",
           "description": "Hofstad Radio deelt het verhaal over Rik van Wieren en de PillenPopper voor mensen die moeite hebben met medicijnstrips.",
           "href": "https://www.hofstadradio.com/dankzij-uitvinder-rik-23-hoeft-een-reumapatient-niet-meer-te-worstelen-met-medicijnstrips/",
-          "source": "Hofstad Radio"
+          "source": "Hofstad Radio",
+          "date": "05-11-2026"
         },
       {
         "title": "Rik (23) ontwikkelt PillenPopper voor mensen met pijnlijke of zwakke handen",
@@ -337,11 +338,11 @@ export const projectsNl: Project[] = [
     "faqs": [
       {
         "question": "Voor wie is de PillenPopper bedoeld?",
-        "answer": "Voor mensen die moeite hebben met het voorbereiden van pillen door zwakke of pijnlijke handen of verminderde handfunctie. Aanvullend onafhankelijk onderzoek is gepland om de geschiktheid voor verschillende gebruikers en medicatieroutines beter te begrijpen."
+        "answer": "Voor mensen die moeite hebben met het zelfstandig voorbereiden van pillen door zwakke of pijnlijke handen of verminderde handfunctie. Met de PillenPopper kunnen mensen met verscheidende handbeperkingen zelfstandig pillen uit strips drukken en geschikte pillen splitsen zonder de vingers te hoeven bewegen of veel kracht te hoeven zetten. Aanvullend onafhankelijk onderzoek is gepland om de geschiktheid voor verschillende gebruikers en medicatieroutines beter te begrijpen."
       },
       {
         "question": "Hoe werkt de PillenPopper?",
-        "answer": "Met de PillenPopper schuif je een hele pillenstrip eenvoudig in een clip. Je drukt een hefboom in met je handpalm of onderarm om een pil uit de strip in het opvangbakje te drukken. De pil kan daarna direct worden ingenomen of worden verdeeld over bijvoorbeeld een weekdoos. Een apart, patent-pending mechanisme kan geschikte pillen splitsen zonder scherp mes."
+        "answer": "Met de PillenPopper schuif je een hele pillenstrip eenvoudig in een clip zonder je vingers te hoeven bewegen. Je drukt een hefboom in met je handpalm of onderarm om een pil uit de strip in het opvangbakje te drukken. De pil kan daarna direct worden ingenomen of worden verdeeld over bijvoorbeeld een weekdoos. Een geïntegreerd patent-pending mechanisme kan geschikte pillen splitsen zonder scherp mes en met weinig benodigde kracht."
       },
       {
         "question": "Mag je iedere pil splitsen?",
@@ -349,7 +350,7 @@ export const projectsNl: Project[] = [
       },
       {
         "question": "Is de PillenPopper al getest?",
-        "answer": "Zes gebruikers hebben bijgedragen aan de ontwikkeling van de PillenPopper, naast feedback van drie ergotherapeutische experts. De volgende stap is verdere onafhankelijke validatie."
+        "answer": "De PillenPopper is ontwikkeld samen met gebruikers en ergotherapeuten. De volgende stap is verdere onafhankelijke validatie binnen een grootschalige pilot met 100 deelnemers."
       },
       {
         "question": "Kan ik de PillenPopper al kopen?",
@@ -433,7 +434,8 @@ export const mediaHighlightsNl: MediaHighlight[] = [
       "title": "PillenPopper helpt mensen met reuma bij medicijnstrips",
       "description": "Hofstad Radio deelt het verhaal over Rik van Wieren en de PillenPopper voor mensen die moeite hebben met medicijnstrips.",
       "href": "https://www.hofstadradio.com/dankzij-uitvinder-rik-23-hoeft-een-reumapatient-niet-meer-te-worstelen-met-medicijnstrips/",
-      "source": "Hofstad Radio"
+      "source": "Hofstad Radio",
+      "date": "05-11-2026"
     },
   {
     "projectSlug": "pillenpopper",

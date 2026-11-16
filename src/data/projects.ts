@@ -332,7 +332,8 @@ export const projects: Project[] = [
           "title": "PillenPopper helps people with rheumatism open blister packs",
           "description": "Hofstad Radio shares the story of Rik van Wieren and the PillenPopper for people who struggle with blister packs (article in Dutch).",
           "href": "https://www.hofstadradio.com/dankzij-uitvinder-rik-23-hoeft-een-reumapatient-niet-meer-te-worstelen-met-medicijnstrips/",
-          "source": "Hofstad Radio"
+          "source": "Hofstad Radio",
+          "date": "05-11-2026"
         },
       {
         "title": "Rik (23) develops the PillenPopper for people with painful or weak hands",
@@ -405,11 +406,11 @@ export const projects: Project[] = [
     "faqs": [
       {
         "question": "Who is the PillenPopper designed for?",
-        "answer": "It is designed for people who have difficulty preparing pills because of weak or painful hands or reduced hand function. Further independent testing is planned to better understand suitability for different users and medication routines."
+        "answer": "It is designed for people who have difficulty preparing pills independently because of weak or painful hands or reduced hand function. With the PillenPopper, people with a range of hand impairments can independently remove pills from blister packs and split suitable pills without having to move their fingers or use much force. Further independent research is planned to better understand its suitability for different users and medication routines."
       },
       {
         "question": "How does the PillenPopper work?",
-        "answer": "With the PillenPopper, you simply slide a whole blister strip into a clip. Press a lever with your palm or forearm to push a pill from the strip into the collection tray. The pill can then be taken directly or organised in, for example, a weekly pill organiser. A separate, patent-pending mechanism can split suitable pills without a sharp blade."
+        "answer": "With the PillenPopper, you simply slide a whole blister strip into a clip without having to move your fingers. Press a lever with your palm or forearm to push a pill from the strip into the collection tray. The pill can then be taken directly or organised in, for example, a weekly pill organiser. An integrated, patent-pending mechanism can split suitable pills without a sharp blade and with little force."
       },
       {
         "question": "Can every pill be split?",
@@ -417,7 +418,7 @@ export const projects: Project[] = [
       },
       {
         "question": "Has the PillenPopper been tested?",
-        "answer": "Six users contributed to the development of the PillenPopper, alongside feedback from three occupational therapy experts. The next step is further independent validation."
+        "answer": "The PillenPopper was developed together with users and occupational therapists. The next step is further independent validation through a large-scale pilot with 100 participants."
       },
       {
         "question": "Can I buy the PillenPopper already?",
@@ -501,7 +502,8 @@ export const mediaHighlights: MediaHighlight[] = [
       "title": "PillenPopper helps people with rheumatism open blister packs",
       "description": "Hofstad Radio shares the story of Rik van Wieren and the PillenPopper for people who struggle with blister packs (article in Dutch).",
       "href": "https://www.hofstadradio.com/dankzij-uitvinder-rik-23-hoeft-een-reumapatient-niet-meer-te-worstelen-met-medicijnstrips/",
-      "source": "Hofstad Radio"
+      "source": "Hofstad Radio",
+      "date": "05-11-2026"
     },
   {
     "projectSlug": "pillenpopper",
