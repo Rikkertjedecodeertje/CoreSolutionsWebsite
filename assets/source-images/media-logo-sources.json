@@ -32,6 +32,43 @@
       "sourceUrl": "https://www.impactcity.nl/wp/wp-content/uploads/impactcity/2021/11/ImpactCity_RGB-ai.png",
       "original": "assets/originals/media-logos/impactcity-logo.png",
       "prepared": "assets/source-images/media-logos/impactcity-logo.png"
+    },
+    {
+      "sourceUrl": "https://images.ctfassets.net/765y2hpj99ul/jeLLGnfnqoM5x2XqrQCcl/bf4d0022495867006d5c23c250b6fa2d/deOndernemer_180x70pixels.jpg",
+      "original": "assets/originals/media-logos/de-ondernemer-logo.jpg",
+      "prepared": "assets/source-images/media-logos/de-ondernemer-logo.png",
+      "sha256": "6c328605ac0a2757e47c04de88f8a2fcbf4fdf8f6506611a92951f38f31daaff"
+    },
+    {
+      "sourceUrl": "https://www.hofstadradio.com/wp-content/uploads/2025/10/nieuw-logo.png",
+      "original": "assets/originals/media-logos/hofstad-radio-logo.png",
+      "prepared": "assets/source-images/media-logos/hofstad-radio-logo.png",
+      "sha256": "3cc3ef00581dbdbd2e0f61ddb89513c69815a6e3adfcec7d6b56f2a691747067"
+    },
+    {
+      "sourceUrl": "https://media.digitaaldagblad.nl/logo/dagblad070.nl.png",
+      "original": "assets/originals/media-logos/dagblad070-logo.png",
+      "prepared": "assets/source-images/media-logos/dagblad070-logo.png",
+      "sha256": "59e47ff20e6fd3840a9e8d5f354b6a15e866865495bee4edf82b74f211f28f86"
+    },
+    {
+      "sourceUrl": "https://www.duurzaam-ondernemen.nl/wordpress/wp-content/themes/haicu6_duon/images/duon-logo.svg",
+      "original": "assets/originals/media-logos/duurzaam-ondernemen-logo.svg",
+      "prepared": "assets/source-images/media-logos/duurzaam-ondernemen-logo.png",
+      "sha256": "9feffbeac5d02a02d14c6190e7841463cda845afc424fe899af76730b6c950b5"
+    },
+    {
+      "sourceUrl": "https://media.digitaaldagblad.nl/logo/zoetermeersdagblad.nl.png",
+      "original": "assets/originals/media-logos/zoetermeers-dagblad-logo.png",
+      "prepared": "assets/source-images/media-logos/zoetermeers-dagblad-logo.png",
+      "sha256": "42325ee6066dbbfab4093ebd77f5d8383bf31d0394870ba2ca5ff0bc4182a129"
+    },
+    {
+      "sourceUrl": "https://media.digitaaldagblad.nl/logo/rijswijksdagblad.nl.jpg",
+      "original": "assets/originals/media-logos/rijswijks-dagblad-logo.jpg",
+      "prepared": "assets/source-images/media-logos/rijswijks-dagblad-logo.png",
+      "sha256": "980a6919a0746df45ee11a3c133f13553f33c16bd2a4e0cec633e8a1792df000"
     }
-  ]
+  ],
+  "updatedOn": "2026-11-16"
 }

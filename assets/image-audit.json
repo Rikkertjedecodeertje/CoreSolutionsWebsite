@@ -424,5 +424,94 @@
     "largestAvifBytes": 33731,
     "largestWebpBytes": 75492,
     "purpose": "Contact-page panorama; capped at 800 pixels for faster loading"
+  },
+  {
+    "path": "/images/press-logos/dagblad070-logo.png",
+    "source": "assets/source-images/media-logos/dagblad070-logo.png",
+    "originalBytes": 59361,
+    "sourceWidth": 1124,
+    "sourceHeight": 1124,
+    "widths": [
+      80,
+      160,
+      320
+    ],
+    "largestAvifBytes": 7015,
+    "largestWebpBytes": 9022,
+    "purpose": "Media source logos; retain alpha, trim empty margins, never upscale"
+  },
+  {
+    "path": "/images/press-logos/de-ondernemer-logo.png",
+    "source": "assets/source-images/media-logos/de-ondernemer-logo.png",
+    "originalBytes": 6906,
+    "sourceWidth": 152,
+    "sourceHeight": 26,
+    "widths": [
+      80,
+      152
+    ],
+    "largestAvifBytes": 4510,
+    "largestWebpBytes": 1572,
+    "purpose": "Media source logos; retain alpha, trim empty margins, never upscale"
+  },
+  {
+    "path": "/images/press-logos/duurzaam-ondernemen-logo.png",
+    "source": "assets/source-images/media-logos/duurzaam-ondernemen-logo.png",
+    "originalBytes": 29808,
+    "sourceWidth": 990,
+    "sourceHeight": 241,
+    "widths": [
+      80,
+      160,
+      320
+    ],
+    "largestAvifBytes": 8824,
+    "largestWebpBytes": 10690,
+    "purpose": "Media source logos; retain alpha, trim empty margins, never upscale"
+  },
+  {
+    "path": "/images/press-logos/hofstad-radio-logo.png",
+    "source": "assets/source-images/media-logos/hofstad-radio-logo.png",
+    "originalBytes": 333500,
+    "sourceWidth": 1660,
+    "sourceHeight": 498,
+    "widths": [
+      80,
+      160,
+      320
+    ],
+    "largestAvifBytes": 10565,
+    "largestWebpBytes": 26496,
+    "purpose": "Media source logos; retain alpha, trim empty margins, never upscale"
+  },
+  {
+    "path": "/images/press-logos/rijswijks-dagblad-logo.png",
+    "source": "assets/source-images/media-logos/rijswijks-dagblad-logo.png",
+    "originalBytes": 103379,
+    "sourceWidth": 1000,
+    "sourceHeight": 1000,
+    "widths": [
+      80,
+      160,
+      320
+    ],
+    "largestAvifBytes": 4467,
+    "largestWebpBytes": 5840,
+    "purpose": "Media source logos; retain alpha, trim empty margins, never upscale"
+  },
+  {
+    "path": "/images/press-logos/zoetermeers-dagblad-logo.png",
+    "source": "assets/source-images/media-logos/zoetermeers-dagblad-logo.png",
+    "originalBytes": 29447,
+    "sourceWidth": 512,
+    "sourceHeight": 512,
+    "widths": [
+      80,
+      160,
+      320
+    ],
+    "largestAvifBytes": 5916,
+    "largestWebpBytes": 7722,
+    "purpose": "Media source logos; retain alpha, trim empty margins, never upscale"
   }
 ]

@@ -1,0 +1,30 @@
+.swipeHint { display: none; margin: 8px 0 0; color: #5e626d; font-size: 13px; line-height: 1.5; }
+.more { margin-top: 24px; }
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 48px;
+  max-width: 100%;
+  padding: 12px 18px;
+  border: 1px solid var(--color-border, #d8dde1);
+  border-radius: 10px;
+  background: #ffffff;
+  color: var(--color-text, #20222e);
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+.toggle::-webkit-details-marker { display: none; }
+.toggle:hover { background: #f3f5f7; border-color: var(--color-steel, #4f6d8a); }
+.toggle:focus-visible { outline: 3px solid var(--color-steel, #4f6d8a); outline-offset: 4px; }
+.chevron { flex: 0 0 auto; }
+.hide { display: none; }
+.more[open] > .toggle .show { display: none; }
+.more[open] > .toggle .hide { display: inline; }
+.more[open] > .toggle .chevron { transform: rotate(180deg); }
+@media (max-width: 999px) { .swipeHint { display: block; } }
+@media (max-width: 699px) { .toggle { width: 100%; justify-content: space-between; text-align: left; } }

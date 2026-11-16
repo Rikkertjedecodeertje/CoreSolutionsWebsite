@@ -15,6 +15,12 @@ REPLACEMENTS = {
  "pillenpopper-product.webp": ROOT / "assets/source-images/pillenpopper-cleaned.png",
 }
 EXTRA_SOURCES = {
+ "press-logos/de-ondernemer-logo.png": ROOT / "assets/source-images/media-logos/de-ondernemer-logo.png",
+ "press-logos/hofstad-radio-logo.png": ROOT / "assets/source-images/media-logos/hofstad-radio-logo.png",
+ "press-logos/dagblad070-logo.png": ROOT / "assets/source-images/media-logos/dagblad070-logo.png",
+ "press-logos/duurzaam-ondernemen-logo.png": ROOT / "assets/source-images/media-logos/duurzaam-ondernemen-logo.png",
+ "press-logos/zoetermeers-dagblad-logo.png": ROOT / "assets/source-images/media-logos/zoetermeers-dagblad-logo.png",
+ "press-logos/rijswijks-dagblad-logo.png": ROOT / "assets/source-images/media-logos/rijswijks-dagblad-logo.png",
  "rik-van-wieren-founder.jpg": ROOT / "assets/originals/replacements/rik-van-wieren-founder.jpg",
  "press-logos/haagse-dingen-logo.png": ROOT / "assets/source-images/media-logos/haagse-dingen-logo.png",
  "media-haagse-dingen.jpg": ROOT / "assets/source-images/media-haagse-dingen.jpg",

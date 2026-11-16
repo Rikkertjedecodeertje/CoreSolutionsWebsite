@@ -1,4 +1,4 @@
-import { MediaCards } from '@/components/MediaCards';
+import { MediaCoverage } from '@/components/MediaCoverage';
 import { FounderPortrait } from '@/components/FounderPortrait';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -85,7 +85,7 @@ export default function DutchHomePage() {
           eyebrow="In de media"
           title="Aandacht, vermeldingen en productverhalen"
         />
-        <MediaCards mentions={mediaHighlightsNl} />
+        <MediaCoverage mentions={mediaHighlightsNl} locale="nl" />
       </section>
 
       <SplitCta locale="nl" />

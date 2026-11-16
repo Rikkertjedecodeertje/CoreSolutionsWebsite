@@ -776,5 +776,172 @@
         "jpg": "/images/optimized/rik-van-wieren-founder-1200.jpg"
       }
     ]
+  },
+  "/images/press-logos/dagblad070-logo.png": {
+    "width": 320,
+    "height": 320,
+    "sizes": "146px",
+    "fallback": "/images/optimized/press-logos--dagblad070-logo-320.jpg",
+    "variants": [
+      {
+        "width": 80,
+        "height": 80,
+        "avif": "/images/optimized/press-logos--dagblad070-logo-80.avif",
+        "webp": "/images/optimized/press-logos--dagblad070-logo-80.webp",
+        "jpg": "/images/optimized/press-logos--dagblad070-logo-80.jpg"
+      },
+      {
+        "width": 160,
+        "height": 160,
+        "avif": "/images/optimized/press-logos--dagblad070-logo-160.avif",
+        "webp": "/images/optimized/press-logos--dagblad070-logo-160.webp",
+        "jpg": "/images/optimized/press-logos--dagblad070-logo-160.jpg"
+      },
+      {
+        "width": 320,
+        "height": 320,
+        "avif": "/images/optimized/press-logos--dagblad070-logo-320.avif",
+        "webp": "/images/optimized/press-logos--dagblad070-logo-320.webp",
+        "jpg": "/images/optimized/press-logos--dagblad070-logo-320.jpg"
+      }
+    ]
+  },
+  "/images/press-logos/de-ondernemer-logo.png": {
+    "width": 152,
+    "height": 26,
+    "sizes": "146px",
+    "fallback": "/images/optimized/press-logos--de-ondernemer-logo-152.jpg",
+    "variants": [
+      {
+        "width": 80,
+        "height": 14,
+        "avif": "/images/optimized/press-logos--de-ondernemer-logo-80.avif",
+        "webp": "/images/optimized/press-logos--de-ondernemer-logo-80.webp",
+        "jpg": "/images/optimized/press-logos--de-ondernemer-logo-80.jpg"
+      },
+      {
+        "width": 152,
+        "height": 26,
+        "avif": "/images/optimized/press-logos--de-ondernemer-logo-152.avif",
+        "webp": "/images/optimized/press-logos--de-ondernemer-logo-152.webp",
+        "jpg": "/images/optimized/press-logos--de-ondernemer-logo-152.jpg"
+      }
+    ]
+  },
+  "/images/press-logos/duurzaam-ondernemen-logo.png": {
+    "width": 320,
+    "height": 78,
+    "sizes": "146px",
+    "fallback": "/images/optimized/press-logos--duurzaam-ondernemen-logo-320.png",
+    "variants": [
+      {
+        "width": 80,
+        "height": 19,
+        "avif": "/images/optimized/press-logos--duurzaam-ondernemen-logo-80.avif",
+        "webp": "/images/optimized/press-logos--duurzaam-ondernemen-logo-80.webp",
+        "png": "/images/optimized/press-logos--duurzaam-ondernemen-logo-80.png"
+      },
+      {
+        "width": 160,
+        "height": 39,
+        "avif": "/images/optimized/press-logos--duurzaam-ondernemen-logo-160.avif",
+        "webp": "/images/optimized/press-logos--duurzaam-ondernemen-logo-160.webp",
+        "png": "/images/optimized/press-logos--duurzaam-ondernemen-logo-160.png"
+      },
+      {
+        "width": 320,
+        "height": 78,
+        "avif": "/images/optimized/press-logos--duurzaam-ondernemen-logo-320.avif",
+        "webp": "/images/optimized/press-logos--duurzaam-ondernemen-logo-320.webp",
+        "png": "/images/optimized/press-logos--duurzaam-ondernemen-logo-320.png"
+      }
+    ]
+  },
+  "/images/press-logos/hofstad-radio-logo.png": {
+    "width": 320,
+    "height": 96,
+    "sizes": "146px",
+    "fallback": "/images/optimized/press-logos--hofstad-radio-logo-320.png",
+    "variants": [
+      {
+        "width": 80,
+        "height": 24,
+        "avif": "/images/optimized/press-logos--hofstad-radio-logo-80.avif",
+        "webp": "/images/optimized/press-logos--hofstad-radio-logo-80.webp",
+        "png": "/images/optimized/press-logos--hofstad-radio-logo-80.png"
+      },
+      {
+        "width": 160,
+        "height": 48,
+        "avif": "/images/optimized/press-logos--hofstad-radio-logo-160.avif",
+        "webp": "/images/optimized/press-logos--hofstad-radio-logo-160.webp",
+        "png": "/images/optimized/press-logos--hofstad-radio-logo-160.png"
+      },
+      {
+        "width": 320,
+        "height": 96,
+        "avif": "/images/optimized/press-logos--hofstad-radio-logo-320.avif",
+        "webp": "/images/optimized/press-logos--hofstad-radio-logo-320.webp",
+        "png": "/images/optimized/press-logos--hofstad-radio-logo-320.png"
+      }
+    ]
+  },
+  "/images/press-logos/rijswijks-dagblad-logo.png": {
+    "width": 320,
+    "height": 320,
+    "sizes": "146px",
+    "fallback": "/images/optimized/press-logos--rijswijks-dagblad-logo-320.jpg",
+    "variants": [
+      {
+        "width": 80,
+        "height": 80,
+        "avif": "/images/optimized/press-logos--rijswijks-dagblad-logo-80.avif",
+        "webp": "/images/optimized/press-logos--rijswijks-dagblad-logo-80.webp",
+        "jpg": "/images/optimized/press-logos--rijswijks-dagblad-logo-80.jpg"
+      },
+      {
+        "width": 160,
+        "height": 160,
+        "avif": "/images/optimized/press-logos--rijswijks-dagblad-logo-160.avif",
+        "webp": "/images/optimized/press-logos--rijswijks-dagblad-logo-160.webp",
+        "jpg": "/images/optimized/press-logos--rijswijks-dagblad-logo-160.jpg"
+      },
+      {
+        "width": 320,
+        "height": 320,
+        "avif": "/images/optimized/press-logos--rijswijks-dagblad-logo-320.avif",
+        "webp": "/images/optimized/press-logos--rijswijks-dagblad-logo-320.webp",
+        "jpg": "/images/optimized/press-logos--rijswijks-dagblad-logo-320.jpg"
+      }
+    ]
+  },
+  "/images/press-logos/zoetermeers-dagblad-logo.png": {
+    "width": 320,
+    "height": 320,
+    "sizes": "146px",
+    "fallback": "/images/optimized/press-logos--zoetermeers-dagblad-logo-320.jpg",
+    "variants": [
+      {
+        "width": 80,
+        "height": 80,
+        "avif": "/images/optimized/press-logos--zoetermeers-dagblad-logo-80.avif",
+        "webp": "/images/optimized/press-logos--zoetermeers-dagblad-logo-80.webp",
+        "jpg": "/images/optimized/press-logos--zoetermeers-dagblad-logo-80.jpg"
+      },
+      {
+        "width": 160,
+        "height": 160,
+        "avif": "/images/optimized/press-logos--zoetermeers-dagblad-logo-160.avif",
+        "webp": "/images/optimized/press-logos--zoetermeers-dagblad-logo-160.webp",
+        "jpg": "/images/optimized/press-logos--zoetermeers-dagblad-logo-160.jpg"
+      },
+      {
+        "width": 320,
+        "height": 320,
+        "avif": "/images/optimized/press-logos--zoetermeers-dagblad-logo-320.avif",
+        "webp": "/images/optimized/press-logos--zoetermeers-dagblad-logo-320.webp",
+        "jpg": "/images/optimized/press-logos--zoetermeers-dagblad-logo-320.jpg"
+      }
+    ]
   }
 }

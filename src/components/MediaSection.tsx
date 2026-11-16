@@ -1,5 +1,5 @@
 import type { MediaMention } from '@/data/projects';
-import { MediaCards } from '@/components/MediaCards';
+import { MediaCoverage } from '@/components/MediaCoverage';
 
 export function MediaSection({
   mentions,
@@ -19,7 +19,7 @@ export function MediaSection({
   return (
     <div>
       <h2 className="text-2xl font-semibold text-text">{locale === 'nl' ? 'In de media' : 'In the media'}</h2>
-      <MediaCards mentions={mentions} />
+      <MediaCoverage mentions={mentions} locale={locale} />
     </div>
   );
 }

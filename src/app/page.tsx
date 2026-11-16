@@ -1,4 +1,4 @@
-import { MediaCards } from '@/components/MediaCards';
+import { MediaCoverage } from '@/components/MediaCoverage';
 import { FounderPortrait } from '@/components/FounderPortrait';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -70,7 +70,7 @@ export default function HomePage() {
           eyebrow="In the media"
           title="Coverage, mentions and product stories"
         />
-        <MediaCards mentions={mediaHighlights} />
+        <MediaCoverage mentions={mediaHighlights} />
       </section>
 
       <SplitCta />

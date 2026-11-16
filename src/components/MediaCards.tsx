@@ -10,7 +10,7 @@ const images: Record<string, string> = {
   AD: '/images/pillenpopper-product.webp',
   'Omroep Delft': '/images/pillenpopper-blister.jpg',
   'Haagse Dingen': '/images/media-haagse-dingen.jpg',
-  LeidenNieuwsjournaal: '/images/rik-van-wieren-founder.jpg',
+  'De Ondernemer': '/images/pillenpopper-product.webp',
 };
 
 const sourceLogos: Record<string, string> = {
@@ -21,11 +21,30 @@ const sourceLogos: Record<string, string> = {
   'The Hague Online': '/images/press-logos/hague-online-logo.png',
   ImpactCity: '/images/press-logos/impactcity-logo.png',
   'Haagse Dingen': '/images/press-logos/haagse-dingen-logo.png',
+  'De Ondernemer': '/images/press-logos/de-ondernemer-logo.png',
+  'Hofstad Radio': '/images/press-logos/hofstad-radio-logo.png',
+  Dagblad070: '/images/press-logos/dagblad070-logo.png',
+  'Duurzaam Ondernemen': '/images/press-logos/duurzaam-ondernemen-logo.png',
+  'Zoetermeers Dagblad': '/images/press-logos/zoetermeers-dagblad-logo.png',
+  'Rijswijks Dagblad': '/images/press-logos/rijswijks-dagblad-logo.png',
 };
 
-export function MediaCards({ mentions }: { mentions: MediaMention[] }) {
+export function MediaCards({
+  mentions,
+  featured = false,
+  label,
+}: {
+  mentions: MediaMention[];
+  featured?: boolean;
+  label?: string;
+}) {
   return (
-    <div className={styles.grid}>
+    <div
+      className={`${styles.grid}${featured ? ` ${styles.featured}` : ''}`}
+      role={featured ? 'region' : undefined}
+      aria-label={featured ? label : undefined}
+      tabIndex={featured ? 0 : undefined}
+    >
       {mentions.map((mention) => {
         const logo = sourceLogos[mention.source ?? ''];
         const hasSeparateLinks = !!mention.linkLabel || !!mention.additionalLinks?.length;
@@ -39,7 +58,7 @@ export function MediaCards({ mentions }: { mentions: MediaMention[] }) {
               <ResponsiveImage
                 src={assetPath(images[mention.source ?? ''] ?? '/images/pillenpopper-blister.jpg')}
                 alt=""
-                sizes="(min-width: 1000px) 144px, (min-width: 700px) 180px, 28vw"
+                sizes={featured ? "(min-width: 1000px) 390px, (min-width: 700px) 360px, 82vw" : "(min-width: 1000px) 144px, (min-width: 700px) 180px, 28vw"}
                 className={styles.image}
                 loading="lazy"
               />
