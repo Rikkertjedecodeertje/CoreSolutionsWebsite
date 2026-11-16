@@ -162,7 +162,7 @@ export function MediaCarousel({ children, locale = 'en' }: { children: ReactNode
                 aria-roledescription={nl ? 'artikel' : 'slide'}
                 aria-label={`${index % count + 1} / ${count}`}
                 aria-hidden={inactive || undefined}
-                {...(inactive ? { inert: '' } : {})}
+                ref={(element) => { if (element) element.inert = inactive; }}
               >
                 {slide}
               </div>

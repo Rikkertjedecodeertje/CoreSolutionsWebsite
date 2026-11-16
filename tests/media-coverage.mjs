@@ -53,6 +53,7 @@ try {
       const previous = region.getByRole('button', {name:nl?'Vorig artikel':'Previous story',exact:true});
       assert.equal(await activeGroups(region).count(), width >= 1024 ? 3 : 1);
       const initial = await firstTitle(region);
+      assert(await region.locator('[aria-roledescription][aria-hidden="true"]').evaluateAll((slides)=>slides.every((slide)=>slide.inert)), 'Offscreen copies must not receive focus');
 
       // Verify actual timed rotation before touching or focusing any controls.
       if (width === 1440 && path === '/nl/') {
