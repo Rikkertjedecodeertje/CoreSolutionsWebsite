@@ -1,0 +1,36 @@
+name: Inspect media logo sources
+on:
+  push:
+    paths:
+      - '.github/workflows/inspect-media-logos.yml'
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inspect official media assets
+        shell: python
+        run: |
+          import urllib.request, urllib.parse, re, json
+          from html.parser import HTMLParser
+          class Images(HTMLParser):
+            def __init__(self):
+              super().__init__()
+              self.items=[]
+            def handle_starttag(self,tag,attrs):
+              a=dict(attrs)
+              if tag in ("img","image","link") and ("logo" in str(a).lower() or tag=="img"):
+                self.items.append(a)
+          for site in ["https://www.deondernemer.nl/","https://www.hofstadradio.com/","https://dagblad070.nl/","https://www.duurzaam-ondernemen.nl/","https://zoetermeersdagblad.nl/","https://rijswijksdagblad.nl/"]:
+            print("SITE", site, flush=True)
+            try:
+              req=urllib.request.Request(site,headers={"User-Agent":"Mozilla/5.0"})
+              html=urllib.request.urlopen(req,timeout=30).read().decode("utf-8","replace")
+              parser=Images();parser.feed(html)
+              print(json.dumps(parser.items[:20]),flush=True)
+              for url in re.findall(r'[^\s\"\'<>]*logo[^\s\"\'<>]*\.(?:svg|png|webp)',html,re.I)[:25]:
+                print("LOGO",url,flush=True)
+              svgs=re.findall(r'<svg\b.*?</svg>',html,re.S)
+              for svg in svgs[:3]: print("SVG",svg[:1000],flush=True)
+            except Exception as e: print(type(e).__name__,str(e),flush=True)
