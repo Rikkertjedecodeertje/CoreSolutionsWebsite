@@ -1,3 +1,4 @@
+import { ArrowUpRight } from 'lucide-react';
 import type { MediaMention } from '@/data/projects';
 import { ResponsiveImage } from '@/components/ResponsiveImage';
 import { assetPath } from '@/lib/sitePath';
@@ -29,75 +30,75 @@ const sourceLogos: Record<string, string> = {
   'Rijswijks Dagblad': '/images/press-logos/rijswijks-dagblad-logo.png',
 };
 
-export function MediaCards({
-  mentions,
-  featured = false,
-  label,
-}: {
-  mentions: MediaMention[];
-  featured?: boolean;
-  label?: string;
-}) {
+
+export function MediaCard({ mention, featured = false }: { mention: MediaMention; featured?: boolean }) {
+  const logo = sourceLogos[mention.source ?? ''];
+  const separateLinks = !!mention.linkLabel || !!mention.additionalLinks?.length;
+  const links = [
+    ...(mention.href && mention.linkLabel ? [{ label: mention.linkLabel, href: mention.href }] : []),
+    ...(mention.additionalLinks ?? []),
+  ];
+  const source = (
+    <div className={featured ? styles.source : styles.compactSource} title={mention.source}>
+      {logo ? (
+        <ResponsiveImage
+          src={assetPath(logo)}
+          alt={mention.source ?? ''}
+          className={featured ? styles.sourceLogo : styles.compactLogo}
+          sizes={featured ? '112px' : '80px'}
+          loading="lazy"
+        />
+      ) : <span>{mention.source}</span>}
+    </div>
+  );
+
   return (
-    <div
-      className={`${styles.grid}${featured ? ` ${styles.featured}` : ''}`}
-      role={featured ? 'region' : undefined}
-      aria-label={featured ? label : undefined}
-      tabIndex={featured ? 0 : undefined}
-    >
-      {mentions.map((mention) => {
-        const logo = sourceLogos[mention.source ?? ''];
-        const hasSeparateLinks = !!mention.linkLabel || !!mention.additionalLinks?.length;
-        const links = [
-          ...(mention.href && mention.linkLabel ? [{ label: mention.linkLabel, href: mention.href }] : []),
-          ...(mention.additionalLinks ?? []),
-        ];
-        return (
-          <article className={styles.card} key={`${mention.source}-${mention.title}`}>
-            <div className={styles.thumbnail}>
-              <ResponsiveImage
-                src={assetPath(images[mention.source ?? ''] ?? '/images/pillenpopper-blister.jpg')}
-                alt=""
-                sizes={featured ? "(min-width: 1000px) 390px, (min-width: 700px) 360px, 82vw" : "(min-width: 1000px) 144px, (min-width: 700px) 180px, 28vw"}
-                className={styles.image}
-                loading="lazy"
-              />
-            </div>
-            <div className={styles.content}>
-              <h3 className={styles.title}>
-                {mention.href && !hasSeparateLinks ? (
-                  <a className={styles.mainLink} href={mention.href} target="_blank" rel="noopener noreferrer">
-                    {mention.title}
-                  </a>
-                ) : mention.title}
-              </h3>
-              {links.length > 0 && (
-                <div className={styles.links}>
-                  {links.map((link) => (
-                    <a className={styles.extraLink} href={link.href} key={link.href} target="_blank" rel="noopener noreferrer">
-                      {link.label}
-                    </a>
-                  ))}
-                </div>
-              )}
-              <div className={styles.footer}>
-                <div className={styles.source}>
-                  {logo ? (
-                    <ResponsiveImage
-                      src={assetPath(logo)}
-                      alt={mention.source ?? ''}
-                      className={styles.sourceLogo}
-                      sizes="112px"
-                      loading="lazy"
-                    />
-                  ) : <span>{mention.source}</span>}
-                </div>
-                {mention.date && <p className={styles.date}>{mention.date}</p>}
-              </div>
-            </div>
-          </article>
-        );
-      })}
+    <article className={featured ? styles.featuredCard : styles.mention}>
+      {featured ? (
+        <div className={styles.thumbnail}>
+          <ResponsiveImage
+            src={assetPath(images[mention.source ?? ''] ?? '/images/pillenpopper-blister.jpg')}
+            alt=""
+            sizes="(min-width: 1024px) 390px, (min-width: 640px) 45vw, calc(100vw - 40px)"
+            className={styles.image}
+            loading="lazy"
+          />
+        </div>
+      ) : source}
+      <div className={featured ? styles.content : styles.compactContent}>
+        <h3 className={featured ? styles.title : styles.compactTitle}>
+          {mention.href && !separateLinks ? (
+            <a className={styles.mainLink} href={mention.href} target="_blank" rel="noopener noreferrer">
+              <span>{mention.title}</span>
+              {!featured && <ArrowUpRight className={styles.external} size={16} aria-hidden="true" />}
+            </a>
+          ) : mention.title}
+        </h3>
+        {!featured && mention.date && <p className={styles.date}>{mention.date}</p>}
+        {links.length > 0 && (
+          <div className={styles.links}>
+            {links.map((link) => (
+              <a className={styles.extraLink} href={link.href} key={link.href} target="_blank" rel="noopener noreferrer">
+                {link.label}<ArrowUpRight size={13} aria-hidden="true" />
+              </a>
+            ))}
+          </div>
+        )}
+        {featured && (
+          <div className={styles.footer}>
+            {source}
+            {mention.date && <p className={styles.date}>{mention.date}</p>}
+          </div>
+        )}
+      </div>
+    </article>
+  );
+}
+
+export function MediaCards({ mentions }: { mentions: MediaMention[] }) {
+  return (
+    <div className={styles.list}>
+      {mentions.map((mention) => <MediaCard mention={mention} key={`${mention.source}-${mention.title}`} />)}
     </div>
   );
 }

@@ -13,6 +13,7 @@ export type MediaMention = {
   date?: string;
   linkLabel?: string;
   additionalLinks?: { label: string; href: string }[];
+  featured?: boolean;
 };
 
 export type MediaHighlight = MediaMention & { projectSlug: string };
@@ -286,7 +287,7 @@ export const projects: Project[] = [
     ],
     "mediaMentions": [
       {
-          "title": "PillenPopper helps people prepare their own pills",
+          "title": "Dankzij ondernemer Rik (23) zijn PillenPopper hoeft reumapatiënt niet meer te worstelen met medicijnstrips",
           "description": "De Ondernemer shares the AD story about Rik van Wieren, the PillenPopper and independently removing pills from blister packs (article in Dutch).",
           "href": "https://www.deondernemer.nl/innovatie/technologie/piepjonge-ondernemer-rik-van-wieren-23-pillenpopper-reumapatienten~407efaf",
           "source": "De Ondernemer",
@@ -449,7 +450,7 @@ export const editableMetrics = [
 export const mediaHighlights: MediaHighlight[] = [
   {
       "projectSlug": "pillenpopper",
-      "title": "PillenPopper helps people prepare their own pills",
+      "title": "Dankzij ondernemer Rik (23) zijn PillenPopper hoeft reumapatiënt niet meer te worstelen met medicijnstrips",
       "description": "De Ondernemer shares the AD story about Rik van Wieren, the PillenPopper and independently removing pills from blister packs (article in Dutch).",
       "href": "https://www.deondernemer.nl/innovatie/technologie/piepjonge-ondernemer-rik-van-wieren-23-pillenpopper-reumapatienten~407efaf",
       "source": "De Ondernemer",

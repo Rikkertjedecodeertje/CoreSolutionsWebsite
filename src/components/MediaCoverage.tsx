@@ -1,6 +1,7 @@
 import { ChevronDown } from 'lucide-react';
 import type { MediaMention } from '@/data/projects';
-import { MediaCards } from '@/components/MediaCards';
+import { MediaCard, MediaCards } from '@/components/MediaCards';
+import { MediaCarousel } from '@/components/MediaCarousel';
 import styles from './MediaCoverage.module.css';
 
 const featuredSources = ['AD', 'Omroep Delft', 'De Ondernemer'];
@@ -17,6 +18,12 @@ export function MediaCoverage({
     return mention ? [mention] : [];
   });
   const selected = new Set(featured);
+  for (const mention of mentions) {
+    if (mention.featured && !selected.has(mention)) {
+      featured.push(mention);
+      selected.add(mention);
+    }
+  }
   const remaining = mentions.filter((mention) => !selected.has(mention));
   const nl = locale === 'nl';
 
@@ -24,14 +31,9 @@ export function MediaCoverage({
 
   return (
     <div>
-      <MediaCards
-        mentions={featured}
-        featured
-        label={nl ? 'Uitgelichte media: AD, Omroep Delft en De Ondernemer' : 'Featured coverage: AD, Omroep Delft and De Ondernemer'}
-      />
-      <p className={styles.swipeHint}>
-        {nl ? 'Veeg om de uitgelichte artikelen te bekijken.' : 'Swipe to explore the featured stories.'}
-      </p>
+      <MediaCarousel locale={locale}>
+        {featured.map((mention) => <MediaCard mention={mention} featured key={`${mention.source}-${mention.title}`} />)}
+      </MediaCarousel>
       {remaining.length > 0 && (
         <details className={styles.more}>
           <summary className={styles.toggle}>

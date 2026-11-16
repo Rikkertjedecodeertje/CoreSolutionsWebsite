@@ -1,5 +1,4 @@
-.swipeHint { display: none; margin: 8px 0 0; color: #5e626d; font-size: 13px; line-height: 1.5; }
-.more { margin-top: 24px; }
+.more { margin-top: 20px; }
 .toggle {
   display: inline-flex;
   align-items: center;
@@ -26,5 +25,4 @@
 .more[open] > .toggle .show { display: none; }
 .more[open] > .toggle .hide { display: inline; }
 .more[open] > .toggle .chevron { transform: rotate(180deg); }
-@media (max-width: 999px) { .swipeHint { display: block; } }
 @media (max-width: 699px) { .toggle { width: 100%; justify-content: space-between; text-align: left; } }

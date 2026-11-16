@@ -219,7 +219,7 @@ export const projectsNl: Project[] = [
     ],
     "mediaMentions": [
       {
-          "title": "PillenPopper helpt bij het zelfstandig klaarzetten van pillen",
+          "title": "Dankzij ondernemer Rik (23) zijn PillenPopper hoeft reumapatiënt niet meer te worstelen met medicijnstrips",
           "description": "De Ondernemer deelt het AD-verhaal over Rik van Wieren, de PillenPopper en zelfstandig pillen uit medicijnstrips halen.",
           "href": "https://www.deondernemer.nl/innovatie/technologie/piepjonge-ondernemer-rik-van-wieren-23-pillenpopper-reumapatienten~407efaf",
           "source": "De Ondernemer",
@@ -382,7 +382,7 @@ export const editableMetricsNl = [
 export const mediaHighlightsNl: MediaHighlight[] = [
   {
       "projectSlug": "pillenpopper",
-      "title": "PillenPopper helpt bij het zelfstandig klaarzetten van pillen",
+      "title": "Dankzij ondernemer Rik (23) zijn PillenPopper hoeft reumapatiënt niet meer te worstelen met medicijnstrips",
       "description": "De Ondernemer deelt het AD-verhaal over Rik van Wieren, de PillenPopper en zelfstandig pillen uit medicijnstrips halen.",
       "href": "https://www.deondernemer.nl/innovatie/technologie/piepjonge-ondernemer-rik-van-wieren-23-pillenpopper-reumapatienten~407efaf",
       "source": "De Ondernemer",

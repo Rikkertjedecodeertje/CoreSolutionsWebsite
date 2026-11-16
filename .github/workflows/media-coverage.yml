@@ -1,0 +1,38 @@
+name: Verify media coverage interactions
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/components/Media*'
+      - 'src/data/projects*'
+      - 'tests/media-coverage.mjs'
+      - '.github/workflows/media-coverage.yml'
+  pull_request:
+    paths:
+      - 'src/components/Media*'
+      - 'src/data/projects*'
+      - 'tests/media-coverage.mjs'
+      - '.github/workflows/media-coverage.yml'
+permissions:
+  contents: read
+jobs:
+  browser-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies and browser
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Prepare isolated carousel fixtures
+        run: node tests/media-coverage.mjs --fixture
+      - name: Build and typecheck
+        run: npm run build
+      - name: Check desktop, mobile and motion preferences
+        run: |
+          python3 -m http.server 8765 --directory out > /tmp/media-server.log 2>&1 &
+          node tests/media-coverage.mjs
