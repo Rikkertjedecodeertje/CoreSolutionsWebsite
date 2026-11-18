@@ -140,7 +140,7 @@ try {
   assert.equal(await firstTitle(future),first,'Reduced-motion preference disables autoplay');
   const titles=new Set();
   for(let i=0;i<5;i++){
-    titles.add(await activeGroups(future).first().locator('img[alt]:not([alt=""])').getAttribute('alt'));
+    titles.add(await firstTitle(future));;
     await future.getByRole('button',{name:'Next story',exact:true}).click();
     await page.waitForTimeout(100);
     await aligned(future);
