@@ -1,5 +1,5 @@
 import { ArrowUpRight } from 'lucide-react';
-import type { MediaMention } from '@/data/projects';
+import type { MediaMention, Project } from '@/data/projects';
 import { ResponsiveImage } from '@/components/ResponsiveImage';
 import { assetPath } from '@/lib/sitePath';
 import styles from './MediaCards.module.css';
@@ -34,14 +34,23 @@ const sourceLogos: Record<string, string> = {
   'Parkinson Vereniging': '/images/press-logos/parkinson-vereniging-logo.webp',
 };
 
+export type MediaCardMention = MediaMention & { product?: Pick<Project, 'slug' | 'shortName' | 'cardImage'> };
 
-export function MediaCard({ mention, featured = false }: { mention: MediaMention; featured?: boolean }) {
+export function getMediaCardKey(mention: MediaCardMention) {
+  return `${mention.product?.slug}-${mention.source}-${mention.title}`;
+}
+
+export function MediaCard({ mention, featured = false }: { mention: MediaCardMention; featured?: boolean }) {
   const logo = sourceLogos[mention.source ?? ''];
   const separateLinks = !!mention.linkLabel || !!mention.additionalLinks?.length;
   const links = [
     ...(mention.href && mention.linkLabel ? [{ label: mention.linkLabel, href: mention.href }] : []),
     ...(mention.additionalLinks ?? []),
   ];
+  const thumbnail = mention.product && mention.product.slug !== 'pillenpopper'
+    ? mention.product.cardImage?.src
+    : images[mention.source ?? ''] ?? '/images/pillenpopper-blister.jpg';
+  const productLabel = mention.product && <span className={styles.productLabel}>{mention.product.shortName}</span>;
   const source = (
     <div className={featured ? styles.source : styles.compactSource} title={mention.source}>
       {logo ? (
@@ -59,9 +68,9 @@ export function MediaCard({ mention, featured = false }: { mention: MediaMention
   return (
     <article className={featured ? styles.featuredCard : styles.mention}>
       {featured ? (
-        <div className={styles.thumbnail}>
+        thumbnail && <div className={styles.thumbnail}>
           <ResponsiveImage
-            src={assetPath(images[mention.source ?? ''] ?? '/images/pillenpopper-blister.jpg')}
+            src={assetPath(thumbnail)}
             alt=""
             sizes="(min-width: 1024px) 390px, (min-width: 640px) 45vw, calc(100vw - 40px)"
             className={styles.image}
@@ -70,6 +79,7 @@ export function MediaCard({ mention, featured = false }: { mention: MediaMention
         </div>
       ) : source}
       <div className={featured ? styles.content : styles.compactContent}>
+        {featured && productLabel}
         <h3 className={featured ? styles.title : styles.compactTitle}>
           {mention.href && !separateLinks ? (
             <a className={styles.mainLink} href={mention.href} target="_blank" rel="noopener noreferrer">
@@ -78,7 +88,12 @@ export function MediaCard({ mention, featured = false }: { mention: MediaMention
             </a>
           ) : mention.title}
         </h3>
-        {!featured && mention.date && <p className={styles.date}>{mention.date}</p>}
+        {!featured && (mention.date || productLabel) && (
+          <div className={styles.meta}>
+            {mention.date && <p className={styles.date}>{mention.date}</p>}
+            {productLabel}
+          </div>
+        )}
         {links.length > 0 && (
           <div className={styles.links}>
             {links.map((link) => (
@@ -99,10 +114,10 @@ export function MediaCard({ mention, featured = false }: { mention: MediaMention
   );
 }
 
-export function MediaCards({ mentions }: { mentions: MediaMention[] }) {
+export function MediaCards({ mentions }: { mentions: MediaCardMention[] }) {
   return (
     <div className={styles.list}>
-      {mentions.map((mention) => <MediaCard mention={mention} key={`${mention.source}-${mention.title}`} />)}
+      {mentions.map((mention) => <MediaCard mention={mention} key={getMediaCardKey(mention)} />)}
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { MediaCoverage } from '@/components/MediaCoverage';
+import { MediaCoverage, getProjectMedia } from '@/components/MediaCoverage';
 import { FounderPortrait } from '@/components/FounderPortrait';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -7,7 +7,7 @@ import { MetricCard } from '@/components/MetricCard';
 import { ProjectCard } from '@/components/ProjectCard';
 import { SectionHeader } from '@/components/SectionHeader';
 import { SplitCta } from '@/components/SplitCta';
-import { editableMetricsNl, mediaHighlightsNl, projectsNl } from '@/data/projects.nl';
+import { editableMetricsNl, projectsNl } from '@/data/projects.nl';
 
 export const metadata: Metadata = {
   title: 'Praktische productoplossingen',
@@ -80,12 +80,12 @@ export default function DutchHomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+      <section id="media" className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
         <SectionHeader
           eyebrow="In de media"
           title="Aandacht, vermeldingen en productverhalen"
         />
-        <MediaCoverage mentions={mediaHighlightsNl} locale="nl" />
+        <MediaCoverage mentions={getProjectMedia(projectsNl)} locale="nl" />
       </section>
 
       <SplitCta locale="nl" />

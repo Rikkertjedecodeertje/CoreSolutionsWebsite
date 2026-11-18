@@ -147,6 +147,22 @@ try {
       await page.keyboard.press('Enter');
       assert.notEqual(await details.getAttribute('open'), null);
       const mentions = await details.locator('article').all();
+      const onHome = path === '/' || path === '/nl/';
+      for (const area of [region, details]) {
+        const labels = area.getByText('PillenPopper', { exact: true });
+        assert.equal(await labels.count(), onHome ? await area.locator('article').count() : 0,
+          'Each homepage media card shows its product label');
+      }
+      for (const [paper, domain] of [['Rijswijks Dagblad', 'rijswijksdagblad.nl'], ['Zoetermeers Dagblad', 'zoetermeersdagblad.nl']]) {
+        const row = details.locator('article').filter({ has: page.getByRole('img', { name: paper, exact: true }) });
+        assert.equal(await row.count(), 1, `${paper} should have one media card`);
+        const links = await row.getByRole('link').evaluateAll(anchors => anchors.map(link => link.href));
+        assert.equal(links.length, 2, `${paper} should link to the nomination and the win`);
+        assert(links.every(link => new URL(link).hostname === domain));
+        assert(links.some(link => new URL(link).pathname.includes('/nominaties-voor-')) && links.some(link => new URL(link).pathname.includes('/winnaars-')));
+      }
+      assert.equal(await details.locator('a[href*="202611171900.mp3#t=2601,3190"]').count(), 1,
+        'The latest Den Haag FM interview appears in all media sections');
       const toggleCount = (await details.locator('summary').textContent()).match(/\d+/);
       assert.equal(mentions.length, Number(toggleCount?.[0]), 'The toggle counts all secondary mentions');
       for (const item of mentions) {

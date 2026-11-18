@@ -1,16 +1,22 @@
 import { ChevronDown } from 'lucide-react';
-import type { MediaMention } from '@/data/projects';
-import { MediaCard, MediaCards } from '@/components/MediaCards';
+import type { Project } from '@/data/projects';
+import { getMediaCardKey, MediaCard, MediaCards, type MediaCardMention } from '@/components/MediaCards';
 import { MediaCarousel } from '@/components/MediaCarousel';
 import styles from './MediaCoverage.module.css';
 
 const featuredSources = ['AD', 'Omroep Delft', 'De Ondernemer'];
 
+export function getProjectMedia(projects: Project[]): MediaCardMention[] {
+  return projects.flatMap(({ slug, shortName, cardImage, mediaMentions }) =>
+    mediaMentions.map((mention) => ({ ...mention, product: { slug, shortName, cardImage } })),
+  );
+}
+
 export function MediaCoverage({
   mentions,
   locale = 'en',
 }: {
-  mentions: MediaMention[];
+  mentions: MediaCardMention[];
   locale?: 'en' | 'nl';
 }) {
   const featured = featuredSources.flatMap((source) => {
@@ -32,7 +38,7 @@ export function MediaCoverage({
   return (
     <div>
       <MediaCarousel locale={locale}>
-        {featured.map((mention) => <MediaCard mention={mention} featured key={`${mention.source}-${mention.title}`} />)}
+        {featured.map((mention) => <MediaCard mention={mention} featured key={getMediaCardKey(mention)} />)}
       </MediaCarousel>
       {remaining.length > 0 && (
         <details className={styles.more}>

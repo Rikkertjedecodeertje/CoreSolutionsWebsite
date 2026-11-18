@@ -1,4 +1,4 @@
-import { MediaCoverage } from '@/components/MediaCoverage';
+import { MediaCoverage, getProjectMedia } from '@/components/MediaCoverage';
 import { FounderPortrait } from '@/components/FounderPortrait';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -7,7 +7,7 @@ import { MetricCard } from '@/components/MetricCard';
 import { ProjectCard } from '@/components/ProjectCard';
 import { SectionHeader } from '@/components/SectionHeader';
 import { SplitCta } from '@/components/SplitCta';
-import { editableMetrics, mediaHighlights, projects } from '@/data/projects';
+import { editableMetrics, projects } from '@/data/projects';
 
 export const metadata: Metadata = {
   alternates: {
@@ -65,12 +65,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+      <section id="media" className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
         <SectionHeader
           eyebrow="In the media"
           title="Coverage, mentions and product stories"
         />
-        <MediaCoverage mentions={mediaHighlights} />
+        <MediaCoverage mentions={getProjectMedia(projects)} />
       </section>
 
       <SplitCta />

@@ -20,6 +20,9 @@
 .extraLink { display: inline-flex; align-items: center; gap: 4px; min-height: 32px; color: var(--color-text, #20222e); font-size: 13px; line-height: 1.5; text-decoration: underline; text-underline-offset: 3px; }
 .extraLink:hover { text-decoration-thickness: 2px; }
 .footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin-top: auto; padding-top: 16px; }
+.meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
+.productLabel { align-self: flex-start; display: inline-block; border: 1px solid #e1d9ea; border-radius: 999px; background: #f6f1fa; padding: 2px 8px; color: #473659; font-size: 11px; line-height: 1.4; font-weight: 650; }
+.content > .productLabel { margin-bottom: 8px; }
 .date { margin: 0; font-size: 12px; line-height: 1.5; color: #5e626d; }
 .source { display: flex; align-items: center; justify-content: center; width: 132px; height: 36px; max-width: 100%; padding: 5px 10px; color: #20222e; font-size: 12px; line-height: 1.2; font-weight: 650; text-align: center; }
 .sourceLogo { display: block; width: 112px; height: 26px; max-width: 100%; object-fit: contain; }
