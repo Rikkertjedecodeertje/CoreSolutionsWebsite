@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { AnalyticsOptOut } from '@/components/WebsiteAnalytics';
 import { legalContent, type LegalLocale, type PolicyKind } from '@/data/legal';
 const policyPaths: Record<PolicyKind, string> = { privacy: '/privacy-policy/', terms: '/terms-and-conditions/', cookie: '/cookie-policy/' };
 export function LegalPage({ locale, kind }: { locale: LegalLocale; kind: PolicyKind }) {
@@ -18,9 +19,10 @@ export function LegalPage({ locale, kind }: { locale: LegalLocale; kind: PolicyK
       </header>
       <div className="mt-8 space-y-8 rounded-card border border-border bg-card p-6 text-sm leading-7 text-muted sm:p-8">
         {policy.sections.map(section => (
-          <section key={section.heading}>
+          <section id={section.id} key={section.heading}>
             <h2 className="text-xl font-semibold leading-7 text-text">{section.heading}</h2>
             <div className="mt-3 space-y-3">{section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div>
+            {section.id === 'website-analytics' && <AnalyticsOptOut locale={locale} />}
             {section.table ? (
               <div className="mt-4 overflow-x-auto rounded-md border border-border" role="region" aria-label={section.heading} tabIndex={0}>
                 <table className="w-full min-w-[640px] border-collapse text-left text-sm leading-6">

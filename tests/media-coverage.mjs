@@ -40,7 +40,7 @@ async function aligned(region) {
   assert(first && viewport && Math.abs(first.x - viewport.x) < 2, 'Leading article must align after wrapping');
 }
 
-async function checkAnalyticsConsent() {
+async function checkWebsiteAnalytics() {
   const page = await browser.newPage();
   const site = 'http://127.0.0.1:8765';
   let requests = 0;
@@ -50,50 +50,51 @@ async function checkAnalyticsConsent() {
   });
 
   try {
+    await page.context().addCookies([{ name: '_ga', value: 'legacy-cookie', url: site }]);
     await page.goto(site + '/nl/', { waitUntil: 'networkidle' });
-    const decline = page.getByRole('button', { name: 'Statistieken weigeren', exact: true });
-    const allow = page.getByRole('button', { name: 'Statistieken toestaan', exact: true });
-    await decline.waitFor();
-    assert.equal(requests, 0, 'Google Tag Manager must wait for consent');
-    await decline.click();
-    await page.reload({ waitUntil: 'networkidle' });
-    assert.equal(await allow.count(), 0, 'The site remembers rejection');
-    assert.equal(requests, 0, 'Rejected analytics must stay blocked after reload');
-
-    await page.getByRole('button', { name: 'Cookie-instellingen', exact: true }).click();
-    await Promise.all([page.waitForResponse(response => response.url().includes('GTM-WMSNWHWJ')), allow.click()]);
-    assert.equal(requests, 1);
+    assert.equal(requests, 1, 'Analytics starts without waiting for a visitor choice');
+    assert.equal(await page.locator('#analytics-consent-title').count(), 0, 'The site has no consent banner');
     const commands = await page.evaluate(() => window.dataLayer.map(entry => Array.from(entry)));
     assert.equal(commands[0][2].analytics_storage, 'denied');
-    assert.equal(commands[1][2].analytics_storage, 'granted');
-    assert.equal(commands[1][2].ad_user_data, 'denied');
+    assert.equal(commands[0][2].ad_user_data, 'denied');
+    assert(!commands.some(entry => entry[0] === 'consent' && entry[1] === 'update'));
+    assert.equal((await page.context().cookies()).some(cookie => cookie.name === '_ga'), false);
 
-    await page.goto(site + '/cookie-policy/', { waitUntil: 'networkidle' });
-    assert.equal(requests, 2, 'Consent applies to English and Dutch pages');
-    await page.context().addCookies([{ name: '_ga', value: 'test', url: site }]);
-    await page.getByRole('button', { name: 'Cookie settings', exact: true }).click();
+    await page.goto(site + '/nl/cookie-policy/#website-analytics', { waitUntil: 'networkidle' });
+    assert.equal(requests, 2);
     await Promise.all([
       page.waitForEvent('load'),
-      page.getByRole('button', { name: 'Decline analytics', exact: true }).click(),
+      page.getByRole('button', { name: 'Webstatistieken uitzetten', exact: true }).click(),
     ]);
-    assert.equal(requests, 2, 'Withdrawal stops analytics from loading');
-    assert.equal((await page.context().cookies()).some(cookie => cookie.name === '_ga'), false);
-    reports.push({ analyticsConsent: 'pass' });
+    await page.getByRole('button', { name: 'Webstatistieken weer aanzetten', exact: true }).waitFor();
+    assert.equal(await page.evaluate(() => window['ga-disable-G-MBPRCG2KGY']), true);
+    await page.goto(site + '/cookie-policy/', { waitUntil: 'networkidle' });
+    assert.equal(requests, 2, 'Opt-out applies to both locales after navigation');
+    await Promise.all([
+      page.waitForResponse(response => response.url().includes('GTM-WMSNWHWJ')),
+      page.getByRole('button', { name: 'Turn website analytics back on', exact: true }).click(),
+    ]);
+    assert.equal(requests, 3);
+    await page.evaluate(() => localStorage.setItem('coresolutions.analytics-consent', JSON.stringify({
+      choice: 'decline', expiresAt: Date.now() + 10 * 60 * 1000,
+    })));
+    await page.reload({ waitUntil: 'networkidle' });
+    assert.equal(requests, 3, 'An earlier refusal is respected');
+    reports.push({ websiteAnalytics: 'pass' });
   } finally {
     await page.close();
   }
 }
 
 try {
-  await checkAnalyticsConsent();
+  await checkWebsiteAnalytics();
   for (const width of [1440, 390]) {
     const page = await browser.newPage({ viewport: { width, height: 1000 }, reducedMotion: 'no-preference' });
     page.on('pageerror', (error) => errors.push(error.message));
+    await page.route('https://www.googletagmanager.com/gtm.js?id=GTM-WMSNWHWJ', route => route.fulfill({ body: '' }));
     for (const path of ['/nl/', '/', '/nl/portfolio/pillenpopper/', '/portfolio/pillenpopper/']) {
       const nl = path.startsWith('/nl/');
       await page.goto('http://127.0.0.1:8765' + path, { waitUntil: 'networkidle' });
-      const declineAnalytics = page.getByRole('button', {name:nl?'Statistieken weigeren':'Decline analytics',exact:true});
-      if (await declineAnalytics.isVisible()) await declineAnalytics.click();
       const region = page.getByRole('region', {name:nl?'Uitgelichte media':'Featured coverage', exact:true});
       await region.scrollIntoViewIfNeeded();
       const next = region.getByRole('button', {name:nl?'Volgend artikel':'Next story',exact:true});
@@ -193,8 +194,8 @@ try {
 
   const page=await browser.newPage({viewport:{width:768,height:1000},reducedMotion:'reduce'});
   page.on('pageerror',(error)=>errors.push(error.message));
+  await page.route('https://www.googletagmanager.com/gtm.js?id=GTM-WMSNWHWJ', route => route.fulfill({ body: '' }));
   await page.goto('http://127.0.0.1:8765/media-test-fixture/',{waitUntil:'networkidle'});
-  await page.getByRole('button', {name:'Decline analytics',exact:true}).click();
   const future=page.locator('#future-carousel').getByRole('region');
   await future.scrollIntoViewIfNeeded();
   assert.equal(await activeGroups(future).count(),2);

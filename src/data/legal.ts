@@ -1,6 +1,6 @@
 export type LegalLocale = 'en' | 'nl';
 export type PolicyKind = 'privacy' | 'terms' | 'cookie';
-export type PolicySection = { heading: string; paragraphs: string[]; table?: { headers: string[]; rows: string[][] }; links?: { label: string; href: string }[] };
+export type PolicySection = { id?: string; heading: string; paragraphs: string[]; table?: { headers: string[]; rows: string[][] }; links?: { label: string; href: string }[] };
 export type PolicyContent = { title: string; description: string; sections: PolicySection[] };
 export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>> = {
   "en": {
@@ -38,9 +38,9 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
                 "Displaying and protecting the website, troubleshooting and preventing abuse: legitimate interest in a reliable, secure website."
               ],
               [
-                "Optional website analytics (Google Analytics)",
-                "Pages viewed, referrers and campaign details, website interactions, browser and device information, approximate region and a random browser identifier. Google also receives the IP address when the browser connects.",
-                "Understanding how people use the site and improving it, based on your consent."
+                "Limited website analytics (Google Analytics)",
+                "Pages viewed, referring pages, interactions and technical information such as browser and screen resolution. Google receives the IP address with the request. Measurement uses no analytics cookies.",
+                "Understanding how the website is used so we can improve it. Where personal data is processed, the legal basis is legitimate interests."
               ],
               [
                 "Postcode search",
@@ -79,7 +79,7 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
             "Website hosting and delivery use GitHub Pages. Our business email uses Google Workspace. These providers may receive the data needed to deliver their services. The OpenStreetMap Foundation receives the map and postcode requests described above. Their own privacy notices explain processing for which they are independently responsible.",
             "Data may also be shared with an adviser, service provider or competent authority when necessary for handling an agreement, a legal obligation or a legal claim. We do not sell your personal data. Where a provider processes personal data on our behalf, the GDPR requires appropriate processor terms and safeguards.",
             "The PillenPopper sign-up form is embedded from Google Forms. When the form loads, your browser contacts Google, which may receive technical information such as your IP address and browser information. Submitted email addresses and consent responses are processed in Google Forms and a linked Google Sheet within our Google Workspace account, with access restricted to authorised people. Google may also process service and account data under its own privacy policy.",
-            "If you allow analytics, we load Google Tag Manager to start Google Analytics 4. Google Ireland Limited receives data for this service. Advertising consent is disabled. See the Cookie Policy for the technologies and controls involved."
+            "We use Google Analytics 4 through Google Tag Manager for limited website statistics. Google Ireland Limited receives information for this service. Advertising storage and ad personalisation are disabled. You can turn off website analytics in the Cookie Policy."
           ]
         },
         {
@@ -95,7 +95,7 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
             "Tax records that must be retained are kept for the statutory period, generally seven years. Where the One Stop Shop VAT scheme applies, the relevant records are kept for ten years. These periods apply only to records covered by the relevant legal duty, not to all correspondence.",
             "The website itself does not retain postcode or browser-location history beyond the current page state. Hosting, email and map providers may keep their own technical logs according to their service, security and statutory retention rules; their privacy notices explain the criteria. Core Solutions does not set those providers’ independent log-retention periods.",
             "We keep your sign-up while you are subscribed to PillenPopper development updates. You can unsubscribe by emailing contact@coresolutionsglobal.com. We then stop sending updates and handle removal of your subscription data from the form responses and linked spreadsheet, except for minimal records needed to respect an opt-out or meet an applicable legal obligation.",
-            "User-level and event-level data in Google Analytics is retained according to our Analytics property settings. The Cookie Policy lists the retention periods for browser storage."
+            "Retention of events in Google Analytics follows our Analytics property settings. The Cookie Policy describes the information stored locally in your browser."
           ]
         },
         {
@@ -110,7 +110,7 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
           "heading": "8. Your privacy rights",
           "paragraphs": [
             "Subject to the GDPR conditions, you may request access, correction, deletion or restriction of your personal data. You may object to processing based on legitimate interests, explaining your particular situation. Where processing is automated and based on consent or a contract, you may also have a right to data portability.",
-            "You may withdraw consent at any time. For browser location, use ‘Clear’ and revoke the site’s location permission in your browser. Withdrawal does not affect the lawfulness of processing before withdrawal. For website analytics, choose ‘Decline analytics’ in ‘Cookie settings’ at the bottom of the site. Email us to withdraw any other consent or exercise your rights.",
+            "You may withdraw consent at any time. For browser location, use ‘Clear’ and revoke the site’s location permission in your browser. Withdrawal does not affect the lawfulness of processing before withdrawal. To object to website analytics, choose ‘Turn off website analytics’ in the Cookie Policy. Email us to withdraw any other consent or exercise your rights.",
             "Send a request to contact@coresolutionsglobal.com. Requests are normally free. We respond within one month; if a request is complex or there are many requests, the GDPR permits an extension of up to two further months, which we explain within the first month. If identity verification is necessary, we request only proportionate information. Do not send a copy of your ID unsolicited.",
             "You can complain to the Dutch Autoriteit Persoonsgegevens via autoriteitpersoonsgegevens.nl, or to the competent supervisory authority in the EEA country where you live or work. You do not have to contact us first."
           ]
@@ -232,7 +232,7 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
         {
           "heading": "2. What this website uses",
           "paragraphs": [
-            "We use Google Analytics 4 for website statistics after you give permission. Google Tag Manager loads Google Analytics. We save your choice locally in your browser. The page address determines the language. There is no customer login or shopping basket. The embedded Google Forms service is described separately below.",
+            "We use Google Analytics 4 through Google Tag Manager to measure use of the website. By default this runs without analytics cookies. The page address determines the language. The embedded Google Forms service is described separately below.",
             "Choices in the store locator are kept only in the current page’s memory. This is temporary application state, not a cookie or local-storage profile. It is cleared when you refresh or leave that page."
           ],
           "table": {
@@ -243,19 +243,19 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
             ],
             "rows": [
               [
-                "Google Analytics: _ga",
-                "Distinguishes browsers for website statistics.",
-                "Up to 2 years under Google’s default setting."
+                "Google Analytics 4",
+                "Measures page visits and interactions to improve the website.",
+                "No analytics cookies or persistent browser identifiers for this measurement."
               ],
               [
-                "Google Analytics: _ga_*",
-                "Maintains session state for website statistics.",
-                "Up to 2 years under Google’s default setting."
+                "coresolutions.analytics-opt-out (local storage)",
+                "Remembers that you turned website analytics off.",
+                "Until you turn analytics back on or clear your browser data."
               ],
               [
-                "coresolutions.analytics-consent (local storage)",
-                "Remembers whether you allowed or declined analytics.",
-                "180 days."
+                "coresolutions.analytics-consent (previous preference)",
+                "Preserves a decision to decline under the previous settings.",
+                "Up to 180 days from the previous choice."
               ],
               [
                 "Temporary store-locator page state",
@@ -299,18 +299,19 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
               "href": "https://policies.google.com/technologies/cookies"
             },
             {
-              "label": "Google Analytics 4 cookies",
-              "href": "https://support.google.com/analytics/answer/11397207"
+              "label": "Google on measurement without cookies",
+              "href": "https://support.google.com/analytics/answer/13802165"
             }
           ]
         },
         {
-          "heading": "5. Consent and your controls",
+          "heading": "5. Website analytics and your settings",
           "paragraphs": [
-            "You can allow or decline website analytics. Our site loads Google Tag Manager for Google Analytics only after you give permission. The rest of the site remains available if you decline.",
-            "Use ‘Cookie settings’ at the bottom of the site to change your choice. If you withdraw permission, the site stops loading Analytics and deletes the Analytics cookies it can remove. Your choice applies to this browser.",
+            "Google Analytics receives limited measurements without analytics cookies. The site removes its legacy Analytics cookies where your browser allows it.",
+            "Use the button below to turn website analytics off in this browser or to turn them on again. The rest of the website remains available.",
             "You can inspect, delete or block cookies and website data in your browser’s privacy settings. Browser settings also control location permissions. Blocking technical storage or cache may affect how websites work. Deleting browser data does not remove information already received by a provider."
-          ]
+          ],
+          "id": "website-analytics"
         },
         {
           "heading": "6. Updates and contact",
@@ -356,9 +357,9 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
                 "Website tonen en beschermen, storingen oplossen en misbruik voorkomen: gerechtvaardigd belang bij een betrouwbare en veilige website."
               ],
               [
-                "Optionele webstatistieken (Google Analytics)",
-                "Bekeken pagina’s, verwijzende pagina’s en campagnegegevens, interacties op de site, browser- en apparaatgegevens, globale regio en een willekeurig browser-ID. Google ontvangt bij de verbinding ook het IP-adres.",
-                "Begrijpen hoe de site wordt gebruikt en deze verbeteren, op basis van jouw toestemming."
+                "Beperkte webstatistieken (Google Analytics)",
+                "Bezochte pagina’s, verwijzende pagina’s, interacties en technische gegevens zoals browser en schermresolutie. Bij het verzoek ontvangt Google het IP-adres. De meting gebruikt geen analyticscookies.",
+                "Inzicht in het gebruik van onze website om deze te verbeteren. Grondslag voor zover persoonsgegevens worden verwerkt: gerechtvaardigd belang."
               ],
               [
                 "Zoeken op postcode",
@@ -397,7 +398,7 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
             "De website wordt gehost en geleverd via GitHub Pages. Voor zakelijke e-mail gebruiken we Google Workspace. Deze aanbieders kunnen gegevens ontvangen die nodig zijn om hun diensten te leveren. De OpenStreetMap Foundation ontvangt de hierboven beschreven kaart- en postcodeaanvragen. Hun eigen privacyverklaringen beschrijven verwerkingen waarvoor zij zelf verantwoordelijk zijn.",
             "Gegevens kunnen daarnaast worden gedeeld met een adviseur, dienstverlener of bevoegde instantie als dit noodzakelijk is voor een overeenkomst, wettelijke verplichting of juridische aanspraak. We verkopen je persoonsgegevens niet. Wanneer een aanbieder persoonsgegevens namens ons verwerkt, vereist de AVG passende verwerkersafspraken en waarborgen.",
             "Het inschrijfformulier voor de PillenPopper is ingesloten via Google Forms. Bij het laden maakt je browser verbinding met Google, dat technische informatie zoals je IP-adres en browsergegevens kan ontvangen. Ingestuurde e-mailadressen en toestemmingsantwoorden worden verwerkt in Google Forms en een gekoppelde Google Sheet binnen ons Google Workspace-account, met toegang voor bevoegde personen. Google kan daarnaast dienst- en accountgegevens verwerken volgens het eigen privacybeleid.",
-            "Als je statistieken toestaat, laden we Google Tag Manager om Google Analytics 4 te starten. Google Ireland Limited ontvangt gegevens voor deze dienst. De advertentietoestemmingen staan uit. Lees het Cookiebeleid voor de technieken en instellingen."
+            "Voor beperkte webstatistieken gebruiken we Google Analytics 4 via Google Tag Manager. Google Ireland Limited ontvangt gegevens voor deze dienst. Advertentieopslag en advertentiepersonalisatie staan uit. Via het Cookiebeleid kun je webstatistieken uitzetten."
           ]
         },
         {
@@ -413,7 +414,7 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
             "Fiscaal verplichte administratie bewaren we gedurende de wettelijke termijn, doorgaans zeven jaar. Voor administratie waarop de One Stop Shop-btw-regeling van toepassing is, geldt tien jaar. Deze termijnen gelden alleen voor de gegevens waarop de betreffende bewaarplicht rust, niet voor alle correspondentie.",
             "De website bewaart geen postcode- of browserlocatiegeschiedenis buiten de huidige paginastaat. Hosting-, e-mail- en kaartaanbieders kunnen eigen technische logbestanden bewaren volgens hun dienstverlenings-, beveiligings- en wettelijke bewaaregels. Hun privacyverklaringen beschrijven de criteria. Core Solutions bepaalt niet de zelfstandige bewaartermijnen van die aanbieders.",
             "We bewaren je inschrijving zolang je bent ingeschreven voor updates over de ontwikkeling van de PillenPopper. Afmelden kan via contact@coresolutionsglobal.com. Daarna stoppen we met het sturen van updates en handelen we de verwijdering van je inschrijfgegevens uit de formulierantwoorden en gekoppelde spreadsheet af, behalve minimale gegevens die nodig zijn om een afmelding te respecteren of aan een toepasselijke wettelijke verplichting te voldoen.",
-            "De bewaartermijn voor gebruikers- en gebeurtenisgegevens in Google Analytics volgt de instellingen van onze Analytics-property. De termijnen voor browseropslag staan in het Cookiebeleid."
+            "De bewaartermijn van gebeurtenisgegevens in Google Analytics volgt de instellingen van onze Analytics-property. Raadpleeg het Cookiebeleid voor gegevens die lokaal in je browser worden bewaard."
           ]
         },
         {
@@ -428,7 +429,7 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
           "heading": "8. Jouw privacyrechten",
           "paragraphs": [
             "Onder de voorwaarden van de AVG kun je inzage, correctie, verwijdering of beperking van je persoonsgegevens vragen. Je kunt vanwege jouw specifieke situatie bezwaar maken tegen verwerking op basis van een gerechtvaardigd belang. Bij geautomatiseerde verwerking op basis van toestemming of een overeenkomst kun je ook recht hebben op overdraagbaarheid van gegevens.",
-            "Je kunt toestemming altijd intrekken. Voor browserlocatie gebruik je ‘Wissen’ en trek je de locatietoestemming voor deze site in via je browser. Intrekken maakt eerdere rechtmatige verwerking niet onrechtmatig. Voor webstatistieken kies je ‘Statistieken weigeren’ onder ‘Cookie-instellingen’ onderaan de site. Mail ons voor het intrekken van andere toestemming of het uitoefenen van je rechten.",
+            "Je kunt toestemming altijd intrekken. Voor browserlocatie gebruik je ‘Wissen’ en trek je de locatietoestemming voor deze site in via je browser. Intrekken maakt eerdere rechtmatige verwerking niet onrechtmatig. Je kunt bezwaar maken tegen webstatistieken via ‘Webstatistieken uitzetten’ in het Cookiebeleid. Mail ons voor het intrekken van andere toestemming of het uitoefenen van je rechten.",
             "Stuur je verzoek naar contact@coresolutionsglobal.com. Verzoeken zijn normaal gesproken gratis. We reageren binnen één maand. Bij complexe of meerdere verzoeken mag deze termijn volgens de AVG met maximaal twee maanden worden verlengd; dat lichten we binnen de eerste maand toe. Als controle van je identiteit nodig is, vragen we alleen proportionele informatie. Stuur niet ongevraagd een kopie van je identiteitsbewijs.",
             "Je kunt een klacht indienen bij de Autoriteit Persoonsgegevens via autoriteitpersoonsgegevens.nl, of bij de bevoegde toezichthouder in het EER-land waar je woont of werkt. Je hoeft niet eerst contact met ons op te nemen."
           ]
@@ -550,7 +551,7 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
         {
           "heading": "2. Wat gebruikt deze website?",
           "paragraphs": [
-            "We gebruiken Google Analytics 4 voor webstatistieken nadat je toestemming geeft. Google Tag Manager laadt Google Analytics. Je keuze bewaren we lokaal in je browser. De taal volgt uit het pagina-adres. Er is geen klantlogin of winkelmandje. Het ingesloten Google Forms-formulier wordt hieronder apart beschreven.",
+            "We gebruiken Google Analytics 4 via Google Tag Manager om het gebruik van onze website te meten. Dit gebeurt standaard zonder analyticscookies. De taal volgt uit het pagina-adres. Het ingesloten Google Forms-formulier wordt hieronder apart beschreven.",
             "Keuzes in de winkelzoeker staan alleen in het geheugen van de huidige pagina. Dit is tijdelijke paginastaat en geen cookie of profiel in lokale opslag. Deze staat wordt gewist als je de pagina vernieuwt of verlaat."
           ],
           "table": {
@@ -561,19 +562,19 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
             ],
             "rows": [
               [
-                "Google Analytics: _ga",
-                "Maakt onderscheid tussen browsers voor webstatistieken.",
-                "Maximaal 2 jaar volgens de standaardinstelling van Google."
+                "Google Analytics 4",
+                "Meet paginabezoeken en interacties om de website te verbeteren.",
+                "Geen analyticscookies of blijvende browser-ID’s voor deze meting."
               ],
               [
-                "Google Analytics: _ga_*",
-                "Onthoudt de sessiestatus voor webstatistieken.",
-                "Maximaal 2 jaar volgens de standaardinstelling van Google."
+                "coresolutions.analytics-opt-out (lokale opslag)",
+                "Onthoudt het uitschakelen van webstatistieken.",
+                "Totdat je webstatistieken weer aanzet of je browsergegevens wist."
               ],
               [
-                "coresolutions.analytics-consent (lokale opslag)",
-                "Bewaart of je webstatistieken toestaat of weigert.",
-                "180 dagen."
+                "coresolutions.analytics-consent (oude voorkeur)",
+                "Een eerder vastgelegde weigering blijft geldig.",
+                "Maximaal 180 dagen vanaf de eerdere keuze."
               ],
               [
                 "Tijdelijke paginastaat van de winkelzoeker",
@@ -617,18 +618,19 @@ export const legalContent: Record<LegalLocale, Record<PolicyKind, PolicyContent>
               "href": "https://policies.google.com/technologies/cookies"
             },
             {
-              "label": "Cookies van Google Analytics 4",
-              "href": "https://support.google.com/analytics/answer/11397207"
+              "label": "Google over metingen zonder cookies",
+              "href": "https://support.google.com/analytics/answer/13802165"
             }
           ]
         },
         {
-          "heading": "5. Toestemming en jouw instellingen",
+          "heading": "5. Webstatistieken en jouw instellingen",
           "paragraphs": [
-            "Je kunt webstatistieken toestaan of weigeren. Pas na toestemming laadt onze site Google Tag Manager voor Google Analytics. De rest van de site blijft beschikbaar bij weigering.",
-            "Via ‘Cookie-instellingen’ onderaan de site kun je je keuze wijzigen. Als je toestemming intrekt, stopt de site met het laden van Analytics en verwijdert zij de Analytics-cookies die zij zelf kan verwijderen. Je keuze geldt voor deze browser.",
+            "Google Analytics ontvangt beperkte metingen zonder analyticscookies. De site verwijdert de eigen Analytics-cookies uit de eerdere inrichting voor zover je browser dat toelaat.",
+            "Gebruik de knop hieronder om webstatistieken voor deze browser uit te zetten of later weer aan te zetten. De rest van de website blijft beschikbaar.",
             "Je kunt cookies en websitegegevens bekijken, verwijderen of blokkeren via de privacyinstellingen van je browser. Daar kun je ook locatietoestemming beheren. Het blokkeren van technische opslag of cache kan de werking van websites beïnvloeden. Browsergegevens verwijderen wist geen gegevens die een aanbieder al heeft ontvangen."
-          ]
+          ],
+          "id": "website-analytics"
         },
         {
           "heading": "6. Wijzigingen en contact",
