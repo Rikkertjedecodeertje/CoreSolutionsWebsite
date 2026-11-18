@@ -221,16 +221,9 @@ export const projectsNl: Project[] = [
       {
         "title": "De PillenPopper terug bij Haagse Knaken na de publieksprijs",
         "description": "Rik van Wieren vertelt over de gewonnen publieksprijs en de volgende stappen voor de PillenPopper.",
-        "href": "https://media.denhaagfm.nl/audio/denhaagfm/202611171900.mp3",
+        "href": "https://media.denhaagfm.nl/audio/denhaagfm/202611171900.mp3#t=2601,3190",
         "source": "Den Haag FM",
         "date": "17 november 2026"
-      },
-      {
-        "title": "Schaal Je Impact: terugblik en winnaars",
-        "description": "Amsterdam Impact noemt Rik van Wieren als winnaar van de publieksprijs in de terugblik op Schaal Je Impact.",
-        "href": "https://www.linkedin.com/posts/amsterdamimpact_wat-een-energie-tijdens-schaal-je-impact-activity-7526999123141496833-aFvG",
-        "source": "Amsterdam Impact",
-        "date": "13 november 2026"
       },
       {
           "title": "Dankzij ondernemer Rik (23) zijn PillenPopper hoeft reumapatiënt niet meer te worstelen met medicijnstrips",
@@ -239,13 +232,6 @@ export const projectsNl: Project[] = [
           "source": "De Ondernemer",
           "date": "13 november 2026"
         },
-      {
-        "title": "Core Solutions wint de publieksprijs bij Schaal Je Impact",
-        "description": "Social Enterprise NL feliciteert Rik van Wieren in de terugblik op Schaal Je Impact.",
-        "href": "https://www.linkedin.com/posts/social-enterprise-nl_schaaljeimpact2026-sociaalondernemen-impacteconomie-activity-7526278334515826689-DAKF",
-        "source": "Social Enterprise NL",
-        "date": "11 november 2026"
-      },
       {
         "title": "Winnaars The Hague Innovators Awards 2026 bekendgemaakt",
         "description": "Voorburgs Dagblad brengt verslag uit over de publieksprijs voor Core Solutions en vermeldde het bedrijf eerder bij de genomineerden.",
@@ -321,7 +307,7 @@ export const projectsNl: Project[] = [
           "description": "Hofstad Radio deelt het verhaal over Rik van Wieren en de PillenPopper voor mensen die moeite hebben met medicijnstrips.",
           "href": "https://www.hofstadradio.com/dankzij-uitvinder-rik-23-hoeft-een-reumapatient-niet-meer-te-worstelen-met-medicijnstrips/",
           "source": "Hofstad Radio",
-          "date": "05-11-2026"
+          "date": "5 november 2026"
         },
       {
         "title": "Rik (23) ontwikkelt PillenPopper voor mensen met pijnlijke of zwakke handen",
@@ -525,7 +511,7 @@ export const mediaHighlightsNl: MediaHighlight[] = [
       "description": "Hofstad Radio deelt het verhaal over Rik van Wieren en de PillenPopper voor mensen die moeite hebben met medicijnstrips.",
       "href": "https://www.hofstadradio.com/dankzij-uitvinder-rik-23-hoeft-een-reumapatient-niet-meer-te-worstelen-met-medicijnstrips/",
       "source": "Hofstad Radio",
-      "date": "05-11-2026"
+      "date": "5 november 2026"
     },
   {
     "projectSlug": "pillenpopper",

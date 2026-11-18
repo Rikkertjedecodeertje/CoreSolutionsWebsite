@@ -28,6 +28,10 @@ const sourceLogos: Record<string, string> = {
   'Duurzaam Ondernemen': '/images/press-logos/duurzaam-ondernemen-logo.png',
   'Zoetermeers Dagblad': '/images/press-logos/zoetermeers-dagblad-logo.png',
   'Rijswijks Dagblad': '/images/press-logos/rijswijks-dagblad-logo.png',
+  'Voorburgs Dagblad': '/images/press-logos/voorburgs-dagblad-logo.webp',
+  'Drimble': '/images/press-logos/drimble-logo.webp',
+  'Essentially The Hague': '/images/press-logos/essentially-the-hague-logo.webp',
+  'Parkinson Vereniging': '/images/press-logos/parkinson-vereniging-logo.webp',
 };
 
 

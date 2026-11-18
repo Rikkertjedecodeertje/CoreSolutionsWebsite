@@ -4,13 +4,17 @@ const policyPaths: Record<PolicyKind, string> = { privacy: '/privacy-policy/', t
 export function LegalPage({ locale, kind }: { locale: LegalLocale; kind: PolicyKind }) {
   const policy = legalContent[locale][kind];
   const prefix = locale === 'nl' ? '/nl' : '';
+  const updated = kind === 'terms' ? '2026-10-07' : '2026-11-18';
+  const formattedDate = new Intl.DateTimeFormat(locale === 'nl' ? 'nl-NL' : 'en-GB', {
+    day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC',
+  }).format(new Date(updated));
   return (
     <article className="mx-auto max-w-4xl px-5 py-16 lg:px-8">
       <header className="max-w-3xl">
         <p className="mb-3 text-sm font-semibold uppercase text-steel">{locale === 'nl' ? 'Juridisch' : 'Legal'}</p>
         <h1 className="text-3xl font-semibold leading-tight text-text">{policy.title}</h1>
         <p className="mt-4 leading-7 text-muted">{policy.description}</p>
-        <p className="mt-4 text-sm text-muted">{locale === 'nl' ? 'Laatst bijgewerkt: ' : 'Last updated: '}<time dateTime="2026-10-07">{locale === 'nl' ? '7 oktober 2026' : '7 October 2026'}</time></p>
+        <p className="mt-4 text-sm text-muted">{locale === 'nl' ? 'Laatst bijgewerkt: ' : 'Last updated: '}<time dateTime={updated}>{formattedDate}</time></p>
       </header>
       <div className="mt-8 space-y-8 rounded-card border border-border bg-card p-6 text-sm leading-7 text-muted sm:p-8">
         {policy.sections.map(section => (

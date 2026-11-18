@@ -6,6 +6,7 @@ import './pillenpopper-theme.css';
 import './batbox-theme.css';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { AnalyticsConsent } from '@/components/AnalyticsConsent';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -60,6 +61,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Header />
         <main>{children}</main>
         <Footer />
+        <AnalyticsConsent />
       </body>
     </html>
   );
