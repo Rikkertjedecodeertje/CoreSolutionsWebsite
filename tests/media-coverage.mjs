@@ -99,15 +99,25 @@ try {
       await details.locator('summary').focus();
       await page.keyboard.press('Enter');
       assert.notEqual(await details.getAttribute('open'), null);
-      assert.equal(await details.locator('article').count(),11);
-      for(const item of await details.locator('article').all()) {
-        // Secondary rows contain only the source logo, avoiding repeated large thumbnails.
-        assert.equal(await item.locator('img').count(),1);
+      const mentions = await details.locator('article').all();
+      const toggleCount = (await details.locator('summary').textContent()).match(/\d+/);
+      assert.equal(mentions.length, Number(toggleCount?.[0]), 'The toggle counts all secondary mentions');
+      for (const item of mentions) {
+        const images = item.locator('img');
+        const imageCount = await images.count();
+        assert(imageCount <= 1, 'Secondary rows must avoid large thumbnails');
         await item.scrollIntoViewIfNeeded();
-        await item.locator('img').evaluate((img)=>img.decode());
+        if (imageCount === 1) {
+          await images.evaluate((img) => img.decode());
+        } else {
+          assert((await item.locator(':scope > div').first().innerText()).trim(), 'A text source label replaces a missing logo');
+        }
       }
-      const desktopHeight=await details.boundingBox();
-      if(width===1440)assert(desktopHeight.height<850,'Expanded desktop list must remain compact');
+      const desktopHeight = await details.boundingBox();
+      if (width === 1440) {
+        const gridRows = Math.ceil(mentions.length / 2);
+        assert(desktopHeight.height < 60 + gridRows * 130, 'Expanded desktop rows must remain compact');
+      }
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth), false);
       if(path==='/nl/')await screenshot(page,region,'expanded-'+width);
       await details.locator('summary').click();

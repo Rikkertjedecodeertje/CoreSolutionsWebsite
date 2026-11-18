@@ -219,12 +219,61 @@ export const projectsNl: Project[] = [
     ],
     "mediaMentions": [
       {
+        "title": "De PillenPopper terug bij Haagse Knaken na de publieksprijs",
+        "description": "Rik van Wieren vertelt over de gewonnen publieksprijs en de volgende stappen voor de PillenPopper.",
+        "href": "https://media.denhaagfm.nl/audio/denhaagfm/202611171900.mp3",
+        "source": "Den Haag FM",
+        "date": "17 november 2026"
+      },
+      {
+        "title": "Schaal Je Impact: terugblik en winnaars",
+        "description": "Amsterdam Impact noemt Rik van Wieren als winnaar van de publieksprijs in de terugblik op Schaal Je Impact.",
+        "href": "https://www.linkedin.com/posts/amsterdamimpact_wat-een-energie-tijdens-schaal-je-impact-activity-7526999123141496833-aFvG",
+        "source": "Amsterdam Impact",
+        "date": "13 november 2026"
+      },
+      {
           "title": "Dankzij ondernemer Rik (23) zijn PillenPopper hoeft reumapatiënt niet meer te worstelen met medicijnstrips",
           "description": "De Ondernemer deelt het AD-verhaal over Rik van Wieren, de PillenPopper en zelfstandig pillen uit medicijnstrips halen.",
           "href": "https://www.deondernemer.nl/innovatie/technologie/piepjonge-ondernemer-rik-van-wieren-23-pillenpopper-reumapatienten~407efaf",
           "source": "De Ondernemer",
           "date": "13 november 2026"
         },
+      {
+        "title": "Core Solutions wint de publieksprijs bij Schaal Je Impact",
+        "description": "Social Enterprise NL feliciteert Rik van Wieren in de terugblik op Schaal Je Impact.",
+        "href": "https://www.linkedin.com/posts/social-enterprise-nl_schaaljeimpact2026-sociaalondernemen-impacteconomie-activity-7526278334515826689-DAKF",
+        "source": "Social Enterprise NL",
+        "date": "11 november 2026"
+      },
+      {
+        "title": "Winnaars The Hague Innovators Awards 2026 bekendgemaakt",
+        "description": "Voorburgs Dagblad brengt verslag uit over de publieksprijs voor Core Solutions en vermeldde het bedrijf eerder bij de genomineerden.",
+        "href": "https://voorburgsdagblad.nl/Den%20Haag%20%26%20Regio/winnaars-the-hague-innovators-awards-2026-bekendgemaakt",
+        "source": "Voorburgs Dagblad",
+        "date": "11 november 2026",
+        "linkLabel": "Lees over de publieksprijs",
+        "additionalLinks": [
+          {
+            "label": "Lees over de nominatie",
+            "href": "https://voorburgsdagblad.nl/den%20haag%20%26%20regio/nominaties-voor-the-hague-innovators-awards-2026-bekendgemaakt"
+          }
+        ]
+      },
+      {
+        "title": "The Hague Innovators Awards: nominatie en publieksprijs",
+        "description": "Drimble verwijst naar de regionale berichtgeving over de nominatie en de publieksprijs voor Core Solutions.",
+        "href": "https://drimble.nl/regio/zuid-holland/zoetermeer/108563033/winnaars-the-hague-innovators-awards-2026-bekendgemaakt.html",
+        "source": "Drimble",
+        "date": "11 november 2026",
+        "linkLabel": "Bekijk het winnaarsbericht",
+        "additionalLinks": [
+          {
+            "label": "Bekijk het nominatiebericht",
+            "href": "https://drimble.nl/regio/zuid-holland/haaglanden/108077549/nominaties-voor-the-hague-innovators-awards-2026-bekendgemaakt.html"
+          }
+        ]
+      },
         {
           "title": "CupHub, Legumia en Core Solutions winnen The Hague Innovators Awards 2026",
           "description": "The Hague Online bericht over de publieksprijs voor Core Solutions en de PillenPopper (artikel in het Engels).",
@@ -260,6 +309,13 @@ export const projectsNl: Project[] = [
           "source": "Duurzaam Ondernemen",
           "date": "10 november 2026"
         },
+      {
+        "title": "De PillenPopper in de Haagse nieuwsbrief",
+        "description": "Essentially The Hague bespreekt hoe het hulpmiddel werkt en haalt de eerste gebruikerstest aan.",
+        "href": "https://essentiallythehague.com/newsletter-2026-11-06-nl/",
+        "source": "Essentially The Hague",
+        "date": "6 november 2026"
+      },
         {
           "title": "PillenPopper helpt mensen met reuma bij medicijnstrips",
           "description": "Hofstad Radio deelt het verhaal over Rik van Wieren en de PillenPopper voor mensen die moeite hebben met medicijnstrips.",
@@ -289,6 +345,12 @@ export const projectsNl: Project[] = [
         "date": "5 november 2026"
       },
       {
+        "title": "De PillenPopper in de ledencommunity",
+        "description": "De Parkinson Vereniging deelt de oproep voor de publieksstemming in haar online ledencommunity.",
+        "source": "Parkinson Vereniging",
+        "date": "2 november 2026"
+      },
+      {
         "title": "Haagse Rik (23) ontwikkelt hulpmiddel waarmee mensen zelfstandig pillen kunnen uitdrukken",
         "description": "De Nieuwe Haagse Courant schrijft over de PillenPopper, de ontwikkeling met gebruikers en ergotherapeuten en de geplande pilot met honderd hulpmiddelen.",
         "href": "https://dnhc.nl/voorpagina/haagse-rik-23-ontwikkelt-hulpmiddel-waarmee-mensen-zelfstandig-pillen-kunnen-uitdrukken/",
@@ -315,6 +377,34 @@ export const projectsNl: Project[] = [
         "href": "https://thehagueonline.com/community-story-meet-rik-van-wieren-the-entrepreneur-behind-the-pillenpopper/",
         "source": "The Hague Online",
         "date": "25 oktober 2026"
+      },
+      {
+        "title": "Kandidatenvideo: Core Solutions en de PillenPopper",
+        "description": "In de officiële kandidatenvideo van ImpactCity laat Rik van Wieren zien waarom hij de PillenPopper ontwikkelde.",
+        "href": "https://www.youtube.com/watch?v=zYGTYkWatKQ",
+        "source": "ImpactCity",
+        "date": "22 oktober 2026"
+      },
+      {
+        "title": "Nominaties voor The Hague Innovators Awards 2026 bekendgemaakt",
+        "description": "Core Solutions staat tussen de studentgenomineerden met een hulpmiddel voor mensen met beperkte handfunctie.",
+        "href": "https://dagblad070.nl/Den%20Haag%20%26%20Regio/nominaties-voor-the-hague-innovators-awards-2026-bekendgemaakt",
+        "source": "Dagblad070",
+        "date": "22 september 2026"
+      },
+      {
+        "title": "Nominaties voor The Hague Innovators Awards 2026 bekendgemaakt",
+        "description": "Core Solutions staat tussen de studentgenomineerden met een hulpmiddel voor mensen met beperkte handfunctie.",
+        "href": "https://zoetermeersdagblad.nl/Den%20Haag%20%26%20Regio/nominaties-voor-the-hague-innovators-awards-2026-bekendgemaakt",
+        "source": "Zoetermeers Dagblad",
+        "date": "22 september 2026"
+      },
+      {
+        "title": "Nominaties voor The Hague Innovators Awards 2026 bekendgemaakt",
+        "description": "Core Solutions staat tussen de studentgenomineerden met een hulpmiddel voor mensen met beperkte handfunctie.",
+        "href": "https://rijswijksdagblad.nl/Den%20Haag%20%26%20Regio/nominaties-voor-the-hague-innovators-awards-2026-bekendgemaakt",
+        "source": "Rijswijks Dagblad",
+        "date": "22 september 2026"
       },
       {
         "title": "Core Solutions genomineerd voor The Hague Student Innovator Award 2026",
