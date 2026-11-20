@@ -1,0 +1,172 @@
+.section {
+  --how-purple: var(--pillenpopper-purple, #7447a4);
+  --how-purple-dark: var(--pillenpopper-purple-dark, #563279);
+  --how-muted: var(--color-muted, #5e626d);
+  max-width: 1280px;
+  margin-inline: auto;
+  padding: 58px 32px 47px;
+  scroll-margin-top: 100px;
+}
+
+.sectionHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 35px;
+  margin-bottom: 26px;
+}
+
+.label {
+  color: var(--how-purple);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.sectionHead h2 {
+  margin-top: 12px;
+  font-size: clamp(28px, 3vw, 34px);
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -.035em;
+}
+
+.sectionHead > p,
+.step > p {
+  color: var(--how-muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.sectionHead > p {
+  max-width: 310px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.stepImage {
+  position: relative;
+  overflow: hidden;
+  border-radius: 9px;
+  background: #e8e1dc;
+}
+
+.stepImage > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.stepNumber {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 50%;
+  background: #fffdf8;
+  color: var(--how-purple);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.step h3 {
+  margin: 20px 0 9px;
+  font-size: 19px;
+  font-weight: 650;
+  letter-spacing: -.025em;
+}
+
+.splitNote {
+  margin-top: 23px;
+  color: var(--how-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.detailInsets {
+  position: absolute;
+  right: 11px;
+  bottom: 11px;
+  display: grid;
+  gap: 9px;
+}
+
+.detailInsets figure {
+  position: relative;
+  width: clamp(60px, 7.6vw, 102px);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 10px #20142755;
+}
+
+.detailInsets img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: 53% 50%;
+  transform: scale(2.8);
+  transform-origin: 50% 48%;
+}
+
+.detailInsets figure:first-child img {
+  object-position: 49% 45%;
+  transform-origin: 49% 45%;
+}
+
+.detailInsets figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--how-purple-dark);
+  font-size: 11px;
+  font-weight: 750;
+}
+
+@media (max-width: 760px) {
+  .section {
+    padding: 35px 20px 31px;
+    scroll-margin-top: 85px;
+  }
+
+  .sectionHead {
+    display: block;
+    margin-bottom: 22px;
+  }
+
+  .sectionHead > p {
+    margin-top: 12px;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .step h3 {
+    margin-top: 16px;
+  }
+
+  .detailInsets figure {
+    width: clamp(70px, 18vw, 102px);
+  }
+}

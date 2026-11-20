@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation';
 import { AchievementSystem, BrandOverviewSystem } from '@/components/BrandSystems';
 import { ButtonLink } from '@/components/ButtonLink';
 import { MediaSection } from '@/components/MediaSection';
+import { PillenPopperHowItWorks } from '@/components/PillenPopperHowItWorks';
 import { PillenPopperSignup } from '@/components/PillenPopperSignup';
 import { SalesChannelButton } from '@/components/SalesChannelButton';
 import { SectionHeader } from '@/components/SectionHeader';
@@ -123,6 +124,8 @@ export default function DutchProjectPage({ params }: ProjectPageProps) {
         </div>
       </section>
 
+      {isPillenpopper && <PillenPopperSignup locale="nl" />}
+
       <section className="mx-auto grid max-w-7xl gap-8 px-5 py-16 md:grid-cols-2 lg:px-8">
         <article className="rounded-card border border-border bg-card p-6">
           <h2 className="text-2xl font-semibold text-text">Probleem</h2>
@@ -150,6 +153,8 @@ export default function DutchProjectPage({ params }: ProjectPageProps) {
         </div>
       </section>
 
+      {isPillenpopper && <PillenPopperHowItWorks locale="nl" />}
+
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
         <SectionHeader title={isPillenpopper ? 'Ontwikkeling en mijlpalen' : 'Prestaties'} />
         <div className="mt-8">
@@ -172,7 +177,6 @@ export default function DutchProjectPage({ params }: ProjectPageProps) {
               <SalesChannelButton channel={channel} key={channel.label} locale="nl" />
             ))}
           </div>
-          {isPillenpopper && <PillenPopperSignup locale="nl" />}
         </div>
       </section>
 

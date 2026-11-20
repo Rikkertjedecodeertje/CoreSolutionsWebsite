@@ -264,7 +264,7 @@ export const projects: Project[] = [
       "Developed together with users and occupational therapy experts",
       "Patent-pending pill-splitting mechanism",
       "Design refined through 3D-printed prototypes",
-      "Nominated for The Hague Student Innovator Award 2026"
+      "Won two awards, including the Audience Award at The Hague Innovators Awards 2026"
     ],
     "salesChannels": [
       {
