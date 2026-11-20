@@ -129,8 +129,8 @@
 
 .detailInsets figcaption {
   position: absolute;
-  right: 0;
-  bottom: 0;
+  right: 12px;
+  bottom: 12px;
   display: grid;
   width: 24px;
   height: 24px;
