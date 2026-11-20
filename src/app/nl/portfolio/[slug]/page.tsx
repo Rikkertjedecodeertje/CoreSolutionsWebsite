@@ -124,7 +124,11 @@ export default function DutchProjectPage({ params }: ProjectPageProps) {
         </div>
       </section>
 
-      {isPillenpopper && <PillenPopperSignup locale="nl" />}
+      {isPillenpopper && (
+        <div className="pillenpopper-waitlist-band border-b border-border py-10 [&>section]:mt-0 md:py-12">
+          <PillenPopperSignup locale="nl" id="updates-top" />
+        </div>
+      )}
 
       <section className="mx-auto grid max-w-7xl gap-8 px-5 py-16 md:grid-cols-2 lg:px-8">
         <article className="rounded-card border border-border bg-card p-6">
@@ -155,18 +159,23 @@ export default function DutchProjectPage({ params }: ProjectPageProps) {
 
       {isPillenpopper && <PillenPopperHowItWorks locale="nl" />}
 
-      <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
-        <SectionHeader title={isPillenpopper ? 'Ontwikkeling en mijlpalen' : 'Prestaties'} />
-        <div className="mt-8">
-          <AchievementSystem
-            brand={brand}
-            items={project.achievements}
-            locale="nl"
-          />
+      <section className={isPillenpopper ? 'border-t border-border bg-card' : undefined}>
+        <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+          <SectionHeader title={isPillenpopper ? 'Ontwikkeling en mijlpalen' : 'Prestaties'} />
+          <div className="mt-8">
+            <AchievementSystem
+              brand={brand}
+              items={project.achievements}
+              locale="nl"
+            />
+          </div>
         </div>
       </section>
 
-      <section className="border-y border-border bg-card" id={isPillenpopper ? 'availability' : 'sales-channels'}>
+      <section
+        className={isPillenpopper ? 'pillenpopper-waitlist-band border-t border-border' : 'border-y border-border bg-card'}
+        id={isPillenpopper ? 'availability' : 'sales-channels'}
+      >
         <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <SectionHeader
             description={isPillenpopper ? 'De PillenPopper wordt voorbereid op marktintroductie. Ontdek hoe je kunt bijdragen aan validatie en de volgende stap naar productie.' : 'Bekijk beschikbare verkoopkanalen, de eigen webshop en retailmogelijkheden voor dit merk.'}
@@ -177,6 +186,7 @@ export default function DutchProjectPage({ params }: ProjectPageProps) {
               <SalesChannelButton channel={channel} key={channel.label} locale="nl" />
             ))}
           </div>
+          {isPillenpopper && <PillenPopperSignup locale="nl" />}
         </div>
       </section>
 

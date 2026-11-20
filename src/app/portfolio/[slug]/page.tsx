@@ -109,7 +109,11 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         </div>
       </section>
 
-      {isPillenpopper && <PillenPopperSignup />}
+      {isPillenpopper && (
+        <div className="pillenpopper-waitlist-band border-b border-border py-10 [&>section]:mt-0 md:py-12">
+          <PillenPopperSignup id="updates-top" />
+        </div>
+      )}
 
       <section className="mx-auto grid max-w-7xl gap-8 px-5 py-16 md:grid-cols-2 lg:px-8">
         <article className="rounded-card border border-border bg-card p-6">
@@ -133,17 +137,22 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
       {isPillenpopper && <PillenPopperHowItWorks locale="en" />}
 
-      <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
-        <SectionHeader title={isPillenpopper ? 'Development and milestones' : 'Achievements'} />
-        <div className="mt-8">
-          <AchievementSystem
-            brand={brand}
-            items={project.achievements}
-          />
+      <section className={isPillenpopper ? 'border-t border-border bg-card' : undefined}>
+        <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+          <SectionHeader title={isPillenpopper ? 'Development and milestones' : 'Achievements'} />
+          <div className="mt-8">
+            <AchievementSystem
+              brand={brand}
+              items={project.achievements}
+            />
+          </div>
         </div>
       </section>
 
-      <section className="border-y border-border bg-card" id={isPillenpopper ? 'availability' : 'sales-channels'}>
+      <section
+        className={isPillenpopper ? 'pillenpopper-waitlist-band border-t border-border' : 'border-y border-border bg-card'}
+        id={isPillenpopper ? 'availability' : 'sales-channels'}
+      >
         <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <SectionHeader
             description={isPillenpopper ? 'The PillenPopper is being prepared for launch. Explore opportunities to contribute to validation and the next step towards production.' : 'Explore available sales channels, own webshop options and retail opportunities for this brand.'}
@@ -154,6 +163,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               <SalesChannelButton channel={channel} key={channel.label} />
             ))}
           </div>
+          {isPillenpopper && <PillenPopperSignup />}
         </div>
       </section>
 

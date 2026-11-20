@@ -21,6 +21,10 @@
   color: var(--color-text);
 }
 
+.pillenpopper-theme .pillenpopper-waitlist-band {
+  background: #f4edf8;
+}
+
 .pillenpopper-theme :is(h2, h3).text-text {
   color: var(--pillenpopper-purple);
 }
