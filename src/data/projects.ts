@@ -417,11 +417,25 @@ export const projects: Project[] = [
         "date": "2 November 2026"
       },
       {
-        "title": "Rik (23) from The Hague develops a device to help people remove pills independently",
-        "description": "De Nieuwe Haagse Courant covers the PillenPopper, its development with users and occupational therapists, and the planned pilot with one hundred devices (article in Dutch).",
-        "href": "https://dnhc.nl/voorpagina/haagse-rik-23-ontwikkelt-hulpmiddel-waarmee-mensen-zelfstandig-pillen-kunnen-uitdrukken/",
+        "title": "The PillenPopper and its Audience Award",
+        "description": "De Nieuwe Haagse Courant covers the PillenPopper and its Audience Award at The Hague Innovators Awards 2026 (articles in Dutch).",
+        "href": "https://dnhc.nl/voorpagina/haagse-innovatie-pillenpopper-wint-publieksprijs-the-hague-innovators-awards/",
         "source": "De Nieuwe Haagse Courant",
-        "date": "31 October 2026"
+        "date": "October and November 2026",
+        "linkLabel": "Read about the Audience Award",
+        "additionalLinks": [
+          {
+            "label": "Read about the PillenPopper",
+            "href": "https://dnhc.nl/voorpagina/haagse-rik-23-ontwikkelt-hulpmiddel-waarmee-mensen-zelfstandig-pillen-kunnen-uitdrukken/"
+          }
+        ]
+      },
+      {
+        "title": "The PillenPopper on West Wordt Wakker",
+        "description": "Rik van Wieren talks about the PillenPopper and why he made it on Radio West (in Dutch).",
+        "source": "Omroep West",
+        "date": "6 November 2026",
+        "featured": true
       },
       {
         "title": "The PillenPopper on Den Haag FM",

@@ -15,6 +15,7 @@ const images: Record<string, string> = {
 };
 
 const sourceLogos: Record<string, string> = {
+  'Omroep West': 'https://s.regiogroei.cloud/img/brand-logos/resized/logo_west.svg',
   AD: '/images/press-logos/ad-logo.png',
   'Omroep Delft': '/images/press-logos/omroep-delft-logo.png',
   'De Nieuwe Haagse Courant': '/images/press-logos/dnhc-logo.png',

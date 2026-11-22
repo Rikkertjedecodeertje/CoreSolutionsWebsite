@@ -101,6 +101,9 @@ try {
       const previous = region.getByRole('button', {name:nl?'Vorig artikel':'Previous story',exact:true});
       assert.equal(await activeGroups(region).count(), width >= 1024 ? 3 : 1);
       const initial = await firstTitle(region);
+      const featuredCount = Number(await region.evaluate(element => element.style.getPropertyValue('--available')));
+      const westSlides = region.locator('article').filter({ has: page.getByRole('img', { name: 'Omroep West', exact: true }) });
+      assert.equal(await westSlides.count(), 3, 'Omroep West appears once in each carousel sequence');
       assert(await region.locator('[aria-roledescription][aria-hidden="true"]').evaluateAll((slides)=>slides.every((slide)=>slide.inert)), 'Offscreen copies must not receive focus');
 
       // Verify actual timed rotation before touching or focusing any controls.
@@ -128,9 +131,9 @@ try {
 
       // Navigate through a complete cycle in each direction, checking the real viewport.
       const starting = await firstTitle(region);
-      for(let i=0;i<3;i++){await next.click();await settle(page);await aligned(region);}
+      for(let i=0;i<featuredCount;i++){await next.click();await settle(page);await aligned(region);}
       assert.equal(await firstTitle(region), starting, 'Forward loop must preserve content');
-      for(let i=0;i<3;i++){await previous.click();await settle(page);await aligned(region);}
+      for(let i=0;i<featuredCount;i++){await previous.click();await settle(page);await aligned(region);}
       assert.equal(await firstTitle(region), starting, 'Backward loop must preserve content');
       const viewport = region.locator('[tabindex="0"]');
       await viewport.focus();
@@ -162,6 +165,10 @@ try {
         assert(links.every(link => new URL(link).hostname === domain));
         assert(links.some(link => new URL(link).pathname.includes('/nominaties-voor-')) && links.some(link => new URL(link).pathname.includes('/winnaars-')));
       }
+      const dnhc = details.locator('article').filter({ has: page.getByRole('img', { name: 'De Nieuwe Haagse Courant', exact: true }) });
+      assert.equal(await dnhc.count(), 1, 'Both De Nieuwe Haagse Courant articles share one card');
+      assert.deepEqual(await dnhc.getByRole('link').evaluateAll(anchors => anchors.map(link => link.href)),
+        ["https://dnhc.nl/voorpagina/haagse-innovatie-pillenpopper-wint-publieksprijs-the-hague-innovators-awards/", "https://dnhc.nl/voorpagina/haagse-rik-23-ontwikkelt-hulpmiddel-waarmee-mensen-zelfstandig-pillen-kunnen-uitdrukken/"]);
       assert.equal(await details.locator('a[href*="202611171900.mp3#t=2601,3190"]').count(), 1,
         'The latest Den Haag FM interview appears in all media sections');
       const toggleCount = (await details.locator('summary').textContent()).match(/\d+/);
