@@ -4,7 +4,7 @@ import { Children, useCallback, useEffect, useMemo, useRef, useState, type CSSPr
 import { ArrowLeft, ArrowRight, Pause, Play } from 'lucide-react';
 import styles from './MediaCarousel.module.css';
 
-const ROTATION_INTERVAL = 7500;
+const ROTATION_INTERVAL = 3750;
 
 export function MediaCarousel({ children, locale = 'en' }: { children: ReactNode; locale?: 'en' | 'nl' }) {
   const slides = useMemo(() => Children.toArray(children), [children]);

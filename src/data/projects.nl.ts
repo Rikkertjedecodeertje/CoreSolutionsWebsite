@@ -355,7 +355,7 @@ export const projectsNl: Project[] = [
         "description": "De Nieuwe Haagse Courant schrijft over de PillenPopper en de publieksprijs bij The Hague Innovators Awards 2026.",
         "href": "https://dnhc.nl/voorpagina/haagse-innovatie-pillenpopper-wint-publieksprijs-the-hague-innovators-awards/",
         "source": "De Nieuwe Haagse Courant",
-        "date": "Oktober en november 2026",
+        "date": "19 november 2026",
         "linkLabel": "Lees over de publieksprijs",
         "additionalLinks": [
           {

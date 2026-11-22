@@ -88,7 +88,7 @@ const overviewCopy = {
 } as const;
 
 const achievementValues: Record<BrandKey, string[]> = {
-  pillenpopper: ['TOGETHER', 'PATENT', '3D', '2026'],
+  pillenpopper: ['TOGETHER', 'PATENT', '3D', 'AWARDS'],
   iheel: ['10.000+', '9', 'OMNI', 'RETAIL'],
   'batbox-battery-tester': ['LIVE', 'TOP', 'SEO', '4.9'],
 };
@@ -178,7 +178,7 @@ export function AchievementSystem({
   locale?: Locale;
 }) {
   const values = brand === 'pillenpopper' && locale === 'nl'
-    ? ['SAMEN', ...achievementValues[brand].slice(1)]
+    ? ['SAMEN', 'PATENT', '3D', 'PRIJZEN']
     : achievementValues[brand];
   const icons = achievementIcons[brand];
 

@@ -25,6 +25,7 @@ const errors = [];
 const reports = [];
 const header = 'Dankzij ondernemer Rik (23) zijn PillenPopper hoeft reumapatiënt niet meer te worstelen met medicijnstrips';
 const settle = (page) => page.waitForTimeout(1000);
+const rotationCheckDelay = 5000;
 const firstTitle = async (region) => region.locator('[aria-roledescription="artikel"]:not([aria-hidden="true"]), [aria-roledescription="slide"]:not([aria-hidden="true"])').first().locator('h3').innerText();
 const activeGroups = (region) => region.locator('[aria-roledescription="artikel"]:not([aria-hidden="true"]), [aria-roledescription="slide"]:not([aria-hidden="true"])');
 async function screenshot(page, region, name) {
@@ -109,23 +110,23 @@ try {
       // Verify actual timed rotation before touching or focusing any controls.
       if (width === 1440 && path === '/nl/') {
         await page.mouse.move(0,0);
-        await page.waitForTimeout(8500);
+        await page.waitForTimeout(rotationCheckDelay);
         assert.notEqual(await firstTitle(region), initial, 'Visible carousel must rotate automatically');
         const pause = region.getByRole('button', {name:'Automatische rotatie pauzeren'});
         await pause.click();
         await settle(page);
         const pausedTitle = await firstTitle(region);
         await page.mouse.move(0,0);
-        await page.waitForTimeout(8100);
+        await page.waitForTimeout(rotationCheckDelay);
         assert.equal(await firstTitle(region), pausedTitle, 'Pause must persist');
         await region.getByRole('button', {name:'Automatische rotatie starten'}).click();
         await page.mouse.move(0,0);
-        await page.waitForTimeout(8500);
+        await page.waitForTimeout(rotationCheckDelay);
         assert.notEqual(await firstTitle(region), pausedTitle, 'Play must resume rotation');
         await activeGroups(region).getByRole('link').first().focus();
         const focusTitle = await firstTitle(region);
         await page.mouse.move(0,0);
-        await page.waitForTimeout(8100);
+        await page.waitForTimeout(rotationCheckDelay);
         assert.equal(await firstTitle(region), focusTitle, 'Keyboard readers must not lose their article');
       }
 
@@ -152,6 +153,12 @@ try {
       assert.notEqual(await details.getAttribute('open'), null);
       const mentions = await details.locator('article').all();
       const onHome = path === '/' || path === '/nl/';
+      if (!onHome) {
+        const milestone = page.locator('article').filter({
+          hasText: nl ? 'Twee prijzen gewonnen' : 'Won two awards',
+        });
+        assert.equal(await milestone.getByText(nl ? 'PRIJZEN' : 'AWARDS', { exact: true }).count(), 1);
+      }
       for (const area of [region, details]) {
         const labels = area.getByText('PillenPopper', { exact: true });
         assert.equal(await labels.count(), onHome ? await area.locator('article').count() : 0,
@@ -167,6 +174,7 @@ try {
       }
       const dnhc = details.locator('article').filter({ has: page.getByRole('img', { name: 'De Nieuwe Haagse Courant', exact: true }) });
       assert.equal(await dnhc.count(), 1, 'Both De Nieuwe Haagse Courant articles share one card');
+      assert.equal(await dnhc.getByText(nl ? '19 november 2026' : '19 November 2026', { exact: true }).count(), 1);
       assert.deepEqual(await dnhc.getByRole('link').evaluateAll(anchors => anchors.map(link => link.href)),
         ["https://dnhc.nl/voorpagina/haagse-innovatie-pillenpopper-wint-publieksprijs-the-hague-innovators-awards/", "https://dnhc.nl/voorpagina/haagse-rik-23-ontwikkelt-hulpmiddel-waarmee-mensen-zelfstandig-pillen-kunnen-uitdrukken/"]);
       assert.equal(await details.locator('a[href*="202611171900.mp3#t=2601,3190"]').count(), 1,
@@ -208,7 +216,7 @@ try {
   assert.equal(await activeGroups(future).count(),2);
   assert.equal(await future.getByRole('button').count(),2,'Reduced motion uses manual controls');
   const first=await firstTitle(future);
-  await page.waitForTimeout(8100);
+  await page.waitForTimeout(rotationCheckDelay);
   assert.equal(await firstTitle(future),first,'Reduced-motion preference disables autoplay');
   const titles=new Set();
   for(let i=0;i<5;i++){
