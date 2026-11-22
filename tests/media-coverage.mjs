@@ -102,7 +102,7 @@ try {
       assert.equal(await activeGroups(region).count(), width >= 1024 ? 3 : 1);
       const initial = await firstTitle(region);
       const featuredCount = Number(await region.evaluate(element => element.style.getPropertyValue('--available')));
-      const westSlides = region.locator('article').filter({ has: page.getByRole('img', { name: 'Omroep West', exact: true }) });
+      const westSlides = region.locator('article').filter({ has: page.locator('img[alt="Omroep West"]') });
       assert.equal(await westSlides.count(), 3, 'Omroep West appears once in each carousel sequence');
       assert(await region.locator('[aria-roledescription][aria-hidden="true"]').evaluateAll((slides)=>slides.every((slide)=>slide.inert)), 'Offscreen copies must not receive focus');
 
@@ -122,7 +122,7 @@ try {
         await page.mouse.move(0,0);
         await page.waitForTimeout(8500);
         assert.notEqual(await firstTitle(region), pausedTitle, 'Play must resume rotation');
-        await activeGroups(region).first().getByRole('link').first().focus();
+        await activeGroups(region).getByRole('link').first().focus();
         const focusTitle = await firstTitle(region);
         await page.mouse.move(0,0);
         await page.waitForTimeout(8100);
