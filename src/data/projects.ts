@@ -10,7 +10,8 @@ export type MediaMention = {
   description: string;
   href?: string;
   source?: string;
-  date?: string;
+  date?: string; // ISO 8601 calendar date (YYYY-MM-DD)
+  audio?: { src: string; duration: string };
   linkLabel?: string;
   additionalLinks?: { label: string; href: string }[];
   featured?: boolean;
@@ -289,21 +290,21 @@ export const projects: Project[] = [
         "description": "Rik van Wieren discusses winning the Audience Award and the next steps for the PillenPopper (radio in Dutch).",
         "href": "https://media.denhaagfm.nl/audio/denhaagfm/202611171900.mp3#t=2601,3190",
         "source": "Den Haag FM",
-        "date": "17 November 2026"
+        "date": "2026-11-17"
       },
       {
           "title": "Dankzij ondernemer Rik (23) zijn PillenPopper hoeft reumapatiënt niet meer te worstelen met medicijnstrips",
           "description": "De Ondernemer shares the AD story about Rik van Wieren, the PillenPopper and independently removing pills from blister packs (article in Dutch).",
           "href": "https://www.deondernemer.nl/innovatie/technologie/piepjonge-ondernemer-rik-van-wieren-23-pillenpopper-reumapatienten~407efaf",
           "source": "De Ondernemer",
-          "date": "13 November 2026"
+          "date": "2026-11-13"
         },
       {
         "title": "The Hague Innovators Awards 2026 winners announced",
         "description": "Voorburgs Dagblad covers the Audience Award for Core Solutions and previously named the company among the nominees (articles in Dutch).",
         "href": "https://voorburgsdagblad.nl/Den%20Haag%20%26%20Regio/winnaars-the-hague-innovators-awards-2026-bekendgemaakt",
         "source": "Voorburgs Dagblad",
-        "date": "11 November 2026",
+        "date": "2026-11-11",
         "linkLabel": "Read about the Audience Award",
         "additionalLinks": [
           {
@@ -317,7 +318,7 @@ export const projects: Project[] = [
         "description": "Drimble links to regional coverage of the nomination and the Audience Award for Core Solutions (articles in Dutch).",
         "href": "https://drimble.nl/regio/zuid-holland/zoetermeer/108563033/winnaars-the-hague-innovators-awards-2026-bekendgemaakt.html",
         "source": "Drimble",
-        "date": "11 November 2026",
+        "date": "2026-11-11",
         "linkLabel": "See the winners announcement",
         "additionalLinks": [
           {
@@ -331,21 +332,21 @@ export const projects: Project[] = [
           "description": "The Hague Online reports on Core Solutions winning the Audience Award with the PillenPopper.",
           "href": "https://thehagueonline.com/the-hague-innovators-awards-2026-winners/",
           "source": "The Hague Online",
-          "date": "11 November 2026"
+          "date": "2026-11-11"
         },
         {
           "title": "The Hague Innovators Awards 2026 winners announced",
           "description": "Dagblad070 reports on the winners, including the Audience Award for Core Solutions and the PillenPopper (article in Dutch).",
           "href": "https://dagblad070.nl/Den%20Haag%20%26%20Regio/winnaars-the-hague-innovators-awards-2026-bekendgemaakt",
           "source": "Dagblad070",
-          "date": "11 November 2026"
+          "date": "2026-11-11"
         },
         {
           "title": "The Hague Innovators Awards 2026 winners announced",
           "description": "Zoetermeers Dagblad covers the Audience Award for Core Solutions and previously named the company among the nominees (articles in Dutch).",
           "href": "https://zoetermeersdagblad.nl/Den%20Haag%20%26%20Regio/winnaars-the-hague-innovators-awards-2026-bekendgemaakt",
           "source": "Zoetermeers Dagblad",
-          "date": "11 November 2026",
+          "date": "2026-11-11",
           "linkLabel": "Read about the Audience Award",
           "additionalLinks": [
             {
@@ -359,7 +360,7 @@ export const projects: Project[] = [
           "description": "Rijswijks Dagblad covers the Audience Award for Core Solutions and previously named the company among the nominees (articles in Dutch).",
           "href": "https://rijswijksdagblad.nl/Den%20Haag%20%26%20Regio/winnaars-the-hague-innovators-awards-2026-bekendgemaakt",
           "source": "Rijswijks Dagblad",
-          "date": "11 November 2026",
+          "date": "2026-11-11",
           "linkLabel": "Read about the Audience Award",
           "additionalLinks": [
             {
@@ -373,64 +374,63 @@ export const projects: Project[] = [
           "description": "Duurzaam Ondernemen covers the award-winning social innovations and the Audience Award for Core Solutions (article in Dutch).",
           "href": "https://www.duurzaam-ondernemen.nl/nieuwe-generatie-haagse-ondernemers-wint-prijzen-voor-maatschappelijke-innovatie/",
           "source": "Duurzaam Ondernemen",
-          "date": "10 November 2026"
+          "date": "2026-11-10"
         },
       {
         "title": "The PillenPopper in the local news digest",
         "description": "Essentially The Hague summarises how the aid works and highlights an early user test.",
         "href": "https://essentiallythehague.com/newsletter-2026-11-06/",
         "source": "Essentially The Hague",
-        "date": "6 November 2026"
+        "date": "2026-11-06"
       },
         {
           "title": "PillenPopper helps people with rheumatism open blister packs",
           "description": "Hofstad Radio shares the story of Rik van Wieren and the PillenPopper for people who struggle with blister packs (article in Dutch).",
           "href": "https://www.hofstadradio.com/dankzij-uitvinder-rik-23-hoeft-een-reumapatient-niet-meer-te-worstelen-met-medicijnstrips/",
           "source": "Hofstad Radio",
-          "date": "5 November 2026"
+          "date": "2026-11-05"
         },
       {
         "title": "Rik (23) develops the PillenPopper for people with painful or weak hands",
         "description": "Haagse Dingen visits Rik van Wieren to show the PillenPopper in action (video in Dutch).",
         "href": "https://www.youtube.com/watch?v=inTvBd82SBE",
         "source": "Haagse Dingen",
-        "date": "3 November 2026"
+        "date": "2026-11-03"
       },
       {
         "title": "Inventor Rik (23) helps a rheumatism patient stop struggling with blister packs",
         "description": "AD features Rik van Wieren and the PillenPopper (premium article in Dutch).",
         "href": "https://www.ad.nl/den-haag/dankzij-uitvinder-rik-23-hoeft-een-reumapatient-niet-meer-te-worstelen-met-medicijnstrips~a407efaf/",
         "source": "AD",
-        "date": "5 November 2026"
+        "date": "2026-11-05"
       },
       {
         "title": "Rik (23) invents the PillenPopper: helping people stay independent",
         "description": "Omroep Delft reports on the PillenPopper and independence when removing pills from blister packs (article in Dutch).",
         "href": "https://www.omroepdelft.nl/delft/rik-23-bedenkt-pillenpopper-biedt-stukje-zelfstandigheid/",
         "source": "Omroep Delft",
-        "date": "5 November 2026"
+        "date": "2026-11-05"
       },
       {
         "title": "The PillenPopper on Omroep Delft radio",
         "description": "Rik van Wieren talks about the PillenPopper on Omroep Delft radio (interview in Dutch).",
-        "href": "/portfolio/pillenpopper/radio/#omroep-delft",
         "source": "Omroep Delft",
-        "date": "4 November 2026",
-        "linkLabel": "Listen to the interview (14:54)",
+        "date": "2026-11-04",
+        "audio": { "src": "/audio/pillenpopper-omroep-delft-2026-11-04.mp3", "duration": "14:54" },
         "featured": false
       },
       {
         "title": "The PillenPopper in the Parkinson Association’s member community",
         "description": "The Dutch Parkinson Association shares the public vote appeal in its online member community.",
         "source": "Parkinson Vereniging",
-        "date": "2 November 2026"
+        "date": "2026-11-02"
       },
       {
         "title": "The PillenPopper and its Audience Award",
         "description": "De Nieuwe Haagse Courant covers the PillenPopper and its Audience Award at The Hague Innovators Awards 2026 (articles in Dutch).",
         "href": "https://dnhc.nl/voorpagina/haagse-innovatie-pillenpopper-wint-publieksprijs-the-hague-innovators-awards/",
         "source": "De Nieuwe Haagse Courant",
-        "date": "19 November 2026",
+        "date": "2026-11-19",
         "linkLabel": "Read about the Audience Award",
         "additionalLinks": [
           {
@@ -442,10 +442,9 @@ export const projects: Project[] = [
       {
         "title": "The PillenPopper on West Wordt Wakker",
         "description": "Rik van Wieren explains why he made the PillenPopper and demonstrates it to Bob Brinkman on Radio West (interview in Dutch).",
-        "href": "/portfolio/pillenpopper/radio/#radio-west",
         "source": "Omroep West",
-        "date": "6 November 2026",
-        "linkLabel": "Listen to the interview (5:32)",
+        "date": "2026-11-06",
+        "audio": { "src": "/audio/pillenpopper-radio-west-2026-11-06.mp3", "duration": "5:32" },
         "featured": true
       },
       {
@@ -453,7 +452,7 @@ export const projects: Project[] = [
         "description": "Rik van Wieren talks about the PillenPopper and helping people with weak or painful hands. Listen to the interview in two parts (in Dutch).",
         "href": "https://media.denhaagfm.nl/audio/denhaagfm/202610271900.mp3#t=470,670",
         "source": "Den Haag FM",
-        "date": "27 October 2026",
+        "date": "2026-10-27",
         "linkLabel": "Listen to part 1 (7:50 to 11:10)",
         "additionalLinks": [
           {
@@ -467,28 +466,28 @@ export const projects: Project[] = [
         "description": "The Hague Online profiles Rik van Wieren, the development of the PillenPopper and his work supporting student entrepreneurs.",
         "href": "https://thehagueonline.com/community-story-meet-rik-van-wieren-the-entrepreneur-behind-the-pillenpopper/",
         "source": "The Hague Online",
-        "date": "25 October 2026"
+        "date": "2026-10-25"
       },
       {
         "title": "Nominee video: Core Solutions and the PillenPopper",
         "description": "Rik van Wieren introduces the PillenPopper and why he developed it in the official ImpactCity nominee video.",
         "href": "https://www.youtube.com/watch?v=zYGTYkWatKQ",
         "source": "ImpactCity",
-        "date": "22 October 2026"
+        "date": "2026-10-22"
       },
       {
         "title": "The Hague Innovators Awards 2026 nominees announced",
         "description": "Core Solutions is listed among the student nominees for an aid for people with reduced hand function (article in Dutch).",
         "href": "https://dagblad070.nl/Den%20Haag%20%26%20Regio/nominaties-voor-the-hague-innovators-awards-2026-bekendgemaakt",
         "source": "Dagblad070",
-        "date": "22 September 2026"
+        "date": "2026-09-22"
       },
       {
         "title": "Core Solutions nominated for The Hague Student Innovator Award 2026",
         "description": "ImpactCity lists Core Solutions among the student nominees for its work helping people with reduced hand function remove tablets from blister packs independently.",
         "href": "https://www.impactcity.nl/nominaties-voor-the-hague-innovators-awards-2026-bekendgemaakt/",
         "source": "ImpactCity",
-        "date": "22 September 2026"
+        "date": "2026-09-22"
       }
     ],
     "cardImage": {

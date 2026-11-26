@@ -1,5 +1,6 @@
 import { ArrowUpRight } from 'lucide-react';
 import type { MediaMention, Project } from '@/data/projects';
+import { MediaAudioButton } from '@/components/MediaAudio';
 import { ResponsiveImage } from '@/components/ResponsiveImage';
 import { assetPath } from '@/lib/sitePath';
 import styles from './MediaCards.module.css';
@@ -15,7 +16,7 @@ const images: Record<string, string> = {
 };
 
 const sourceLogos: Record<string, string> = {
-  'Omroep West': 'https://s.regiogroei.cloud/img/brand-logos/resized/logo_west.svg',
+  'Omroep West': '/images/press-logos/omroep-west-logo.svg',
   AD: '/images/press-logos/ad-logo.png',
   'Omroep Delft': '/images/press-logos/omroep-delft-logo.png',
   'De Nieuwe Haagse Courant': '/images/press-logos/dnhc-logo.png',
@@ -37,11 +38,20 @@ const sourceLogos: Record<string, string> = {
 
 export type MediaCardMention = MediaMention & { product?: Pick<Project, 'slug' | 'shortName' | 'cardImage'> };
 
+const dateFormatters = {
+  en: new Intl.DateTimeFormat('en-GB', { dateStyle: 'long', timeZone: 'UTC' }),
+  nl: new Intl.DateTimeFormat('nl-NL', { dateStyle: 'long', timeZone: 'UTC' }),
+};
+
 export function getMediaCardKey(mention: MediaCardMention) {
   return `${mention.product?.slug}-${mention.source}-${mention.title}`;
 }
 
-export function MediaCard({ mention, featured = false }: { mention: MediaCardMention; featured?: boolean }) {
+export function MediaCard({ mention, featured = false, locale = 'en' }: {
+  mention: MediaCardMention;
+  featured?: boolean;
+  locale?: 'nl' | 'en';
+}) {
   const logo = sourceLogos[mention.source ?? ''];
   const separateLinks = !!mention.linkLabel || !!mention.additionalLinks?.length;
   const links = [
@@ -52,6 +62,8 @@ export function MediaCard({ mention, featured = false }: { mention: MediaCardMen
     ? mention.product.cardImage?.src
     : images[mention.source ?? ''] ?? '/images/pillenpopper-blister.jpg';
   const productLabel = mention.product && <span className={styles.productLabel}>{mention.product.shortName}</span>;
+  const dateLabel = mention.date && dateFormatters[locale].format(new Date(mention.date));
+  const date = dateLabel && <time className={styles.date} dateTime={mention.date}>{dateLabel}</time>;
   const source = (
     <div className={featured ? styles.source : styles.compactSource} title={mention.source}>
       {logo ? (
@@ -91,12 +103,18 @@ export function MediaCard({ mention, featured = false }: { mention: MediaCardMen
         </h3>
         {!featured && (mention.date || productLabel) && (
           <div className={styles.meta}>
-            {mention.date && <p className={styles.date}>{mention.date}</p>}
+            {date}
             {productLabel}
           </div>
         )}
-        {links.length > 0 && (
+        {(mention.audio || links.length > 0) && (
           <div className={styles.links}>
+            {mention.audio && (
+              <MediaAudioButton
+                recording={{ ...mention.audio, src: assetPath(mention.audio.src), title: mention.source ?? mention.title, date: dateLabel }}
+                label={locale === 'nl' ? `Luister naar het interview (${mention.audio.duration})` : `Listen to the interview (${mention.audio.duration})`}
+              />
+            )}
             {links.map((link) => (
               <a className={styles.extraLink} href={assetPath(link.href)} key={link.href} target="_blank" rel="noopener noreferrer">
                 {link.label}<ArrowUpRight size={13} aria-hidden="true" />
@@ -107,7 +125,7 @@ export function MediaCard({ mention, featured = false }: { mention: MediaCardMen
         {featured && (
           <div className={styles.footer}>
             {source}
-            {mention.date && <p className={styles.date}>{mention.date}</p>}
+            {date}
           </div>
         )}
       </div>
@@ -115,10 +133,10 @@ export function MediaCard({ mention, featured = false }: { mention: MediaCardMen
   );
 }
 
-export function MediaCards({ mentions }: { mentions: MediaCardMention[] }) {
+export function MediaCards({ mentions, locale }: { mentions: MediaCardMention[]; locale: 'nl' | 'en' }) {
   return (
     <div className={styles.list}>
-      {mentions.map((mention) => <MediaCard mention={mention} key={getMediaCardKey(mention)} />)}
+      {mentions.map((mention) => <MediaCard mention={mention} locale={locale} key={getMediaCardKey(mention)} />)}
     </div>
   );
 }

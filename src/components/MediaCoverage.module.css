@@ -1,3 +1,8 @@
+.heading { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; margin: 24px 0 12px; }
+.heading h3 { margin: 0; font-size: 16px; font-weight: 650; }
+.order { color: var(--color-muted, #5e626d); font-size: 13px; line-height: 1.5; }
+.more .order { margin: 16px 0 0; }
+@media (max-width: 899px) { .rowOrder { display: none; } }
 .more { margin-top: 20px; }
 .toggle {
   display: inline-flex;

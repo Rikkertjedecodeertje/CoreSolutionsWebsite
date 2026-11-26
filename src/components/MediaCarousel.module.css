@@ -2,7 +2,6 @@
   --per-view: 3;
   --gap: 20px;
   --slots: min(var(--per-view), var(--available));
-  margin-top: 28px;
   min-width: 0;
 }
 .viewport { overflow: hidden; border-radius: 12px; touch-action: pan-y pinch-zoom; }

@@ -41,6 +41,33 @@ async function aligned(region) {
   assert(first && viewport && Math.abs(first.x - viewport.x) < 2, 'Leading article must align after wrapping');
 }
 
+async function checkAudio(page, trigger, { station, seconds, file, closeWithKeyboard, nl }) {
+  const url = page.url();
+  await trigger.click();
+  const dialog = page.getByRole('dialog', { name: station, exact: true });
+  await dialog.waitFor();
+  assert.equal(page.url(), url, 'Opening a recording leaves the visitor on the same page');
+  const audio = dialog.locator('audio');
+  assert.match(await audio.getAttribute('src'), file);
+  const close = dialog.getByRole('button', { name: nl ? 'Sluiten' : 'Close', exact: true });
+  assert(await close.evaluate(element => element === document.activeElement), 'Focus enters the audio dialog');
+  await audio.evaluate(element => element.play());
+  assert(Math.abs(await audio.evaluate(element => element.duration) - seconds) < 1);
+  await audio.evaluate(element => {
+    if (element.currentTime > 0.1) return;
+    return new Promise(resolve => element.addEventListener('timeupdate', resolve, { once: true }));
+  });
+  if (closeWithKeyboard) {
+    await page.keyboard.press('Escape');
+  } else {
+    await close.click();
+  }
+  await dialog.waitFor({ state: 'hidden' });
+  await audio.waitFor({ state: 'detached' });
+  assert.equal(await page.locator('audio').count(), 0, 'Closing removes the player and stops playback');
+  assert(await trigger.evaluate(element => element === document.activeElement), 'Focus returns to the interview button');
+}
+
 async function checkWebsiteAnalytics() {
   const page = await browser.newPage();
   const site = 'http://127.0.0.1:8765';
@@ -95,7 +122,6 @@ try {
     await page.route('https://www.googletagmanager.com/gtm.js?id=GTM-WMSNWHWJ', route => route.fulfill({ body: '' }));
     for (const path of ['/nl/', '/', '/nl/portfolio/pillenpopper/', '/portfolio/pillenpopper/']) {
       const nl = path.startsWith('/nl/');
-      const radioPage = (nl ? '/nl' : '') + '/portfolio/pillenpopper/radio/';
       await page.goto('http://127.0.0.1:8765' + path, { waitUntil: 'networkidle' });
       const region = page.getByRole('region', {name:nl?'Uitgelichte media':'Featured coverage', exact:true});
       await region.scrollIntoViewIfNeeded();
@@ -104,11 +130,17 @@ try {
       assert.equal(await activeGroups(region).count(), width >= 1024 ? 3 : 1);
       const initial = await firstTitle(region);
       const featuredCount = Number(await region.evaluate(element => element.style.getPropertyValue('--available')));
+      const sourceDates = (scope) => scope.locator('article time').evaluateAll(times => times.map(time => time.dateTime));
+      const byNewest = (dates) => [...dates].sort().reverse();
+      const featuredDates = (await sourceDates(region)).slice(0, featuredCount);
+      assert.equal(featuredDates[0], '2026-11-13');
+      assert.deepEqual(featuredDates, byNewest(featuredDates));
       const westSlides = region.locator('article').filter({ has: page.locator('img[alt="Omroep West"]') });
       assert.equal(await westSlides.count(), 3, 'Omroep West appears once in each carousel sequence');
-      assert.equal(await westSlides.locator(`a[href="${radioPage}#radio-west"]`).count(), 3,
-        'The Omroep West interview opens the local audio player');
-      assert.equal(await region.locator(`a[href="${radioPage}#omroep-delft"]`).count(), 0,
+      const audioButton = (area, duration) => area.getByRole('button', { name: new RegExp(duration) });
+      assert.equal(await westSlides.locator('button[aria-haspopup="dialog"]').count(), 3,
+        'The Omroep West interview opens a dialog');
+      assert.equal(await audioButton(region, '14:54').count(), 0,
         'The Omroep Delft radio interview stays out of the featured carousel');
       assert.equal(await region.locator('a[href^="https://www.omroepdelft.nl/delft/rik-23-bedenkt-pillenpopper"]').count(), 3,
         'The Omroep Delft article remains featured');
@@ -152,17 +184,31 @@ try {
       await settle(page);
       assert.equal(await firstTitle(region), starting);
       assert.equal(await region.locator('h3').filter({hasText:header}).count(), 3);
+      const westAudio = audioButton(activeGroups(region), '5:32');
+      for (let i = 0; i < featuredCount && !await westAudio.count(); i++) {
+        await next.click();
+        await settle(page);
+      }
+      await checkAudio(page, westAudio, {
+        station: 'Omroep West', seconds: 332, file: /radio-west-2026-11-06\.mp3$/, closeWithKeyboard: true, nl,
+      });
 
       const details = page.locator('details').filter({has:page.locator('summary').filter({hasText:/overige|more media/})});
       assert.equal(await details.getAttribute('open'), null);
       await details.locator('summary').focus();
       await page.keyboard.press('Enter');
       assert.notEqual(await details.getAttribute('open'), null);
+      const archiveDates = await sourceDates(details);
+      assert.equal(archiveDates[0], '2026-11-19');
+      assert.deepEqual(archiveDates, byNewest(archiveDates));
       const delftAudio = details.locator('article').filter({
-        has: page.locator(`a[href="${radioPage}#omroep-delft"]`),
+        has: audioButton(page, '14:54'),
       });
       assert.equal(await delftAudio.count(), 1, 'The Omroep Delft radio interview appears once in the full media list');
       assert.equal(await delftAudio.getByText(nl ? '4 november 2026' : '4 November 2026', { exact: true }).count(), 1);
+      await checkAudio(page, audioButton(delftAudio, '14:54'), {
+        station: 'Omroep Delft', seconds: 894, file: /omroep-delft-2026-11-04\.mp3$/, closeWithKeyboard: false, nl,
+      });
       const mentions = await details.locator('article').all();
       const onHome = path === '/' || path === '/nl/';
       if (!onHome) {
