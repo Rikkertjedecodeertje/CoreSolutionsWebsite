@@ -20,7 +20,7 @@ export function MediaCoverage({
   locale?: 'en' | 'nl';
 }) {
   const featured = featuredSources.flatMap((source) => {
-    const mention = mentions.find((item) => item.source === source);
+    const mention = mentions.find((item) => item.source === source && item.featured !== false);
     return mention ? [mention] : [];
   });
   const selected = new Set(featured);

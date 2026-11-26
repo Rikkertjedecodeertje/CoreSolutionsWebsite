@@ -83,7 +83,7 @@ export function MediaCard({ mention, featured = false }: { mention: MediaCardMen
         {featured && productLabel}
         <h3 className={featured ? styles.title : styles.compactTitle}>
           {mention.href && !separateLinks ? (
-            <a className={styles.mainLink} href={mention.href} target="_blank" rel="noopener noreferrer">
+            <a className={styles.mainLink} href={assetPath(mention.href)} target="_blank" rel="noopener noreferrer">
               <span>{mention.title}</span>
               {!featured && <ArrowUpRight className={styles.external} size={16} aria-hidden="true" />}
             </a>
@@ -98,7 +98,7 @@ export function MediaCard({ mention, featured = false }: { mention: MediaCardMen
         {links.length > 0 && (
           <div className={styles.links}>
             {links.map((link) => (
-              <a className={styles.extraLink} href={link.href} key={link.href} target="_blank" rel="noopener noreferrer">
+              <a className={styles.extraLink} href={assetPath(link.href)} key={link.href} target="_blank" rel="noopener noreferrer">
                 {link.label}<ArrowUpRight size={13} aria-hidden="true" />
               </a>
             ))}

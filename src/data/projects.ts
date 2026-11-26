@@ -411,6 +411,15 @@ export const projects: Project[] = [
         "date": "5 November 2026"
       },
       {
+        "title": "The PillenPopper on Omroep Delft radio",
+        "description": "Rik van Wieren talks about the PillenPopper on Omroep Delft radio (interview in Dutch).",
+        "href": "/audio/pillenpopper-omroep-delft-2026-11-04.mp3",
+        "source": "Omroep Delft",
+        "date": "4 November 2026",
+        "linkLabel": "Listen to the interview (14:54)",
+        "featured": false
+      },
+      {
         "title": "The PillenPopper in the Parkinson Association’s member community",
         "description": "The Dutch Parkinson Association shares the public vote appeal in its online member community.",
         "source": "Parkinson Vereniging",
@@ -432,9 +441,11 @@ export const projects: Project[] = [
       },
       {
         "title": "The PillenPopper on West Wordt Wakker",
-        "description": "Rik van Wieren talks about the PillenPopper and why he made it on Radio West (in Dutch).",
+        "description": "Rik van Wieren explains why he made the PillenPopper and demonstrates it to Bob Brinkman on Radio West (interview in Dutch).",
+        "href": "/audio/pillenpopper-radio-west-2026-11-06.mp3",
         "source": "Omroep West",
         "date": "6 November 2026",
+        "linkLabel": "Listen to the interview (5:32)",
         "featured": true
       },
       {
