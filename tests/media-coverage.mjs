@@ -95,6 +95,7 @@ try {
     await page.route('https://www.googletagmanager.com/gtm.js?id=GTM-WMSNWHWJ', route => route.fulfill({ body: '' }));
     for (const path of ['/nl/', '/', '/nl/portfolio/pillenpopper/', '/portfolio/pillenpopper/']) {
       const nl = path.startsWith('/nl/');
+      const radioPage = (nl ? '/nl' : '') + '/portfolio/pillenpopper/radio/';
       await page.goto('http://127.0.0.1:8765' + path, { waitUntil: 'networkidle' });
       const region = page.getByRole('region', {name:nl?'Uitgelichte media':'Featured coverage', exact:true});
       await region.scrollIntoViewIfNeeded();
@@ -105,9 +106,9 @@ try {
       const featuredCount = Number(await region.evaluate(element => element.style.getPropertyValue('--available')));
       const westSlides = region.locator('article').filter({ has: page.locator('img[alt="Omroep West"]') });
       assert.equal(await westSlides.count(), 3, 'Omroep West appears once in each carousel sequence');
-      assert.equal(await westSlides.locator('a[href="/audio/pillenpopper-radio-west-2026-11-06.mp3"]').count(), 3,
-        'The Omroep West interview links to the locally hosted excerpt');
-      assert.equal(await region.locator('a[href="/audio/pillenpopper-omroep-delft-2026-11-04.mp3"]').count(), 0,
+      assert.equal(await westSlides.locator(`a[href="${radioPage}#radio-west"]`).count(), 3,
+        'The Omroep West interview opens the local audio player');
+      assert.equal(await region.locator(`a[href="${radioPage}#omroep-delft"]`).count(), 0,
         'The Omroep Delft radio interview stays out of the featured carousel');
       assert.equal(await region.locator('a[href^="https://www.omroepdelft.nl/delft/rik-23-bedenkt-pillenpopper"]').count(), 3,
         'The Omroep Delft article remains featured');
@@ -158,7 +159,7 @@ try {
       await page.keyboard.press('Enter');
       assert.notEqual(await details.getAttribute('open'), null);
       const delftAudio = details.locator('article').filter({
-        has: page.locator('a[href="/audio/pillenpopper-omroep-delft-2026-11-04.mp3"]'),
+        has: page.locator(`a[href="${radioPage}#omroep-delft"]`),
       });
       assert.equal(await delftAudio.count(), 1, 'The Omroep Delft radio interview appears once in the full media list');
       assert.equal(await delftAudio.getByText(nl ? '4 november 2026' : '4 November 2026', { exact: true }).count(), 1);

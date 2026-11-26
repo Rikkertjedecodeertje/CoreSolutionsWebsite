@@ -413,7 +413,7 @@ export const projects: Project[] = [
       {
         "title": "The PillenPopper on Omroep Delft radio",
         "description": "Rik van Wieren talks about the PillenPopper on Omroep Delft radio (interview in Dutch).",
-        "href": "/audio/pillenpopper-omroep-delft-2026-11-04.mp3",
+        "href": "/portfolio/pillenpopper/radio/#omroep-delft",
         "source": "Omroep Delft",
         "date": "4 November 2026",
         "linkLabel": "Listen to the interview (14:54)",
@@ -442,7 +442,7 @@ export const projects: Project[] = [
       {
         "title": "The PillenPopper on West Wordt Wakker",
         "description": "Rik van Wieren explains why he made the PillenPopper and demonstrates it to Bob Brinkman on Radio West (interview in Dutch).",
-        "href": "/audio/pillenpopper-radio-west-2026-11-06.mp3",
+        "href": "/portfolio/pillenpopper/radio/#radio-west",
         "source": "Omroep West",
         "date": "6 November 2026",
         "linkLabel": "Listen to the interview (5:32)",
