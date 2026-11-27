@@ -219,7 +219,7 @@ export const projectsNl: Project[] = [
     ],
     "mediaMentions": [
       {
-        "title": "De PillenPopper",
+        "title": "De PillenPopper op de website",
         "description": "KBO Gelderland legt uit hoe de PillenPopper helpt om zelfstandig pillen uit strips te drukken en geschikte pillen te splitsen.",
         "href": "https://www.kbogelderland.nl/nieuws/de-pillenpopper/",
         "source": "KBO Gelderland",

@@ -16,6 +16,7 @@ const images: Record<string, string> = {
 };
 
 const sourceLogos: Record<string, string> = {
+  'KBO Gelderland': 'https://www.kbogelderland.nl/wp-content/uploads/2025/12/Afbeelding1.png',
   'Omroep West': '/images/press-logos/omroep-west-logo.svg',
   AD: '/images/press-logos/ad-logo.png',
   'Omroep Delft': '/images/press-logos/omroep-delft-logo.png',

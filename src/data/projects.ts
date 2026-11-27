@@ -286,7 +286,7 @@ export const projects: Project[] = [
     ],
     "mediaMentions": [
       {
-        "title": "The PillenPopper",
+        "title": "The PillenPopper on the website",
         "description": "KBO Gelderland explains how the PillenPopper helps people remove pills from blister packs and split suitable pills independently (article in Dutch).",
         "href": "https://www.kbogelderland.nl/nieuws/de-pillenpopper/",
         "source": "KBO Gelderland",
