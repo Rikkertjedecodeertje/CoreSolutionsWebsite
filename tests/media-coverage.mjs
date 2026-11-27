@@ -199,8 +199,12 @@ try {
       await page.keyboard.press('Enter');
       assert.notEqual(await details.getAttribute('open'), null);
       const archiveDates = await sourceDates(details);
-      assert.equal(archiveDates[0], '2026-11-19');
       assert.deepEqual(archiveDates, byNewest(archiveDates));
+      const kbo = details.locator('article').filter({
+        has: page.locator('a[href="https://www.kbogelderland.nl/nieuws/de-pillenpopper/"]'),
+      });
+      assert.equal(await kbo.count(), 1, 'The KBO Gelderland article appears once in the media list');
+      assert.equal(await kbo.locator('time').getAttribute('datetime'), '2026-11-25');
       const delftAudio = details.locator('article').filter({
         has: audioButton(page, '14:54'),
       });
