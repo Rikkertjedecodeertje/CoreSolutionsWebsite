@@ -286,6 +286,13 @@ export const projects: Project[] = [
     ],
     "mediaMentions": [
       {
+        "title": "The PillenPopper",
+        "description": "KBO Gelderland explains how the PillenPopper helps people remove pills from blister packs and split suitable pills independently (article in Dutch).",
+        "href": "https://www.kbogelderland.nl/nieuws/de-pillenpopper/",
+        "source": "KBO Gelderland",
+        "date": "2026-11-25"
+      },
+      {
         "title": "The PillenPopper returns to Haagse Knaken after winning the Audience Award",
         "description": "Rik van Wieren discusses winning the Audience Award and the next steps for the PillenPopper (radio in Dutch).",
         "href": "https://media.denhaagfm.nl/audio/denhaagfm/202611171900.mp3#t=2601,3190",

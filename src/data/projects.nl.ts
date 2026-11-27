@@ -219,6 +219,13 @@ export const projectsNl: Project[] = [
     ],
     "mediaMentions": [
       {
+        "title": "De PillenPopper",
+        "description": "KBO Gelderland legt uit hoe de PillenPopper helpt om zelfstandig pillen uit strips te drukken en geschikte pillen te splitsen.",
+        "href": "https://www.kbogelderland.nl/nieuws/de-pillenpopper/",
+        "source": "KBO Gelderland",
+        "date": "2026-11-25"
+      },
+      {
         "title": "De PillenPopper terug bij Haagse Knaken na de publieksprijs",
         "description": "Rik van Wieren vertelt over de gewonnen publieksprijs en de volgende stappen voor de PillenPopper.",
         "href": "https://media.denhaagfm.nl/audio/denhaagfm/202611171900.mp3#t=2601,3190",
